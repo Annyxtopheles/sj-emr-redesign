@@ -204,10 +204,6 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     {feat.desc}
                   </p>
                 </div>
-                <div className="mt-4 pt-2 border-t border-slate-200/60 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
-                  <Check className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>{language === "en" ? "Included in all plans" : "সকল প্ল্যানে অন্তর্ভুক্ত"}</span>
-                </div>
               </div>
             );
           })}

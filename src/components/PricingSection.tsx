@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Sparkles, HelpCircle, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import { Check, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
 
 interface PricingSectionProps {
   language: "en" | "bn";
@@ -14,62 +14,56 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
   const plans = [
     {
       id: "trial",
-      name: language === "en" ? "14-Day Free Trial" : "১৪ দিনের ফ্রি ট্রায়াল",
-      badge: language === "en" ? "Zero Risk" : "বিনা খরচে শুরু",
+      tag: language === "en" ? "14-Day Free Evaluation" : "১৪ দিনের ফ্রি ট্রায়াল",
+      name: language === "en" ? "Free Trial" : "ফ্রি ট্রায়াল",
       desc:
         language === "en"
-          ? "Experience the full suite of SJ EMR with your real chamber workflow."
-          : "কোনো অগ্রিম পেমেন্ট ছাড়াই সম্পূর্ণ সফটওয়্যার ব্যবহার করে দেখুন।",
+          ? "Test the complete software in your daily chamber with zero commitment."
+          : "কোনো অগ্রিম পেমেন্ট ছাড়াই সম্পূর্ণ সফটওয়্যার চেম্বারে যাচাই করে দেখুন।",
       priceMonthly: "0",
-      periodMonthly: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
+      periodMonthly: language === "en" ? "Free for 14 days" : "১৪ দিনের জন্য সম্পূর্ণ ফ্রি",
       priceYearly: "0",
-      periodYearly: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
+      periodYearly: language === "en" ? "Free for 14 days" : "১৪ দিনের জন্য সম্পূর্ণ ফ্রি",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Start Free 14-Day Trial" : "ফ্রি ট্রায়াল শুরু করুন",
+      ctaText: language === "en" ? "Start Free Trial" : "ফ্রি ট্রায়াল শুরু করুন",
       features: [
-        language === "en" ? "Full e-Prescription Module" : "সম্পূর্ণ ই-প্রেসক্রিপশন মডিউল",
-        language === "en" ? "Bangladeshi Drug Database" : "বাংলাদেশ ড্রাগ ডেটাবেস",
-        language === "en" ? "Patient Demographics & PHI" : "রোগীর হিস্ট্রি ও রেকর্ড সংরক্ষণ",
-        language === "en" ? "Doctor Schedule & Appointments" : "চেম্বার অ্যাপয়েন্টমেন্ট শিডিউলিং",
-        language === "en" ? "Payment & Billing Records" : "বিলিং ও ফি ট্র্যাকিং",
-        language === "en" ? "Trial SMS Gateway" : "ট্রায়াল এসএমএস সুবিধা",
-        language === "en" ? "Single Doctor Chamber" : "১ জন ডাক্তারের চেম্বার",
+        language === "en" ? "Full e-prescription & BD drug database" : "সম্পূর্ণ ই-প্রেসক্রিপশন ও ড্রাগ ডেটাবেস",
+        language === "en" ? "Lifetime patient history & diagnostics" : "আজীবন রোগীর মেডিকেল হিস্ট্রি ও রিপোর্ট",
+        language === "en" ? "Chamber schedule & appointment booking" : "চেম্বার শিডিউলিং ও সিরিয়াল বুকিং",
+        language === "en" ? "Pad print formatting & trial SMS" : "চেম্বার প্যাড প্রিন্টিং ও ট্রায়াল এসএমএস",
       ],
     },
     {
       id: "essential",
+      tag: language === "en" ? "Solo Doctor Practice" : "একক ডাক্তারের চেম্বার",
       name: language === "en" ? "Essential Plan" : "এসেনশিয়াল প্ল্যান",
-      badge: language === "en" ? "Standard" : "মাসিক প্ল্যান",
       desc:
         language === "en"
-          ? "Perfect for solo practitioners who prefer month-to-month flexibility."
-          : "একক ডাক্তারদের জন্য সুবিধাজনক মাসিক সাবস্ক্রিপশন প্ল্যান।",
+          ? "Standard month-to-month subscription for individual clinical practices."
+          : "স্বতন্ত্র চিকিৎসকদের জন্য সুবিধাজনক মাসিক সাবস্ক্রিপশন প্ল্যান।",
       priceMonthly: "2,000",
       periodMonthly: language === "en" ? "BDT / month" : "টাকা / মাস",
       priceYearly: "24,000",
       periodYearly: language === "en" ? "BDT / year (2,000 BDT/mo)" : "টাকা / বছর (২,০০০ টাকা/মাস)",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Get Essential Plan" : "এসেনশিয়াল প্ল্যান নিন",
+      ctaText: language === "en" ? "Select Essential" : "এসেনশিয়াল বেছে নিন",
       features: [
-        language === "en" ? "All Free Trial Features" : "ফ্রি ট্রায়ালের সকল ফিচার",
-        language === "en" ? "Unlimited Patients & Prescriptions" : "আনলিমিটেড রোগী ও প্রেসক্রিপশন",
-        language === "en" ? "Custom Prescription Layout / Header" : "কাস্টম চেম্বার হেডার ও প্যাড",
-        language === "en" ? "Zoom Video Integration" : "জুম ভিডিও ইন্টিগ্রেশন",
-        language === "en" ? "Daily & Weekly OPD Summaries" : "দৈনিক ও সাপ্তাহিক সামারি রিপোর্ট",
-        language === "en" ? "Dedicated WhatsApp & Call Support" : "হোয়াটসঅ্যাপ ও ফোন সাপোর্ট",
-        language === "en" ? "Cloud Automated Backups" : "স্বয়ংক্রিয় ক্লাউড ব্যাকআপ",
+        language === "en" ? "Unlimited patients & prescriptions" : "আনলিমিটেড রোগী ও প্রেসক্রিপশন তৈরি",
+        language === "en" ? "Automated Zoom telemedicine via SMS" : "স্বয়ংক্রিয় জুম টেলিমেডিসিন ও এসএমএস",
+        language === "en" ? "Daily & weekly OPD summary analytics" : "দৈনিক ও সাপ্তাহিক প্র্যাকটিস সামারি",
+        language === "en" ? "WhatsApp & direct phone support" : "হোয়াটসঅ্যাপ ও ফোন সাপোর্ট সহায়তা",
       ],
     },
     {
       id: "essential-plus",
-      name: language === "en" ? "Essential Plus" : "এসেনশিয়াল প্লাস (বাৎসরিক)",
-      badge: language === "en" ? "Save 58% • Best Value" : "৫৮% সাশ্রয় • সেরা প্ল্যান",
+      tag: language === "en" ? "Save 58% • Annual Special" : "৫৮% সাশ্রয় • বাৎসরিক অফার",
+      name: language === "en" ? "Essential Plus" : "এসেনশিয়াল প্লাস",
       desc:
         language === "en"
-          ? "Pay yearly in advance and save over 14,000 BDT every single year."
-          : "বাৎসরিক এককালীন পেমেন্টে পান বিশাল ১৪,০০০ টাকা সরাসরি ডিসকাউন্ট!",
+          ? "Pay annually and save 14,000 BDT with priority support and patient sync."
+          : "বাৎসরিক এককালীন পেমেন্টে ১৪,০০০ টাকা সরাসরি সাশ্রয় ও বাড়তি সুবিধা।",
       priceMonthly: "833",
       periodMonthly:
         language === "en"
@@ -82,39 +76,34 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           : "টাকা / বছর (মাত্র ~৮৩৩ টাকা/মাস)",
       oldPrice: "24,000",
       popular: true,
-      ctaText: language === "en" ? "Claim 58% Discount" : "৫৮% ডিসকাউন্টে সাবস্ক্রাইব করুন",
+      ctaText: language === "en" ? "Claim 58% Discount" : "৫৮% ডিসকাউন্টে শুরু করুন",
       features: [
-        language === "en" ? "All Essential Plan Features Included" : "এসেনশিয়াল প্ল্যানের সব ফিচার",
-        language === "en" ? "Massive 58% Annual Discount" : "এককালীন ১৪,০০০ টাকা সরাসরি সেভিং",
-        language === "en" ? "Priority 24/7 VIP Phone Support" : "২৪/৭ ভিআইপি প্রায়োরিটি সাপোর্ট",
-        language === "en" ? "Patient Android App Sync" : "পেশেন্ট অ্যান্ড্রয়েড অ্যাপ কানেকশন",
-        language === "en" ? "Bulk SMS Credits Bundle" : "বাল্ক এসএমএস ক্রেডিট বান্ডেল",
-        language === "en" ? "Staff/Assistant Multi-login" : "সহকারী ও রিসেপশন স্টাফ লগইন",
-        language === "en" ? "Free Onboarding & Data Migration" : "ফ্রি অনবোর্ডিং ও ডেটা সেটআপ সহায়তা",
+        language === "en" ? "All Essential features included" : "এসেনশিয়াল প্ল্যানের সকল সুবিধা অন্তর্ভুক্ত",
+        language === "en" ? "Annual saving of 14,000 BDT" : "এককালীন ১৪,০০০ টাকা সরাসরি সাশ্রয়",
+        language === "en" ? "Android patient mobile app sync" : "পেশেন্ট অ্যান্ড্রয়েড মোবাইল অ্যাপ সিঙ্ক",
+        language === "en" ? "Free assisted onboarding & setup" : "ফ্রি অনবোর্ডিং ও ডেটা সেটআপ সহায়তা",
       ],
     },
     {
       id: "hospital",
-      name: language === "en" ? "Hospital / Diagnostic" : "হাসপাতাল ও ডায়াগনস্টিক",
-      badge: language === "en" ? "Multi-Doctor Enterprise" : "মাল্টি-স্পেশালিটি",
+      tag: language === "en" ? "Clinic & Polyclinic" : "হাসপাতাল ও ক্লিনিক",
+      name: language === "en" ? "Hospital Suite" : "হাসপাতাল স্যুট",
       desc:
         language === "en"
-          ? "Built for clinics, polyclinics, and diagnostic centers with multi-doctor setups."
-          : "পলিক্লিনিক, হাসপাতাল ও ডায়াগনস্টিক সেন্টারের সেন্ট্রাল ম্যানেজমেন্ট।",
+          ? "Multi-doctor setup with department queues and central reporting."
+          : "একাধিক ডাক্তার, রিসেপশন ও সেন্ট্রাল ল্যাব ম্যানেজমেন্ট সমাধান।",
       priceMonthly: "Custom",
-      periodMonthly: language === "en" ? "Tailored to your facility" : "আপনার প্রতিষ্ঠানের চাহিদা অনুযায়ী",
+      periodMonthly: language === "en" ? "Tailored to facility scale" : "প্রতিষ্ঠানের চাহিদা অনুযায়ী নির্ধারিত",
       priceYearly: "Custom",
-      periodYearly: language === "en" ? "Tailored to your facility" : "আপনার প্রতিষ্ঠানের চাহিদা অনুযায়ী",
+      periodYearly: language === "en" ? "Tailored to facility scale" : "প্রতিষ্ঠানের চাহিদা অনুযায়ী নির্ধারিত",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Contact Hospital Sales" : "সেলস টিমের সাথে কথা বলুন",
+      ctaText: language === "en" ? "Contact Enterprise Sales" : "সেলস টিমের সাথে কথা বলুন",
       features: [
-        language === "en" ? "Unlimited Doctors & Chambers" : "যত খুশি তত ডাক্তার যুক্ত করার সুবিধা",
-        language === "en" ? "Role-Based Access (Admin/Doctor/Staff)" : "ভূমিকা ভিত্তিক পারমিশন ও স্টাফ একাউন্ট",
-        language === "en" ? "Centralized Diagnostic Document Hub" : "সেন্ট্রাল ডায়াগনস্টিক ও ল্যাব রিপোর্ট হাব",
-        language === "en" ? "Multi-Chamber Queue & Token Display" : "টোকেন ও ডিজিটাল ডিসপ্লে সিস্টেম",
-        language === "en" ? "Custom Billing & Revenue Analytics" : "কাস্টম বিলিং ও আয়-ব্যয় অ্যানালিটিক্স",
-        language === "en" ? "Dedicated Account Manager & On-Site Setup" : "অন-সাইট সেটআপ ও ডেডিকেটেড ম্যানেজার",
+        language === "en" ? "Multi-doctor accounts & chamber routing" : "মাল্টি-ডাক্তার একাউন্ট ও ডিপার্টমেন্ট",
+        language === "en" ? "Centralized lab & diagnostic hub" : "সেন্ট্রাল ডায়াগনস্টিক ও ল্যাব রিপোর্ট হাব",
+        language === "en" ? "Receptionist queue & token display" : "রিসেপশন টোকেন ও সিরিয়াল ডিসপ্লে",
+        language === "en" ? "Dedicated account manager & on-site setup" : "অন-সাইট সেটআপ ও ডেডিকেটেড ম্যানেজার",
       ],
     },
   ];
@@ -138,40 +127,40 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
             <span>{language === "en" ? "Transparent BDT Pricing" : "স্বচ্ছ দেশীয় মূল্য তালিকা"}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
-              ? "Simple, Affordable Plans with Zero Hidden Fees"
-              : "আপনার চেম্বার ও ক্লিনিকের সাইজ অনুযায়ী সেরা প্ল্যানটি বেছে নিন"}
+              ? "Simple, Predictable Plans with Zero Hidden Fees"
+              : "চেম্বার ও ক্লিনিকের প্রয়োজন অনুযায়ী সহজ ও স্পষ্ট প্ল্যান"}
           </h2>
-          <p className="text-base text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 text-pretty">
             {language === "en"
-              ? "Start with a risk-free 14-day trial. Upgrade or switch anytime with full data ownership."
-              : "১৪ দিনের ফ্রি ট্রায়াল দিয়ে শুরু করুন। কোনো কার্ড বা অগ্রিম চার্জ নেই।"}
+              ? "Start with a risk-free 14-day trial. Upgrade or cancel anytime with complete data ownership."
+              : "১৪ দিনের ফ্রি ট্রায়াল দিয়ে শুরু করুন। কোনো অগ্রিম পেমেন্ট বা হিডেন চার্জ নেই।"}
           </p>
 
-          {/* Billing Toggle */}
-          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/90 rounded-xl border border-slate-300">
+          {/* Billing Cycle Toggle */}
+          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/80 rounded-xl border border-slate-300">
             <button
               type="button"
               onClick={() => setBillingCycle("monthly")}
-              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all ${
                 billingCycle === "monthly"
-                  ? "bg-white text-slate-900 shadow-sm"
+                  ? "bg-white text-slate-900 shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              {language === "en" ? "Monthly Billing" : "মাসিক বিলিং"}
+              {language === "en" ? "Monthly" : "মাসিক বিলিং"}
             </button>
             <button
               type="button"
               onClick={() => setBillingCycle("yearly")}
-              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${
+              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${
                 billingCycle === "yearly"
-                  ? "bg-emerald-600 text-white shadow-sm"
+                  ? "bg-emerald-600 text-white shadow-xs"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <span>{language === "en" ? "Yearly Advanced" : "বাৎসরিক অগ্রিম"}</span>
+              <span>{language === "en" ? "Annual" : "বাৎসরিক বিলিং"}</span>
               <span className="text-[10px] bg-emerald-900 text-emerald-100 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                 {language === "en" ? "Save 58%" : "৫৮% সাশ্রয়"}
               </span>
@@ -191,40 +180,43 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             return (
               <div
                 key={plan.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all relative ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all bg-white ${
                   isFeatured
-                    ? "bg-white border-2 border-emerald-500 shadow-xl shadow-emerald-950/10 ring-4 ring-emerald-500/10"
-                    : "bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-slate-300"
+                    ? "border-2 border-emerald-500 shadow-lg ring-2 ring-emerald-500/10"
+                    : "border border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-sm"
                 }`}
               >
-                {/* Popular Pill */}
-                {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-md uppercase tracking-wider flex items-center gap-1">
-                    <Sparkles className="w-3 h-3 text-emerald-200" />
-                    <span>{plan.badge}</span>
-                  </div>
-                )}
-
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-bold text-slate-900">{plan.name}</h3>
-                    {!isFeatured && (
-                      <span className="text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
-                        {plan.badge}
-                      </span>
-                    )}
+                  {/* Category Tag Positioned Neatly Above Plan Name */}
+                  <div className="mb-2">
+                    <span
+                      className={`inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider ${
+                        isFeatured
+                          ? "bg-emerald-100 text-emerald-900 border border-emerald-300"
+                          : "bg-slate-100 text-slate-600 border border-slate-200"
+                      }`}
+                    >
+                      {plan.tag}
+                    </span>
                   </div>
-                  <p className="text-xs text-slate-500 mb-6 min-h-[36px]">{plan.desc}</p>
 
-                  {/* Price Display */}
-                  <div className="mb-6 pb-6 border-b border-slate-100">
+                  {/* Plan Name */}
+                  <h3 className="text-lg font-bold text-slate-900 mb-1.5">{plan.name}</h3>
+
+                  {/* Plan Description with text-balance */}
+                  <p className="text-xs text-slate-500 mb-5 min-h-[34px] leading-relaxed text-balance">
+                    {plan.desc}
+                  </p>
+
+                  {/* Price Block */}
+                  <div className="mb-5 pb-5 border-b border-slate-100">
                     {billingCycle === "yearly" && plan.oldPrice && (
                       <div className="text-xs text-slate-400 line-through font-semibold mb-0.5">
                         {plan.oldPrice} BDT
                       </div>
                     )}
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                      <span className="text-3xl font-extrabold text-slate-900">
                         {currentPrice === "Custom"
                           ? language === "en"
                             ? "Custom"
@@ -232,7 +224,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                           : currentPrice}
                       </span>
                       {currentPrice !== "Custom" && (
-                        <span className="text-sm font-bold text-slate-600">BDT</span>
+                        <span className="text-xs font-bold text-slate-500">BDT</span>
                       )}
                     </div>
                     <div className="text-xs text-emerald-700 font-semibold mt-1">
@@ -240,27 +232,24 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                     </div>
                   </div>
 
-                  {/* Features List */}
-                  <div className="space-y-3 mb-8">
-                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                      {language === "en" ? "What's Included:" : "প্ল্যানের সুবিধাসমূহ:"}
-                    </p>
+                  {/* Streamlined 4-Item Feature Checklist */}
+                  <div className="space-y-2.5 mb-7">
                     {plan.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
+                      <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-700">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="leading-snug text-pretty">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Card Button */}
+                {/* CTA Button */}
                 <button
                   type="button"
                   onClick={() => handlePlanClick(plan.name)}
-                  className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+                  className={`w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
                     isFeatured
-                      ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-md hover:shadow-lg"
+                      ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
                   }`}
                 >
@@ -272,28 +261,28 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           })}
         </div>
 
-        {/* Guarantee Banner */}
-        <div className="mt-12 bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+        {/* Minimalist Trust & Guarantee Strip */}
+        <div className="mt-12 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200">
+              <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <h4 className="text-sm font-bold text-slate-900">
                 {language === "en"
                   ? "100% Data Confidentiality & BMDC Record Compliance"
-                  : "১০০% রোগীর তথ্যের গোপনীয়তা ও বিএমডিসি নিয়মাবলি নিশ্চয়তা"}
+                  : "১০০% রোগীর তথ্যের গোপনীয়তা ও বিএমডিসি নির্দেশিকা নিশ্চয়তা"}
               </h4>
               <p className="text-xs text-slate-500">
                 {language === "en"
-                  ? "Your patient records belong exclusively to you. Daily automated encrypted backups and easy export anytime."
-                  : "আপনার রোগীর সব তথ্য সম্পূর্ণ আপনার নিয়ন্ত্রণে। এনক্রিপ্টেড ব্যাকআপ এবং যেকোনো সময় ফাইল এক্সপোর্টের সুবিধা।"}
+                  ? "Your clinical data is encrypted and strictly private. Instant export anytime."
+                  : "আপনার রোগীর সব তথ্য সম্পূর্ণ এনক্রিপ্টেড এবং যেকোনো সময় এক্সপোর্টযোগ্য।"}
               </p>
             </div>
           </div>
           <a
             href="#contact"
-            className="text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg border border-emerald-200 shrink-0"
+            className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3.5 py-2 rounded-lg border border-emerald-200 shrink-0"
           >
             {language === "en" ? "Questions? Talk to Sales" : "যেকোনো প্রশ্নে কথা বলুন"}
           </a>
