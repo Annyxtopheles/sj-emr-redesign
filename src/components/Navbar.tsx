@@ -42,9 +42,11 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
   ];
 
   return (
-    <>
+    <div className="sticky top-0 z-50 transition-all duration-300">
       {/* Top Banner for Local Support & Compliance */}
-      <div className="bg-emerald-950 text-emerald-100 text-xs py-2 px-4 border-b border-emerald-900/60 sticky top-0 z-50">
+      <div className={`bg-emerald-950 text-emerald-100 text-xs px-4 border-b border-emerald-900/60 transition-all duration-300 ${
+        scrolled ? "py-1.5 text-[11px]" : "py-2"
+      }`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-800/80 text-emerald-200 font-medium text-[11px] shrink-0">
@@ -100,16 +102,16 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
 
       {/* Main Sticky Navbar */}
       <header
-        className={`sticky top-[33px] z-40 transition-all duration-300 ${
+        className={`w-full bg-white/98 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300 flex flex-col justify-center relative ${
           scrolled
-            ? "bg-white/98 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-2.5"
-            : "bg-white/95 backdrop-blur-xs py-3 border-b border-slate-100"
+            ? "h-16 shadow-sm"
+            : "h-20"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          {/* Clean Logo without redundant AI Lite badge */}
-          <a href="/" className="flex items-center shrink-0 group py-0.5">
-            <div className="relative h-11 sm:h-12 w-36 sm:w-44 transition-transform group-hover:scale-[1.02]">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+          {/* Logo */}
+          <a href="/" className="flex items-center shrink-0 group">
+            <div className={`relative transition-all duration-300 ${scrolled ? "h-10 w-36 sm:w-40" : "h-12 w-40 sm:w-44"} group-hover:scale-[1.02]`}>
               <Image
                 src="/assets/logo-blue.png"
                 alt="SJ EMR Logo"
@@ -121,7 +123,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             </div>
           </a>
 
-          {/* Desktop Nav Links (Streamlined, no preview clutter) */}
+          {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <a
@@ -174,7 +176,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-lg animate-in slide-in-from-top">
+          <div className="lg:hidden absolute top-full left-0 w-full border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-lg animate-in slide-in-from-top">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
@@ -207,6 +209,6 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
           </div>
         )}
       </header>
-    </>
+    </div>
   );
 }
