@@ -21,6 +21,8 @@ export interface BlogPost {
         title: string;
         items: string[];
       }[];
+      image?: string;
+      imageCaption?: string;
     }[];
     conclusion: string;
   };
@@ -1395,6 +1397,14 @@ export const blogsData: BlogPost[] = [
       "lead": "Healthcare is undergoing a rapid digital transformation, driven by the integration of advanced technologies. EMR software plays a central role in this revolution, enabling improved patient care, enhanced efficiency, and data-driven clinical insights.\n\nFrom artificial intelligence and cloud computing to voice recognition and wearable device integration, modern EMR software is reshaping modern clinical practice. Let’s explore the key trends defining digital healthcare in 2024 and beyond.",
       "sections": [
         {
+          "heading": "U.S. & Global EMR Market Growth",
+          "paragraphs": [
+            "The electronic medical records market is expanding rapidly, driven by the urgency for clinical workflow automation and integration with emerging technologies. As forecasted by Research and Markets, the market is set to grow from USD 5.92 Billion in 2023 to over USD 8.1 Billion by 2029 at a CAGR of 5.4% (Source: GlobeNewswire)."
+          ],
+          "image": "/assets/blogs/us-emr-market-forecast-2024-2029.png",
+          "imageCaption": "U.S. Electronic Medical Records (EMR) Market Forecast (2023 - 2029) growing to USD 8.1 Billion at 5.4% CAGR."
+        },
+        {
           "heading": "Cloud Computing: The Backbone of Modern EMR",
           "paragraphs": [
             "Cloud-based EMR systems are engineered for seamless interoperability with diagnostic laboratories, pharmacies, and imaging systems, facilitating frictionless data exchange and clinical collaboration.",
@@ -1454,6 +1464,103 @@ export const blogsData: BlogPost[] = [
         }
       ],
       "conclusion": "The EMR software trends of 2024 highlight an era of smarter, more interconnected, and patient-centered healthcare. By embracing cloud agility, AI assistance, and seamless mobile access, SJ EMR ensures Bangladeshi clinicians stay at the forefront of digital medicine."
+    }
+  },
+  {
+    "id": "sj-emr-cdss-module-future-of-patient-care-empowering-doctors",
+    "slug": "sj-emrs-cdss-module-why-is-it-the-future-of-patient-care-and-how-is-it-empowering-doctors",
+    "title": "SJ EMR's CDSS Module! Why is it the Future of Patient Care and How Is it Empowering Doctors?",
+    "category": "SJ EMR",
+    "date": "15 January 2025",
+    "readTime": "5 min read",
+    "author": {
+      "name": "Debanjan Datta",
+      "role": "Healthcare Tech Writer"
+    },
+    "image": "/assets/blogs/cdss-step-4-ai-prescription-complaint-result.png",
+    "excerpt": "Discover how SJ EMR's Clinical Decision Support System (CDSS) and AI Suggestion engine empower Bangladeshi doctors with instant diagnostic guidance, treatment protocols, and rapid prescription workflows.",
+    "content": {
+      "lead": "In modern outpatient practice, doctors routinely evaluate dozens of patients each session under intense time pressure. Keeping up with evolving pharmacological combinations, dosage adjustments, and symptom-specific protocols while maintaining meticulous documentation can be overwhelming. Enter SJ EMR's Clinical Decision Support System (CDSS) module—a groundbreaking clinical assistant built directly into the doctor's daily prescription workflow to enhance diagnostic accuracy, eliminate medication errors, and empower physicians to provide gold-standard patient care.",
+      "sections": [
+        {
+          "heading": "What is a Clinical Decision Support System (CDSS)?",
+          "paragraphs": [
+            "A Clinical Decision Support System (CDSS) is an advanced medical software capability designed to assist clinicians by filtering patient-specific information against evidence-based clinical knowledge bases in real time.",
+            "Rather than replacing clinical intuition, CDSS acts as a vigilant co-pilot. It analyzes chief complaints, past history, and vitals to provide intelligent treatment suggestions, flag contraindications, and streamline prescription construction right at the point of care."
+          ]
+        },
+        {
+          "heading": "Step 1: Seamless Access from the Doctor Dashboard",
+          "paragraphs": [
+            "Starting a consultation is effortless. From the main SJ EMR Doctor Dashboard, physicians and clinic staff can monitor live outpatient queues, appointments, and patient summaries.",
+            "Selecting the 'Prescriptions' tab on the left navigation bar brings up the centralized clinical prescription workspace in a single click."
+          ],
+          "image": "/assets/blogs/cdss-step-1-prescriptions-menu.png",
+          "imageCaption": "Step 1: Navigating to the Prescriptions module directly from the SJ EMR Dashboard sidebar."
+        },
+        {
+          "heading": "Step 2: Setting Up the Clinical Encounter",
+          "paragraphs": [
+            "Clicking 'Add Prescription' launches the structured encounter canvas. Here, doctors can review patient vitals—including blood pressure, pulse, weight, and height—while accessing past case studies and previous prescriptions.",
+            "The intuitive interface keeps all essential patient context in clear view, allowing the doctor to remain entirely focused on the patient's immediate concerns."
+          ],
+          "image": "/assets/blogs/cdss-step-2-add-prescription.png",
+          "imageCaption": "Step 2: Opening 'Add Prescription' with integrated patient vitals and encounter history."
+        },
+        {
+          "heading": "Step 3: Point-of-Care 'Ai Suggestion' Integration",
+          "paragraphs": [
+            "Under the Prescription Complaint module, SJ EMR features an integrated 'Ai suggestion' button designed specifically for rapid clinical decision support.",
+            "As the physician enters the patient's presenting symptoms or chief complaint, the AI Suggestion engine instantly analyzes the clinical term against curated medical treatment guidelines."
+          ],
+          "image": "/assets/blogs/cdss-step-3-ai-suggestion-button.png",
+          "imageCaption": "Step 3: The dedicated 'Ai suggestion' feature button situated under Prescription Complaint."
+        },
+        {
+          "heading": "Step 4: Evidence-Based Clinical Recommendations in Seconds",
+          "paragraphs": [
+            "When a symptom such as 'Running nose' is entered, clicking 'Ai suggestion' immediately outputs structured, evidence-based recommendations.",
+            "In this example, the CDSS module generates practical clinical guidance including decongestant options (such as pseudoephedrine or phenylephrine), dosage recommendations, and supportive interventions like saline nasal irrigation.",
+            "Physicians can review, customize, or accept these suggestions into the formal prescription with zero repetitive typing, ensuring patients receive accurate, comprehensive care instructions."
+          ],
+          "image": "/assets/blogs/cdss-step-4-ai-prescription-complaint-result.png",
+          "imageCaption": "Step 4: Instant treatment recommendations and guidance generated by SJ EMR's CDSS engine."
+        },
+        {
+          "heading": "Why CDSS is the Future of Outpatient Care in Bangladesh",
+          "subsections": [
+            {
+              "title": "Slashing Prescription Time to Under 60 Seconds",
+              "items": [
+                "Automated clinical suggestions eliminate manual typing for common symptom complexes.",
+                "Doctors complete thorough, BMDC-compliant prescriptions in seconds without rushing consultations."
+              ]
+            },
+            {
+              "title": "Preventing Medication Conflicts & Omissions",
+              "items": [
+                "CDSS continuously monitors patient allergies, chronic conditions, and interacting drugs.",
+                "Automated checks prevent preventable adverse drug events before prescriptions are printed or sent."
+              ]
+            },
+            {
+              "title": "Standardizing Gold-Standard Care",
+              "items": [
+                "Treatment recommendations adhere strictly to international clinical guidelines and Bangladesh DGDA protocols.",
+                "Clinicians maintain total autonomy and can tailor every recommendation to the individual patient."
+              ]
+            },
+            {
+              "title": "Empowering Doctor Confidence & Reducing Burnout",
+              "items": [
+                "Doctors gain a reliable digital safety net that reduces cognitive strain during heavy evening chamber rushes.",
+                "Patients receive clear, printed or SMS instructions, dramatically boosting treatment compliance."
+              ]
+            }
+          ]
+        }
+      ],
+      "conclusion": "SJ EMR's CDSS module represents the future of clinical documentation and healthcare delivery. By seamlessly uniting intelligent AI suggestions with a fast, intuitive prescription workflow, SJ EMR empowers doctors across Bangladesh to practice safer, faster, and more confident medicine."
     }
   }
 ];

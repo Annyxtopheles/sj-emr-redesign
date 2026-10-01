@@ -162,6 +162,24 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     ))}
                   </div>
                 )}
+
+                {section.image && (
+                  <figure className="my-6 rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 p-2 sm:p-3 shadow-xs">
+                    <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-white">
+                      <Image
+                        src={section.image}
+                        alt={section.imageCaption || section.heading}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    {section.imageCaption && (
+                      <figcaption className="text-center text-xs text-slate-500 mt-2.5 font-medium">
+                        {section.imageCaption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
               </div>
             ))}
 
