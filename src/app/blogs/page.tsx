@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogsData } from "@/data/blogs";
-import { Calendar, Clock, ArrowRight, BookOpen, User, Sparkles } from "lucide-react";
+import { Calendar, Clock, ArrowRight, User, Sparkles } from "lucide-react";
 
 export default function BlogsPage() {
   const [language, setLanguage] = useState<"en" | "bn">("en");
@@ -18,30 +18,8 @@ export default function BlogsPage() {
       {/* Sticky Header */}
       <Navbar language={language} setLanguage={setLanguage} />
 
-      {/* Hero Header */}
-      <section className="pt-12 pb-16 lg:pt-16 lg:pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-[#fafbfc] border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-4">
-              <BookOpen className="w-3.5 h-3.5 text-emerald-700" />
-              <span>{language === "en" ? "Clinical HealthTech Insights" : "স্বাস্থ্যপ্রযুক্তি ও চেম্বার নির্দেশিকা"}</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4 text-balance">
-              {language === "en"
-                ? "The SJ EMR Healthcare & Practice Blog"
-                : "এস জে ইএমআর প্র্যাকটিস ও হেলথটেক ব্লগ"}
-            </h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed text-pretty">
-              {language === "en"
-                ? "In-depth guides on digital prescribing, patient record security, chamber queue management, and modernizing healthcare facilities in Bangladesh."
-                : "ডিজিটাল প্রেসক্রিপশন, রোগীর তথ্যের নিরাপত্তা, চেম্বার অটোমেশন ও আধুনিক স্বাস্থ্যপ্রযুক্তি সম্পর্কিত বিস্তারিত বিশ্লেষণ ও পরামর্শ।"}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Blog Content Container */}
-      <section className="py-12 lg:py-16 flex-1">
+      {/* Main Blog Content Container - Straight into blogs */}
+      <section className="pt-8 pb-16 lg:pt-10 lg:pb-20 flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured Article Card */}
           <div className="mb-14">

@@ -37,8 +37,8 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
     { name: language === "en" ? "Features" : "বৈশিষ্ট্যসমূহ", href: "/#features" },
     { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
     { name: language === "en" ? "Doctor Review" : "মতামত", href: "/#testimonials" },
-    { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
     { name: language === "en" ? "Contact" : "যোগাযোগ", href: "/#contact" },
+    { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
   ];
 
   return (
