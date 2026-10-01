@@ -26,7 +26,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
   const screenshots = {
     dashboard: {
       src: "/assets/dashboard-main.png",
-      alt: "SJ EMR AI Lite Main Doctor Dashboard",
+      alt: "SJ EMR Main Doctor Dashboard",
       label: language === "en" ? "Doctor Control Tower" : "ডাক্তার ড্যাশবোর্ড",
       desc:
         language === "en"
@@ -46,8 +46,8 @@ export default function HeroSection({ language }: HeroSectionProps) {
     },
     actions: {
       src: "/assets/dashboard-actions.png",
-      alt: "SJ EMR Fast Prescription & AI Shortcuts",
-      label: language === "en" ? "Quick Rx & Clinical AI" : "দ্রুত প্রেসক্রিপশন ও টুলস",
+      alt: "SJ EMR Fast Prescription & Clinical Shortcuts",
+      label: language === "en" ? "Quick Rx & Clinical Tools" : "দ্রুত প্রেসক্রিপশন ও টুলস",
       desc:
         language === "en"
           ? "Pre-loaded clinical tags (Fever, Gastric, BP, Cold) for 60-second prescribing."
@@ -72,8 +72,8 @@ export default function HeroSection({ language }: HeroSectionProps) {
             <Sparkles className="w-4 h-4 text-emerald-600" />
             <span>
               {language === "en"
-                ? "SJ EMR AI Lite • Specially Engineered for Bangladeshi Doctors"
-                : "এস জে ইএমআর এআই লাইট • বাংলাদেশি চিকিৎসকদের জন্য কাস্টমাইজড"}
+                ? "SJ EMR • Specially Engineered for Bangladeshi Doctors"
+                : "এস জে ইএমআর • বাংলাদেশি চিকিৎসকদের জন্য বিশেষভাবে নির্মিত"}
             </span>
           </div>
 

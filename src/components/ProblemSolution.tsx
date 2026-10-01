@@ -143,7 +143,7 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
                 </span>
                 <div>
                   <h3 className="text-lg font-bold text-white">
-                    {language === "en" ? "The SJ EMR AI Lite Standard" : "এস জে ইএমআর আধুনিক ডিজিটাল মান"}
+                    {language === "en" ? "The SJ EMR Digital Standard" : "এস জে ইএমআর আধুনিক ডিজিটাল মান"}
                   </h3>
                   <p className="text-xs text-emerald-400 font-medium">
                     {language === "en" ? "Instant retrieval, 60s prescriptions, Zoom synced" : "তাৎক্ষণিক তথ্য, ৬০ সেকেন্ডে প্রেসক্রিপশন, অটোমেটেড জুম"}

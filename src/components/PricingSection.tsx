@@ -18,7 +18,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
       badge: language === "en" ? "Zero Risk" : "বিনা খরচে শুরু",
       desc:
         language === "en"
-          ? "Experience the full suite of SJ EMR AI Lite with your real chamber workflow."
+          ? "Experience the full suite of SJ EMR with your real chamber workflow."
           : "কোনো অগ্রিম পেমেন্ট ছাড়াই সম্পূর্ণ সফটওয়্যার ব্যবহার করে দেখুন।",
       priceMonthly: "0",
       periodMonthly: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
