@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, CheckCircle2, ArrowRight, Clock, FileWarning, Zap, Database, Smartphone } from "lucide-react";
+import { XCircle, CheckCircle2, ArrowRight, Clock, FileWarning, Zap, Database, Smartphone, X, Check } from "lucide-react";
 
 interface ProblemSolutionProps {
   language: "en" | "bn";
@@ -97,8 +97,8 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             <div className="absolute top-0 left-0 w-full h-1.5 bg-rose-500" />
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <span className="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold">
-                  ✕
+                <span className="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center">
+                  <X className="w-4 h-4" />
                 </span>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900">
@@ -138,8 +138,8 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500" />
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <span className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-bold">
-                  ✓
+                <span className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center">
+                  <Check className="w-4 h-4" />
                 </span>
                 <div>
                   <h3 className="text-lg font-bold text-white">

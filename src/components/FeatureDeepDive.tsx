@@ -188,7 +188,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 <div className="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-slate-400 font-medium">SJ EMR Core</span>
                   <span className="text-emerald-600 font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
-                    ✓ {language === "en" ? "Active" : "সক্রিয়"}
+                    <Check className="w-3.5 h-3.5" />
+                    <span>{language === "en" ? "Active" : "সক্রিয়"}</span>
                   </span>
                 </div>
               </div>

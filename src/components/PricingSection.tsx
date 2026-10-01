@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Sparkles, HelpCircle, ArrowRight, ShieldCheck } from "lucide-react";
+import { Check, Sparkles, HelpCircle, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
 interface PricingSectionProps {
   language: "en" | "bn";
@@ -21,8 +21,10 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           ? "Experience the full suite of SJ EMR AI Lite with your real chamber workflow."
           : "কোনো অগ্রিম পেমেন্ট ছাড়াই সম্পূর্ণ সফটওয়্যার ব্যবহার করে দেখুন।",
       priceMonthly: "0",
+      periodMonthly: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
       priceYearly: "0",
-      period: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
+      periodYearly: language === "en" ? "for 14 days" : "১৪ দিনের জন্য",
+      oldPrice: null,
       popular: false,
       ctaText: language === "en" ? "Start Free 14-Day Trial" : "ফ্রি ট্রায়াল শুরু করুন",
       features: [
@@ -44,8 +46,10 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           ? "Perfect for solo practitioners who prefer month-to-month flexibility."
           : "একক ডাক্তারদের জন্য সুবিধাজনক মাসিক সাবস্ক্রিপশন প্ল্যান।",
       priceMonthly: "2,000",
-      priceYearly: "2,000",
-      period: language === "en" ? "BDT / month" : "টাকা / মাস",
+      periodMonthly: language === "en" ? "BDT / month" : "টাকা / মাস",
+      priceYearly: "24,000",
+      periodYearly: language === "en" ? "BDT / year (2,000 BDT/mo)" : "টাকা / বছর (২,০০০ টাকা/মাস)",
+      oldPrice: null,
       popular: false,
       ctaText: language === "en" ? "Get Essential Plan" : "এসেনশিয়াল প্ল্যান নিন",
       features: [
@@ -61,15 +65,22 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
     {
       id: "essential-plus",
       name: language === "en" ? "Essential Plus" : "এসেনশিয়াল প্লাস (বাৎসরিক)",
-      badge: language === "en" ? "🔥 Save 58% - Best Value" : "🔥 ৫৮% সাশ্রয় - সেরা প্ল্যান",
+      badge: language === "en" ? "Save 58% • Best Value" : "৫৮% সাশ্রয় • সেরা প্ল্যান",
       desc:
         language === "en"
           ? "Pay yearly in advance and save over 14,000 BDT every single year."
           : "বাৎসরিক এককালীন পেমেন্টে পান বিশাল ১৪,০০০ টাকা সরাসরি ডিসকাউন্ট!",
-      priceMonthly: "10,000",
+      priceMonthly: "833",
+      periodMonthly:
+        language === "en"
+          ? "BDT / month (Billed 10,000 BDT/yr)"
+          : "টাকা / মাস (বাৎসরিক ১০,০০০ টাকায়)",
       priceYearly: "10,000",
+      periodYearly:
+        language === "en"
+          ? "BDT / year (Equivalent to ~833 BDT/mo)"
+          : "টাকা / বছর (মাত্র ~৮৩৩ টাকা/মাস)",
       oldPrice: "24,000",
-      period: language === "en" ? "BDT / year (Only ~833 BDT/mo)" : "টাকা / বছর (মাত্র ~৮৩৩ টাকা/মাস)",
       popular: true,
       ctaText: language === "en" ? "Claim 58% Discount" : "৫৮% ডিসকাউন্টে সাবস্ক্রাইব করুন",
       features: [
@@ -91,8 +102,10 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           ? "Built for clinics, polyclinics, and diagnostic centers with multi-doctor setups."
           : "পলিক্লিনিক, হাসপাতাল ও ডায়াগনস্টিক সেন্টারের সেন্ট্রাল ম্যানেজমেন্ট।",
       priceMonthly: "Custom",
+      periodMonthly: language === "en" ? "Tailored to your facility" : "আপনার প্রতিষ্ঠানের চাহিদা অনুযায়ী",
       priceYearly: "Custom",
-      period: language === "en" ? "Tailored to your facility" : "আপনার প্রতিষ্ঠানের চাহিদা অনুযায়ী",
+      periodYearly: language === "en" ? "Tailored to your facility" : "আপনার প্রতিষ্ঠানের চাহিদা অনুযায়ী",
+      oldPrice: null,
       popular: false,
       ctaText: language === "en" ? "Contact Hospital Sales" : "সেলস টিমের সাথে কথা বলুন",
       features: [
@@ -137,13 +150,13 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           </p>
 
           {/* Billing Toggle */}
-          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/80 rounded-xl border border-slate-300/80">
+          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/90 rounded-xl border border-slate-300">
             <button
               type="button"
               onClick={() => setBillingCycle("monthly")}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all ${
                 billingCycle === "monthly"
-                  ? "bg-white text-slate-900 shadow-xs"
+                  ? "bg-white text-slate-900 shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -152,14 +165,14 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             <button
               type="button"
               onClick={() => setBillingCycle("yearly")}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-5 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${
                 billingCycle === "yearly"
-                  ? "bg-emerald-600 text-white shadow-xs"
+                  ? "bg-emerald-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <span>{language === "en" ? "Yearly Advanced (Best Value)" : "বাৎসরিক অগ্রিম"}</span>
-              <span className="text-[10px] bg-emerald-800 text-emerald-100 px-1.5 py-0.5 rounded-full font-bold">
+              <span>{language === "en" ? "Yearly Advanced" : "বাৎসরিক অগ্রিম"}</span>
+              <span className="text-[10px] bg-emerald-900 text-emerald-100 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                 {language === "en" ? "Save 58%" : "৫৮% সাশ্রয়"}
               </span>
             </button>
@@ -170,6 +183,11 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan) => {
             const isFeatured = plan.popular;
+            const currentPrice =
+              billingCycle === "yearly" ? plan.priceYearly : plan.priceMonthly;
+            const currentPeriod =
+              billingCycle === "yearly" ? plan.periodYearly : plan.periodMonthly;
+
             return (
               <div
                 key={plan.id}
@@ -181,8 +199,9 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
               >
                 {/* Popular Pill */}
                 {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-md uppercase tracking-wider">
-                    {plan.badge}
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-md uppercase tracking-wider flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-emerald-200" />
+                    <span>{plan.badge}</span>
                   </div>
                 )}
 
@@ -199,24 +218,26 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
 
                   {/* Price Display */}
                   <div className="mb-6 pb-6 border-b border-slate-100">
-                    {plan.oldPrice && (
+                    {billingCycle === "yearly" && plan.oldPrice && (
                       <div className="text-xs text-slate-400 line-through font-semibold mb-0.5">
                         {plan.oldPrice} BDT
                       </div>
                     )}
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-                        {plan.priceYearly === "Custom"
+                        {currentPrice === "Custom"
                           ? language === "en"
                             ? "Custom"
                             : "কাস্টম"
-                          : `${plan.priceYearly}`}
+                          : currentPrice}
                       </span>
-                      {plan.priceYearly !== "Custom" && (
+                      {currentPrice !== "Custom" && (
                         <span className="text-sm font-bold text-slate-600">BDT</span>
                       )}
                     </div>
-                    <div className="text-xs text-emerald-700 font-medium mt-1">{plan.period}</div>
+                    <div className="text-xs text-emerald-700 font-semibold mt-1">
+                      {currentPeriod}
+                    </div>
                   </div>
 
                   {/* Features List */}

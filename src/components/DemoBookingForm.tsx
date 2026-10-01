@@ -437,10 +437,13 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     </button>
                   </div>
 
-                  <p className="text-[11px] text-center text-slate-400 pt-1">
-                    {language === "en"
-                      ? "🔒 100% Privacy Protected. We respect patient-doctor confidentiality under BMDC guidelines."
-                      : "🔒 ১০০% তথ্যের গোপনীয়তা নিশ্চিত। বিএমডিসি নীতিমালার আওতায় আপনার ডেটা সম্পূর্ণ সুরক্ষিত।"}
+                  <p className="text-[11px] text-center text-slate-400 pt-1 flex items-center justify-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>
+                      {language === "en"
+                        ? "100% Privacy Protected. We respect patient-doctor confidentiality under BMDC guidelines."
+                        : "১০০% তথ্যের গোপনীয়তা নিশ্চিত। বিএমডিসি নীতিমালার আওতায় আপনার ডেটা সম্পূর্ণ সুরক্ষিত।"}
+                    </span>
                   </p>
                 </form>
               )}

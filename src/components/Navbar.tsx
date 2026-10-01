@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Phone, Calendar, ArrowRight, Menu, X, ShieldCheck, Stethoscope } from "lucide-react";
+import { Phone, Calendar, ArrowRight, Menu, X, ShieldCheck, Stethoscope, Sparkles } from "lucide-react";
 
 interface NavbarProps {
   language: "en" | "bn";
@@ -36,14 +36,14 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
       <div className="bg-emerald-950 text-emerald-100 text-xs py-2 px-4 border-b border-emerald-900/60 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-800/80 text-emerald-200 font-medium">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-800/80 text-emerald-200 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               {language === "en" ? "BMDC Compliant" : "BMDC নির্দেশিকা সম্মত"}
             </span>
-            <span className="hidden sm:inline text-emerald-300/80">
+            <span className="hidden sm:inline text-emerald-300/90 text-[11px] sm:text-xs">
               {language === "en"
-                ? "🇧🇩 Bangladesh's #1 Doctor-First EMR & Telemedicine Platform"
-                : "🇧🇩 বাংলাদেশের ডাক্তারদের জন্য বিশ্বমানের ইএমআর ও টেলিমেডিসিন প্ল্যাটফর্ম"}
+                ? "National Doctor-First EMR & Telemedicine Platform of Bangladesh"
+                : "বাংলাদেশের চিকিৎসকদের জন্য জাতীয় মানের ইএমআর ও টেলিমেডিসিন প্ল্যাটফর্ম"}
             </span>
           </div>
           <div className="flex items-center gap-4 text-emerald-200 text-xs">
@@ -52,11 +52,11 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              <span>+880 1707-074577</span>
+              <span className="font-semibold">+880 1707-074577</span>
             </a>
             <span className="text-emerald-700">|</span>
             {/* Language Switcher */}
-            <div className="inline-flex items-center bg-emerald-900/80 rounded-md p-0.5 border border-emerald-800">
+            <div className="inline-flex items-center bg-emerald-900/90 rounded-md p-0.5 border border-emerald-800">
               <button
                 type="button"
                 onClick={() => setLanguage("en")}
@@ -84,18 +84,18 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
         </div>
       </div>
 
-      {/* Main Sticky Navbar */}
+      {/* Main Sticky Navbar with Increased Logo Size */}
       <header
         className={`sticky top-[33px] z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3"
-            : "bg-white/80 backdrop-blur-xs py-4 border-b border-slate-100"
+            ? "bg-white/98 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-2.5"
+            : "bg-white/95 backdrop-blur-xs py-3 sm:py-3.5 border-b border-slate-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative h-10 w-28 sm:w-32 transition-transform group-hover:scale-105">
+          {/* Logo with Increased Dimensions */}
+          <a href="#" className="flex items-center gap-3 group py-1">
+            <div className="relative h-12 sm:h-14 md:h-16 w-40 sm:w-48 md:w-56 transition-transform group-hover:scale-[1.02]">
               <Image
                 src="/assets/logo-blue.png"
                 alt="SJ EMR Logo"
@@ -104,7 +104,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                 className="object-contain object-left"
               />
             </div>
-            <span className="hidden xl:inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+            <span className="hidden xl:inline-block text-[11px] font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-md border border-emerald-300 shadow-2xs">
               AI Lite
             </span>
           </a>
@@ -115,7 +115,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors"
+                className="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors"
               >
                 {link.name}
               </a>
@@ -128,13 +128,13 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               href="https://emr.com.bd/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-slate-700 hover:text-emerald-700 px-3.5 py-2 rounded-lg hover:bg-slate-100 transition-colors"
+              className="text-sm font-semibold text-slate-700 hover:text-emerald-700 px-3.5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors"
             >
               {language === "en" ? "Doctor Login" : "লগইন"}
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 px-4 py-2.5 rounded-lg shadow-sm hover:shadow transition-all"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 px-4.5 py-2.5 rounded-xl shadow-sm hover:shadow transition-all"
             >
               <Calendar className="w-4 h-4" />
               <span>{language === "en" ? "Book Free Zoom Demo" : "ফ্রি জুম ডেমো বুক করুন"}</span>
@@ -145,7 +145,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href="#contact"
-              className="text-xs font-medium text-white bg-emerald-600 px-3 py-1.5 rounded-md"
+              className="text-xs font-semibold text-white bg-emerald-600 px-3 py-1.5 rounded-lg"
             >
               {language === "en" ? "Demo" : "ডেমো"}
             </a>
@@ -169,7 +169,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-md transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-md transition-colors"
                 >
                   {link.name}
                 </a>
@@ -179,14 +179,14 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                   href="https://emr.com.bd/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-2.5 text-sm font-medium text-slate-700 border border-slate-300 rounded-lg"
+                  className="w-full text-center py-2.5 text-sm font-semibold text-slate-700 border border-slate-300 rounded-lg"
                 >
                   {language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-2.5 text-sm font-medium text-white bg-emerald-600 rounded-lg shadow-sm"
+                  className="w-full text-center py-2.5 text-sm font-semibold text-white bg-emerald-600 rounded-lg shadow-sm"
                 >
                   {language === "en" ? "Book Free Zoom Demo" : "ফ্রি জুম ডেমো বুক করুন"}
                 </a>
