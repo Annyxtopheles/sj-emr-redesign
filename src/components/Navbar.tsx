@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Calendar, Menu, X, ShieldCheck } from "lucide-react";
 
 interface NavbarProps {
@@ -110,7 +111,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
       >
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="/" className="flex items-center shrink-0 group">
+          <Link href="/" className="flex items-center shrink-0 group">
             <div className={`relative transition-all duration-300 ${scrolled ? "h-10 w-36 sm:w-40" : "h-12 w-40 sm:w-44"} group-hover:scale-[1.02]`}>
               <Image
                 src="/assets/logo-blue.png"
@@ -121,18 +122,18 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
                 className="object-contain object-left"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors whitespace-nowrap"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -179,14 +180,14 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
           <div className="lg:hidden absolute top-full left-0 w-full border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-lg animate-in slide-in-from-top">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="px-3 py-2 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-md transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
                 <a

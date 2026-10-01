@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   MapPin,
   Phone,
@@ -118,38 +119,38 @@ export default function Footer({ language }: FooterProps) {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="/#why-us" className="hover:text-emerald-400 transition-colors">
+                <Link href="/#why-us" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ"}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#features" className="hover:text-emerald-400 transition-colors">
+                <Link href="/#features" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Core Features" : "প্রধান ফিচার"}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#pricing" className="hover:text-emerald-400 transition-colors">
+                <Link href="/#pricing" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Pricing List (BDT)" : "মূল্য তালিকা (টাকা)"}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#testimonials" className="hover:text-emerald-400 transition-colors">
+                <Link href="/#testimonials" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Doctor Endorsements" : "ডাক্তারদের মতামত"}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blogs" className="hover:text-emerald-400 transition-colors">
+                <Link href="/blogs" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Health Tech Blog" : "হেলথ টেক ব্লগ"}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/#contact"
                   className="hover:text-emerald-400 transition-colors inline-flex items-center gap-1"
                 >
                   <Download className="w-3 h-3 text-emerald-400" />
                   <span>{language === "en" ? "Download Brochure" : "ব্রোশিওর ডাউনলোড"}</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a
