@@ -9,6 +9,7 @@ if (isGithubActions) {
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || (isGithubActions ? repo : ""),
   images: {
     unoptimized: true,
