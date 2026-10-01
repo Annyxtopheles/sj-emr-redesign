@@ -91,6 +91,7 @@ export default function Footer({ language }: FooterProps) {
                 src="/assets/logo-white.png"
                 alt="SJ EMR White Logo"
                 fill
+                sizes="180px"
                 className="object-contain object-left"
               />
             </div>

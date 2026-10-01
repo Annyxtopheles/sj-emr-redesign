@@ -215,6 +215,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 alt={screenshots[activeTab].alt}
                 fill
                 priority
+                sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover object-top transition-opacity duration-300"
               />
             </div>

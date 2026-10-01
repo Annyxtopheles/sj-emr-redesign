@@ -103,6 +103,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
                 alt="SJ EMR Logo"
                 fill
                 priority
+                sizes="(max-width: 768px) 160px, 200px"
                 className="object-contain object-left"
               />
             </div>
