@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   FileSignature,
   Pill,
@@ -8,10 +9,11 @@ import {
   Video,
   Smartphone,
   Laptop2,
-  ShieldAlert,
   Building,
   Sparkles,
   Check,
+  ShieldCheck,
+  ArrowRight,
 } from "lucide-react";
 
 interface FeatureDeepDiveProps {
@@ -19,118 +21,100 @@ interface FeatureDeepDiveProps {
 }
 
 export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
-  const features = [
+  // Top 3 Flagship Pillars with Custom Spot Graphics
+  const spotlightFeatures = [
     {
-      icon: FileSignature,
-      title: language === "en" ? "Smart e-Prescription Module" : "স্মার্ট ই-প্রেসক্রিপশন মডিউল",
+      image: "/assets/spot-rx.png",
+      alt: "Smart e-Prescription & Medicine Database",
+      badge: language === "en" ? "60s Prescribing" : "৬০ সেকেন্ডে প্রেসক্রিপশন",
+      title: language === "en" ? "Smart e-Prescription & Drug Directory" : "স্মার্ট ই-প্রেসক্রিপশন ও ড্রাগ ডেটাবেস",
       tagline:
         language === "en"
-          ? "Govt. Compliant & Custom Chamber Templates"
-          : "সরকারি নির্দেশিকা সম্মত ও কাস্টম চেম্বার টেমপ্লেট",
+          ? "BMDC Compliant Format with Instant Drug Auto-Suggest"
+          : "বিএমডিসি নির্দেশিকা সম্মত ও স্বয়ংক্রিয় ড্রাগ ড্রপডাউন",
       desc:
         language === "en"
-          ? "Generate error-free digital prescriptions in under 60 seconds. Features intelligent auto-suggested drug dropdowns, dosage calculators, pre-configured templates for common conditions, and 1-click BMDC-formatted print or SMS delivery."
-          : "কয়েক ক্লিকেই তৈরি করুন সরকারি নিয়ম মেনে সুনির্দিষ্ট প্রেসক্রিপশন। রয়েছে ড্রাগ অটো-ড্রপডাউন, সেবনবিধির শর্টকাট এবং বিভিন্ন রোগের জন্য কাস্টম টেমপ্লেট সেভ করার অনন্য সুবিধা।",
-      badge: language === "en" ? "Core Engine" : "প্রধান ফিচার",
-      color: "emerald",
+          ? "Type just 2-3 letters of any brand or generic to select dosages, formulations, and instructions from the comprehensive Bangladeshi pharmaceutical registry."
+          : "ওষুধের ২-৩টি অক্ষর লিখলেই দেশের অনুমোদিত ড্রাগ ডেটাবেস থেকে সঠিক ডোজ ও ফর্মুলেশন চলে আসে। চেম্বার প্যাডে প্রিন্ট বা এসএমএসে পাঠানো যায় নিমিষেই।",
+      points: [
+        language === "en" ? "Auto-suggested drug directory" : "হাজারো দেশীয় ওষুধের ড্রপডাউন সাজেশন",
+        language === "en" ? "Custom chamber template shortcuts" : "স্পেশালিটি ভিত্তিক রেডিমেড টেমপ্লেট",
+        language === "en" ? "Millimeter-exact pad margin customization" : "পূর্বের ছাপানো চেম্বার প্যাডে নিখুঁত প্রিন্ট",
+      ],
     },
     {
-      icon: Pill,
-      title: language === "en" ? "Bangladeshi Medicine Database" : "সমৃদ্ধ দেশীয় ড্রাগ ডেটাবেস",
+      image: "/assets/spot-telemedicine.png",
+      alt: "Automated Zoom Telemedicine Integration",
+      badge: language === "en" ? "1-Click Telemedicine" : "স্বয়ংক্রিয় জুম কল",
+      title: language === "en" ? "Automated Zoom Video Consultations" : "স্বয়ংক্রিয় জুম ভিডিও কনসাল্টেশন",
       tagline:
         language === "en"
-          ? "Comprehensive Brand & Generic Directory"
-          : "ব্র্যান্ড ও জেনেরিক নামের পূর্ণাঙ্গ তথ্যভাণ্ডার",
+          ? "Instant Zoom Rooms Dispatched Straight via SMS"
+          : "অ্যাপয়েন্টমেন্ট হলেই রোগীর মোবাইলে এসএমএস লিংক",
       desc:
         language === "en"
-          ? "Instant search across thousands of pharmaceuticals registered in Bangladesh. Access generic names, dosage strengths, formulations (Tablet, Syrup, Injection, Drop), and manufacturer details instantly."
-          : "বাংলাদেশে প্রচলিত সব ধরনের ওষুধের ব্র্যান্ড নেম, জেনেরিক নেম, শক্তি ও ফর্মুলেশন (ট্যাবলেট, সিরাপ, ইনজেকশন ইত্যাদি) সহজেই সার্চ করে প্রেসক্রিপশনে যুক্ত করুন।",
-      badge: language === "en" ? "Built-in Directory" : "বিল্ট-ইন ডেটাবেস",
-      color: "teal",
+          ? "When a patient books a remote consultation, SJ EMR instantly provisions a secure Zoom meeting room and texts the link, meeting ID, and password to the patient."
+          : "ভিডিও কনসাল্টেশনের অ্যাপয়েন্টমেন্ট শিডিউল হলেই রোগীর মোবাইলে এসএমএসে জুম মিটিং লিংক ও পাসওয়ার্ড পৌঁছে যায়। আলাদা করে লিংক পাঠানোর কোনো ঝামেলা নেই।",
+      points: [
+        language === "en" ? "Automatic SMS link delivery to patient" : "রোগীর ফোনে সরাসরি এসএমএস নোটিফিকেশন",
+        language === "en" ? "Integrated video chamber with notes" : "ভিডিও কলের পাশাপাশি প্রেসক্রিপশন লেখার সুবিধা",
+        language === "en" ? "High-definition video on mobile & web" : "মোবাইল ও ল্যাপটপে নিরবচ্ছিন্ন সংযোগ",
+      ],
     },
     {
-      icon: Video,
-      title: language === "en" ? "Automated Zoom Telemedicine" : "স্বয়ংক্রিয় জুম টেলিমেডিসিন",
+      image: "/assets/spot-records.png",
+      alt: "Patient Demographics & Centralized Cloud PHI",
+      badge: language === "en" ? "Zero Paperwork" : "আজীবন স্বাস্থ্য নথি",
+      title: language === "en" ? "Patient Demographics & Centralized PHI" : "রোগীর ডেমোগ্রাফি ও সুরক্ষিত রেকর্ড",
       tagline:
         language === "en"
-          ? "Instant Video Calls via Automated SMS"
-          : "এসএমএস লিংকের মাধ্যমে সরাসরি ভিডিও কনসাল্টেশন",
+          ? "Lifetime Health Records with Diagnostic Attachments"
+          : "মোবাইল নম্বর সার্চে এক্স-রে, রিপোর্ট ও অতীত ভিজিট",
       desc:
         language === "en"
-          ? "Seamlessly conduct remote consultations. When an online appointment is set, SJ EMR automatically generates a unique Zoom meeting ID & password and texts it directly to the patient’s phone."
-          : "ভিডিও কনসাল্টেশনের অ্যাপয়েন্টমেন্ট কনফার্ম হওয়ার সাথে সাথে রোগীর মোবাইলে স্বয়ংক্রিয়ভাবে জুম মিটিং আইডি ও পাসওয়ার্ড চলে যায়, যাতে সহজেই নির্বিঘ্ন ভিডিও কল করা যায়।",
-      badge: language === "en" ? "Instant Connect" : "সরাসরি কানেক্ট",
-      color: "blue",
+          ? "Retrieve complete patient records instantly by mobile number. Never ask patients to carry bulky physical files — review past diagnoses, attached X-rays, and lab scans."
+          : "রোগীর মোবাইল নম্বর দিয়ে সার্চ করলেই আগের সব প্রেসক্রিপশন, চিফ কমপ্লেইন্টস এবং এক্স-রে বা ল্যাব টেস্টের ছবি ডিজিটালভাবে সুরক্ষিত পাওয়া যায়।",
+      points: [
+        language === "en" ? "Instant lookup by mobile number" : "মোবাইল নম্বর দিয়ে এক ক্লিকে রেকর্ড বের করা",
+        language === "en" ? "X-ray, radiology & lab report uploads" : "এক্স-রে ও ডায়াগনস্টিক রিপোর্ট সংরক্ষণ",
+        language === "en" ? "Bank-grade encrypted cloud storage" : "এনক্রিপ্টেড ও সম্পূর্ণ নিরাপদ ক্লাউড ব্যাকআপ",
+      ],
     },
-    {
-      icon: Users,
-      title: language === "en" ? "Patient Demographics & Full PHI" : "রোগীর ডেমোগ্রাফি ও আজীবন রেকর্ড",
-      tagline:
-        language === "en"
-          ? "Lifetime Electronic Health Record"
-          : "এক স্ক্রিনে এক্স-রে, রিপোর্ট ও অতীত ইতিহাস",
-      desc:
-        language === "en"
-          ? "Consolidate each patient's complete case study, chief complaints, past prescriptions, and visual diagnostic documents (e.g., X-ray scans, facial clinical photography, and pathology test reports) in one place."
-          : "রোগীর ব্যক্তিগত তথ্য, অতীতের ভিজিট হিস্ট্রি, চিফ কমপ্লেইন্ট এবং এক্স-রে বা ল্যাব টেস্টের ছবি ডিজিটালভাবে সুরক্ষিত রাখুন। যেকোনো সময় যেকোনো ডিভাইস থেকে খুঁজে পান।",
-      badge: language === "en" ? "Zero Paper Lost" : "১০০% ডিজিটাল ফাইল",
-      color: "indigo",
-    },
+  ];
+
+  // Secondary Practice Features
+  const secondaryFeatures = [
     {
       icon: CalendarCheck,
-      title: language === "en" ? "Smart Chamber & Slot Scheduling" : "চেম্বার ও অ্যাপয়েন্টমেন্ট শিডিউলিং",
-      tagline:
-        language === "en"
-          ? "Admin & Assistant Multi-User Booking"
-          : "সহকারী ও রিসেপশন স্টাফদের জন্য সহজ বুকিং",
+      title: language === "en" ? "Chamber Queue & Slot Scheduling" : "চেম্বার সিরিয়াল ও স্লট শিডিউলিং",
       desc:
         language === "en"
-          ? "Empower your receptionist or backend assistants to manage real-time patient queues, avoid chamber overcrowding, balance walk-in tokens with scheduled appointments, and sync with your availability."
-          : "রিসেপশনিস্ট বা অ্যাসিস্ট্যান্ট সহজেই ডাক্তারের সুবিধাজনক স্লটে রোগীদের অ্যাপয়েন্টমেন্ট শিডিউল করতে পারে। ভিড় কমানো ও দৈনিক সিরিয়াল নিয়ন্ত্রণ এখন অতি সহজ।",
-      badge: language === "en" ? "Queue Control" : "সিরিয়াল ম্যানেজমেন্ট",
-      color: "amber",
+          ? "Empower staff to manage patient queues, walk-in tokens, and sync appointments with doctor availability."
+          : "রিসেপশনিস্ট সহজেই রোগীর সিরিয়াল ও টোকেন ম্যানেজ করতে পারে এবং ডাক্তারের সুবিধাজনক সময়ে স্লট বুক করে।",
     },
     {
       icon: Smartphone,
       title: language === "en" ? "Android & Web Patient Portal" : "অ্যান্ড্রয়েড ও ওয়েব পেশেন্ট অ্যাপ",
-      tagline:
-        language === "en"
-          ? "Native React Technology for Patients"
-          : "রোগীদের জন্য সহজে প্রেসক্রিপশন ও অ্যাপয়েন্টমেন্ট দেখা",
       desc:
         language === "en"
-          ? "Patients can download the dedicated Android app to schedule chamber visits, view their digital prescriptions, track doctor instructions, and never stress about leaving old paper prescriptions behind."
-          : "রোগীর মোবাইলেই থাকবে তার সব প্রেসক্রিপশন ও ডাক্তারের পরামর্শ। পুরনো প্রেসক্রিপশন হারিয়ে ফেলার কোনো ভয় নেই; যেকোনো নতুন ভিজিটেও ডাক্তার সরাসরি আগের সব রেকর্ড দেখতে পাবেন।",
-      badge: language === "en" ? "Google Play Ready" : "প্লে-স্টোর অ্যাপ",
-      color: "sky",
+          ? "Patients can view digital prescriptions on their phone, review follow-up dates, and schedule visits."
+          : "রোগীর মোবাইলেই সংরক্ষিত থাকে প্রেসক্রিপশন ও ফলো-আপ তারিখ। কখনো প্রেসক্রিপশন হারানোর ভয় নেই।",
     },
     {
       icon: Laptop2,
-      title: language === "en" ? "Cross-Device Cloud Sync" : "ক্লাউড অটো-সিঙ্ক ও সিকিউরিটি",
-      tagline:
-        language === "en"
-          ? "Desktop, Laptop & Tablet Harmony"
-          : "ল্যাপটপ, ডেস্কটপ বা ট্যাবলেটে নিরবচ্ছিন্ন অ্যাক্সেস",
+      title: language === "en" ? "Cross-Device Cloud Sync" : "ক্লাউড অটো-সিঙ্ক (ডেস্কটপ ও ল্যাপটপ)",
       desc:
         language === "en"
-          ? "Work uninterrupted whether at your main clinic, hospital OPD, or home chamber. Changes sync instantaneously across devices with bank-grade encryption and automated cloud backups."
-          : "চেম্বার, হাসপাতাল কিংবা বাসা—যেখান থেকেই লগইন করুন না কেন, সব ডেটা থাকবে নিরাপদ ও আপ-টু-ডেট। সম্পূর্ণ এনক্রিপ্টেড ক্লাউড ব্যাকআপ ব্যবস্থা।",
-      badge: language === "en" ? "High Availability" : "সার্বক্ষণিক সচল",
-      color: "violet",
+          ? "Work seamlessly across clinic desktop, personal laptop, or tablet with real-time cloud data harmony."
+          : "চেম্বার, হাসপাতাল কিংবা ব্যক্তিগত ল্যাপটপ—সব ডিভাইসেই ডেটা রিয়েল-টাইমে স্বয়ংক্রিয়ভাবে সিঙ্ক হয়।",
     },
     {
       icon: Building,
-      title: language === "en" ? "Hospital & Multi-Doctor Clinic Mode" : "হাসপাতাল ও মাল্টি-ডাক্তার ক্লিনিক মোড",
-      tagline:
-        language === "en"
-          ? "Multi-Specialty Chamber Administration"
-          : "একাধিক ডাক্তার, ডিপার্টমেন্ট ও ডায়াগনস্টিক সাপোর্ট",
+      title: language === "en" ? "Hospital & Multi-Doctor Polyclinic" : "হাসপাতাল ও মাল্টি-ডাক্তার মোড",
       desc:
         language === "en"
-          ? "Designed to scale effortlessly from solo doctor chambers to multi-specialty polyclinics and diagnostic centers. Support unlimited doctors, department routing, and central administrative controls."
-          : "একক ডাক্তার চেম্বার থেকে শুরু করে বড় পলিক্লিনিক ও ডায়াগনস্টিক সেন্টারের জন্য প্রযোজ্য। আনলিমিটেড ডাক্তার যুক্ত করা, আলাদা আলাদা পারমিশন ও একাউন্টিং সমন্বয় সম্ভব।",
-      badge: language === "en" ? "Enterprise Scale" : "ক্লিনিক ও হাসপাতাল",
-      color: "rose",
+          ? "Role-based accounts for multiple doctors, receptionist front-desk, and centralized billing."
+          : "একাধিক ডাক্তার, আলাদা আলাদা ডিপার্টমেন্ট ও রিসেপশন স্টাফদের জন্য সেন্ট্রালাইজড ম্যানেজমেন্ট সুবিধা।",
     },
   ];
 
@@ -141,7 +125,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{language === "en" ? "Everything Your Practice Needs" : "ডাক্তারি চেম্বারের পূর্ণাঙ্গ সমাধান"}</span>
+            <span>{language === "en" ? "Core Platform Capabilities" : "প্ল্যাটফর্মের মূল সুবিধাসমূহ"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             {language === "en"
@@ -155,42 +139,79 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           </p>
         </div>
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feat, idx) => {
-            const IconComponent = feat.icon;
+        {/* Top 3 Flagship Spotlight Bento Cards with Custom Spot Graphics */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {spotlightFeatures.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs hover:shadow-lg hover:border-emerald-400 transition-all flex flex-col justify-between group"
+            >
+              <div>
+                {/* Spot Illustration Container */}
+                <div className="relative h-44 sm:h-52 w-full bg-slate-50/90 rounded-2xl p-4 flex items-center justify-center border border-slate-100 overflow-hidden mb-6 group-hover:bg-emerald-50/40 group-hover:border-emerald-200/60 transition-colors">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute top-3 right-3 text-[10px] font-bold text-emerald-800 bg-emerald-100/90 px-2.5 py-1 rounded-full uppercase tracking-wider border border-emerald-200">
+                    {item.badge}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs font-semibold text-emerald-700 mb-3">{item.tagline}</p>
+                <p className="text-xs text-slate-600 leading-relaxed mb-6">{item.desc}</p>
+
+                {/* Feature Bullet Points */}
+                <div className="space-y-2.5 pt-4 border-t border-slate-100">
+                  {item.points.map((pt, pIdx) => (
+                    <div key={pIdx} className="flex items-start gap-2 text-xs text-slate-700">
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{pt}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span className="text-slate-400 font-medium">SJ EMR Core</span>
+                <a
+                  href="#contact"
+                  className="text-emerald-700 hover:text-emerald-900 font-bold inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+                >
+                  <span>{language === "en" ? "Explore Demo" : "ডেমো দেখুন"}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Secondary Practice Tools: 4-Column Clean Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {secondaryFeatures.map((feat, idx) => {
+            const Icon = feat.icon;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all flex flex-col justify-between group"
+                className="rounded-2xl border border-slate-200/90 bg-slate-50/60 p-5 hover:bg-white hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-xs">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                      {feat.badge}
-                    </span>
+                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-emerald-700 flex items-center justify-center mb-3 shadow-2xs">
+                    <Icon className="w-5 h-5" />
                   </div>
-
-                  {/* Title & Tagline */}
-                  <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">
-                    {feat.title}
-                  </h3>
-                  <p className="text-xs font-medium text-emerald-700 mb-3">{feat.tagline}</p>
-
-                  {/* Description */}
+                  <h4 className="text-sm font-bold text-slate-900 mb-1">{feat.title}</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">{feat.desc}</p>
                 </div>
-
-                <div className="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-400 font-medium">SJ EMR Core</span>
-                  <span className="text-emerald-600 font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
-                    <Check className="w-3.5 h-3.5" />
-                    <span>{language === "en" ? "Active" : "সক্রিয়"}</span>
-                  </span>
+                <div className="mt-4 pt-2 border-t border-slate-200/60 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
+                  <Check className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>{language === "en" ? "Included in all plans" : "সকল প্ল্যানে অন্তর্ভুক্ত"}</span>
                 </div>
               </div>
             );
