@@ -22,7 +22,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#fafbfc]">
+    <main
+      className={`min-h-screen flex flex-col bg-[#fafbfc] ${language === "bn" ? "font-bangla" : ""}`}
+      lang={language}
+    >
       {/* Sticky Navigation */}
       <Navbar language={language} setLanguage={setLanguage} />
 

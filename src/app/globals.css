@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), var(--font-hind-siliguri), "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, sans-serif;
+  --font-bangla: var(--font-hind-siliguri), "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+}
 
 @layer base {
   html {
@@ -7,7 +13,15 @@
   body {
     color: #0f172a;
     background-color: #fafbfc;
+    font-family: var(--font-geist-sans), var(--font-hind-siliguri), "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Ensure all Bengali text renders with Hind Siliguri with optimal line heights and letter spacing */
+  :lang(bn), [lang="bn"], .font-bangla {
+    font-family: var(--font-hind-siliguri), "Hind Siliguri", "Noto Sans Bengali", sans-serif !important;
+    line-height: 1.6;
   }
 }
 
