@@ -18,8 +18,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
   // Top 3 Flagship Pillars with Custom Spot Graphics
   const spotlightFeatures = [
     {
-      image: "/assets/spot-rx.png",
-      alt: "Smart e-Prescription & Medicine Database",
+      image: "/assets/spot-rx.jpg",
+      alt: "SJ EMR Smart Digital Prescription Interface",
       badge: language === "en" ? "60-Second Prescribing" : "৬০ সেকেন্ডে প্রেসক্রিপশন",
       title: language === "en" ? "Smart e-Prescription & Drug Directory" : "স্মার্ট ই-প্রেসক্রিপশন ও ড্রাগ ডেটাবেস",
       tagline:
@@ -37,8 +37,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
       ],
     },
     {
-      image: "/assets/spot-telemedicine.png",
-      alt: "Automated Zoom Telemedicine Integration",
+      image: "/assets/spot-telemedicine.jpg",
+      alt: "SJ EMR Automated Video Telemedicine Consultation",
       badge: language === "en" ? "1-Click Telemedicine" : "স্বয়ংক্রিয় জুম কল",
       title: language === "en" ? "Automated Zoom Video Consultations" : "স্বয়ংক্রিয় জুম ভিডিও কনসাল্টেশন",
       tagline:
@@ -56,8 +56,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
       ],
     },
     {
-      image: "/assets/spot-records.png",
-      alt: "Patient Demographics & Centralized Cloud PHI",
+      image: "/assets/spot-records.jpg",
+      alt: "SJ EMR Encrypted Cloud Patient Records & Diagnostics",
       badge: language === "en" ? "Zero Paperwork" : "আজীবন স্বাস্থ্য নথি",
       title: language === "en" ? "Patient Demographics & Centralized Cloud PHI" : "রোগীর ডেমোগ্রাফি ও আজীবন ডিজিটাল রেকর্ড",
       tagline:
