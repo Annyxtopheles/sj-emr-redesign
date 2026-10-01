@@ -1,6 +1,7 @@
 "use client";
 
-import { Quote, Star, Award, Stethoscope, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { Quote, Star, Award, CheckCircle2 } from "lucide-react";
 
 interface TestimonialSectionProps {
   language: "en" | "bn";
@@ -16,12 +17,12 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
             <Award className="w-3.5 h-3.5 text-emerald-600" />
             <span>{language === "en" ? "Doctor Testimonials" : "চিকিৎসকদের বাস্তব অভিজ্ঞতা"}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Trusted by Renowned Clinicians & Healthcare Specialists"
               : "দেশের বিশেষজ্ঞ চিকিৎসকদের আস্থায় এস জে ইএমআর"}
           </h2>
-          <p className="text-base text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 text-pretty">
             {language === "en"
               ? "See how practitioners across Bangladesh use SJ EMR to streamline tele-consultations and routine chamber operations."
               : "দেখুন কীভাবে বিশেষজ্ঞ চিকিৎসকরা চেম্বার ও দূরবর্তী রোগীদের সেবায় এস জে ইএমআর ব্যবহার করে স্বাচ্ছন্দ্য পাচ্ছেন।"}
@@ -46,17 +47,22 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
               </div>
 
               {/* Quote Body */}
-              <blockquote className="text-base sm:text-xl md:text-2xl font-medium leading-relaxed text-slate-100 mb-8 italic">
+              <blockquote className="text-base sm:text-xl md:text-2xl font-medium leading-relaxed text-slate-100 mb-8 italic text-pretty">
                 {language === "en"
-                  ? "“It's very easy to use and helps to communicate easily with patients remotely. This is helping a lot to provide services to my patients without having to worry about physical constraints. I am truly delighted with how quickly it integrates with my clinical routine.”"
-                  : "“এটি ব্যবহার করা অত্যন্ত সহজ এবং দূরবর্তী রোগীদের সাথে সহজে যোগাযোগ করতে দারুণ সহায়তা করে। চেম্বার ও টেলিমেডিসিন উভয় ক্ষেত্রেই রোগীদের তাৎক্ষণিক সেবা নিশ্চিত করা এখন অনেক স্বস্তিদায়ক হয়েছে। আমি চিকিৎসাসেবা দিতে পেরে অত্যন্ত আনন্দিত।”"}
+                  ? "“It's very easy to use and helps to communicate easily with patients via remotely. This is helping a lot to provide services to my patients without having to worry about physically examining patients in an epidemic situation. I am happy to be able to help patients at the moment.”"
+                  : "“এটি ব্যবহার করা খুবই সহজ এবং দূরবর্তী রোগীদের সাথে সহজে যোগাযোগ করতে দারুণভাবে সহায়তা করে। মহামারী বা যেকোনো বিশেষ পরিস্থিতিতে সরাসরি রোগী পরীক্ষার উদ্বেগ ছাড়াই রোগীদের নির্বিঘ্নে চিকিৎসাসেবা প্রদান করতে এটি অনেক সাহায্য করছে। এই সময়ে রোগীদের পাশে দাঁড়িয়ে চিকিৎসা নিশ্চিত করতে পেরে আমি আনন্দিত।”"}
               </blockquote>
 
               {/* Doctor Details */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-emerald-800/80">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-emerald-700/80 border-2 border-emerald-400 flex items-center justify-center text-white font-bold text-lg shadow-md shrink-0">
-                    <Stethoscope className="w-7 h-7 text-emerald-200" />
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-400 shadow-md shrink-0 bg-slate-800">
+                    <Image
+                      src="/assets/dr-ehasan.png"
+                      alt="Dr. Ehasan UZ Zaman Khan"
+                      fill
+                      className="object-cover object-top"
+                    />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">

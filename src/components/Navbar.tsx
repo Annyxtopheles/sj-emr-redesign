@@ -5,11 +5,22 @@ import Image from "next/image";
 import { Phone, Calendar, Menu, X, ShieldCheck } from "lucide-react";
 
 interface NavbarProps {
-  language: "en" | "bn";
-  setLanguage: (lang: "en" | "bn") => void;
+  language?: "en" | "bn";
+  setLanguage?: (lang: "en" | "bn") => void;
 }
 
-export default function Navbar({ language, setLanguage }: NavbarProps) {
+export default function Navbar({ language: propLanguage = "en", setLanguage: propSetLanguage }: NavbarProps) {
+  const [internalLanguage, setInternalLanguage] = useState<"en" | "bn">(propLanguage);
+  const language = propSetLanguage ? propLanguage : internalLanguage;
+
+  const handleLanguageChange = (lang: "en" | "bn") => {
+    if (propSetLanguage) {
+      propSetLanguage(lang);
+    } else {
+      setInternalLanguage(lang);
+    }
+  };
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,11 +33,12 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: language === "en" ? "Features" : "বৈশিষ্ট্যসমূহ", href: "#features" },
-    { name: language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ", href: "#why-us" },
-    { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "#pricing" },
-    { name: language === "en" ? "Doctor Review" : "মতামত", href: "#testimonials" },
-    { name: language === "en" ? "Contact" : "যোগাযোগ", href: "#contact" },
+    { name: language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ", href: "/#why-us" },
+    { name: language === "en" ? "Features" : "বৈশিষ্ট্যসমূহ", href: "/#features" },
+    { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
+    { name: language === "en" ? "Doctor Review" : "মতামত", href: "/#testimonials" },
+    { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
+    { name: language === "en" ? "Contact" : "যোগাযোগ", href: "/#contact" },
   ];
 
   return (
@@ -61,7 +73,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
             <div className="inline-flex items-center bg-emerald-900/90 rounded-md p-0.5 border border-emerald-800">
               <button
                 type="button"
-                onClick={() => setLanguage("en")}
+                onClick={() => handleLanguageChange("en")}
                 className={`px-2 py-0.5 text-xs rounded transition-all font-sans ${
                   language === "en"
                     ? "bg-emerald-500 text-white font-semibold shadow-xs"
@@ -72,7 +84,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               </button>
               <button
                 type="button"
-                onClick={() => setLanguage("bn")}
+                onClick={() => handleLanguageChange("bn")}
                 className={`px-2 py-0.5 text-xs rounded transition-all font-sans ${
                   language === "bn"
                     ? "bg-emerald-500 text-white font-semibold shadow-xs"
@@ -96,7 +108,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Clean Logo without redundant AI Lite badge */}
-          <a href="#" className="flex items-center shrink-0 group py-0.5">
+          <a href="/" className="flex items-center shrink-0 group py-0.5">
             <div className="relative h-11 sm:h-12 w-36 sm:w-44 transition-transform group-hover:scale-[1.02]">
               <Image
                 src="/assets/logo-blue.png"

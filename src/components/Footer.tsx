@@ -118,23 +118,28 @@ export default function Footer({ language }: FooterProps) {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#features" className="hover:text-emerald-400 transition-colors">
+                <a href="/#why-us" className="hover:text-emerald-400 transition-colors">
+                  {language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ"}
+                </a>
+              </li>
+              <li>
+                <a href="/#features" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Core Features" : "প্রধান ফিচার"}
                 </a>
               </li>
               <li>
-                <a href="#preview" className="hover:text-emerald-400 transition-colors">
-                  {language === "en" ? "Software Mockup" : "সফটওয়্যার ড্যাশবোর্ড"}
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="hover:text-emerald-400 transition-colors">
+                <a href="/#pricing" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Pricing List (BDT)" : "মূল্য তালিকা (টাকা)"}
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-emerald-400 transition-colors">
+                <a href="/#testimonials" className="hover:text-emerald-400 transition-colors">
                   {language === "en" ? "Doctor Endorsements" : "ডাক্তারদের মতামত"}
+                </a>
+              </li>
+              <li>
+                <a href="/blogs" className="hover:text-emerald-400 transition-colors">
+                  {language === "en" ? "Health Tech Blog" : "হেলথ টেক ব্লগ"}
                 </a>
               </li>
               <li>
