@@ -48,7 +48,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
       periodYearly: language === "en" ? "BDT / year (2,000 BDT/mo)" : "টাকা / বছর (২,০০০ টাকা/মাস)",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Select Essential" : "এসেনশিয়াল বেছে নিন",
+      ctaText: language === "en" ? "Buy Now" : "এখনই কিনুন",
       features: [
         language === "en" ? "Unlimited patients & prescriptions" : "আনলিমিটেড রোগী ও প্রেসক্রিপশন তৈরি",
         language === "en" ? "Automated Zoom telemedicine via SMS" : "স্বয়ংক্রিয় জুম টেলিমেডিসিন ও এসএমএস",
@@ -76,7 +76,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           : "টাকা / বছর (মাত্র ~৮৩৩ টাকা/মাস)",
       oldPrice: "24,000",
       popular: true,
-      ctaText: language === "en" ? "Claim 58% Discount" : "৫৮% ডিসকাউন্টে শুরু করুন",
+      ctaText: language === "en" ? "Buy Now" : "এখনই কিনুন",
       features: [
         language === "en" ? "All Essential features included" : "এসেনশিয়াল প্ল্যানের সকল সুবিধা অন্তর্ভুক্ত",
         language === "en" ? "Annual saving of 14,000 BDT" : "এককালীন ১৪,০০০ টাকা সরাসরি সাশ্রয়",
@@ -98,7 +98,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
       periodYearly: language === "en" ? "Tailored to facility scale" : "প্রতিষ্ঠানের চাহিদা অনুযায়ী নির্ধারিত",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Contact Enterprise Sales" : "সেলস টিমের সাথে কথা বলুন",
+      ctaText: language === "en" ? "Contact Sales" : "যোগাযোগ করুন",
       features: [
         language === "en" ? "Multi-doctor accounts & chamber routing" : "মাল্টি-ডাক্তার একাউন্ট ও ডিপার্টমেন্ট",
         language === "en" ? "Centralized lab & diagnostic hub" : "সেন্ট্রাল ডায়াগনস্টিক ও ল্যাব রিপোর্ট হাব",

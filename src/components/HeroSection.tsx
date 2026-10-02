@@ -112,7 +112,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
               className="w-full sm:w-auto"
             >
               <Video className="w-5 h-5 mr-1 text-emerald-200" />
-              <span>{language === "en" ? "Book a 1-on-1 Zoom Demo" : "লাইভ জুম ডেমো বুক করুন"}</span>
+              <span>{language === "en" ? "Book Demo" : "ডেমো বুক করুন"}</span>
               <ArrowRight className="w-4 h-4 ml-1" />
             </SpecularButton>
 
@@ -121,7 +121,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs hover:border-slate-400 transition-all"
             >
               <FileText className="w-5 h-5 text-emerald-600" />
-              <span>{language === "en" ? "Start 14-Day Free Trial" : "১৪ দিনের ফ্রি ট্রায়াল শুরু করুন"}</span>
+              <span>{language === "en" ? "Start Free Trial" : "ফ্রি ট্রায়াল শুরু করুন"}</span>
             </a>
           </div>
 

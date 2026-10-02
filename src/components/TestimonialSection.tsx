@@ -36,12 +36,14 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
             <Quote className="absolute right-6 -bottom-6 w-44 h-44 text-emerald-600/10 pointer-events-none" />
 
             <div className="relative z-10">
-              {/* Star Rating */}
-              <div className="flex items-center gap-1 mb-6 text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400" />
-                ))}
-                <span className="ml-2 text-xs font-semibold text-emerald-300">
+              {/* Star Rating & Verified Review */}
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="flex items-center gap-1 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-amber-400" />
+                  ))}
+                </div>
+                <span className="text-sm sm:text-base font-semibold text-emerald-300">
                   {language === "en" ? "Verified Doctor Review" : "যাচাইকৃত চিকিৎসকের মতামত"}
                 </span>
               </div>
@@ -54,37 +56,28 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
               </blockquote>
 
               {/* Doctor Details */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-emerald-800/80">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-400 shadow-md shrink-0 bg-slate-800">
-                    <Image
-                      src="/assets/dr-ehasan.png"
-                      alt="Dr. Ehasan UZ Zaman Khan"
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className="text-lg font-bold text-white">Dr. Ehasan UZ Zaman Khan</h4>
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    </div>
-                    <p className="text-xs text-emerald-300 font-medium">
-                      MBBS, BCS (Health), DDV (SKIN), BSMMU
-                    </p>
-                    <p className="text-[11px] text-slate-400 mt-0.5">
-                      {language === "en"
-                        ? "Dermatology & Venereology Specialist"
-                        : "চর্ম ও যৌনরোগ বিশেষজ্ঞ"}
-                    </p>
-                  </div>
+              <div className="flex items-center gap-4 pt-6 border-t border-emerald-800/80">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-400 shadow-md shrink-0 bg-slate-800">
+                  <Image
+                    src="/assets/dr-ehasan.png"
+                    alt="Dr. Ehasan UZ Zaman Khan"
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
-
-                <div className="sm:text-right">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-900/90 text-emerald-200 text-xs font-semibold border border-emerald-700/60">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    {language === "en" ? "Active SJ EMR Practitioner" : "সক্রিয় ব্যবহারকারী চিকিৎসক"}
-                  </span>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h4 className="text-lg font-bold text-white">Dr. Ehasan UZ Zaman Khan</h4>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <p className="text-xs text-emerald-300 font-medium">
+                    MBBS, BCS (Health), DDV (SKIN), BSMMU
+                  </p>
+                  <p className="text-[11px] text-slate-400 mt-0.5">
+                    {language === "en"
+                      ? "Dermatology & Venereology Specialist"
+                      : "চর্ম ও যৌনরোগ বিশেষজ্ঞ"}
+                  </p>
                 </div>
               </div>
             </div>

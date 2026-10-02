@@ -1150,7 +1150,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
               textColor="#ffffff"
               href="#contact"
             >
-              <span>{language === "en" ? "Request Specialized Demo" : "স্পেশালাইজড ডেমো চান"}</span>
+              <span>{language === "en" ? "Contact Sales" : "যোগাযোগ করুন"}</span>
               <ArrowRight className="w-4 h-4 ml-1" />
             </SpecularButton>
           </div>

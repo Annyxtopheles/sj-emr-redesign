@@ -262,10 +262,10 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                   : "আপনার স্পেশালিটি অনুযায়ী সফটওয়্যার ব্যবহারের ফ্রি লাইভ ডেমো শিডিউল করুন।"}
               </p>
               <a
-                href="#demo"
+                href="#contact"
                 className="inline-flex items-center justify-center w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors shadow-sm"
               >
-                {language === "en" ? "Schedule Demo" : "ডেমো শিডিউল করুন"}
+                {language === "en" ? "Book Demo" : "ডেমো বুক করুন"}
               </a>
             </div>
           </div>
