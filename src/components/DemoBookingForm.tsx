@@ -62,25 +62,25 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
   ];
 
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-slate-900 text-white scroll-mt-20 relative overflow-hidden">
+    <section id="contact" className="py-16 lg:py-24 bg-slate-50 border-b border-slate-200/80 scroll-mt-20 relative overflow-hidden">
       <span id="demo" className="scroll-mt-24 absolute top-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Value Prop & Contact Info */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-700/60 text-emerald-300 text-xs font-semibold mb-4">
-              <Calendar className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-4">
+              <Calendar className="w-3.5 h-3.5 text-emerald-600" />
               <span>{language === "en" ? "Fast Doctor Onboarding" : "সহজেই শুরু করুন"}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 text-balance">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-4 text-balance">
               {language === "en"
                 ? "See SJ EMR in Action with a Tailored Walkthrough"
                 : "আপনার চেম্বারের উপযোগী লাইভ ডেমো দেখে নিন"}
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
               {language === "en"
                 ? "Schedule a personalized 15-minute live Zoom session. We will demonstrate the rapid e-prescription generator, the Bangladeshi drug directory, and doctor chamber workflows tailored to your specific medical specialty."
                 : "মাত্র ১৫ মিনিটের লাইভ জুম সেশনে দেখে নিন কীভাবে ড্রাগ ডেটাবেস, ৬০ সেকেন্ডের প্রেসক্রিপশন ও টেলিমেডিসিন আপনার চেম্বারের কাজকে সহজ করে তুলবে।"}
@@ -89,14 +89,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
             {/* Quick Benefits Bullet List */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-900/60 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
                   <Video className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">
+                  <h4 className="text-sm font-bold text-slate-900">
                     {language === "en" ? "Live Interactive Zoom Demo" : "লাইভ জুম স্ক্রিন-শেয়ারিং"}
                   </h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-600">
                     {language === "en"
                       ? "Interactive Q&A with our clinical technology team in Dhaka & Sylhet."
                       : "আমাদের বিশেষজ্ঞ টিমের সাথে সরাসরি প্রশ্নোত্তরের সুযোগ।"}
@@ -105,14 +105,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-900/60 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">
+                  <h4 className="text-sm font-bold text-slate-900">
                     {language === "en" ? "BMDC Doctor Verification" : "বিএমডিসি রেজিস্টার্ড ডাক্তারদের অগ্রাধিকার"}
                   </h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-600">
                     {language === "en"
                       ? "Instant trial activation & dedicated template configuration."
                       : "তাৎক্ষণিক অ্যাকাউন্ট অ্যাক্টিভেশন ও চেম্বার প্যাড কনফিগারেশন।"}
@@ -121,14 +121,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-900/60 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">
+                  <h4 className="text-sm font-bold text-slate-900">
                     {language === "en" ? "2-Hour Response Time" : "২ ঘণ্টার মধ্যে নিশ্চিত যোগাযোগ"}
                   </h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-600">
                     {language === "en"
                       ? "Our technical specialists reach out promptly during chamber hours."
                       : "আমাদের টিম দ্রুত ফোন বা হোয়াটসঅ্যাপে আপনার সাথে শিডিউল সমন্বয় করবে।"}
@@ -138,22 +138,22 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
             </div>
 
             {/* Direct Helpline Badge */}
-            <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700 text-xs">
-              <span className="text-slate-400">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs text-xs">
+              <span className="text-slate-500">
                 {language === "en" ? "Prefer direct phone consultation?" : "সরাসরি ফোনে কথা বলতে চান?"}
               </span>
               <div className="mt-1 flex items-center gap-3">
                 <a
                   href="tel:+8801707074577"
-                  className="font-bold text-emerald-400 hover:text-emerald-300 text-sm flex items-center gap-1.5"
+                  className="font-bold text-emerald-700 hover:text-emerald-800 text-sm flex items-center gap-1.5"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   +880 1707-074577
                 </a>
-                <span className="text-slate-500">|</span>
+                <span className="text-slate-300">|</span>
                 <a
                   href="mailto:info@sjinnovation.com"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-600 hover:text-slate-900 font-medium"
                 >
                   info@sjinnovation.com
                 </a>
@@ -163,16 +163,16 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
 
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-9 shadow-2xl backdrop-blur-md">
+            <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-9 shadow-xl">
               {submitted ? (
                 <div className="text-center py-10">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mx-auto flex items-center justify-center mb-4">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
                     {language === "en" ? "Demo Request Received!" : "ডেমো রিকোয়েস্ট সফল হয়েছে!"}
                   </h3>
-                  <p className="text-sm text-slate-300 max-w-md mx-auto mb-6">
+                  <p className="text-sm text-slate-600 max-w-md mx-auto mb-6">
                     {language === "en"
                       ? `Thank you, ${formData.fullName || "Doctor"}! Our medical tech onboarding consultant will contact you via ${formData.phone || "phone"} within 2 hours to confirm your Zoom demo.`
                       : `ধন্যবাদ ${formData.fullName || "ডাঃ"}! আমাদের বিশেষজ্ঞ টিম আগামী ২ ঘণ্টার মধ্যে ${formData.phone || "আপনার নম্বরে"} যোগাযোগ করে জুম ডেমো কনফার্ম করবে।`}
@@ -187,11 +187,11 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="border-b border-slate-700 pb-3 mb-4">
-                    <h3 className="text-lg font-bold text-white">
+                  <div className="border-b border-slate-100 pb-3 mb-4">
+                    <h3 className="text-lg font-bold text-slate-900">
                       {language === "en" ? "Schedule Your Personalized Demo" : "আপনার ফ্রি লাইভ ডেমো ফর্ম"}
                     </h3>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-500">
                       {language === "en"
                         ? "Fill in your chamber details below to get started immediately."
                         : "নিচের তথ্যগুলো পূরণ করে সরাসরি ডেমো বুক করুন।"}
@@ -200,17 +200,17 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
 
                   {/* Doctor Verification Radio Switch */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-2">
+                    <label className="block text-xs font-semibold text-slate-700 mb-2">
                       {language === "en" ? "User Profile / Verification *" : "আপনার পরিচিতি *"}
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       <button
                         type="button"
                         onClick={() => setFormData({ ...formData, userType: "doctor" })}
-                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all ${
+                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                           formData.userType === "doctor"
-                            ? "bg-emerald-600 border-emerald-500 text-white shadow-xs"
-                            : "bg-slate-700/60 border-slate-600 text-slate-300 hover:bg-slate-700"
+                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
                         <Stethoscope className="w-3.5 h-3.5" />
@@ -220,10 +220,10 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                       <button
                         type="button"
                         onClick={() => setFormData({ ...formData, userType: "clinic_admin" })}
-                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all ${
+                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                           formData.userType === "clinic_admin"
-                            ? "bg-emerald-600 border-emerald-500 text-white shadow-xs"
-                            : "bg-slate-700/60 border-slate-600 text-slate-300 hover:bg-slate-700"
+                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
                         <Building className="w-3.5 h-3.5" />
@@ -233,10 +233,10 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                       <button
                         type="button"
                         onClick={() => setFormData({ ...formData, userType: "patient" })}
-                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1 ${
+                        className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1 cursor-pointer ${
                           formData.userType === "patient"
-                            ? "bg-emerald-600 border-emerald-500 text-white shadow-xs"
-                            : "bg-slate-700/60 border-slate-600 text-slate-300 hover:bg-slate-700"
+                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
                         <User className="w-3.5 h-3.5" />
@@ -248,7 +248,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                   {/* Name and Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Full Name *" : "আপনার পূর্ণ নাম *"}
                       </label>
                       <input
@@ -265,12 +265,12 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         }
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Mobile Phone *" : "মোবাইল নম্বর *"}
                       </label>
                       <input
@@ -279,7 +279,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         placeholder="017XXXXXXXX"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       />
                     </div>
                   </div>
@@ -287,7 +287,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                   {/* Email & Chamber/Clinic Name */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Email Address *" : "ইমেইল অ্যাড্রেস *"}
                       </label>
                       <input
@@ -296,12 +296,12 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         placeholder="doctor@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Chamber or Clinic Name *" : "চেম্বার বা ক্লিনিকের নাম *"}
                       </label>
                       <input
@@ -312,7 +312,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         }
                         value={formData.chamberName}
                         onChange={(e) => setFormData({ ...formData, chamberName: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       />
                     </div>
                   </div>
@@ -320,13 +320,13 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                   {/* Specialization & BMDC Number */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Medical Specialization *" : "স্পেশালাইজেশন *"}
                       </label>
                       <select
                         value={formData.specialization}
                         onChange={(e) => setFormData({ ...formData, specialization: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       >
                         <option value="">{language === "en" ? "Select Specialization" : "বাছাই করুন"}</option>
                         {specializations.map((spec) => (
@@ -338,7 +338,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {formData.userType === "doctor"
                           ? language === "en"
                             ? "BMDC Registration Number *"
@@ -355,7 +355,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         }
                         value={formData.bmdcNumber}
                         onChange={(e) => setFormData({ ...formData, bmdcNumber: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       />
                     </div>
                   </div>
@@ -363,17 +363,17 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                   {/* Demo Format & Plan of Interest */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Preferred Demo Format *" : "ডেমো দেখার মাধ্যম *"}
                       </label>
                       <div className="grid grid-cols-2 gap-2">
                         <button
                           type="button"
                           onClick={() => setFormData({ ...formData, demoType: "zoom" })}
-                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all ${
+                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
                             formData.demoType === "zoom"
-                              ? "bg-emerald-600 border-emerald-500 text-white shadow-xs font-semibold"
-                              : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800"
+                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs font-semibold"
+                              : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
                           {language === "en" ? "Live Zoom (1-on-1)" : "লাইভ জুম"}
@@ -381,10 +381,10 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         <button
                           type="button"
                           onClick={() => setFormData({ ...formData, demoType: "recorded" })}
-                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all ${
+                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
                             formData.demoType === "recorded"
-                              ? "bg-emerald-600 border-emerald-500 text-white shadow-xs font-semibold"
-                              : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800"
+                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs font-semibold"
+                              : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
                           {language === "en" ? "Recorded Video Tour" : "রেকর্ডেড ভিডিও"}
@@ -393,13 +393,13 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1">
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         {language === "en" ? "Plan You Are Interested In *" : "আগ্রহী প্ল্যান *"}
                       </label>
                       <select
                         value={formData.plan}
                         onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
-                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                        className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       >
                         <option value="Free (14 Days Trial)">
                           Free 14 Days Trial (0 BDT)
@@ -422,7 +422,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {loading ? (
                         <span>{language === "en" ? "Processing..." : "প্রক্রিয়াকরণ হচ্ছে..."}</span>
@@ -435,8 +435,8 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     </button>
                   </div>
 
-                  <p className="text-[11px] text-center text-slate-400 pt-1 flex items-center justify-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <p className="text-[11px] text-center text-slate-500 pt-1 flex items-center justify-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>
                       {language === "en"
                         ? "100% Privacy Protected. We respect patient-doctor confidentiality under BMDC guidelines."

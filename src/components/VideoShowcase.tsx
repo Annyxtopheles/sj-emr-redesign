@@ -39,8 +39,17 @@ const VIDEOS: VideoItem[] = [
     titleBn: "ব্যারিস্টার সুমন তুলে ধরলেন EMR এর গুরুত্ব | SJ EMR",
     speakerEn: "Barrister Syed Sayedul Haque Suman",
     speakerBn: "ব্যারিস্টার সৈয়দ সায়েদুল হক সুমন",
-    summaryEn: "Insights on healthcare transparency, stopping fake prescriptions, and legal safety for practicing physicians.",
-    summaryBn: "চিকিৎসা সেবায় স্বচ্ছতা আনা, ভুয়া প্রেসক্রিপশন রোধ এবং চিকিৎসকদের আইনি সুরক্ষায় ইএমআরের ভূমিকা।",
+    summaryEn: "Advocating for digital healthcare transformation and how systematic patient record-keeping prevents medical negligence.",
+    summaryBn: "ডিজিটাল স্বাস্থ্যসেবার প্রয়োজনীয়তা এবং চিকিৎসায় রোগীর রেকর্ড সংরক্ষণের সুদূরপ্রসারী প্রভাব নিয়ে বিশেষ আলোচনা।",
+  },
+  {
+    id: "nN1yq4bQYtM",
+    titleEn: "SJ EMR - Complete Doctor Software Walkthrough",
+    titleBn: "এস জে ইএমআর - সম্পূর্ণ সফটওয়্যার পরিচিতি",
+    speakerEn: "SJ EMR Official",
+    speakerBn: "এস জে ইএমআর অফিশিয়াল",
+    summaryEn: "Comprehensive demonstration of online appointment booking, customized pad printing, and SMS notifications.",
+    summaryBn: "অনলাইন অ্যাপয়েন্টমেন্ট বুকিং, প্যাড প্রিন্টিং এবং স্বয়ংক্রিয় এসএমএস সেবার বিস্তারিত ওভারভিউ।",
   },
 ];
 
@@ -67,21 +76,21 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
   };
 
   return (
-    <section id="videos" className="py-16 sm:py-20 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-900 scroll-mt-20">
+    <section id="videos" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200/80 text-slate-900 relative overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3">
-              <Video className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-3">
+              <Video className="w-3.5 h-3.5 text-emerald-600" />
               <span>{language === "en" ? "Videos" : "ভিডিও"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4 text-balance">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
               {language === "en"
                 ? "Video Demos & Talks"
                 : "ভিডিও ডেমো ও চিকিৎসকদের আলোচনা"}
             </h2>
-            <p className="mt-2.5 text-sm sm:text-base text-slate-400 text-pretty">
+            <p className="mt-2.5 text-sm sm:text-base text-slate-600 text-pretty">
               {language === "en"
                 ? "Watch SJ EMR in action and hear doctors discuss patient safety and electronic medical records in\u00A0Bangladesh."
                 : "সরাসরি সফটওয়্যার ব্যবহার পদ্ধতি এবং চিকিৎসা সেবায় ডিজিটাল রেকর্ডের ভূমিকা নিয়ে বিশেষজ্ঞদের আলোচনা দেখুন।"}
@@ -93,13 +102,13 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
               href="https://www.youtube.com/channel/UC6TJ6W1BinAd2oVa358Vc4w"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all border border-slate-800 hover:border-red-500/40 shadow-sm group"
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold transition-all border border-slate-200 hover:border-red-500/40 shadow-xs group"
             >
               <span className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
                 <Play className="w-2.5 h-2.5 fill-current translate-x-0.2" />
               </span>
               <span>{language === "en" ? "Official YouTube Channel" : "অফিসিয়াল ইউটিউব চ্যানেল"}</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors" />
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" />
             </a>
           </div>
         </div>
@@ -107,7 +116,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
         {/* Video Theatre & Playlist Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Theatre Player */}
-          <div className="lg:col-span-8 bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
             {/* Video Screen Container 16:9 */}
             <div className="relative aspect-video w-full bg-black overflow-hidden">
               {isPlaying ? (
@@ -154,7 +163,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             </div>
 
             {/* Video Details Card */}
-            <div className="p-6 space-y-3">
+            <div className="p-6 space-y-3 bg-slate-900 text-white">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-xs text-slate-400">
                   <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -166,7 +175,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                 <div className="flex items-center gap-3 text-xs">
                   <button
                     onClick={handleCopyLink}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-white border border-slate-700/60 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-colors cursor-pointer"
                     title="Copy video link"
                   >
                     {copied ? (
@@ -203,7 +212,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             </div>
           </div>
 
-          {/* Side Playlist - Clean with NO tags and NO Playing pills */}
+          {/* Side Playlist */}
           <div className="lg:col-span-4 space-y-3">
             {VIDEOS.map((video) => {
               const isSelected = video.id === activeVideoId;
@@ -211,14 +220,14 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                 <button
                   key={video.id}
                   onClick={() => handleSelectVideo(video.id)}
-                  className={`w-full text-left p-3 rounded-xl border transition-all duration-200 flex gap-3.5 items-center group ${
+                  className={`w-full text-left p-3 rounded-xl border transition-all duration-200 flex gap-3.5 items-center group cursor-pointer ${
                     isSelected
-                      ? "bg-slate-900 border-emerald-500/60 shadow-lg shadow-emerald-950/40 border-l-4 border-l-emerald-400"
-                      : "bg-slate-900/50 border-slate-800 hover:bg-slate-900 hover:border-slate-700"
+                      ? "bg-white border-emerald-500 shadow-md ring-1 ring-emerald-500/20 border-l-4 border-l-emerald-500"
+                      : "bg-white/80 border-slate-200 hover:bg-white hover:border-slate-300 text-slate-700 shadow-2xs"
                   }`}
                 >
                   {/* Thumbnail Preview */}
-                  <div className="relative w-28 h-18 sm:w-32 sm:h-20 shrink-0 rounded-lg overflow-hidden bg-black border border-slate-800">
+                  <div className="relative w-28 h-18 sm:w-32 sm:h-20 shrink-0 rounded-lg overflow-hidden bg-black border border-slate-200">
                     <Image
                       src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                       alt={language === "en" ? video.titleEn : video.titleBn}
@@ -238,11 +247,11 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                   {/* Clean Content: Title & Channel only */}
                   <div className="min-w-0 flex-1 space-y-1">
                     <h4 className={`text-xs font-semibold line-clamp-2 leading-snug transition-colors ${
-                      isSelected ? "text-emerald-400" : "text-slate-100 group-hover:text-white"
+                      isSelected ? "text-emerald-700 font-bold" : "text-slate-900 group-hover:text-emerald-700"
                     }`}>
                       {language === "en" ? video.titleEn : video.titleBn}
                     </h4>
-                    <p className="text-[11px] text-slate-400 truncate">
+                    <p className="text-[11px] text-slate-500 truncate">
                       {language === "en" ? video.speakerEn : video.speakerBn}
                     </p>
                   </div>
@@ -251,19 +260,19 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             })}
 
             {/* Chamber Demo Card */}
-            <div className="mt-3 p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-              <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                <Shield className="w-3.5 h-3.5" />
+            <div className="mt-3 p-4 rounded-xl bg-emerald-50/80 border border-emerald-200/90 space-y-2">
+              <div className="flex items-center gap-1.5 text-emerald-800 text-xs font-semibold uppercase tracking-wider">
+                <Shield className="w-3.5 h-3.5 text-emerald-600" />
                 <span>{language === "en" ? "Want a live demo?" : "লাইভ ডেমো দেখতে চান?"}</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-emerald-950/80 leading-relaxed">
                 {language === "en"
                   ? "Book a free 15-minute 1-on-1 walkthrough tailored to your specialty."
                   : "আপনার স্পেশালিটি অনুযায়ী সফটওয়্যার ব্যবহারের ফ্রি লাইভ ডেমো শিডিউল করুন।"}
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors shadow-sm"
+                className="inline-flex items-center justify-center w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-xs"
               >
                 {language === "en" ? "Book Demo" : "ডেমো বুক করুন"}
               </a>
