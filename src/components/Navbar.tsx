@@ -112,17 +112,17 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
       >
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 group">
-            <div className={`relative transition-all duration-300 ${scrolled ? "h-11 w-44 sm:w-48" : "h-13 sm:h-14 w-48 sm:w-56"} group-hover:scale-[1.02]`}>
-              <Image
-                src="/assets/logo-blue.png"
-                alt="SJ EMR Logo"
-                fill
-                priority
-                sizes="(max-width: 768px) 200px, 260px"
-                className="object-contain object-left"
-              />
-            </div>
+          <Link href="/" className="flex items-center shrink-0 group py-1">
+            <Image
+              src="/assets/logo-blue.png"
+              alt="SJ EMR Logo"
+              width={180}
+              height={80}
+              priority
+              className={`w-auto object-contain transition-all duration-300 ${
+                scrolled ? "h-9 sm:h-10" : "h-11 sm:h-12"
+              } group-hover:scale-[1.02]`}
+            />
           </Link>
 
           {/* Desktop Nav Links */}

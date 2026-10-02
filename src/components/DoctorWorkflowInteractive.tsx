@@ -88,7 +88,7 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <span className="text-[11px] font-mono font-bold text-emerald-700 uppercase tracking-widest block">
+                          <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block">
                             {language === "en" ? `Step ${item.step}` : `ধাপ ${item.step}`}
                           </span>
                         </div>

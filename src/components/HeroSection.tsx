@@ -199,7 +199,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <span className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
               </div>
-              <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1 rounded-md text-[11px] text-slate-300 font-mono">
+              <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1 rounded-md text-[11px] text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>emr.com.bd/app/dashboard</span>
               </div>

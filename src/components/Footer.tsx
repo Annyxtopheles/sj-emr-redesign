@@ -236,7 +236,7 @@ export default function Footer({ language }: FooterProps) {
                   info@sjinnovation.com
                 </a>
               </div>
-              <div className="text-[11px] text-slate-500 font-mono">Skype: sjinnovationbd</div>
+              <div className="text-[11px] text-slate-500">Skype: sjinnovationbd</div>
             </div>
           </div>
 
@@ -262,7 +262,7 @@ export default function Footer({ language }: FooterProps) {
                   +880 9611-677335 (Landline)
                 </a>
               </div>
-              <div className="text-[11px] text-slate-500 font-mono">Skype: SJI Sylhet</div>
+              <div className="text-[11px] text-slate-500">Skype: SJI Sylhet</div>
             </div>
           </div>
         </div>

@@ -81,7 +81,7 @@ export default function FAQSection({ language }: FAQSectionProps) {
             <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
             <span>{language === "en" ? "Frequently Asked Questions" : "সাধারণ প্রশ্নোত্তর"}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Answers to Common Questions from Doctors & Clinics"
               : "চিকিৎসক ও ক্লিনিক কর্তৃপক্ষের প্রয়োজনীয় তথ্যাবলী"}

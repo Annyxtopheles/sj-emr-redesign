@@ -1,17 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import {
   Scan,
   FileText,
-  ShieldCheck,
   Building2,
   Stethoscope,
   ArrowRight,
-  ExternalLink,
   CheckCircle2,
-  Share2,
   Zap,
 } from "lucide-react";
 
@@ -21,99 +16,83 @@ interface TeleradiologyShowcaseProps {
 
 export default function TeleradiologyShowcase({ language }: TeleradiologyShowcaseProps) {
   return (
-    <section id="teleradiology" className="py-20 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-900 scroll-mt-20">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-500/10 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="teleradiology" className="py-16 lg:py-24 bg-white border-b border-slate-200/80 scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Context & Capabilities */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider">
-              <Scan className="w-3.5 h-3.5" />
-              <span>{language === "en" ? "Diagnostic Imaging Network" : "টেলিরেডিওলজি ও ডায়াগনস্টিক নেটওয়ার্ক"}</span>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold">
+              <Scan className="w-3.5 h-3.5 text-emerald-700" />
+              <span>{language === "en" ? "Diagnostic Imaging Network" : "টেলিরেডিওলজি ও ডায়াগনস্টিক নেটওয়ার্ক"}</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              {language === "en" ? (
-                <>
-                  Connect Diagnostic Centers with Top Radiologists via{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
-                    BD Radiology Analyzer
-                  </span>
-                </>
-              ) : (
-                <>
-                  ডায়াগনস্টিক সেন্টার ও বিশেষজ্ঞ রেডিওলজিস্টদের সমন্বয়ে{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
-                    টেলিরেডিওলজি প্ল্যাটফর্ম
-                  </span>
-                </>
-              )}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+              {language === "en"
+                ? "Connect Diagnostic Centers with Certified Radiologists"
+                : "ডায়াগনস্টিক সেন্টার ও বিশেষজ্ঞ রেডিওলজিস্টদের সমন্বয়ে সমন্বিত নেটওয়ার্ক"}
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
               {language === "en"
-                ? "Beyond doctor chambers, SJ EMR powers a full-fledged teleradiology workflow. Diagnostic centers across Bangladesh upload X-rays and scans, while certified radiologists report cases remotely with AI diagnostic assist and automated e-signatures."
-                : "চেম্বার ছাড়াও এস জে ইএমআরে রয়েছে স্বয়ংসম্পূর্ণ টেলিরেডিওলজি পোর্টাল। বাংলাদেশের যে কোনো প্রান্তের ল্যাব থেকে এক্স-রে বা স্ক্যান আপলোড এবং প্রত্যয়িত রেডিওলজিস্টদের দ্বারা রিমোট রিপোর্ট প্রস্তুতের শতভাগ নিরাপদ ব্যবস্থা।"}
+                ? "Beyond individual doctor chambers, SJ EMR powers a complete teleradiology portal. Diagnostic centers across Bangladesh upload X-rays and scans, while certified radiologists report cases remotely with custom templates and digital signatures."
+                : "ব্যক্তিগত চেম্বার ছাড়াও এস জে ইএমআরে রয়েছে টেলিরেডিওলজি সুবিধা। বাংলাদেশের যে কোনো প্রান্তের ল্যাব থেকে এক্স-রে বা স্ক্যান আপলোড এবং প্রত্যয়িত রেডিওলজিস্টদের মাধ্যমে রিমোট রিপোর্ট তৈরির ব্যবস্থা।"}
             </p>
 
-            {/* 4 Feature Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5">
-                <div className="w-8 h-8 rounded-lg bg-sky-950 border border-sky-800/80 flex items-center justify-center text-sky-400">
+            {/* 4 Feature Pillars in Clean Bright Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
                   <Building2 className="w-4 h-4" />
                 </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                  {language === "en" ? "Lab Tech Case Intake" : "ল্যাব টেকনিশিয়ান এন্ট্রি"}
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                  {language === "en" ? "Lab Tech Case Intake" : "ল্যাব টেকনিশিয়ান এন্ট্রি"}
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {language === "en"
                     ? "Phone-first patient lookup, scan uploads, and automated study date assignment."
                     : "মোবাইল নম্বর সার্চ, দ্রুত স্ক্যান আপলোড ও কেস ট্র্যাকিং।"}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-800/80 flex items-center justify-center text-emerald-400">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
                   <Stethoscope className="w-4 h-4" />
                 </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                  {language === "en" ? "Doctor Report Playground" : "রেডিওলজিস্ট প্লেগ্রাউন্ড"}
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                  {language === "en" ? "Radiologist Worklist" : "রেডিওলজিস্ট ওয়ার্কলিস্ট"}
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {language === "en"
-                    ? "Rich Word-style editor, specialized chest/skeletal templates, and AI radiological assistance."
-                    : "সম্পূর্ণ ওয়ার্ড-স্টাইল এডিটর ও এআই রেডিয়োলজিক্যাল সহায়তা।"}
+                    ? "Clean report editor, specialized chest/skeletal templates, and fast review tools."
+                    : "সম্পূর্ণ ওয়ার্ড-স্টাইল এডিটর ও প্রস্তুতকৃত স্পেশালাইজড টেমপ্লেট।"}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5">
-                <div className="w-8 h-8 rounded-lg bg-indigo-950 border border-indigo-800/80 flex items-center justify-center text-indigo-400">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
                   <FileText className="w-4 h-4" />
                 </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   {language === "en" ? "Digital Signature & PDF" : "ডিজিটাল স্বাক্ষর ও পিডিএফ"}
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {language === "en"
-                    ? "Branded hospital header, BMDC doctor seal, and instant downloadable patient report."
+                    ? "Hospital branding header, BMDC doctor verification, and downloadable patient reports."
                     : "হাসপাতালের নিজস্ব ব্র্যান্ডিং, চিকিৎসকের সিল ও তাৎক্ষণিক ডাউনলোড।"}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5">
-                <div className="w-8 h-8 rounded-lg bg-teal-950 border border-teal-800/80 flex items-center justify-center text-teal-400">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-1.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
                   <Zap className="w-4 h-4" />
                 </div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                  {language === "en" ? "Automated Fee Tracking" : "ফি ও ট্র্যাকিং লেজার"}
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                  {language === "en" ? "Transparent Fee Tracking" : "ফি ও ট্র্যাকিং লেজার"}
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {language === "en"
-                    ? "Transparent per-case fee calculation, monthly facility invoices, and doctor earnings."
-                    : "স্বচ্ছ কেস ফি হিসাব, ল্যাব ইনভয়েস ও চিকিৎসকের সম্মানী লেজার।"}
+                    ? "Automated per-case fees, diagnostic facility invoices, and doctor payouts."
+                    : "স্বচ্ছ কেস ফি হিসাব, ল্যাব ইনভয়েস ও চিকিৎসকের সম্মানী লেজার।"}
                 </p>
               </div>
             </div>
@@ -121,28 +100,28 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
             <div className="pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-lg shadow-sky-950/50"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-sm"
               >
-                <span>{language === "en" ? "Inquire for Diagnostic Centers" : "ডায়াগনস্টিক সেন্টারের জন্য যোগাযোগ"}</span>
+                <span>{language === "en" ? "Inquire for Diagnostic Centers" : "ডায়াগনস্টিক সেন্টারের জন্য যোগাযোগ"}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Right Column: Visual Mockup Card of Teleradiology Playground */}
-          <div className="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
-            {/* Top Bar simulating the actual software header */}
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div className="lg:col-span-6 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-xs space-y-5">
+            {/* Top Bar simulating the software header */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-sky-950 border border-sky-800 flex items-center justify-center text-sky-400">
-                  <Scan className="w-5 h-5" />
+                <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-700 shadow-2xs">
+                  <Scan className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white leading-tight">BD Radiology Analyzer</h3>
-                  <div className="text-[11px] text-slate-400">Case #RAD-2026-0842 • Chest X-Ray PA View</div>
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">BD Radiology Analyzer</h3>
+                  <div className="text-[11px] text-slate-500">Case #RAD-2026-0842 • Chest X-Ray PA View</div>
                 </div>
               </div>
-              <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/60">
+              <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
                 Ready for Review
               </span>
             </div>
@@ -150,56 +129,56 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
             {/* Split Screen Simulation: X-ray Viewer + Clinical Report */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Simulated X-Ray Viewer */}
-              <div className="relative aspect-[3/4] rounded-2xl bg-black border border-slate-800 flex flex-col justify-between p-3 overflow-hidden">
-                <div className="flex items-center justify-between text-[10px] text-slate-500 font-mono">
+              <div className="relative aspect-[3/4] rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between p-3 overflow-hidden text-white">
+                <div className="flex items-center justify-between text-[10px] text-slate-400">
                   <span>FOV: 35x43cm</span>
                   <span>120 kVp • 4 mAs</span>
                 </div>
 
                 {/* Visual Chest X-ray silhouette representation */}
                 <div className="my-auto text-center space-y-1 opacity-70">
-                  <div className="w-24 h-24 mx-auto border-2 border-slate-700/60 rounded-3xl flex items-center justify-center relative">
-                    <div className="w-16 h-16 border border-slate-600/40 rounded-full" />
-                    <div className="w-px h-16 bg-slate-600/40 absolute" />
+                  <div className="w-20 h-20 mx-auto border-2 border-slate-700 rounded-3xl flex items-center justify-center relative">
+                    <div className="w-14 h-14 border border-slate-600 rounded-full" />
+                    <div className="w-px h-14 bg-slate-600 absolute" />
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono">CHEST PA • NORMAL CARDIOTHORACIC RATIO</div>
+                  <div className="text-[10px] text-slate-300">CHEST PA • CARDIAC OUTLINE NORMAL</div>
                 </div>
 
-                <div className="text-[10px] text-sky-400 bg-sky-950/80 px-2 py-1 rounded border border-sky-800/60 font-mono text-center">
-                  AI Pre-Screen: No Infiltration Detected
+                <div className="text-[10px] text-emerald-400 bg-emerald-950/80 px-2 py-1 rounded border border-emerald-800/60 text-center font-medium">
+                  Scan Quality: Clear Exposure
                 </div>
               </div>
 
               {/* Simulated Word-Style Doctor Report */}
-              <div className="bg-slate-950 rounded-2xl p-4 border border-slate-800 space-y-3 flex flex-col justify-between text-xs">
+              <div className="bg-white rounded-2xl p-4 border border-slate-200 space-y-3 flex flex-col justify-between text-xs">
                 <div className="space-y-2">
                   <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-                    Radiological Impression
+                    Radiological Findings
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80 text-[11px] text-slate-300 leading-relaxed font-sans">
-                    Lungs are clear with normal vascular markings. Both costophrenic angles are sharp. Cardiac size and contour are within normal physiological limits.
+                  <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-[11px] text-slate-700 leading-relaxed">
+                    Lungs are clear with normal bronchovascular markings. Both costophrenic angles are sharp. Cardiac size and contour are within normal physiological limits.
                   </div>
-                  <div className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    Impression: Normal study of chest.
+                  <div className="text-[11px] text-emerald-800 font-semibold flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Impression: Normal study of chest.</span>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 space-y-2">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400">
+                <div className="pt-3 border-t border-slate-200 space-y-2">
+                  <div className="flex items-center justify-between text-[11px] text-slate-500">
                     <span>E-Signature:</span>
-                    <span className="text-emerald-400 font-semibold font-mono">DR-BMDC-49281-SEALED</span>
+                    <span className="text-emerald-800 font-semibold">DR-BMDC-49281-SEALED</span>
                   </div>
-                  <div className="w-full py-2 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px] text-center shadow-md">
+                  <div className="w-full py-1.5 rounded-lg bg-emerald-600 text-white font-semibold text-xs text-center shadow-xs">
                     Export Official PDF Report
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
-              <span>Trusted by diagnostic networks in Dhaka, Sylhet, and Chittagong.</span>
-              <span className="text-sky-400 font-semibold">100% DICOM Compliant</span>
+            <div className="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-200/80">
+              <span>Trusted by diagnostic facilities in Dhaka, Sylhet, and Chittagong.</span>
+              <span className="text-emerald-700 font-semibold">DICOM Compatible</span>
             </div>
           </div>
         </div>
