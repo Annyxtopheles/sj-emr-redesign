@@ -1040,7 +1040,9 @@ export default function PaperCrumple({
     resize();
 
     const loader = new THREE.TextureLoader();
-    loader.setCrossOrigin('anonymous');
+    if (src && src.startsWith('http')) {
+      loader.setCrossOrigin('anonymous');
+    }
 
     function load(url: string) {
       return new Promise<THREE.Texture>((resolve, reject) => {

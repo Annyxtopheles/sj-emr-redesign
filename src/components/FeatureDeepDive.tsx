@@ -28,9 +28,13 @@ import {
   Pill,
   CheckCircle2,
   AlertTriangle,
+  HeartPulse,
+  Baby,
+  UserCheck,
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import GlowCard from "@/components/ui/GlowCard";
+import GlassIcons, { GlassIconItem } from "@/components/ui/GlassIcons";
 
 interface FeatureDeepDiveProps {
   language: "en" | "bn";
@@ -214,6 +218,39 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         language === "en"
           ? "Aggregates daily visit volumes, prevalent disease trends, average prescription speed, and chamber collections."
           : "দৈনিক রোগী সংখ্যা, সবচেয়ে প্রচলিত রোগের প্রবণতা এবং চেম্বারের আয়-ব্যয়ের সার্বিক অ্যানালিটিক্স রিপোর্ট।",
+    },
+  ];
+
+  const specialtyIcons: GlassIconItem[] = [
+    {
+      icon: <Stethoscope className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Medicine" : "মেডিসিন",
+      color: "green",
+    },
+    {
+      icon: <HeartPulse className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Cardiology" : "হৃদরোগ",
+      color: "red",
+    },
+    {
+      icon: <Baby className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Pediatrics" : "শিশুরোগ",
+      color: "orange",
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Dermatology" : "চর্মরোগ",
+      color: "purple",
+    },
+    {
+      icon: <Activity className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Orthopedics" : "অর্থোপেডিক",
+      color: "blue",
+    },
+    {
+      icon: <UserCheck className="w-6 h-6 text-white" />,
+      label: language === "en" ? "Gynecology" : "স্ত্রীরোগ",
+      color: "indigo",
     },
   ];
 
@@ -1126,33 +1163,43 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           </div>
         </div>
 
-        {/* Bottom Banner callout with elevated SpecularButton */}
-        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="max-w-2xl">
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-balance">
-              {language === "en"
-                ? "Need a Custom Feature or Specialty Module for Your Chamber?"
-                : "আপনার স্পেশালিটি বা চেম্বারের জন্য বিশেষ কোনো ফিচারের প্রয়োজন?"}
-            </h3>
-            <p className="text-xs sm:text-sm text-emerald-200/90 leading-relaxed text-pretty">
-              {language === "en"
-                ? "Dermatology, Orthopedic, Gynecology, Pediatrics, Cardiology, and General Medicine templates available."
-                : "চর্মরোগ, অর্থোপেডিক, স্ত্রীরোগ ও প্রসূতি, শিশুরোগ ও মেডিসিনের রেডিমেড স্পেশালাইজড ফরম্যাট।"
-              }
-            </p>
+        {/* Bottom Banner callout with 3D GlassIcons & SpecularButton */}
+        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl space-y-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="max-w-2xl text-center lg:text-left">
+              <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">
+                {language === "en" ? "Specialty Modules Ready" : "স্পেশালাইজড ক্লিনিক্যাল মডিউল"}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold mt-1 mb-2 text-balance">
+                {language === "en"
+                  ? "Pre-Configured for Your Medical Specialty & Chamber"
+                  : "আপনার স্পেশালিটি ও চেম্বারের জন্য রেডিমেড ফরম্যাট"}
+              </h3>
+              <p className="text-xs sm:text-sm text-emerald-200/90 leading-relaxed text-pretty">
+                {language === "en"
+                  ? "Pre-loaded with specialized clinical templates, ICD-10 diagnostic codes, and examination checklists tailored for individual disciplines."
+                  : "মেডিসিন, হৃদরোগ, শিশুরোগ, চর্মরোগ, অর্থোপেডিক ও স্ত্রীরোগের জন্য তৈরি বিশেষ প্রেসক্রিপশন টেমপ্লেট ও ড্রাগ সাজেশন্স।"
+                }
+              </p>
+            </div>
+            <div className="shrink-0">
+              <SpecularButton
+                size="md"
+                tint="#047857"
+                lineColor="#34d399"
+                baseColor="#064e3b"
+                textColor="#ffffff"
+                href="#contact"
+              >
+                <span>{language === "en" ? "Contact Sales" : "যোগাযোগ করুন"}</span>
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </SpecularButton>
+            </div>
           </div>
-          <div>
-            <SpecularButton
-              size="md"
-              tint="#047857"
-              lineColor="#34d399"
-              baseColor="#064e3b"
-              textColor="#ffffff"
-              href="#contact"
-            >
-              <span>{language === "en" ? "Contact Sales" : "যোগাযোগ করুন"}</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </SpecularButton>
+
+          {/* 3D GlassIcons Grid */}
+          <div className="pt-2 border-t border-emerald-900/60 flex justify-center">
+            <GlassIcons items={specialtyIcons} />
           </div>
         </div>
       </div>

@@ -269,7 +269,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
                   {/* 3D PaperCrumple WebGL Canvas */}
                   <PaperCrumple
-                    src="/assets/old-prescription-pad.svg"
+                    src="/assets/old-prescription-pad.png"
                     alt="Old handwritten prescription pad"
                     width={330}
                     height={420}
