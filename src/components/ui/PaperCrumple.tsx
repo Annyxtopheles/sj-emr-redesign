@@ -831,22 +831,19 @@ export default function PaperCrumple({
           ((Math.abs(Math.cos(baseRotation)) * spanX + Math.abs(Math.sin(baseRotation)) * spanY) * scale) / 2;
         const halfHeight =
           ((Math.abs(Math.sin(baseRotation)) * spanX + Math.abs(Math.cos(baseRotation)) * spanY) * scale) / 2;
-        const limitX = Math.min(
-          Math.max(0, finite(opts.dragRadius, 180)),
-          Math.max(0, viewportWidth / 2 - halfWidth - 16)
-        );
-        const limitY = Math.min(
-          Math.max(0, finite(opts.dragRadius, 180)),
-          Math.max(0, viewportHeight / 2 - halfHeight - 16)
-        );
-        const coast = !reduceMotion && !keyboard && performance.now() - lastMove < 90 ? 0.06 : 0;
+        const limitX = Math.max(0, finite(opts.dragRadius, 800));
+        const limitY = Math.max(0, finite(opts.dragRadius, 800));
+        const speed = Math.hypot(speedX, speedY);
+        const coast = !reduceMotion && !keyboard && performance.now() - lastMove < 150 ? 0.35 : 0.08;
         posX.target = clamp(posX.value + speedX * coast, -limitX, limitX);
         posY.target = clamp(posY.value - speedY * coast, -limitY, limitY);
       }
       if (instant || keyboard || reduceMotion) for (const s of springs) advance(s, 0, 0, true);
       keyboard = false;
+      const distFromCenter = Math.hypot(posX.value, posY.value);
+      const speed = Math.hypot(speedX, speedY);
       publish(
-        opts.releaseBehavior === 'stay' && amount.target > 0.001
+        opts.releaseBehavior === 'stay' && (amount.target > 0.001 || distFromCenter > 70 || speed > 180)
           ? 'crumpled'
           : memory.target > 0.001
             ? 'creased'
@@ -914,8 +911,8 @@ export default function PaperCrumple({
       lastX = x;
       lastY = y;
       lastMove = now;
-      pointerX = clamp(x, 12, viewportWidth - 12);
-      pointerY = clamp(y, 12, viewportHeight - 12);
+      pointerX = clamp(x, -viewportWidth * 0.8, viewportWidth * 1.8);
+      pointerY = clamp(y, -viewportHeight * 0.8, viewportHeight * 1.8);
       const maxTilt = reduceMotion
         ? 0
         : THREE.MathUtils.degToRad(clamp(finite(options.current.dragRotation, 10), 0, 60));

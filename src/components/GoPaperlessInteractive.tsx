@@ -1,18 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
-  FileText,
   CheckCircle2,
   Sparkles,
-  ArrowRight,
   RotateCcw,
   ShieldCheck,
   Smartphone,
   Printer,
-  Move,
-  Trash2,
 } from "lucide-react";
 import PaperCrumple from "@/components/ui/PaperCrumple";
 import { getAssetPath } from "@/lib/asset-path";
@@ -38,7 +33,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
   const handleStateChange = (state: string) => {
     if (state === "crumpled") {
-      // User dropped or tossed the crumpled paper!
+      // User dropped, crumpled, or tossed the paper!
       triggerTossAndFade();
     }
   };
@@ -47,10 +42,6 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
     setIsTossing(false);
     setIsCrumpled(false);
     setResetKey((prev) => prev + 1);
-  };
-
-  const handleQuickCrumple = () => {
-    triggerTossAndFade();
   };
 
   return (
@@ -77,98 +68,90 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
         {/* 2-Column Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
           {/* Left Column: Why Switch Benefits */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-4">
-              <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
-                      {language === "en" ? "0% Lost Patient Records" : "নথি হারানোর কোনো ভয় নেই"}
-                    </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {language === "en"
-                        ? "Search any patient by mobile number. Longitudinal visits, past medications, and lab reports appear instantly on screen with zero paper digging."
-                        : "মোবাইল নম্বর সার্চ করলেই আগের সব প্রেসক্রিপশন, রোগ নির্ণয় এবং এক্স-রে একসাথে স্ক্রিনে চলে আসে।"}
-                    </p>
-                  </div>
+          <div className="lg:col-span-5 space-y-4">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
-                      {language === "en" ? "Zero Pharmacy Dispensing Errors" : "শতভাগ নির্ভুল ওষুধ বিতরণ"}
-                    </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {language === "en"
-                        ? "Crystal-clear printed typography and auto-dosage schedules from the comprehensive Bangladeshi drug registry eliminate handwriting misinterpretation."
-                        : "ড্রাগ ডেটাবেস থেকে সঠিক ডোজ ও ফর্মুলেশন নির্বাচনের মাধ্যমে ফার্মেসিতে ভুল ওষুধ পাওয়ার মারাত্মক ঝুঁকি সম্পূর্ণ দূর হয়।"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
-                    <Printer className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
-                      {language === "en" ? "1-Click Print & Auto-SMS" : "১-ক্লিকে চেম্বার প্যাড প্রিন্ট ও এসএমএস"}
-                    </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {language === "en"
-                        ? "Print crisp, BMDC-compliant prescriptions directly onto your existing chamber letterhead while texting an automated digital copy to the patient's phone."
-                        : "আপনার নিজস্ব চেম্বার প্যাডে নিখুঁত প্রিন্ট নিন এবং স্বয়ংক্রিয়ভাবে রোগীর মোবাইলে এসএমএস ও পেশেন্ট পোর্টালে প্রেসক্রিপশন পৌঁছে দিন।"}
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                    {language === "en" ? "0% Lost Patient Records" : "নথি হারানোর কোনো ভয় নেই"}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {language === "en"
+                      ? "Search any patient by mobile number. Longitudinal visits, past medications, and lab reports appear instantly on screen with zero paper digging."
+                      : "মোবাইল নম্বর সার্চ করলেই আগের সব প্রেসক্রিপশন, রোগ নির্ণয় এবং এক্স-রে একসাথে স্ক্রিনে চলে আসে।"}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Interactive Control Pill */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              {isCrumpled ? (
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                    {language === "en" ? "Zero Pharmacy Dispensing Errors" : "শতভাগ নির্ভুল ওষুধ বিতরণ"}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {language === "en"
+                      ? "Crystal-clear printed typography and auto-dosage schedules from the comprehensive Bangladeshi drug registry eliminate handwriting misinterpretation."
+                      : "ড্রাগ ডেটাবেস থেকে সঠিক ডোজ ও ফর্মুলেশন নির্বাচনের মাধ্যমে ফার্মেসিতে ভুল ওষুধ পাওয়ার মারাত্মক ঝুঁকি সম্পূর্ণ দূর হয়।"}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                  <Printer className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                    {language === "en" ? "1-Click Print & Auto-SMS" : "১-ক্লিকে চেম্বার প্যাড প্রিন্ট ও এসএমএস"}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {language === "en"
+                      ? "Print crisp, BMDC-compliant prescriptions directly onto your existing chamber letterhead while texting an automated digital copy to the patient's phone."
+                      : "আপনার নিজস্ব চেম্বার প্যাডে নিখুঁত প্রিন্ট নিন এবং স্বয়ংক্রিয়ভাবে রোগীর মোবাইলে এসএমএস ও পেশেন্ট পোর্টালে প্রেসক্রিপশন পৌঁছে দিন।"}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Subtle Replay Option - Only displayed after paper is tossed */}
+            {isCrumpled && (
+              <div className="pt-2">
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs shadow-xs transition-all cursor-pointer"
                 >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>{language === "en" ? "Restore Paper Pad" : "কাগজের প্যাড পুনরায় আনুন"}</span>
+                  <RotateCcw className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>{language === "en" ? "Restore Paper Pad Demo" : "কাগজের প্যাড পুনরায় আনুন"}</span>
                 </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleQuickCrumple}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow transition-all cursor-pointer"
-                >
-                  <Trash2 className="w-4 h-4 text-rose-400" />
-                  <span>{language === "en" ? "Quick Crumple & Toss" : "দুমড়ে ফেলুন"}</span>
-                </button>
-              )}
-
-              <span className="text-xs text-slate-500 font-medium">
-                {isCrumpled
-                  ? language === "en" ? "SJ EMR Digital Pad is active!" : "ডিজিটাল প্রেসক্রিপশন সক্রিয়!"
-                  : language === "en" ? "Or click & drag paper on the right" : "অথবা ডানের প্যাডটি ধরে টানুন"}
-              </span>
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Right Column: 3D Paper Crumple Stage revealing SJ EMR */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl bg-slate-900 border border-slate-800 p-2 sm:p-4 shadow-2xl overflow-hidden min-h-[560px] flex items-center justify-center">
+            <div className="relative rounded-3xl bg-slate-900 border border-slate-800 p-2 sm:p-4 shadow-2xl min-h-[560px] flex items-center justify-center">
               {/* UNDERNEATH: The Pristine SJ EMR Digital Prescription UI */}
-              <div className="w-full h-full bg-white rounded-2xl p-5 sm:p-7 text-slate-800 flex flex-col justify-between border border-slate-200">
+              <div className="relative w-full h-full bg-white rounded-2xl p-5 sm:p-7 text-slate-800 flex flex-col justify-between border border-slate-200 overflow-hidden shadow-sm">
+                {/* Clean Frosted Glass Blur Overlay behind paper - transitions to clear when tossed */}
+                <div
+                  className={`absolute inset-0 rounded-2xl transition-all duration-700 ease-out pointer-events-none z-10 ${
+                    isCrumpled || isTossing
+                      ? "backdrop-blur-none bg-transparent opacity-0"
+                      : "backdrop-blur-md bg-white/20"
+                  }`}
+                />
+
                 <div>
                   {/* Digital Prescription Header */}
                   <div className="flex items-start justify-between pb-4 border-b border-slate-200 mb-4">
@@ -265,61 +248,32 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                 </div>
               </div>
 
-              {/* OVERLAY: 3D Physical Paper Pad Crumple Simulation */}
+              {/* OVERLAY: 3D Physical Paper Pad Simulation with Extended Viewport */}
               {!isCrumpled && (
                 <div
-                  className={`absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/70 backdrop-blur-[2px] transition-all duration-700 ease-out ${
+                  className={`absolute -inset-10 sm:-inset-16 lg:-inset-24 z-20 flex items-center justify-center transition-all duration-700 ease-out pointer-events-none ${
                     isTossing
-                      ? "opacity-0 scale-90 translate-y-10 blur-[1px] pointer-events-none"
+                      ? "opacity-0 scale-75 translate-x-24 -translate-y-24 blur-sm"
                       : "opacity-100 scale-100 translate-y-0"
                   }`}
                 >
-                  {/* Interaction Hint Banner */}
-                  <div
-                    className={`absolute top-4 z-30 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500 text-emerald-200 text-xs font-semibold shadow-lg transition-opacity duration-300 pointer-events-none ${
-                      isTossing ? "opacity-0" : "animate-bounce"
-                    }`}
-                  >
-                    <Move className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>
-                      {language === "en"
-                        ? "Click & Drag Paper Pad to Crumple!"
-                        : "কাগজের প্যাডটি টেনে দুমড়ে ফেলুন!"}
-                    </span>
-                  </div>
-
-                  {/* 3D PaperCrumple WebGL Canvas with expanded bounds */}
-                  <PaperCrumple
-                    src={getAssetPath("/assets/old-prescription-pad.png")}
-                    alt="Old handwritten prescription pad"
-                    width={330}
-                    height={420}
-                    sceneHeight="100%"
-                    releaseBehavior="stay"
-                    crumpleAmount={0.88}
-                    creaseStrength={0.25}
-                    paperColor="#f8f4ea"
-                    dragRadius={450}
-                    returnToOrigin={false}
-                    resetKey={resetKey}
-                    onStateChange={handleStateChange}
-                    className="w-full h-full"
-                  />
-
-                  {/* Bottom manual trigger for touch or quick click */}
-                  <div
-                    className={`absolute bottom-4 z-30 transition-opacity duration-300 ${
-                      isTossing ? "opacity-0 pointer-events-none" : "opacity-100"
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      onClick={handleQuickCrumple}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-medium transition-colors cursor-pointer"
-                    >
-                      <Trash2 className="w-3 h-3 text-rose-400" />
-                      <span>{language === "en" ? "Toss Paper Aside" : "কাগজ ফেলে দিন"}</span>
-                    </button>
+                  <div className="w-full h-full pointer-events-auto">
+                    <PaperCrumple
+                      src={getAssetPath("/assets/old-prescription-pad.png")}
+                      alt="Old handwritten prescription pad"
+                      width={330}
+                      height={420}
+                      sceneHeight="100%"
+                      releaseBehavior="stay"
+                      crumpleAmount={0.92}
+                      creaseStrength={0.25}
+                      paperColor="#f8f4ea"
+                      dragRadius={800}
+                      returnToOrigin={false}
+                      resetKey={resetKey}
+                      onStateChange={handleStateChange}
+                      className="w-full h-full"
+                    />
                   </div>
                 </div>
               )}
