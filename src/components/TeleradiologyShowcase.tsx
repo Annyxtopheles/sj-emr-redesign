@@ -268,13 +268,13 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                 setActiveCaseIndex(idx);
                 setIsSigned(false);
               }}
-              className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                 activeCaseIndex === idx
-                  ? "bg-slate-900 text-white shadow-md ring-2 ring-emerald-500"
-                  : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200"
+                  ? "bg-emerald-600 text-white shadow-md shadow-emerald-950/20 border border-emerald-600"
+                  : "bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-2xs"
               }`}
             >
-              <Scan className="w-3.5 h-3.5 text-emerald-400" />
+              <Scan className={`w-3.5 h-3.5 ${activeCaseIndex === idx ? "text-white" : "text-emerald-600"}`} />
               <span>{c.name}</span>
             </button>
           ))}
@@ -291,8 +291,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
               </div>
               <p className="text-xs text-emerald-800 leading-relaxed">
                 {language === "en"
-                  ? "Click through the 4 stages to see how local diagnostics connect with verified radiologists in Dhaka & Sylhet."
-                  : "৪টি ধাপের মাধ্যমে দেখুন কীভাবে সারা দেশের ল্যাব সরাসরি বিশেষজ্ঞ রেডিওলজিস্টদের সাথে যুক্ত থাকে।"}
+                  ? "Click through the 4 stages below to see how local diagnostics connect with verified radiologists in Dhaka & Sylhet."
+                  : "নিচের ৪টি ধাপ ক্লিক করে দেখুন কীভাবে সারা দেশের ল্যাব সরাসরি বিশেষজ্ঞ রেডিওলজিস্টদের সাথে যুক্ত থাকে।"}
               </p>
             </div>
 
@@ -372,16 +372,21 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                 </div>
               </div>
 
-              {/* Patient Badge */}
+              {/* Active Stage Indicator Badge */}
               <div className="text-right text-[11px] bg-slate-800/80 px-2.5 py-1 rounded-lg border border-slate-700">
                 <div className="font-bold text-slate-200">{currentCase.patient}</div>
-                <div className="text-[10px] text-emerald-400">{currentCase.exposure}</div>
+                <div className="text-[10px] text-emerald-400 font-semibold">
+                  {activeWorkflowStep === 1 && (language === "en" ? "Stage 1: Intake & Upload" : "ধাপ ১: স্ক্যান আপলোড")}
+                  {activeWorkflowStep === 2 && (language === "en" ? "Stage 2: Doctor Review" : "ধাপ ২: রিপোর্ট প্রস্তুতি")}
+                  {activeWorkflowStep === 3 && (language === "en" ? "Stage 3: AI Pre-Analysis" : "ধাপ ৩: এআই অ্যানালাইসিস")}
+                  {activeWorkflowStep === 4 && (language === "en" ? "Stage 4: Signed & Dispatched" : "ধাপ ৪: ডিজিটাল স্বাক্ষর")}
+                </div>
               </div>
             </div>
 
             {/* Split Screen: Left DICOM Scan Viewer + Right Radiologist Clinical Report */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-stretch">
-              {/* Left Scan View (7 cols) with Live PACS Tools */}
+              {/* Left Scan View (6 cols) with Live PACS Tools */}
               <div className="sm:col-span-6 bg-slate-950 rounded-2xl border border-slate-800 p-3 flex flex-col justify-between relative overflow-hidden">
                 {/* Interactive PACS Toolbar */}
                 <div className="flex items-center justify-between gap-1 mb-2 bg-slate-900/90 border border-slate-800 p-1.5 rounded-xl text-[11px]">
@@ -441,7 +446,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
 
                 {/* Simulated DICOM Image View with live CSS filters */}
                 <div
-                  className="my-auto py-2 flex items-center justify-center transition-all duration-300"
+                  className="my-auto py-2 flex items-center justify-center transition-all duration-300 relative"
                   style={{
                     filter: `invert(${isInverted ? 1 : 0}) contrast(${
                       contrastLevel === "high" ? 1.4 : contrastLevel === "soft" ? 0.8 : 1
@@ -450,6 +455,36 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                   }}
                 >
                   {currentCase.svgGraphic(isInverted)}
+
+                  {/* Stage 1 Overlay: Intake Confirmation */}
+                  {activeWorkflowStep === 1 && (
+                    <div className="absolute top-2 left-2 right-2 bg-slate-900/90 border border-emerald-500/60 rounded-lg p-1.5 text-[10px] text-emerald-300 backdrop-blur-xs flex items-center justify-between">
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span>{language === "en" ? "DICOM Matrix Uploaded" : "ডাইকম ফাইল আপলোড সম্পন্ন"}</span>
+                      </span>
+                      <span className="text-slate-400 text-[9px]">{currentCase.exposure}</span>
+                    </div>
+                  )}
+
+                  {/* Stage 3 Overlay: AI Detection Active */}
+                  {activeWorkflowStep === 3 && (
+                    <div className="absolute top-2 left-2 right-2 bg-emerald-950/90 border border-emerald-400/60 rounded-lg p-1.5 text-[10px] text-emerald-200 backdrop-blur-xs flex items-center justify-between">
+                      <span className="flex items-center gap-1.5">
+                        <Sliders className="w-3 h-3 text-emerald-400" />
+                        <span className="font-bold text-white">{language === "en" ? "AI Detection Active" : "এআই ডিটেকশন সক্রিয়"}</span>
+                      </span>
+                      <span className="text-[9px] bg-emerald-900 px-1 rounded text-emerald-300 font-bold">99.4% Match</span>
+                    </div>
+                  )}
+
+                  {/* Stage 4 Overlay: Digital Official Stamp */}
+                  {activeWorkflowStep === 4 && (
+                    <div className="absolute bottom-2 right-2 bg-emerald-950/95 border border-emerald-500 rounded-lg px-2 py-1 text-center shadow-lg backdrop-blur-xs">
+                      <div className="text-[8px] font-bold text-emerald-300 uppercase tracking-wider">BMDC VERIFIED</div>
+                      <div className="text-[7px] text-slate-300">Digital Seal ✓</div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom Overlay Info */}
@@ -468,73 +503,214 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                 </div>
               </div>
 
-              {/* Right Report Editor (5 cols) */}
+              {/* Right Report Column (6 cols): Dynamically changes with activeWorkflowStep */}
               <div className="sm:col-span-6 bg-slate-950 rounded-2xl border border-slate-800 p-3.5 flex flex-col justify-between text-xs space-y-3">
-                <div className="space-y-2.5">
-                  <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                      Radiological Report
-                    </span>
-                    <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
-                      Doctor Review
-                    </span>
-                  </div>
+                {/* STEP 1: Lab Requisition Intake */}
+                {activeWorkflowStep === 1 && (
+                  <>
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                          <Building2 className="w-3.5 h-3.5" />
+                          <span>{language === "en" ? "Stage 01: Lab Requisition Intake" : "ধাপ ০১: ল্যাব রিকুইজিশন এন্ট্রি"}</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-amber-400 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/80">
+                          {language === "en" ? "Ready for Pickup" : "পর্যালোচনার জন্য প্রস্তুত"}
+                        </span>
+                      </div>
 
-                  {/* Clinical Indication */}
-                  <div className="text-[11px] text-slate-400">
-                    <strong className="text-slate-300 block mb-0.5">Clinical History:</strong>
-                    <span>{currentCase.clinicalHistory}</span>
-                  </div>
+                      <div className="space-y-2 text-[11px] text-slate-300">
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1">
+                          <div className="text-slate-400 text-[10px] uppercase font-bold">{language === "en" ? "Source Diagnostic Center" : "প্রেরক ডায়াগনস্টিক ল্যাব"}</div>
+                          <div className="font-semibold text-white">{currentCase.facility}</div>
+                        </div>
 
-                  {/* Findings */}
-                  <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-[11px] text-slate-300 leading-relaxed space-y-1">
-                    <strong className="text-emerald-400 block text-[10px] uppercase tracking-wider">
-                      Observations &amp; Findings:
-                    </strong>
-                    <p>{currentCase.findings}</p>
-                  </div>
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1">
+                          <div className="text-slate-400 text-[10px] uppercase font-bold">{language === "en" ? "Clinical Indication / Reason" : "পরীক্ষার কারণ ও উপসর্গ"}</div>
+                          <div className="text-slate-300 leading-relaxed">{currentCase.clinicalHistory}</div>
+                        </div>
 
-                  {/* Impression */}
-                  <div className="bg-emerald-950/70 border border-emerald-800/80 rounded-xl p-2.5 text-[11px] text-emerald-300 space-y-1">
-                    <strong className="text-white block text-[10px] uppercase tracking-wider">
-                      Final Impression:
-                    </strong>
-                    <p className="font-medium">{currentCase.impression}</p>
-                  </div>
-                </div>
-
-                {/* E-Signature & Report Actions */}
-                <div className="pt-2 border-t border-slate-800 space-y-2">
-                  <div className="flex items-center justify-between text-[10px] text-slate-400">
-                    <div>
-                      <div className="font-semibold text-slate-200">{currentCase.radiologist}</div>
-                      <div className="text-emerald-400">{currentCase.bmdcReg}</div>
+                        <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between text-[10px] text-slate-400">
+                          <span>{language === "en" ? "DICOM Upload Status" : "ডাইকম আপলোড স্থিতি"}</span>
+                          <span className="text-emerald-400 font-semibold">100% (Lossless TLS)</span>
+                        </div>
+                      </div>
                     </div>
-                    {isSigned && (
-                      <span className="bg-emerald-900/80 text-emerald-300 border border-emerald-700 px-2 py-0.5 rounded font-bold text-[10px] flex items-center gap-1">
-                        <Check className="w-3 h-3 text-emerald-400" />
-                        <span>Signed ✓</span>
-                      </span>
-                    )}
-                  </div>
 
-                  <button
-                    type="button"
-                    onClick={() => setIsSigned(true)}
-                    className="w-full py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
-                  >
-                    <FileCheck className="w-3.5 h-3.5" />
-                    <span>
-                      {isSigned
-                        ? language === "en"
-                          ? "Download Signed Official PDF Report"
-                          : "স্বাক্ষরিত অফিশিয়াল রিপোর্ট ডাউনলোড করুন"
-                        : language === "en"
-                        ? "Verify & Sign Official Report"
-                        : "যাচাই করে ডিজিটাল স্বাক্ষর করুন"}
-                    </span>
-                  </button>
-                </div>
+                    <div className="pt-2 border-t border-slate-800">
+                      <button
+                        type="button"
+                        onClick={() => setActiveWorkflowStep(2)}
+                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                      >
+                        <Stethoscope className="w-3.5 h-3.5" />
+                        <span>{language === "en" ? "Pick Up Case for Radiologist Review →" : "কেসটি পর্যালোচনার জন্য খুলুন →"}</span>
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* STEP 2: Certified Radiologist Worklist */}
+                {activeWorkflowStep === 2 && (
+                  <>
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                          <Stethoscope className="w-3.5 h-3.5" />
+                          <span>{language === "en" ? "Stage 02: Radiologist Findings" : "ধাপ ০২: রেডিওলজিস্ট ফাইন্ডিংস"}</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/80">
+                          {language === "en" ? "Live Review" : "লাইভ রিভিউ মোড"}
+                        </span>
+                      </div>
+
+                      <div className="space-y-2 text-[11px] text-slate-300">
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1">
+                          <strong className="text-slate-400 block text-[10px] uppercase tracking-wider">
+                            {language === "en" ? "Clinical History:" : "রোগীর অতীত বিবরণ:"}
+                          </strong>
+                          <p className="leading-relaxed text-slate-300">{currentCase.clinicalHistory}</p>
+                        </div>
+
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1">
+                          <strong className="text-emerald-400 block text-[10px] uppercase tracking-wider">
+                            {language === "en" ? "Observations & Findings:" : "পর্যবেক্ষণ ও ফাইন্ডিংস:"}
+                          </strong>
+                          <p className="leading-relaxed text-slate-300">{currentCase.findings}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-800">
+                      <button
+                        type="button"
+                        onClick={() => setActiveWorkflowStep(3)}
+                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                      >
+                        <Sliders className="w-3.5 h-3.5" />
+                        <span>{language === "en" ? "Run AI Pre-Analysis & Measurements →" : "এআই প্রি-অ্যানালাইসিস মেজারমেন্ট দেখুন →"}</span>
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* STEP 3: AI Pre-Analysis & Measurements */}
+                {activeWorkflowStep === 3 && (
+                  <>
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                          <Sliders className="w-3.5 h-3.5" />
+                          <span>{language === "en" ? "Stage 03: AI Measurements & Pre-Analysis" : "ধাপ ০৩: এআই মেজারমেন্ট"}</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
+                          AI Assisted
+                        </span>
+                      </div>
+
+                      <div className="space-y-2 text-[11px]">
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1.5">
+                          <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">
+                            {language === "en" ? "Automated AI Landmark Checks:" : "স্বয়ংক্রিয় এআই ফলাফল:"}
+                          </span>
+                          <div className="space-y-1 text-slate-300">
+                            <div className="flex items-center gap-2 text-emerald-300">
+                              <span>✓</span>
+                              <span>{currentCase.id === "chest-pa" ? "Cardiothoracic Ratio (CTR): 0.44 (Normal Limit <0.50)" : currentCase.id === "knee-joint" ? "Medial Joint Space: 3.2mm (Narrowing detected)" : "Midline Shift: 0.0mm (Normal - No deviation)"}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-300">
+                              <span>✓</span>
+                              <span>{currentCase.id === "chest-pa" ? "Costophrenic Angles: Clear & sharp bilaterally" : currentCase.id === "knee-joint" ? "Patellofemoral Articulation: Preserved alignment" : "Ventricular System & Cisterns: Age-appropriate"}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-300">
+                              <span>✓</span>
+                              <span>{currentCase.id === "chest-pa" ? "Bone Matrix: No acute thoracic fracture detected" : currentCase.id === "knee-joint" ? "Joint Effusion: Absent, soft tissue intact" : "Parenchyma: No acute hemorrhage or mass effect"}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-emerald-950/70 border border-emerald-800/80 rounded-xl p-2.5 text-[11px] text-emerald-300">
+                          <strong className="text-white block text-[10px] uppercase tracking-wider mb-0.5">
+                            {language === "en" ? "Suggested Impression:" : "প্রস্তাবিত ফাইনাল ইম্প্রেশন:"}
+                          </strong>
+                          <p className="font-medium">{currentCase.impression}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-800">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsSigned(true);
+                          setActiveWorkflowStep(4);
+                        }}
+                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                      >
+                        <FileCheck className="w-3.5 h-3.5" />
+                        <span>{language === "en" ? "Approve Findings & Sign Report →" : "ফাইন্ডিংস অনুমোদন ও ডিজিটাল স্বাক্ষর →"}</span>
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* STEP 4: Signed Report & Automated Delivery */}
+                {activeWorkflowStep === 4 && (
+                  <>
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                          <FileCheck className="w-3.5 h-3.5" />
+                          <span>{language === "en" ? "Stage 04: Official Signed Report" : "ধাপ ০৪: অফিশিয়াল স্বাক্ষরিত রিপোর্ট"}</span>
+                        </span>
+                        <span className="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700 flex items-center gap-1">
+                          <Check className="w-3 h-3 text-emerald-400" />
+                          <span>BMDC Signed</span>
+                        </span>
+                      </div>
+
+                      <div className="space-y-2 text-[11px]">
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1">
+                          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                            {language === "en" ? "Final Certified Diagnosis:" : "চূড়ান্ত প্রত্যয়িত ডায়াগনোসিস:"}
+                          </div>
+                          <p className="text-white font-medium">{currentCase.impression}</p>
+                        </div>
+
+                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1.5">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <div className="font-semibold text-slate-200">{currentCase.radiologist}</div>
+                              <div className="text-[10px] text-emerald-400">{currentCase.bmdcReg}</div>
+                            </div>
+                            <div className="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-xs">✓</div>
+                          </div>
+                          <div className="pt-1.5 border-t border-slate-800 text-[10px] space-y-0.5 text-slate-400">
+                            <div className="flex items-center gap-1 text-emerald-400">
+                              <span>✓</span>
+                              <span>{language === "en" ? "SMS PDF Link Sent to Patient Phone" : "রোগীর মোবাইলে এসএমএস ও পিডিএফ লিংক প্রেরিত"}</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-emerald-400">
+                              <span>✓</span>
+                              <span>{language === "en" ? "Dispatched to " + currentCase.facility : currentCase.facility + "-এ সরাসরি সিঙ্ক হয়েছে"}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-800">
+                      <button
+                        type="button"
+                        onClick={() => alert(language === "en" ? `Downloading official signed PDF report for ${currentCase.caseNo}...` : `${currentCase.caseNo} এর স্বাক্ষরিত অফিসিয়াল পিডিএফ ডাউনলোড হচ্ছে...`)}
+                        className="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        <span>{language === "en" ? "Download Official BMDC PDF Report" : "অফিশিয়াল বিএমডিসি পিডিএফ রিপোর্ট ডাউনলোড"}</span>
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
