@@ -15,6 +15,7 @@ import {
   Layers,
   ChevronRight,
 } from "lucide-react";
+import SpecularButton from "@/components/ui/SpecularButton";
 
 interface HeroSectionProps {
   language: "en" | "bn";
@@ -101,14 +102,19 @@ export default function HeroSection({ language }: HeroSectionProps) {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
-            <a
+            <SpecularButton
+              size="lg"
+              tint="#059669"
+              lineColor="#6ee7b7"
+              baseColor="#064e3b"
+              textColor="#ffffff"
               href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-base font-semibold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-md hover:shadow-lg transition-all"
+              className="w-full sm:w-auto"
             >
-              <Video className="w-5 h-5" />
+              <Video className="w-5 h-5 mr-1 text-emerald-200" />
               <span>{language === "en" ? "Book a 1-on-1 Zoom Demo" : "লাইভ জুম ডেমো বুক করুন"}</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </SpecularButton>
 
             <a
               href="#pricing"
