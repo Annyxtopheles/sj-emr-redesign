@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { getAssetPath } from '@/lib/asset-path';
+import { fallbackPaperPadDataUri } from './paper-pad-base64';
 import './PaperCrumple.css';
 
 interface SpringState {
@@ -1039,48 +1041,59 @@ export default function PaperCrumple({
     deform();
     resize();
 
-    const loader = new THREE.TextureLoader();
-    if (src && src.startsWith('http')) {
-      loader.setCrossOrigin('anonymous');
-    }
+    const resolveAssetSrc = (url: string) => getAssetPath(url);
 
-    function load(url: string) {
+    function loadTextureWithFallback(url: string, isFallbackAttempt = false): Promise<THREE.Texture> {
       return new Promise<THREE.Texture>((resolve, reject) => {
-        loader.load(
-          url,
-          texture => {
-            if (disposed) {
-              texture.dispose();
-              resolve(texture);
-              return;
-            }
-            textures.add(texture);
-            texture.colorSpace = THREE.SRGBColorSpace;
-            texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
-            const image = texture.image;
-            const imageAspect = image.width / image.height;
-            const targetAspect = paperWidth / paperHeight;
-            let rx = 1,
-              ry = 1;
-            if (imageFit === 'cover') {
-              if (imageAspect > targetAspect) rx = targetAspect / imageAspect;
-              else ry = imageAspect / targetAspect;
-            } else {
-              if (imageAspect > targetAspect) ry = imageAspect / targetAspect;
-              else rx = targetAspect / imageAspect;
-            }
-            texture.repeat.set(rx, ry);
-            texture.offset.set((1 - rx) / 2, (1 - ry) / 2);
-            resolve(texture);
-          },
-          undefined,
-          () => reject(new Error(`Unable to load paper image: ${url}. Remote images must allow CORS.`))
-        );
+        const resolvedUrl = resolveAssetSrc(url);
+        const img = new Image();
+        if (resolvedUrl.startsWith('http')) {
+          img.crossOrigin = 'anonymous';
+        }
+
+        img.onload = () => {
+          if (disposed) return;
+          const texture = new THREE.Texture(img);
+          texture.colorSpace = THREE.SRGBColorSpace;
+          texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+          texture.needsUpdate = true;
+          textures.add(texture);
+
+          const imageAspect = (img.naturalWidth || img.width || 1) / (img.naturalHeight || img.height || 1);
+          const targetAspect = paperWidth / paperHeight;
+          let rx = 1,
+            ry = 1;
+          if (imageFit === 'cover') {
+            if (imageAspect > targetAspect) rx = targetAspect / imageAspect;
+            else ry = imageAspect / targetAspect;
+          } else {
+            if (imageAspect > targetAspect) ry = imageAspect / targetAspect;
+            else rx = targetAspect / imageAspect;
+          }
+          texture.repeat.set(rx, ry);
+          texture.offset.set((1 - rx) / 2, (1 - ry) / 2);
+          resolve(texture);
+        };
+
+        img.onerror = () => {
+          if (!isFallbackAttempt && fallbackPaperPadDataUri) {
+            console.warn(`[PaperCrumple] Failed to load ${resolvedUrl}. Falling back to embedded texture.`);
+            loadTextureWithFallback(fallbackPaperPadDataUri, true).then(resolve).catch(reject);
+          } else {
+            reject(new Error(`Unable to load paper image: ${resolvedUrl}`));
+          }
+        };
+
+        img.src = resolvedUrl;
       });
     }
 
-    if (src) {
-      Promise.all([load(src), backSrc ? load(backSrc) : Promise.resolve(null)])
+    if (src || fallbackPaperPadDataUri) {
+      const activeSrc = src || fallbackPaperPadDataUri;
+      Promise.all([
+        loadTextureWithFallback(activeSrc),
+        backSrc ? loadTextureWithFallback(backSrc) : Promise.resolve(null)
+      ])
         .then(([frontTexture, backTexture]) => {
           if (disposed) return;
           if (backTexture) {
@@ -1186,9 +1199,14 @@ export default function PaperCrumple({
       {status !== 'ready' && (
         <img
           className="paper-crumple-fallback"
-          src={src || undefined}
+          src={getAssetPath(src) || fallbackPaperPadDataUri}
           alt={alt}
           draggable={false}
+          onError={(e) => {
+            if (fallbackPaperPadDataUri && e.currentTarget.src !== fallbackPaperPadDataUri) {
+              e.currentTarget.src = fallbackPaperPadDataUri;
+            }
+          }}
           style={{
             objectFit: imageFit,
             transform: `translate(-50%, -50%) rotate(${rotation}deg)`,

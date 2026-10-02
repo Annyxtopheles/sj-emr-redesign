@@ -15,6 +15,7 @@ import {
   Trash2,
 } from "lucide-react";
 import PaperCrumple from "@/components/ui/PaperCrumple";
+import { getAssetPath } from "@/lib/asset-path";
 
 interface GoPaperlessInteractiveProps {
   language: "en" | "bn";
@@ -269,7 +270,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
                   {/* 3D PaperCrumple WebGL Canvas */}
                   <PaperCrumple
-                    src="/assets/old-prescription-pad.png"
+                    src={getAssetPath("/assets/old-prescription-pad.png")}
                     alt="Old handwritten prescription pad"
                     width={330}
                     height={420}
