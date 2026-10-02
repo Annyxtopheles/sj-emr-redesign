@@ -63,6 +63,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
 
   return (
     <section id="contact" className="py-16 lg:py-24 bg-slate-900 text-white scroll-mt-20 relative overflow-hidden">
+      <span id="demo" className="scroll-mt-24 absolute top-0" />
       {/* Decorative gradient glow */}
       <div className="absolute -top-40 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 left-0 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />

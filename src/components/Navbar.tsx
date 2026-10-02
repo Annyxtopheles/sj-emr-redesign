@@ -38,6 +38,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
     { name: language === "en" ? "Features" : "বৈশিষ্ট্যসমূহ", href: "/#features" },
     { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
     { name: language === "en" ? "Doctor Review" : "মতামত", href: "/#testimonials" },
+    { name: language === "en" ? "Videos" : "ভিডিও", href: "/#videos" },
     { name: language === "en" ? "Contact" : "যোগাযোগ", href: "/#contact" },
     { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
   ];
@@ -125,12 +126,12 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors whitespace-nowrap"
+                className="text-xs xl:text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors whitespace-nowrap"
               >
                 {link.name}
               </Link>
