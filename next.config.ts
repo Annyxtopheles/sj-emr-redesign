@@ -7,12 +7,17 @@ if (isGithubActions) {
   repo = `/${repoName}`;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH !== undefined 
+  ? process.env.NEXT_PUBLIC_BASE_PATH 
+  : (isGithubActions ? repo : "");
+
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || (isGithubActions ? repo : ""),
+  basePath,
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./src/image-loader.ts",
   },
 };
 
