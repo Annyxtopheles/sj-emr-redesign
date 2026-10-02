@@ -89,7 +89,7 @@ export default function Footer({ language }: FooterProps) {
           <div className="lg:col-span-4 space-y-4">
             <div className="relative h-10 w-36">
               <Image
-                src="/assets/logo-blue.png"
+                src="/assets/sj-emr-logo.svg"
                 alt="SJ EMR Logo"
                 fill
                 sizes="180px"

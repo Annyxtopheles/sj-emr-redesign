@@ -114,10 +114,10 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group py-1">
             <Image
-              src="/assets/logo-blue.png"
+              src="/assets/sj-emr-logo.svg"
               alt="SJ EMR Logo"
               width={180}
-              height={80}
+              height={75}
               priority
               className={`w-auto object-contain transition-all duration-300 ${
                 scrolled ? "h-9 sm:h-10" : "h-11 sm:h-12"
