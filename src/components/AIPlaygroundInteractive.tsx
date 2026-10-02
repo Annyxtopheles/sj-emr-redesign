@@ -159,7 +159,7 @@ export default function AIPlaygroundInteractive({ language }: AIPlaygroundProps)
                     <div className="p-3 rounded-xl bg-white border border-slate-200 text-slate-700">
                       <span className="font-bold text-slate-900 uppercase tracking-wide">Objective (O): </span>
                       <span>
-                        Temp: 102°F. Chest clear, bilateral vesicular breath sounds, no rhonchi or wheeze.
+                        Temp: 102.2°F. Chest clear, bilateral vesicular breath sounds, no rhonchi or wheeze.
                       </span>
                     </div>
 
@@ -219,7 +219,7 @@ export default function AIPlaygroundInteractive({ language }: AIPlaygroundProps)
 
                   <div className="font-serif italic text-xs sm:text-sm text-slate-700 space-y-2 pl-3 border-l-2 border-emerald-500">
                     <p className="font-sans font-bold not-italic text-slate-900">Rx</p>
-                    <p>1. Tab Napa Extra 500/65 — 1+1+1 (3 days)</p>
+                    <p>1. Tab. Napa Extend 665mg — 1+1+1 (3 days)</p>
                     <p>2. Cap Seclo 20mg — 1+0+1 (before meals)</p>
                     <p>3. Syp Adryll — 2 tsp TDS x 5 days</p>
                   </div>
@@ -255,9 +255,9 @@ export default function AIPlaygroundInteractive({ language }: AIPlaygroundProps)
                 <div className="space-y-2.5 text-xs">
                   <div className="p-3 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
                     <div>
-                      <div className="font-bold text-slate-900 text-xs sm:text-sm">Tab. Napa Extra 500mg/65mg</div>
-                      <div className="text-slate-500 text-[11px]">Paracetamol + Caffeine | Beximco Pharma</div>
-                      <div className="text-emerald-700 font-medium text-[11px] mt-0.5">1 + 0 + 1 — After meals — 3 Days</div>
+                      <div className="font-bold text-slate-900 text-xs sm:text-sm">Tab. Napa Extend 665mg</div>
+                      <div className="text-slate-500 text-[11px]">Paracetamol | Beximco Pharma</div>
+                      <div className="text-emerald-700 font-medium text-[11px] mt-0.5">1 + 1 + 1 — After meals — 3 Days</div>
                     </div>
                     <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold text-xs">
                       Matched

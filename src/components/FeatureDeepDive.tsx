@@ -530,7 +530,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-xs text-slate-300 space-y-1">
                       <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Detected Audio Stream</div>
                       <p className="italic text-slate-200">
-                        &quot;Patient reports 3 days of high fever and persistent dry cough, anorexia, and body ache. Temp 102°F. Throat is erythematous, lungs clear on auscultation. Prescribed Napa Extend and Bilastine.&quot;
+                        &quot;Patient reports 3 days of high fever and persistent dry cough, anorexia, and body ache. Temp 102.2°F. Throat is erythematous, lungs clear on auscultation. Prescribed Napa Extend and Bilastine.&quot;
                       </p>
                     </div>
 
@@ -549,7 +549,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         </div>
                         <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
                           <span className="font-bold text-slate-400 block mb-0.5">O (Objective):</span>
-                          <span className="text-slate-200">Temp 102.4°F, Chest clear bilaterally, Throat congestion +.</span>
+                          <span className="text-slate-200">Temp 102.2°F, Chest clear bilaterally, Throat congestion +.</span>
                         </div>
                         <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
                           <span className="font-bold text-slate-400 block mb-0.5">A (Assessment):</span>

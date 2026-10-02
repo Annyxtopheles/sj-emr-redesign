@@ -36,7 +36,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
         "Lungs are clear with normal bronchovascular markings. Both costophrenic angles are sharp and free. Trachea is central. Cardiac size and contour are within normal limits (CTR 0.44). Bony thorax appears intact.",
       impression: "Normal study of chest. No active cardiopulmonary lesion detected.",
       radiologist: "Dr. S. K. Roy, MBBS, FCPS (Radiology & Imaging)",
-      bmdcReg: "BMDC Reg #49281",
+      bmdcReg: "BMDC Reg #A-00001",
       svgGraphic: (isInverted: boolean) => (
         <svg viewBox="0 0 200 240" className="w-full h-full max-h-56 mx-auto">
           {/* Ribcage / Thorax silhouette */}
@@ -81,7 +81,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
         "Mild medial joint space narrowing observed in right femorotibial compartment. Small marginal osteophytes noted at medial tibial plateau. Patellofemoral articulation is preserved. No joint effusion or fracture.",
       impression: "Early Grade II Osteoarthritis of the right knee joint with preserved patellar joint space.",
       radiologist: "Dr. Farhana Yasmin, MBBS, DMRD, FCPS (Radiology)",
-      bmdcReg: "BMDC Reg #51204",
+      bmdcReg: "BMDC Reg #A-00002",
       svgGraphic: (isInverted: boolean) => (
         <svg viewBox="0 0 200 240" className="w-full h-full max-h-56 mx-auto">
           {/* Distal Femur */}
@@ -123,7 +123,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
         "No evidence of acute intracranial hemorrhage, mass effect, or midline shift. Ventricular system, basal cisterns, and cortical sulci are within normal limits for age. Calvarium is intact without fracture line.",
       impression: "Normal NCCT study of brain. No acute intracranial pathology.",
       radiologist: "Prof. Dr. A. K. M. Shamsuddin, MBBS, FCPS, FRCR",
-      bmdcReg: "BMDC Reg #38910",
+      bmdcReg: "BMDC Reg #A-00003",
       svgGraphic: (isInverted: boolean) => (
         <svg viewBox="0 0 200 240" className="w-full h-full max-h-56 mx-auto">
           {/* Calvarium / Skull Oval */}

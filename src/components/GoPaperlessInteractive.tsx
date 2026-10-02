@@ -9,7 +9,6 @@ import {
   Printer,
 } from "lucide-react";
 import PaperCrumple from "@/components/ui/PaperCrumple";
-import { getAssetPath } from "@/lib/asset-path";
 
 interface GoPaperlessInteractiveProps {
   language: "en" | "bn";
@@ -163,7 +162,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                         Prof. Dr. M. A. Rahman
                       </h4>
                       <p className="text-xs text-slate-600">
-                        MBBS, FCPS (Medicine) • BMDC Reg #18429
+                        MBBS, FCPS (Medicine) • BMDC Reg #A-00000
                       </p>
                     </div>
 
@@ -200,8 +199,8 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
                     <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200 flex items-center justify-between text-xs">
                       <div>
-                        <span className="font-bold text-slate-900">1. Tab. Napa Extra (500mg+65mg)</span>
-                        <span className="text-slate-500 text-[11px] block">Paracetamol + Caffeine • Square Pharmaceuticals</span>
+                        <span className="font-bold text-slate-900">1. Tab. Napa Extend 665mg</span>
+                        <span className="text-slate-500 text-[11px] block">Paracetamol • Beximco Pharma</span>
                       </div>
                       <span className="font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
                         1 + 1 + 1 (4 Days)
@@ -256,7 +255,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                 >
                   <div className="w-full h-full pointer-events-auto">
                     <PaperCrumple
-                      src={getAssetPath("/assets/old-prescription-pad.png")}
+                      src="/assets/old-prescription-pad.png"
                       alt="Old handwritten prescription pad"
                       width={330}
                       height={420}

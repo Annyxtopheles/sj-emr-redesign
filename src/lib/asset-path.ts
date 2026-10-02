@@ -11,5 +11,8 @@ export function getAssetPath(src: string): string {
   }
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const cleanSrc = src.startsWith("/") ? src : `/${src}`;
+  if (basePath && cleanSrc.startsWith(basePath)) {
+    return cleanSrc;
+  }
   return `${basePath}${cleanSrc}`;
 }

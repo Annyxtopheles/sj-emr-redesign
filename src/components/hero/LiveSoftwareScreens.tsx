@@ -40,7 +40,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
             <div className="font-bold text-slate-900 text-[13px] leading-tight flex items-center gap-1.5">
               <span>Prof. Dr. M. A. Rahman</span>
               <span className="text-[10px] font-normal text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                BMDC #18429
+                BMDC Reg #A-00000
               </span>
             </div>
             <div className="text-[11px] text-slate-500">
@@ -389,24 +389,24 @@ export function LiveActionsScreen({ language }: ScreenProps) {
         <div className="divide-y divide-slate-100 overflow-hidden text-[11px]">
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
             <div className="col-span-5">
-              <span className="font-bold text-slate-900 block">1. Cap. Cefixime 200mg</span>
-              <span className="text-[10px] text-slate-400">Cef-3 • Square Pharmaceuticals</span>
-            </div>
-            <div className="col-span-4 font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded text-[10px] w-fit">
-              1 + 0 + 1 (খাবার পর)
-            </div>
-            <span className="col-span-3 text-right text-slate-700 font-medium">7 Days</span>
-          </div>
-
-          <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
-            <div className="col-span-5">
-              <span className="font-bold text-slate-900 block">2. Tab. Napa Extend 665mg</span>
+              <span className="font-bold text-slate-900 block">1. Tab. Napa Extend 665mg</span>
               <span className="text-[10px] text-slate-400">Paracetamol • Beximco Pharma</span>
             </div>
             <div className="col-span-4 font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded text-[10px] w-fit">
               1 + 1 + 1 (জ্বর থাকলে)
             </div>
             <span className="col-span-3 text-right text-slate-700 font-medium">3 Days</span>
+          </div>
+
+          <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
+            <div className="col-span-5">
+              <span className="font-bold text-slate-900 block">2. Cap. Cefixime 200mg</span>
+              <span className="text-[10px] text-slate-400">Cef-3 • Square Pharmaceuticals</span>
+            </div>
+            <div className="col-span-4 font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded text-[10px] w-fit">
+              1 + 0 + 1 (খাবার পর)
+            </div>
+            <span className="col-span-3 text-right text-slate-700 font-medium">7 Days</span>
           </div>
 
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center">
