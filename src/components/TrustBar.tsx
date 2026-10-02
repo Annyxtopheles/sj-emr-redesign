@@ -1,6 +1,7 @@
 "use client";
 
 import { Award, Building2, Users2, HeartPulse, CheckCircle } from "lucide-react";
+import CountUp from "@/components/ui/CountUp";
 
 interface TrustBarProps {
   language: "en" | "bn";
@@ -90,19 +91,25 @@ export default function TrustBar({ language }: TrustBarProps) {
         {/* Impact Numbers */}
         <div className="mt-10 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">62,000+</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">
+              <CountUp to={62000} separator="," duration={2.2} />+
+            </div>
             <div className="text-xs text-slate-400 mt-1">
               {language === "en" ? "Consultations Completed" : "সম্পন্ন ডিজিটাল প্রেসক্রিপশন"}
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-teal-400">&lt; 60 Sec</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-teal-400">
+              &lt; <CountUp to={60} duration={1.8} /> Sec
+            </div>
             <div className="text-xs text-slate-400 mt-1">
               {language === "en" ? "Average Rx Writing Time" : "গড় প্রেসক্রিপশন তৈরির সময়"}
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400">100%</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400">
+              <CountUp to={100} duration={1.6} />%
+            </div>
             <div className="text-xs text-slate-400 mt-1">
               {language === "en" ? "BMDC Format Compliant" : "BMDC প্রেসক্রিপশন রুলস সম্মত"}
             </div>

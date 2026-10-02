@@ -1,6 +1,7 @@
 "use client";
 
 import { XCircle, CheckCircle2, Zap, ArrowRight, Clock, ShieldCheck, Database, FileSpreadsheet } from "lucide-react";
+import CountUp from "@/components/ui/CountUp";
 
 interface ProblemSolutionProps {
   language: "en" | "bn";
@@ -79,7 +80,9 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
         {/* Infographic KPI Stats Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
           <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">&lt; 60s</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              &lt; <CountUp to={60} duration={1.8} />s
+            </div>
             <div className="text-xs font-bold text-slate-900 mt-1">
               {language === "en" ? "Consultation to Rx" : "প্রেসক্রিপশন প্রস্তুতের সময়"}
             </div>
@@ -89,7 +92,9 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">100%</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              <CountUp to={100} duration={1.6} />%
+            </div>
             <div className="text-xs font-bold text-slate-900 mt-1">
               {language === "en" ? "BMDC Compliance" : "বিএমডিসি নির্দেশিকা সম্মত"}
             </div>
@@ -109,7 +114,9 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
           </div>
 
           <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">2+ Hrs</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              <CountUp to={2} duration={1.5} />+ Hrs
+            </div>
             <div className="text-xs font-bold text-slate-900 mt-1">
               {language === "en" ? "Daily Time Saved" : "প্রতিদিন সময় সাশ্রয়"}
             </div>
