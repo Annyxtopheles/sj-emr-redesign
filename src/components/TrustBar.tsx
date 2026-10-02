@@ -110,23 +110,15 @@ export default function TrustBar({ language }: TrustBarProps) {
                   />
                 </div>
 
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50">
-                    {item.tag}
-                  </span>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+                <div className="flex items-start justify-between gap-1.5 mb-1.5">
+                  <h3 className="font-bold text-slate-100 text-sm group-hover:text-white transition-colors">
+                    {item.title}
+                  </h3>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition-colors shrink-0 mt-0.5" />
                 </div>
-                <h3 className="font-bold text-slate-100 text-sm mb-1 group-hover:text-white transition-colors">
-                  {item.title}
-                </h3>
                 <p className="text-xs text-slate-400 leading-snug group-hover:text-slate-300 transition-colors">
                   {item.subtitle}
                 </p>
-              </div>
-
-              <div className="mt-4 pt-2.5 border-t border-slate-700/60 flex items-center justify-between text-[11px] text-emerald-400 font-medium">
-                <span>{language === "en" ? "Visit Official Site" : "ওয়েবসাইট দেখুন"}</span>
-                <span className="group-hover:translate-x-0.5 transition-transform text-xs">→</span>
               </div>
             </a>
           ))}

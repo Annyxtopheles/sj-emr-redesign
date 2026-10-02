@@ -273,9 +273,9 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
               ? "Designed for Bangladeshi Doctors, Built for Speed & Precision"
               : "বাংলাদেশের চিকিৎসকদের বাস্তব অভিজ্ঞতার আলোকে নির্মিত ফিচারসমূহ"}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty max-w-2xl mx-auto">
             {language === "en"
-              ? "Every tool is tailored to cut clerical burden, eliminate prescription errors, and ensure seamless patient follow-up."
+              ? "Every tool is tailored to cut clerical burden, eliminate prescription errors, and ensure seamless patient\u00A0follow-up."
               : "প্রতিটি ফিচার তৈরি করা হয়েছে চেম্বারের সময় বাঁচাতে, প্রেসক্রিপশনের নির্ভুলতা নিশ্চিত করতে এবং রোগীদের উন্নত সেবা দিতে।"}
           </p>
         </div>
@@ -347,12 +347,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
 
         {/* Restructured 10 Clinical AI Tools: Left Stacked Selector + Right Interactive Live Software Screen */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-16"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* LEFT: Stacked List of 10 Tools (Scrollable on desktop with active state & progress bar) */}
-          <div className="lg:col-span-5 flex flex-col space-y-1.5 max-h-[660px] overflow-y-auto pr-2 custom-scrollbar pt-1">
+          {/* LEFT: Stacked List of 10 Tools (Compact, cleanly fits height with active state & progress bar) */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-1.5 h-full">
             {clinicalAiTools.map((tool, idx) => {
               const Icon = tool.icon;
               const isActive = activeToolIndex === idx;
@@ -414,35 +414,39 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           </div>
 
           {/* RIGHT: Live Authentic Software Interface Display (Direct from dev software code) */}
-          <div className="lg:col-span-7">
-            <div className="rounded-3xl bg-slate-900 border border-slate-800 p-2 sm:p-4 shadow-2xl shadow-slate-950/20">
-              {/* Browser / App Header */}
-              <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800 mb-2 text-xs">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+          <div className="lg:col-span-8 flex flex-col h-full">
+            <div className="rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-800 p-5 sm:p-6 shadow-2xl shadow-slate-950/20 flex flex-col justify-between h-full text-slate-100 font-sans">
+              {/* Clean Clinical Screen Header */}
+              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-800/80">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border"
+                    style={{
+                      backgroundColor: `${activeTool.color}18`,
+                      borderColor: `${activeTool.color}35`,
+                      color: activeTool.color,
+                    }}
+                  >
+                    <activeTool.icon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-100 text-sm sm:text-base leading-tight truncate">
+                      {activeTool.title}
+                    </h3>
+                    <p className="text-[11px] text-slate-400 truncate mt-0.5">
+                      {activeTool.desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1 rounded-md text-[11px] text-slate-300 truncate max-w-[280px]">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span className="truncate">app.emr.com.bd/ai/{activeTool.slug}</span>
+                <div className="shrink-0 flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-emerald-400 font-semibold bg-emerald-950/70 border border-emerald-800/60 px-2.5 py-1 rounded">
+                    Tool {String(activeToolIndex + 1).padStart(2, "0")} / 10
+                  </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Doctor Verified</span>
-                </div>
-              </div>
-
-              {/* Tool Context Strip */}
-              <div className="px-3 py-2 mb-2 bg-slate-800/50 rounded-xl border border-slate-800 flex items-center justify-between text-xs text-slate-300">
-                <span className="font-medium text-slate-200 truncate pr-2">{activeTool.desc}</span>
-                <span className="text-[10px] font-mono text-emerald-400 shrink-0 bg-emerald-950/70 border border-emerald-800/60 px-2 py-0.5 rounded">
-                  Tool {String(activeToolIndex + 1).padStart(2, "0")} / 10
-                </span>
               </div>
 
               {/* Dynamic Authentic Software Screen Container */}
-              <div className="bg-slate-950 rounded-2xl border border-slate-800/90 p-4 sm:p-6 min-h-[560px] flex flex-col justify-between text-slate-100 font-sans">
+              <div className="flex-1 flex flex-col justify-between">
                 {/* 1. Voice-to-Note Screen */}
                 {activeToolIndex === 0 && (
                   <div className="space-y-4">
@@ -1071,33 +1075,6 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                   </div>
                 )}
 
-                {/* Doctor-First Verification Action Bar at the Bottom */}
-                <div className="pt-3 border-t border-slate-800/80 mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-                  <div className="flex items-center gap-2 text-slate-400 text-[11px]">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    <span>
-                      {language === "en"
-                        ? "Doctor-First Mandate: Physician confirms all outputs."
-                        : "ডাক্তারের চূড়ান্ত অনুমোদন ছাড়া কোনো তথ্য ফাইলে যুক্ত হয় না।"}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <button
-                      type="button"
-                      className="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs shadow-md transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <Check className="w-3.5 h-3.5" />
-                      <span>{language === "en" ? "Accept to Rx Draft ✓" : "প্রেসক্রিপশনে যুক্ত করুন ✓"}</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
-                    >
-                      {language === "en" ? "Edit" : "এডিট"}
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

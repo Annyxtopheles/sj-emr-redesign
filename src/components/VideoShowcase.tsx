@@ -78,12 +78,12 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4 text-balance">
               {language === "en"
-                ? "Video Demonstrations & Talks"
+                ? "Video Demos & Talks"
                 : "ভিডিও ডেমো ও চিকিৎসকদের আলোচনা"}
             </h2>
-            <p className="mt-2.5 text-sm sm:text-base text-slate-400">
+            <p className="mt-2.5 text-sm sm:text-base text-slate-400 text-pretty">
               {language === "en"
-                ? "Watch SJ EMR in action and hear doctors discuss patient safety and electronic medical records in Bangladesh."
+                ? "Watch SJ EMR in action and hear doctors discuss patient safety and electronic medical records in\u00A0Bangladesh."
                 : "সরাসরি সফটওয়্যার ব্যবহার পদ্ধতি এবং চিকিৎসা সেবায় ডিজিটাল রেকর্ডের ভূমিকা নিয়ে বিশেষজ্ঞদের আলোচনা দেখুন।"}
             </p>
           </div>
