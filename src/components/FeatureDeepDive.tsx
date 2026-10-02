@@ -113,6 +113,11 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
       id: "voice-to-note",
       icon: Mic,
       color: "indigo",
+      theme: {
+        bg: "rgba(99, 102, 241, 0.16)",
+        border: "rgba(99, 102, 241, 0.35)",
+        icon: "#a5b4fc",
+      },
       slug: "voice-to-note",
       badge: "STT Engine",
       title: language === "en" ? "Voice-to-Note (STT)" : "ভয়েস-টু-নোট (বাংলা ও ইংরেজি)",
@@ -125,6 +130,11 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
       id: "handwritten-ocr",
       icon: ScanLine,
       color: "purple",
+      theme: {
+        bg: "rgba(168, 85, 247, 0.16)",
+        border: "rgba(168, 85, 247, 0.35)",
+        icon: "#d8b4fe",
+      },
       slug: "handwritten-ocr",
       badge: "Vision OCR",
       title: language === "en" ? "Handwritten Pad OCR" : "হাতের লেখার প্রেসক্রিপশন OCR",
@@ -136,7 +146,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "diagnosis-assist",
       icon: Sparkles,
-      color: "green",
+      color: "emerald",
+      theme: {
+        bg: "rgba(16, 185, 129, 0.16)",
+        border: "rgba(16, 185, 129, 0.35)",
+        icon: "#6ee7b7",
+      },
       slug: "diagnosis-assist",
       badge: "ICD Differential",
       title: language === "en" ? "Diagnosis Assist" : "ডায়াগনসিস অ্যাসিস্ট ও ডিফারেনশিয়াল",
@@ -148,7 +163,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "medication-safety",
       icon: AlertCircle,
-      color: "red",
+      color: "rose",
+      theme: {
+        bg: "rgba(244, 63, 94, 0.16)",
+        border: "rgba(244, 63, 94, 0.35)",
+        icon: "#fda4af",
+      },
       slug: "medication-safety",
       badge: "DGDA Safety",
       title: language === "en" ? "Medication Safety Check" : "ওষুধের নিরাপত্তা ও ইন্টারঅ্যাকশন চেক",
@@ -160,7 +180,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "lab-interpreter",
       icon: FileCheck2,
-      color: "blue",
+      color: "sky",
+      theme: {
+        bg: "rgba(2, 132, 199, 0.16)",
+        border: "rgba(2, 132, 199, 0.35)",
+        icon: "#7dd3fc",
+      },
       slug: "lab-interpreter",
       badge: "Pathology Analyzer",
       title: language === "en" ? "Lab Results Interpreter" : "ল্যাব রিপোর্ট অ্যানালাইজার",
@@ -172,7 +197,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "bangla-education",
       icon: Languages,
-      color: "orange",
+      color: "amber",
+      theme: {
+        bg: "rgba(245, 158, 11, 0.16)",
+        border: "rgba(245, 158, 11, 0.35)",
+        icon: "#fcd34d",
+      },
       slug: "patient-education",
       badge: "Bangla Advisory",
       title: language === "en" ? "Bangla Patient Education" : "রোগীর জন্য সহজ বাংলায় নির্দেশনা",
@@ -184,7 +214,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "followup-planner",
       icon: CalendarClock,
-      color: "green",
+      color: "teal",
+      theme: {
+        bg: "rgba(20, 184, 166, 0.16)",
+        border: "rgba(20, 184, 166, 0.35)",
+        icon: "#5eead4",
+      },
       slug: "followup-planner",
       badge: "Chronic Recall",
       title: language === "en" ? "Follow-up & Recall Planner" : "ফলো-আপ প্ল্যানার ও শিডিউল রিকল",
@@ -196,7 +231,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "patient-history",
       icon: History,
-      color: "indigo",
+      color: "blue",
+      theme: {
+        bg: "rgba(59, 130, 246, 0.16)",
+        border: "rgba(59, 130, 246, 0.35)",
+        icon: "#93c5fd",
+      },
       slug: "patient-history",
       badge: "Longitudinal Record",
       title: language === "en" ? "Patient History Summarizer" : "রোগীর আজীবন ইতিহাসের সামারি",
@@ -208,7 +248,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "smart-coding",
       icon: Tag,
-      color: "purple",
+      color: "violet",
+      theme: {
+        bg: "rgba(139, 92, 246, 0.16)",
+        border: "rgba(139, 92, 246, 0.35)",
+        icon: "#c4b5fd",
+      },
       slug: "smart-coding",
       badge: "WHO ICD-11",
       title: language === "en" ? "Smart Diagnostic Coding" : "স্মার্ট রোগ নির্ণয় ট্যাগিং ও কোডিং",
@@ -220,7 +265,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "clinic-insights",
       icon: BarChart3,
-      color: "blue",
+      color: "cyan",
+      theme: {
+        bg: "rgba(6, 182, 212, 0.16)",
+        border: "rgba(6, 182, 212, 0.35)",
+        icon: "#67e8f9",
+      },
       slug: "ai-dashboard",
       badge: "OPD Analytics",
       title: language === "en" ? "Clinic AI Insights Dashboard" : "চেম্বার ইনসাইটস ও প্র্যাকটিস অ্যানালিটিক্স",
@@ -420,14 +470,14 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-800/80">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border"
+                    className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-xs"
                     style={{
-                      backgroundColor: `${activeTool.color}18`,
-                      borderColor: `${activeTool.color}35`,
-                      color: activeTool.color,
+                      backgroundColor: activeTool.theme.bg,
+                      borderColor: activeTool.theme.border,
+                      color: activeTool.theme.icon,
                     }}
                   >
-                    <activeTool.icon className="w-4 h-4" />
+                    <activeTool.icon className="w-4.5 h-4.5" />
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-bold text-slate-100 text-sm sm:text-base leading-tight truncate">
@@ -439,7 +489,14 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                   </div>
                 </div>
                 <div className="shrink-0 flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-emerald-400 font-semibold bg-emerald-950/70 border border-emerald-800/60 px-2.5 py-1 rounded">
+                  <span
+                    className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded border shadow-2xs"
+                    style={{
+                      backgroundColor: activeTool.theme.bg,
+                      borderColor: activeTool.theme.border,
+                      color: activeTool.theme.icon,
+                    }}
+                  >
                     Tool {String(activeToolIndex + 1).padStart(2, "0")} / 10
                   </span>
                 </div>

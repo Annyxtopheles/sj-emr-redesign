@@ -4,12 +4,19 @@ import React from 'react';
 import './GlassIcons.css';
 
 const gradientMapping: Record<string, string> = {
-  blue: 'linear-gradient(hsl(223, 90%, 50%), hsl(208, 90%, 50%))',
-  purple: 'linear-gradient(hsl(283, 90%, 50%), hsl(268, 90%, 50%))',
-  red: 'linear-gradient(hsl(3, 90%, 50%), hsl(348, 90%, 50%))',
-  indigo: 'linear-gradient(hsl(253, 90%, 50%), hsl(238, 90%, 50%))',
-  orange: 'linear-gradient(hsl(43, 90%, 50%), hsl(28, 90%, 50%))',
-  green: 'linear-gradient(hsl(123, 90%, 40%), hsl(108, 90%, 40%))'
+  indigo: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+  purple: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
+  emerald: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+  green: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+  rose: 'linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)',
+  red: 'linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)',
+  sky: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+  blue: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+  amber: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+  orange: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+  teal: 'linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)',
+  violet: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+  cyan: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
 };
 
 export interface GlassIconItem {
