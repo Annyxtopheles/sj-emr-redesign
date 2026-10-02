@@ -34,11 +34,11 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
   }, []);
 
   const navLinks = [
-    { name: language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ", href: "/#why-us" },
-    { name: language === "en" ? "Features" : "বৈশিষ্ট্যসমূহ", href: "/#features" },
-    { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
-    { name: language === "en" ? "Doctor Review" : "মতামত", href: "/#testimonials" },
+    { name: language === "en" ? "AI Demo" : "এআই ডেমো", href: "/#ai-demo" },
     { name: language === "en" ? "Videos" : "ভিডিও", href: "/#videos" },
+    { name: language === "en" ? "Features" : "ফিচার", href: "/#features" },
+    { name: language === "en" ? "Teleradiology" : "টেলিরেডিওলজি", href: "/#teleradiology" },
+    { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
     { name: language === "en" ? "Contact" : "যোগাযোগ", href: "/#contact" },
     { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
   ];
@@ -113,13 +113,13 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group">
-            <div className={`relative transition-all duration-300 ${scrolled ? "h-10 w-36 sm:w-40" : "h-12 w-40 sm:w-44"} group-hover:scale-[1.02]`}>
+            <div className={`relative transition-all duration-300 ${scrolled ? "h-11 w-44 sm:w-48" : "h-13 sm:h-14 w-48 sm:w-56"} group-hover:scale-[1.02]`}>
               <Image
                 src="/assets/logo-blue.png"
                 alt="SJ EMR Logo"
                 fill
                 priority
-                sizes="(max-width: 768px) 160px, 200px"
+                sizes="(max-width: 768px) 200px, 260px"
                 className="object-contain object-left"
               />
             </div>
