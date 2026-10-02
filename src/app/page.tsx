@@ -9,6 +9,7 @@ import FeatureDeepDive from "@/components/FeatureDeepDive";
 import DoctorWorkflowInteractive from "@/components/DoctorWorkflowInteractive";
 import PricingSection from "@/components/PricingSection";
 import TestimonialSection from "@/components/TestimonialSection";
+import VideoShowcase from "@/components/VideoShowcase";
 import DemoBookingForm from "@/components/DemoBookingForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -46,6 +47,9 @@ export default function Home() {
 
       {/* Real Doctor Testimonials & Medical Credentials */}
       <TestimonialSection language={language} />
+
+      {/* Official YouTube Video Showcase & Healthcare Leaders */}
+      <VideoShowcase language={language} />
 
       {/* Interactive BMDC Doctor Verification & Zoom Demo Scheduler */}
       <DemoBookingForm language={language} selectedPlan={selectedPlan} />
