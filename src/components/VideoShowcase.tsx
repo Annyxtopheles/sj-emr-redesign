@@ -6,8 +6,6 @@ import { Play, ExternalLink, Video, UserCheck, Shield, Copy, Check } from "lucid
 
 interface VideoItem {
   id: string;
-  badgeEn: string;
-  badgeBn: string;
   titleEn: string;
   titleBn: string;
   speakerEn: string;
@@ -19,8 +17,6 @@ interface VideoItem {
 const VIDEOS: VideoItem[] = [
   {
     id: "vg7AoWvj5ug",
-    badgeEn: "Software Walkthrough",
-    badgeBn: "সফটওয়্যার ডেমো",
     titleEn: "Doctors' Electronic Medical Records Now in Bangladesh | SJ EMR",
     titleBn: "ডাক্তারদের ইলেক্ট্রনিক মেডিকেল রেকর্ড এখন বাংলাদেশে! | SJ EMR",
     speakerEn: "SJ EMR",
@@ -30,8 +26,6 @@ const VIDEOS: VideoItem[] = [
   },
   {
     id: "m7fBJIk9rO0",
-    badgeEn: "Doctor Interview",
-    badgeBn: "চিকিৎসকের আলোচনা",
     titleEn: "Normal Delivery After C-Section | Dr. Nusrat Ara Yusuf",
     titleBn: "সিজারের পর নরমাল ডেলিভারির সম্ভাবনা কতটুকু? | ডা: নুসরাত আরা ইউসুফ",
     speakerEn: "Dr. Nusrat Ara Yusuf & Shahabuddin Shuvo",
@@ -41,8 +35,6 @@ const VIDEOS: VideoItem[] = [
   },
   {
     id: "oslmaV7ZTpA",
-    badgeEn: "Advocacy",
-    badgeBn: "সচেতনতা বার্তা",
     titleEn: "Barrister Suman on the Importance of EMR | SJ EMR",
     titleBn: "ব্যারিস্টার সুমন তুলে ধরলেন EMR এর গুরুত্ব | SJ EMR",
     speakerEn: "Barrister Syed Sayedul Haque Suman",
@@ -164,13 +156,10 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             {/* Video Details Card */}
             <div className="p-6 space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-950/70 border border-emerald-800 text-emerald-300">
-                    {language === "en" ? activeVideo.badgeEn : activeVideo.badgeBn}
-                  </span>
-                  <span className="text-xs text-slate-400 flex items-center gap-1.5">
-                    <UserCheck className="w-3.5 h-3.5 text-slate-400" />
-                    <span>{language === "en" ? activeVideo.speakerEn : activeVideo.speakerBn}</span>
+                <div className="flex items-center gap-2 text-xs text-slate-400">
+                  <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="font-medium text-slate-300">
+                    {language === "en" ? activeVideo.speakerEn : activeVideo.speakerBn}
                   </span>
                 </div>
 
@@ -214,7 +203,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             </div>
           </div>
 
-          {/* Side Playlist */}
+          {/* Side Playlist - Clean with NO tags and NO Playing pills */}
           <div className="lg:col-span-4 space-y-3">
             {VIDEOS.map((video) => {
               const isSelected = video.id === activeVideoId;
@@ -222,9 +211,9 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                 <button
                   key={video.id}
                   onClick={() => handleSelectVideo(video.id)}
-                  className={`w-full text-left p-3 rounded-xl border transition-all duration-200 flex gap-3.5 items-start group ${
+                  className={`w-full text-left p-3 rounded-xl border transition-all duration-200 flex gap-3.5 items-center group ${
                     isSelected
-                      ? "bg-slate-900 border-emerald-500/60 shadow-lg shadow-emerald-950/40 ring-1 ring-emerald-500/40 border-l-4 border-l-emerald-400"
+                      ? "bg-slate-900 border-emerald-500/60 shadow-lg shadow-emerald-950/40 border-l-4 border-l-emerald-400"
                       : "bg-slate-900/50 border-slate-800 hover:bg-slate-900 hover:border-slate-700"
                   }`}
                 >
@@ -246,21 +235,10 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                     </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Clean Content: Title & Channel only */}
                   <div className="min-w-0 flex-1 space-y-1">
-                    <div className="flex items-center justify-between gap-1.5">
-                      <span className="text-[10px] px-1.5 py-0.5 rounded font-medium bg-slate-800 border border-slate-700 text-slate-300">
-                        {language === "en" ? video.badgeEn : video.badgeBn}
-                      </span>
-                      {isSelected && (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 shrink-0">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          {language === "en" ? "Playing" : "চলছে"}
-                        </span>
-                      )}
-                    </div>
-                    <h4 className={`text-xs font-bold line-clamp-2 leading-snug transition-colors ${
-                      isSelected ? "text-emerald-300" : "text-white group-hover:text-slate-200"
+                    <h4 className={`text-xs font-semibold line-clamp-2 leading-snug transition-colors ${
+                      isSelected ? "text-emerald-400" : "text-slate-100 group-hover:text-white"
                     }`}>
                       {language === "en" ? video.titleEn : video.titleBn}
                     </h4>
