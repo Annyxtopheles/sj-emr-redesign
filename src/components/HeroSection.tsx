@@ -16,6 +16,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
+import { AuroraText } from "@/components/ui/AuroraText";
 
 interface HeroSectionProps {
   language: "en" | "bn";
@@ -77,17 +78,17 @@ export default function HeroSection({ language }: HeroSectionProps) {
             {language === "en" ? (
               <>
                 The{" "}
-                <span className="text-emerald-700">
+                <AuroraText>
                   #1 Doctor-First EMR
-                </span>{" "}
+                </AuroraText>{" "}
                 & Telemedicine Software in Bangladesh
               </>
             ) : (
               <>
                 বাংলাদেশের চিকিৎসকদের জন্য{" "}
-                <span className="text-emerald-700">
+                <AuroraText>
                   #১ নির্ভরযোগ্য ইএমআর
-                </span>{" "}
+                </AuroraText>{" "}
                 ও টেলিমেডিসিন সফটওয়্যার
               </>
             )}
