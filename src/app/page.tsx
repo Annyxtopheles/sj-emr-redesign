@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import MergedStats from "@/components/MergedStats";
 import TrustBar from "@/components/TrustBar";
 import VideoShowcase from "@/components/VideoShowcase";
 import FeatureDeepDive from "@/components/FeatureDeepDive";
@@ -30,6 +31,9 @@ export default function Home() {
 
       {/* Hero with Live Software Screenshot Preview */}
       <HeroSection language={language} />
+
+      {/* Unified Key Performance & Impact Statistics */}
+      <MergedStats language={language} />
 
       {/* Institutional Trust & Accreditations (BASIS, BMDC, SCCI) */}
       <TrustBar language={language} />
