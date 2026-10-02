@@ -2,65 +2,53 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Play, ExternalLink, Video, Sparkles, UserCheck, Shield, Copy, Check } from "lucide-react";
+import { Play, ExternalLink, Video, UserCheck, Shield, Copy, Check } from "lucide-react";
 
 interface VideoItem {
   id: string;
   badgeEn: string;
   badgeBn: string;
-  badgeColor: string;
   titleEn: string;
   titleBn: string;
   speakerEn: string;
   speakerBn: string;
   summaryEn: string;
   summaryBn: string;
-  keyHighlightEn: string;
-  keyHighlightBn: string;
 }
 
 const VIDEOS: VideoItem[] = [
   {
     id: "vg7AoWvj5ug",
-    badgeEn: "Live Demonstration",
-    badgeBn: "সরাসরি ডেমো",
-    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
-    titleEn: "Doctors' Electronic Medical Records Now in Bangladesh | SJ EMR Walkthrough",
-    titleBn: "ডাক্তারদের ইলেক্ট্রনিক মেডিকেল রেকর্ড এখন বাংলাদেশে! | SJ EMR ডেমো",
-    speakerEn: "SJ EMR Clinical Systems Team",
-    speakerBn: "এস জে ইএমআর ক্লিনিক্যাল সিস্টেমস টিম",
-    summaryEn: "Watch how Bangladeshi physicians generate complete, compliant digital prescriptions in under 60 seconds with intelligent dosage templates, ICD-11 diagnostic lookups, and one-click patient history access.",
-    summaryBn: "কীভাবে মাত্র ৬০ সেকেন্ডে বাংলা ও ইংরেজিতে নির্ভুল ডিজিটাল প্রেসক্রিপশন তৈরি, ডোজেজ টেমপ্লেট ও রোগীর পূর্ববর্তী ইতিহাস ট্র্যাক করা যায় তা বিস্তারিত দেখুন।",
-    keyHighlightEn: "60-Second Rx Creation & Auto-Dose Calculation",
-    keyHighlightBn: "৬০ সেকেন্ডে প্রেসক্রিপশন ও অটোমেটিক ডোজ গণনা",
+    badgeEn: "Software Walkthrough",
+    badgeBn: "সফটওয়্যার ডেমো",
+    titleEn: "Doctors' Electronic Medical Records Now in Bangladesh | SJ EMR",
+    titleBn: "ডাক্তারদের ইলেক্ট্রনিক মেডিকেল রেকর্ড এখন বাংলাদেশে! | SJ EMR",
+    speakerEn: "SJ EMR",
+    speakerBn: "এস জে ইএমআর",
+    summaryEn: "A step-by-step walkthrough showing prescription creation, patient history lookup, and chamber workflow in SJ EMR.",
+    summaryBn: "এস জে ইএমআর সফটওয়্যারে দ্রুত ডিজিটাল প্রেসক্রিপশন তৈরি ও রোগীর ইতিহাস ব্যবস্থাপনার বাস্তব ডেমো।",
   },
   {
     id: "m7fBJIk9rO0",
-    badgeEn: "Clinical Specialist Talk",
-    badgeBn: "বিশেষজ্ঞ চিকিৎসকের মতামত",
-    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
-    titleEn: "Maternal Health & Clinical Decision Support in Practice | Dr. Nusrat Ara Yusuf",
+    badgeEn: "Doctor Interview",
+    badgeBn: "চিকিৎসকের আলোচনা",
+    titleEn: "Normal Delivery After C-Section | Dr. Nusrat Ara Yusuf",
     titleBn: "সিজারের পর নরমাল ডেলিভারির সম্ভাবনা কতটুকু? | ডা: নুসরাত আরা ইউসুফ",
     speakerEn: "Dr. Nusrat Ara Yusuf & Shahabuddin Shuvo",
     speakerBn: "ডা: নুসরাত আরা ইউসুফ ও শাহাবুদ্দিন শুভ",
-    summaryEn: "Gynecologist and Obstetrics specialist discusses maternal risk factors, longitudinal diagnostic continuity, and how structured medical records prevent complications across prenatal care.",
-    summaryBn: "প্রসূতি ও স্ত্রীরোগ বিশেষজ্ঞ ডা: নুসরাত আরা ইউসুফ রোগীর পূর্ববর্তী চিকিৎসাপত্র সংরক্ষণ এবং মাতৃত্বকালীন স্বাস্থ্য সুরক্ষায় নির্ভুল ডিজিটাল রেকর্ডের ভূমিকা ব্যাখ্যা করছেন।",
-    keyHighlightEn: "Maternal History Continuity & Patient Safety",
-    keyHighlightBn: "ধারাবাহিক স্বাস্থ্য ইতিহাস ও রোগীর নিরাপত্তা",
+    summaryEn: "Discussion on maternal healthcare and the critical role of maintaining patient treatment history for safe clinical decisions.",
+    summaryBn: "মাতৃত্বকালীন স্বাস্থ্য সুরক্ষা এবং রোগীর পূর্ববর্তী চিকিৎসার ইতিহাস সংরক্ষণের ওপর বিশেষজ্ঞ আলোচনা।",
   },
   {
     id: "oslmaV7ZTpA",
-    badgeEn: "National Health Advocacy",
-    badgeBn: "জাতীয় স্বাস্থ্য সচেতনতা",
-    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
-    titleEn: "Barrister Suman Highlights the Urgent Importance of EMR for Bangladesh",
+    badgeEn: "Advocacy",
+    badgeBn: "সচেতনতা বার্তা",
+    titleEn: "Barrister Suman on the Importance of EMR | SJ EMR",
     titleBn: "ব্যারিস্টার সুমন তুলে ধরলেন EMR এর গুরুত্ব | SJ EMR",
     speakerEn: "Barrister Syed Sayedul Haque Suman",
     speakerBn: "ব্যারিস্টার সৈয়দ সায়েদুল হক সুমন",
-    summaryEn: "Prominent lawyer highlights why electronic records are indispensable for transparent healthcare: defending honest physicians against false negligence claims, stopping counterfeit prescriptions, and guaranteeing patient rights.",
-    summaryBn: "চিকিৎসক ও রোগী উভয়ের নিরাপত্তা, প্রেসক্রিপশনের জালিয়াতি রোধ এবং চিকিৎসা সেবায় সর্বোচ্চ স্বচ্ছতা নিশ্চিত করতে ইএমআরের প্রয়োজনীয়তা তুলে ধরেছেন ব্যারিস্টার সুমন।",
-    keyHighlightEn: "Legal Protection for Doctors & Patient Rights",
-    keyHighlightBn: "চিকিৎসকদের আইনি সুরক্ষা ও নির্ভুল চিকিৎসা নিশ্চিতকরণ",
+    summaryEn: "Insights on healthcare transparency, stopping fake prescriptions, and legal safety for practicing physicians.",
+    summaryBn: "চিকিৎসা সেবায় স্বচ্ছতা আনা, ভুয়া প্রেসক্রিপশন রোধ এবং চিকিৎসকদের আইনি সুরক্ষায় ইএমআরের ভূমিকা।",
   },
 ];
 
@@ -88,39 +76,23 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
 
   return (
     <section id="videos" className="py-16 sm:py-20 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-900 scroll-mt-20">
-      {/* Background Subtle Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-teal-500/10 blur-[120px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3">
               <Video className="w-3.5 h-3.5" />
-              <span>{language === "en" ? "Media & Video Demonstrations" : "ভিডিও ও ডেমোস্ট্রেশন"}</span>
+              <span>{language === "en" ? "Videos" : "ভিডিও"}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              {language === "en" ? (
-                <>
-                  See SJ EMR in Action & Hear From{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
-                    Healthcare Leaders
-                  </span>
-                </>
-              ) : (
-                <>
-                  ভিডিওতে দেখুন এস জে ইএমআর এবং শুনুন{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
-                    বিশেষজ্ঞদের মতামত
-                  </span>
-                </>
-              )}
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
               {language === "en"
-                ? "Live software demonstrations, clinical specialist discussions, and national advocacy on why electronic medical records are vital for modern Bangladesh."
-                : "সরাসরি সফটওয়্যার ব্যবহার পদ্ধতি, বিশেষজ্ঞ চিকিৎসকের ক্লিনিক্যাল অভিজ্ঞতা এবং বাংলাদেশে ডিজিটাল স্বাস্থ্যসেবার রূপান্তর নিয়ে শীর্ষ বক্তাদের বার্তা।"}
+                ? "Video Demonstrations & Talks"
+                : "ভিডিও ডেমো ও চিকিৎসকদের আলোচনা"}
+            </h2>
+            <p className="mt-2.5 text-sm sm:text-base text-slate-400">
+              {language === "en"
+                ? "Watch SJ EMR in action and hear doctors discuss patient safety and electronic medical records in Bangladesh."
+                : "সরাসরি সফটওয়্যার ব্যবহার পদ্ধতি এবং চিকিৎসা সেবায় ডিজিটাল রেকর্ডের ভূমিকা নিয়ে বিশেষজ্ঞদের আলোচনা দেখুন।"}
             </p>
           </div>
 
@@ -129,7 +101,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
               href="https://www.youtube.com/channel/UC6TJ6W1BinAd2oVa358Vc4w"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all border border-slate-800 hover:border-red-500/40 shadow-sm hover:shadow-md group"
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all border border-slate-800 hover:border-red-500/40 shadow-sm group"
             >
               <span className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
                 <Play className="w-2.5 h-2.5 fill-current translate-x-0.2" />
@@ -142,13 +114,13 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
 
         {/* Video Theatre & Playlist Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Main Theatre Player (8 cols on lg) */}
-          <div className="lg:col-span-8 bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-md">
+          {/* Main Theatre Player */}
+          <div className="lg:col-span-8 bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
             {/* Video Screen Container 16:9 */}
             <div className="relative aspect-video w-full bg-black overflow-hidden">
               {isPlaying ? (
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${activeVideo.id}?autoplay=1&rel=0&modestbranding=1`}
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideo.id}?autoplay=1&rel=0`}
                   title={language === "en" ? activeVideo.titleEn : activeVideo.titleBn}
                   className="w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -173,44 +145,31 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                     alt={language === "en" ? activeVideo.titleEn : activeVideo.titleBn}
                     fill
                     sizes="(max-width: 1024px) 100vw, 66vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100"
+                    className="object-cover group-hover:scale-102 transition-transform duration-300"
                     priority
                   />
-                  {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {/* Subtle Dark Vignette */}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
 
-                  {/* Pulsing Center Play Button */}
+                  {/* Clean YouTube-style Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="absolute -inset-4 rounded-full bg-emerald-500/20 animate-ping" />
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-xl shadow-emerald-500/40 group-hover:scale-110 group-hover:bg-emerald-400 transition-all duration-300">
-                        <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current translate-x-0.5" />
-                      </div>
+                    <div className="w-16 h-12 rounded-xl bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-200">
+                      <Play className="w-6 h-6 fill-current translate-x-0.5" />
                     </div>
-                  </div>
-
-                  {/* Bottom Overlay Title Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-slate-200">
-                    <span className="px-2.5 py-1 rounded bg-black/70 backdrop-blur-sm border border-white/10 font-medium">
-                      {language === "en" ? "Click to Play Full HD" : "প্লে করতে ক্লিক করুন"}
-                    </span>
-                    <span className="px-2.5 py-1 rounded bg-emerald-500/80 text-slate-950 font-bold">
-                      YouTube HD
-                    </span>
                   </div>
                 </div>
               )}
             </div>
 
             {/* Video Details Card */}
-            <div className="p-6 sm:p-7 space-y-4">
+            <div className="p-6 space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className={`px-2.5 py-1 rounded-md text-xs font-semibold border ${activeVideo.badgeColor}`}>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-950/70 border border-emerald-800 text-emerald-300">
                     {language === "en" ? activeVideo.badgeEn : activeVideo.badgeBn}
                   </span>
-                  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
-                    <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="text-xs text-slate-400 flex items-center gap-1.5">
+                    <UserCheck className="w-3.5 h-3.5 text-slate-400" />
                     <span>{language === "en" ? activeVideo.speakerEn : activeVideo.speakerBn}</span>
                   </span>
                 </div>
@@ -224,12 +183,12 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                     {copied ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-emerald-400 font-medium">{language === "en" ? "Link Copied!" : "কপি হয়েছে!"}</span>
+                        <span className="text-emerald-400 font-medium">{language === "en" ? "Copied" : "কপি হয়েছে"}</span>
                       </>
                     ) : (
                       <>
                         <Copy className="w-3.5 h-3.5 text-slate-400" />
-                        <span>{language === "en" ? "Share Link" : "শেয়ার"}</span>
+                        <span>{language === "en" ? "Share" : "শেয়ার"}</span>
                       </>
                     )}
                   </button>
@@ -237,7 +196,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                     href={`https://youtu.be/${activeVideo.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
                   >
                     <span>YouTube</span>
                     <ExternalLink className="w-3 h-3" />
@@ -245,23 +204,18 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+              <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
                 {language === "en" ? activeVideo.titleEn : activeVideo.titleBn}
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === "en" ? activeVideo.summaryEn : activeVideo.summaryBn}
               </p>
-
-              <div className="pt-2 flex items-center gap-2 text-emerald-400 font-medium text-xs border-t border-slate-800">
-                <Sparkles className="w-4 h-4 shrink-0" />
-                <span>{language === "en" ? activeVideo.keyHighlightEn : activeVideo.keyHighlightBn}</span>
-              </div>
             </div>
           </div>
 
-          {/* Side Playlist (4 cols on lg) - Clean without redundant headers */}
-          <div className="lg:col-span-4 space-y-3.5">
+          {/* Side Playlist */}
+          <div className="lg:col-span-4 space-y-3">
             {VIDEOS.map((video) => {
               const isSelected = video.id === activeVideoId;
               return (
@@ -295,7 +249,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                   {/* Content */}
                   <div className="min-w-0 flex-1 space-y-1">
                     <div className="flex items-center justify-between gap-1.5">
-                      <span className={`text-[10px] px-1.5 py-0.5 rounded font-semibold border ${video.badgeColor}`}>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded font-medium bg-slate-800 border border-slate-700 text-slate-300">
                         {language === "en" ? video.badgeEn : video.badgeBn}
                       </span>
                       {isSelected && (
@@ -318,22 +272,22 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
               );
             })}
 
-            {/* Chamber Conversion Mini Card */}
-            <div className="mt-4 p-4 rounded-xl bg-gradient-to-br from-emerald-950/60 to-slate-900 border border-emerald-900/60 space-y-2.5">
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                <Shield className="w-4 h-4" />
-                <span>{language === "en" ? "Live Chamber Demonstration" : "লাইভ চেম্বার ডেমো"}</span>
+            {/* Chamber Demo Card */}
+            <div className="mt-3 p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+              <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                <Shield className="w-3.5 h-3.5" />
+                <span>{language === "en" ? "Want a live demo?" : "লাইভ ডেমো দেখতে চান?"}</span>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-400 leading-relaxed">
                 {language === "en"
-                  ? "Want to see how SJ EMR handles your specific medical specialty and prescription pad? Book a free 1-on-1 walkthrough."
-                  : "আপনার স্পেশালিটি ও নিজস্ব প্রেসক্রিপশন প্যাড অনুযায়ী কীভাবে সিস্টেম কাজ করবে তা সরাসরি দেখতে ফ্রি ডেমো বুক করুন।"}
+                  ? "Book a free 15-minute 1-on-1 walkthrough tailored to your specialty."
+                  : "আপনার স্পেশালিটি অনুযায়ী সফটওয়্যার ব্যবহারের ফ্রি লাইভ ডেমো শিডিউল করুন।"}
               </p>
               <a
                 href="#demo"
-                className="inline-flex items-center justify-center w-full py-2 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors shadow-md shadow-emerald-950/30"
+                className="inline-flex items-center justify-center w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors shadow-sm"
               >
-                {language === "en" ? "Schedule 1-on-1 Demo" : "ফ্রি ডেমো শিডিউল করুন"}
+                {language === "en" ? "Schedule Demo" : "ডেমো শিডিউল করুন"}
               </a>
             </div>
           </div>
