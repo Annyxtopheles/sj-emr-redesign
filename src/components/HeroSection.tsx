@@ -17,6 +17,12 @@ import {
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import { AuroraText } from "@/components/ui/AuroraText";
+import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
+import {
+  LiveDashboardScreen,
+  LiveCalendarScreen,
+  LiveActionsScreen,
+} from "@/components/hero/LiveSoftwareScreens";
 
 interface HeroSectionProps {
   language: "en" | "bn";
@@ -169,36 +175,48 @@ export default function HeroSection({ language }: HeroSectionProps) {
             </button>
           </div>
 
-          {/* Clean Screenshot Display Frame (No mockup chrome or artificial browser bar) */}
+          {/* Clean Showcase Frame with Authentic Live Software Screens & Progressive Blur */}
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10">
-            <div className="relative aspect-[16/9.5] sm:aspect-[16/9] w-full bg-slate-50">
-              {(Object.keys(screenshots) as Array<keyof typeof screenshots>).map((key) => {
-                const item = screenshots[key];
-                const isActive = activeTab === key;
-                return (
-                  <div
-                    key={key}
-                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                      isActive
-                        ? "opacity-100 scale-100 z-10"
-                        : "opacity-0 scale-[1.012] pointer-events-none z-0"
-                    }`}
-                  >
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      priority={key === "dashboard"}
-                      sizes="(max-width: 1200px) 100vw, 1200px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                );
-              })}
+            <div className="relative aspect-[16/10] sm:aspect-[16/8.8] w-full bg-slate-50 overflow-hidden">
+              {/* Screen 1: Dashboard */}
+              <div
+                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  activeTab === "dashboard"
+                    ? "opacity-100 scale-100 z-10"
+                    : "opacity-0 scale-[1.012] pointer-events-none z-0"
+                }`}
+              >
+                <LiveDashboardScreen language={language} />
+              </div>
+
+              {/* Screen 2: Calendar */}
+              <div
+                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  activeTab === "calendar"
+                    ? "opacity-100 scale-100 z-10"
+                    : "opacity-0 scale-[1.012] pointer-events-none z-0"
+                }`}
+              >
+                <LiveCalendarScreen language={language} />
+              </div>
+
+              {/* Screen 3: Actions */}
+              <div
+                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  activeTab === "actions"
+                    ? "opacity-100 scale-100 z-10"
+                    : "opacity-0 scale-[1.012] pointer-events-none z-0"
+                }`}
+              >
+                <LiveActionsScreen language={language} />
+              </div>
+
+              {/* Progressive Blur Effect on the bottom of the screens */}
+              <ProgressiveBlur position="bottom" height="38%" tint="light" />
             </div>
 
             {/* Subtle contextual caption strip */}
-            <div className="px-4 py-3 bg-slate-50/90 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-slate-500 text-xs">
+            <div className="relative z-30 px-4 py-3 bg-white border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-slate-500 text-xs">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
                 <span className="font-medium text-slate-700">{screenshots[activeTab].desc}</span>
