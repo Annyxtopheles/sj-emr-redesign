@@ -168,8 +168,8 @@ export default function Footer({ language }: FooterProps) {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/#why-us" className="hover:text-emerald-400 transition-colors">
-                  {language === "en" ? "Why SJ EMR" : "সুবিধাসমূহ"}
+                <Link href="/#workflow" className="hover:text-emerald-400 transition-colors">
+                  {language === "en" ? "60s Consultation Workflow" : "৬০ সেকেন্ডের ওয়ার্কফ্লো"}
                 </Link>
               </li>
               <li>

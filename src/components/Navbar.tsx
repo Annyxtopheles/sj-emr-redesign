@@ -34,12 +34,12 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
   }, []);
 
   const navLinks = [
-    { name: language === "en" ? "AI Demo" : "এআই ডেমো", href: "/#ai-demo" },
-    { name: language === "en" ? "Videos" : "ভিডিও", href: "/#videos" },
     { name: language === "en" ? "Features" : "ফিচার", href: "/#features" },
+    { name: language === "en" ? "Videos" : "ভিডিও", href: "/#videos" },
+    { name: language === "en" ? "Workflow" : "ওয়ার্কফ্লো", href: "/#workflow" },
     { name: language === "en" ? "Teleradiology" : "টেলিরেডিওলজি", href: "/#teleradiology" },
+    { name: language === "en" ? "Reviews" : "মতামত", href: "/#testimonials" },
     { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
-    { name: language === "en" ? "Contact" : "যোগাযোগ", href: "/#contact" },
     { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
   ];
 

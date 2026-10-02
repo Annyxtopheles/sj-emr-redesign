@@ -4,12 +4,10 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
-import AIPlaygroundInteractive from "@/components/AIPlaygroundInteractive";
 import VideoShowcase from "@/components/VideoShowcase";
 import FeatureDeepDive from "@/components/FeatureDeepDive";
 import DoctorWorkflowInteractive from "@/components/DoctorWorkflowInteractive";
 import TeleradiologyShowcase from "@/components/TeleradiologyShowcase";
-import ProblemSolution from "@/components/ProblemSolution";
 import PricingSection from "@/components/PricingSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import DemoBookingForm from "@/components/DemoBookingForm";
@@ -35,23 +33,17 @@ export default function Home() {
       {/* Institutional Trust & Accreditations (BASIS, BMDC, SCCI) */}
       <TrustBar language={language} />
 
-      {/* Interactive Clinical AI Simulator (Voice-to-Note, Handwriting OCR, Lab Scanner) */}
-      <AIPlaygroundInteractive language={language} />
-
       {/* Official YouTube Video Showcase (Elevated: Real Walkthrough, Doctor Talks & Advocacy) */}
       <VideoShowcase language={language} />
 
       {/* 3 Core Pillars + 10 Specialized Clinical AI Tools from dev software */}
       <FeatureDeepDive language={language} />
 
-      {/* 60-Second Mobile AI Prescription Wizard Workflow */}
+      {/* 60-Second Mobile AI Prescription Wizard Workflow with Infographic KPI Stats */}
       <DoctorWorkflowInteractive language={language} />
 
-      {/* Teleradiology & Diagnostic Centers Portal (BD Radiology Analyzer) */}
+      {/* Teleradiology & Diagnostic Centers Portal (PACS DICOM Workstation Simulator) */}
       <TeleradiologyShowcase language={language} />
-
-      {/* Problem vs Solution Comparison Elevated with Infographic KPI Stats */}
-      <ProblemSolution language={language} />
 
       {/* Real Doctor Testimonials & Medical Credentials */}
       <TestimonialSection language={language} />

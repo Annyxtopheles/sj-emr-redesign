@@ -1,6 +1,7 @@
 "use client";
 
 import { Search, Zap, Printer, ArrowRight, Clock, CheckCircle2 } from "lucide-react";
+import CountUp from "@/components/ui/CountUp";
 
 interface DoctorWorkflowInteractiveProps {
   language: "en" | "bn";
@@ -44,10 +45,10 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-slate-50/70 border-b border-slate-200/80 scroll-mt-20">
+    <section id="workflow" className="py-16 lg:py-24 bg-slate-50/70 border-b border-slate-200/80 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
             <Clock className="w-3.5 h-3.5 text-emerald-600" />
             <span>{language === "en" ? "Streamlined 60-Second Consultation" : "ব্যস্ত চেম্বারে দ্রুততম সেবা"}</span>
@@ -62,6 +63,55 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
               ? "Three clear steps engineered to eliminate clerical friction in busy Bangladeshi OPD chambers handling 40–80 patients daily."
               : "ব্যস্ততম চেম্বারে প্রতিদিন ৪০-৮০ জন রোগীর নির্ভুল চিকিৎসাসেবা নিশ্চিত করতে সহজ ও দ্রুত ৩টি ধাপ।"}
           </p>
+        </div>
+
+        {/* Infographic KPI Stats Strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-14">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              &lt; <CountUp to={60} duration={1.8} />s
+            </div>
+            <div className="text-xs font-bold text-slate-900 mt-1">
+              {language === "en" ? "Consultation to Rx" : "প্রেসক্রিপশন প্রস্তুতের সময়"}
+            </div>
+            <div className="text-[11px] text-slate-500 mt-0.5">
+              {language === "en" ? "Down from 8-10 mins" : "৮-১০ মিনিটের বদলে ৬০ সেকেন্ড"}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              <CountUp to={100} duration={1.6} />%
+            </div>
+            <div className="text-xs font-bold text-slate-900 mt-1">
+              {language === "en" ? "BMDC Compliance" : "বিএমডিসি নির্দেশিকা সম্মত"}
+            </div>
+            <div className="text-[11px] text-slate-500 mt-0.5">
+              {language === "en" ? "Standardized legal pads" : "স্বচ্ছ ও সুনির্দিষ্ট প্রিন্ট ফরম্যাট"}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">0%</div>
+            <div className="text-xs font-bold text-slate-900 mt-1">
+              {language === "en" ? "Lost Patient Records" : "নথি হারানোর ঝুঁকি শূন্য"}
+            </div>
+            <div className="text-[11px] text-slate-500 mt-0.5">
+              {language === "en" ? "Lifetime cloud storage" : "আজীবন ক্লাউড হিস্ট্রি সংরক্ষণ"}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+              <CountUp to={2} duration={1.5} />+ Hrs
+            </div>
+            <div className="text-xs font-bold text-slate-900 mt-1">
+              {language === "en" ? "Daily Time Saved" : "প্রতিদিন সময় সাশ্রয়"}
+            </div>
+            <div className="text-[11px] text-slate-500 mt-0.5">
+              {language === "en" ? "More time for physical exams" : "রোগীর পরীক্ষায় পূর্ণ মনোযোগ"}
+            </div>
+          </div>
         </div>
 
         {/* Clean Minimalist Step Timeline */}
