@@ -30,6 +30,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
+import GlowCard from "@/components/ui/GlowCard";
 
 interface FeatureDeepDiveProps {
   language: "en" | "bn";
@@ -268,9 +269,9 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         {/* Top 3 Flagship Spotlight Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {spotlightFeatures.map((item, idx) => (
-            <div
+            <GlowCard
               key={idx}
-              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs hover:shadow-lg hover:border-emerald-400 transition-all flex flex-col justify-between group"
+              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs hover:shadow-lg hover:border-emerald-400 transition-all group"
             >
               <div>
                 <div className="relative h-44 sm:h-52 w-full bg-slate-50/90 rounded-2xl p-4 flex items-center justify-center border border-slate-100 overflow-hidden mb-6 group-hover:bg-emerald-50/40 group-hover:border-emerald-200/60 transition-colors">
@@ -308,7 +309,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                   ))}
                 </div>
               </div>
-            </div>
+            </GlowCard>
           ))}
         </div>
 
