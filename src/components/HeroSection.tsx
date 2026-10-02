@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Calendar,
@@ -25,6 +25,17 @@ interface HeroSectionProps {
 export default function HeroSection({ language }: HeroSectionProps) {
   const [activeTab, setActiveTab] = useState<"dashboard" | "calendar" | "actions">("dashboard");
 
+  useEffect(() => {
+    const keys: ("dashboard" | "calendar" | "actions")[] = ["dashboard", "calendar", "actions"];
+    const interval = setInterval(() => {
+      setActiveTab((prev) => {
+        const nextIdx = (keys.indexOf(prev) + 1) % keys.length;
+        return keys[nextIdx];
+      });
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
   const screenshots = {
     dashboard: {
       src: "/assets/dashboard-main.png",
@@ -34,7 +45,6 @@ export default function HeroSection({ language }: HeroSectionProps) {
         language === "en"
           ? "Real-time appointments, pending follow-ups, and instant patient search."
           : "দৈনিক অ্যাপয়েন্টমেন্ট, ফলো-আপ তালিকা ও তাৎক্ষণিক রোগী সার্চ সুবিধা।",
-      badge: language === "en" ? "Real-time Tele-chamber" : "রিয়েল-টাইম চেম্বার ভিউ",
     },
     calendar: {
       src: "/assets/calendar-schedule.png",
@@ -44,7 +54,6 @@ export default function HeroSection({ language }: HeroSectionProps) {
         language === "en"
           ? "Weekly & daily patient slot booking with doctor availability sync."
           : "সাপ্তাহিক ও দৈনিক স্লট বুকিং এবং ডাক্তারদের সময়সূচির পূর্ণাঙ্গ সমন্বয়।",
-      badge: language === "en" ? "Smart Slots & Token Sync" : "স্মার্ট স্লট ম্যানেজমেন্ট",
     },
     actions: {
       src: "/assets/dashboard-actions.png",
@@ -54,25 +63,14 @@ export default function HeroSection({ language }: HeroSectionProps) {
         language === "en"
           ? "Pre-loaded clinical tags (Fever, Gastric, BP, Cold) for 60-second prescribing."
           : "ক্লিনিক্যাল টেমপ্লেট ও ড্রাগ সাজেশনের মাধ্যমে মাত্র ৬০ সেকেন্ডে পূর্ণাঙ্গ প্রেসক্রিপশন।",
-      badge: language === "en" ? "60s Digital Prescription" : "৬০ সেকেন্ডে ই-প্রেসক্রিপশন",
     },
   };
 
   return (
-    <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
+    <section className="relative pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
-          {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/90 text-emerald-800 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
-            <Sparkles className="w-4 h-4 text-emerald-600" />
-            <span>
-              {language === "en"
-                ? "SJ EMR • Specially Engineered for Bangladeshi Doctors"
-                : "এস জে ইএমআর • বাংলাদেশি চিকিৎসকদের জন্য বিশেষভাবে নির্মিত"}
-            </span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
             {language === "en" ? (
@@ -102,7 +100,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
             <SpecularButton
               size="lg"
               tint="#059669"
@@ -125,39 +123,19 @@ export default function HeroSection({ language }: HeroSectionProps) {
               <span>{language === "en" ? "Start Free Trial" : "ফ্রি ট্রায়াল শুরু করুন"}</span>
             </a>
           </div>
-
-          {/* Value Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 mb-12">
-            <div className="flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>{language === "en" ? "14-Day Free Trial (0 BDT)" : "১৪ দিনের ফ্রি ট্রায়াল (০ টাকা)"}</span>
-            </div>
-            <div className="flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>{language === "en" ? "BMDC Compliant Format" : "BMDC নির্দেশিকা সমর্থিত"}</span>
-            </div>
-            <div className="flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>{language === "en" ? "Android Patient App Ready" : "রোগীর জন্য ডেডিকেটেড অ্যাপ"}</span>
-            </div>
-            <div className="flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>{language === "en" ? "24/7 Support in Dhaka & Sylhet" : "ঢাকা ও সিলেটে সার্বক্ষণিক সাপোর্ট"}</span>
-            </div>
-          </div>
         </div>
 
-        {/* Interactive Showcase Container with Real Screenshots */}
+        {/* Interactive Showcase Container with Clean Screenshots & Auto-Loop */}
         <div id="preview" className="relative max-w-6xl mx-auto scroll-mt-24">
           {/* Showcase Tabs */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-5">
             <button
               type="button"
               onClick={() => setActiveTab("dashboard")}
-              className={`px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === "dashboard"
                   ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -167,10 +145,10 @@ export default function HeroSection({ language }: HeroSectionProps) {
             <button
               type="button"
               onClick={() => setActiveTab("calendar")}
-              className={`px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === "calendar"
                   ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
               <Calendar className="w-4 h-4" />
@@ -180,10 +158,10 @@ export default function HeroSection({ language }: HeroSectionProps) {
             <button
               type="button"
               onClick={() => setActiveTab("actions")}
-              className={`px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === "actions"
                   ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
               <Clock className="w-4 h-4" />
@@ -191,45 +169,43 @@ export default function HeroSection({ language }: HeroSectionProps) {
             </button>
           </div>
 
-          {/* Mockup Frame */}
-          <div className="rounded-2xl bg-slate-900 p-2 sm:p-3 shadow-2xl shadow-slate-900/10 border border-slate-800">
-            {/* Browser top chrome */}
-            <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800 mb-2">
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              </div>
-              <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1 rounded-md text-[11px] text-slate-300">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>emr.com.bd/app/dashboard</span>
-              </div>
-              <div className="text-[11px] font-semibold text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 hidden sm:block">
-                {screenshots[activeTab].badge}
-              </div>
+          {/* Clean Screenshot Display Frame (No mockup chrome or artificial browser bar) */}
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10">
+            <div className="relative aspect-[16/9.5] sm:aspect-[16/9] w-full bg-slate-50">
+              {(Object.keys(screenshots) as Array<keyof typeof screenshots>).map((key) => {
+                const item = screenshots[key];
+                const isActive = activeTab === key;
+                return (
+                  <div
+                    key={key}
+                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                      isActive
+                        ? "opacity-100 scale-100 z-10"
+                        : "opacity-0 scale-[1.012] pointer-events-none z-0"
+                    }`}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      priority={key === "dashboard"}
+                      sizes="(max-width: 1200px) 100vw, 1200px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Main Screenshot Screen */}
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-slate-950">
-              <Image
-                src={screenshots[activeTab].src}
-                alt={screenshots[activeTab].alt}
-                fill
-                priority
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover object-top transition-opacity duration-300"
-              />
-            </div>
-
-            {/* Description strip below mockup */}
-            <div className="px-3 py-2.5 mt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-slate-400 text-xs">
+            {/* Subtle contextual caption strip */}
+            <div className="px-4 py-3 bg-slate-50/90 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-slate-500 text-xs">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span className="font-medium text-slate-200">{screenshots[activeTab].desc}</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
+                <span className="font-medium text-slate-700">{screenshots[activeTab].desc}</span>
               </div>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold"
+                className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-semibold shrink-0"
               >
                 <span>{language === "en" ? "Schedule Live Interactive Walkthrough" : "লাইভ সফটওয়্যার ওয়াকথ্রু দেখুন"}</span>
                 <ChevronRight className="w-3.5 h-3.5" />

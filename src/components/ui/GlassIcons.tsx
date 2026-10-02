@@ -25,6 +25,44 @@ export interface GlassIconsProps {
   className?: string;
 }
 
+export interface GlassIconBadgeProps {
+  icon: React.ReactNode;
+  color?: 'blue' | 'purple' | 'red' | 'indigo' | 'orange' | 'green' | string;
+  size?: number;
+  className?: string;
+  isActive?: boolean;
+}
+
+export const GlassIconBadge: React.FC<GlassIconBadgeProps> = ({
+  icon,
+  color = 'green',
+  size = 36,
+  className = '',
+  isActive = false,
+}) => {
+  const getBackgroundStyle = (c: string) => {
+    if (gradientMapping[c]) {
+      return { background: gradientMapping[c] };
+    }
+    return { background: c };
+  };
+
+  return (
+    <div
+      className={`glass-icon-badge ${className} ${isActive ? 'is-active' : ''}`}
+      style={{ fontSize: `${size / 4.5}px` }}
+      aria-hidden="true"
+    >
+      <span className="icon-btn__back" style={getBackgroundStyle(color)} />
+      <span className="icon-btn__front">
+        <span className="icon-btn__icon">
+          {icon}
+        </span>
+      </span>
+    </div>
+  );
+};
+
 const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
   const getBackgroundStyle = (color: string) => {
     if (gradientMapping[color]) {

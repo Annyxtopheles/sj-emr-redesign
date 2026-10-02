@@ -34,7 +34,7 @@ import {
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import GlowCard from "@/components/ui/GlowCard";
-import GlassIcons, { GlassIconItem } from "@/components/ui/GlassIcons";
+import { GlassIconBadge } from "@/components/ui/GlassIcons";
 
 interface FeatureDeepDiveProps {
   language: "en" | "bn";
@@ -112,6 +112,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "voice-to-note",
       icon: Mic,
+      color: "indigo",
       slug: "voice-to-note",
       badge: "STT Engine",
       title: language === "en" ? "Voice-to-Note (STT)" : "ভয়েস-টু-নোট (বাংলা ও ইংরেজি)",
@@ -123,6 +124,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "handwritten-ocr",
       icon: ScanLine,
+      color: "purple",
       slug: "handwritten-ocr",
       badge: "Vision OCR",
       title: language === "en" ? "Handwritten Pad OCR" : "হাতের লেখার প্রেসক্রিপশন OCR",
@@ -134,6 +136,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "diagnosis-assist",
       icon: Sparkles,
+      color: "green",
       slug: "diagnosis-assist",
       badge: "ICD Differential",
       title: language === "en" ? "Diagnosis Assist" : "ডায়াগনসিস অ্যাসিস্ট ও ডিফারেনশিয়াল",
@@ -145,6 +148,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "medication-safety",
       icon: AlertCircle,
+      color: "red",
       slug: "medication-safety",
       badge: "DGDA Safety",
       title: language === "en" ? "Medication Safety Check" : "ওষুধের নিরাপত্তা ও ইন্টারঅ্যাকশন চেক",
@@ -156,6 +160,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "lab-interpreter",
       icon: FileCheck2,
+      color: "blue",
       slug: "lab-interpreter",
       badge: "Pathology Analyzer",
       title: language === "en" ? "Lab Results Interpreter" : "ল্যাব রিপোর্ট অ্যানালাইজার",
@@ -167,6 +172,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "bangla-education",
       icon: Languages,
+      color: "orange",
       slug: "patient-education",
       badge: "Bangla Advisory",
       title: language === "en" ? "Bangla Patient Education" : "রোগীর জন্য সহজ বাংলায় নির্দেশনা",
@@ -178,6 +184,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "followup-planner",
       icon: CalendarClock,
+      color: "green",
       slug: "followup-planner",
       badge: "Chronic Recall",
       title: language === "en" ? "Follow-up & Recall Planner" : "ফলো-আপ প্ল্যানার ও শিডিউল রিকল",
@@ -189,6 +196,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "patient-history",
       icon: History,
+      color: "indigo",
       slug: "patient-history",
       badge: "Longitudinal Record",
       title: language === "en" ? "Patient History Summarizer" : "রোগীর আজীবন ইতিহাসের সামারি",
@@ -200,6 +208,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "smart-coding",
       icon: Tag,
+      color: "purple",
       slug: "smart-coding",
       badge: "WHO ICD-11",
       title: language === "en" ? "Smart Diagnostic Coding" : "স্মার্ট রোগ নির্ণয় ট্যাগিং ও কোডিং",
@@ -211,6 +220,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       id: "clinic-insights",
       icon: BarChart3,
+      color: "blue",
       slug: "ai-dashboard",
       badge: "OPD Analytics",
       title: language === "en" ? "Clinic AI Insights Dashboard" : "চেম্বার ইনসাইটস ও প্র্যাকটিস অ্যানালিটিক্স",
@@ -218,39 +228,6 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         language === "en"
           ? "Aggregates daily visit volumes, prevalent disease trends, average prescription speed, and chamber collections."
           : "দৈনিক রোগী সংখ্যা, সবচেয়ে প্রচলিত রোগের প্রবণতা এবং চেম্বারের আয়-ব্যয়ের সার্বিক অ্যানালিটিক্স রিপোর্ট।",
-    },
-  ];
-
-  const specialtyIcons: GlassIconItem[] = [
-    {
-      icon: <Stethoscope className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Medicine" : "মেডিসিন",
-      color: "green",
-    },
-    {
-      icon: <HeartPulse className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Cardiology" : "হৃদরোগ",
-      color: "red",
-    },
-    {
-      icon: <Baby className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Pediatrics" : "শিশুরোগ",
-      color: "orange",
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Dermatology" : "চর্মরোগ",
-      color: "purple",
-    },
-    {
-      icon: <Activity className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Orthopedics" : "অর্থোপেডিক",
-      color: "blue",
-    },
-    {
-      icon: <UserCheck className="w-6 h-6 text-white" />,
-      label: language === "en" ? "Gynecology" : "স্ত্রীরোগ",
-      color: "indigo",
     },
   ];
 
@@ -375,42 +352,17 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* LEFT: Stacked List of 10 Tools (Scrollable on desktop with active state & progress bar) */}
-          <div className="lg:col-span-5 flex flex-col space-y-2.5 max-h-[660px] overflow-y-auto pr-2 custom-scrollbar">
-            <div className="flex items-center justify-between px-2 py-1 mb-1 text-xs text-slate-500 font-medium border-b border-slate-100">
-              <span className="font-semibold text-slate-700">
-                {language === "en" ? "Select Tool to Inspect" : "টুল নির্বাচন করে ইন্টারফেস দেখুন"}
-              </span>
-              <button
-                type="button"
-                onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="inline-flex items-center gap-1 text-[11px] text-emerald-700 hover:text-emerald-800 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md transition-colors"
-                title={isAutoPlaying ? "Pause autoplay" : "Resume autoplay"}
-              >
-                {isAutoPlaying ? (
-                  <>
-                    <Pause className="w-3 h-3 text-emerald-600" />
-                    <span>{language === "en" ? "Autoplay ON" : "অটোপ্লে চালু"}</span>
-                  </>
-                ) : (
-                  <>
-                    <Play className="w-3 h-3 text-emerald-600" />
-                    <span>{language === "en" ? "Paused" : "স্থগিত"}</span>
-                  </>
-                )}
-              </button>
-            </div>
-
+          <div className="lg:col-span-5 flex flex-col space-y-2 max-h-[660px] overflow-y-auto pr-2 custom-scrollbar pt-1">
             {clinicalAiTools.map((tool, idx) => {
               const Icon = tool.icon;
               const isActive = activeToolIndex === idx;
-              const formattedNumber = String(idx + 1).padStart(2, "0");
 
               return (
                 <button
                   key={tool.id}
                   type="button"
                   onClick={() => handleSelectTool(idx)}
-                  className={`text-left w-full px-4 py-3 rounded-xl border transition-all relative overflow-hidden flex items-center justify-between gap-3 group cursor-pointer ${
+                  className={`text-left w-full px-3.5 py-3 rounded-2xl border transition-all relative overflow-hidden flex items-center justify-between gap-3 group cursor-pointer ${
                     isActive
                       ? "bg-emerald-50/90 border-emerald-400 text-emerald-950 shadow-xs ring-1 ring-emerald-500/20"
                       : "bg-white hover:bg-slate-50 border-slate-200/90 text-slate-700 hover:border-slate-300"
@@ -424,37 +376,25 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     />
                   )}
 
-                  <div className="flex items-center gap-3 min-w-0">
-                    {/* Icon */}
-                    <div
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-colors ${
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    {/* 3D Glass Icon Badge */}
+                    <GlassIconBadge
+                      icon={<Icon className="w-4 h-4" />}
+                      color={tool.color}
+                      size={36}
+                      isActive={isActive}
+                    />
+
+                    {/* Title (No numbers) */}
+                    <span
+                      className={`text-xs sm:text-sm truncate transition-colors ${
                         isActive
-                          ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
-                          : "bg-slate-100 border-slate-200 text-slate-600 group-hover:bg-emerald-50 group-hover:text-emerald-700 group-hover:border-emerald-200"
+                          ? "text-emerald-950 font-bold"
+                          : "text-slate-800 font-semibold group-hover:text-emerald-900"
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
-                    </div>
-
-                    {/* Title */}
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`text-xs font-mono font-bold ${
-                            isActive ? "text-emerald-700" : "text-slate-400"
-                          }`}
-                        >
-                          {formattedNumber}.
-                        </span>
-                        <span
-                          className={`text-xs sm:text-sm font-semibold truncate ${
-                            isActive ? "text-emerald-950 font-bold" : "text-slate-800"
-                          }`}
-                        >
-                          {tool.title}
-                        </span>
-                      </div>
-                    </div>
+                      {tool.title}
+                    </span>
                   </div>
 
                   {/* Right active status indicator */}
@@ -1163,8 +1103,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           </div>
         </div>
 
-        {/* Bottom Banner callout with 3D GlassIcons & SpecularButton */}
-        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl space-y-8">
+        {/* Bottom Banner callout with SpecularButton */}
+        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="max-w-2xl text-center lg:text-left">
               <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">
@@ -1195,11 +1135,6 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 <ArrowRight className="w-4 h-4 ml-1" />
               </SpecularButton>
             </div>
-          </div>
-
-          {/* 3D GlassIcons Grid */}
-          <div className="pt-2 border-t border-emerald-900/60 flex justify-center">
-            <GlassIcons items={specialtyIcons} />
           </div>
         </div>
       </div>
