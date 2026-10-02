@@ -182,24 +182,11 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                 key={plan.id}
                 className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all bg-white ${
                   isFeatured
-                    ? "border-2 border-emerald-500 shadow-lg ring-2 ring-emerald-500/10"
-                    : "border border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-sm"
+                    ? "border-2 border-emerald-500 shadow-sm"
+                    : "border border-slate-200/90 shadow-2xs hover:border-slate-300"
                 }`}
               >
                 <div>
-                  {/* Category Tag Positioned Neatly Above Plan Name */}
-                  <div className="mb-2">
-                    <span
-                      className={`inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider ${
-                        isFeatured
-                          ? "bg-emerald-100 text-emerald-900 border border-emerald-300"
-                          : "bg-slate-100 text-slate-600 border border-slate-200"
-                      }`}
-                    >
-                      {plan.tag}
-                    </span>
-                  </div>
-
                   {/* Plan Name */}
                   <h3 className="text-lg font-bold text-slate-900 mb-1.5">{plan.name}</h3>
 
