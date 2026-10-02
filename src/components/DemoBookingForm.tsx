@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Calendar,
   Video,
@@ -105,8 +106,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
-                  <ShieldCheck className="w-4 h-4" />
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center shrink-0 p-1">
+                  <Image
+                    src="/assets/bmdc-logo.svg"
+                    alt="BMDC"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 object-contain"
+                  />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">
@@ -213,7 +220,15 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                             : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
-                        <Stethoscope className="w-3.5 h-3.5" />
+                        <Image
+                          src="/assets/bmdc-logo.svg"
+                          alt="BMDC"
+                          width={14}
+                          height={14}
+                          className={`w-3.5 h-3.5 object-contain ${
+                            formData.userType === "doctor" ? "brightness-0 invert" : ""
+                          }`}
+                        />
                         <span>{language === "en" ? "BMDC Doctor" : "বিএমডিসি ডাক্তার"}</span>
                       </button>
 

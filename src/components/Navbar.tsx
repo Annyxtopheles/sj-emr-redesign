@@ -52,7 +52,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-800/80 text-emerald-200 font-medium text-[11px] shrink-0">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <Image src="/assets/bmdc-logo.svg" alt="BMDC" width={14} height={14} className="w-3.5 h-3.5 object-contain" />
               {language === "en" ? "BMDC Compliant" : "BMDC নির্দেশিকা সম্মত"}
             </span>
             <span className="hidden md:inline text-emerald-300/90 text-xs truncate">

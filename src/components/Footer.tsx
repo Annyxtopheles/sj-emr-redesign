@@ -101,12 +101,22 @@ export default function Footer({ language }: FooterProps) {
                 ? "SJ EMR is Bangladesh's premier web and mobile EMR platform engineered by SJ Innovation LLC. Designed to empower doctors, clinics, and hospitals with rapid digital prescriptions, seamless telemedicine, and secure patient data management."
                 : "এস জে ইএমআর বাংলাদেশের শীর্ষস্থানীয় ইএমআর ও টেলিমেডিসিন সফটওয়্যার, যা এস জে ইনোভেশন এলএলসি দ্বারা নির্মিত। চিকিৎসক ও ক্লিনিকের জন্য দ্রুততম প্রেসক্রিপশন ও শতভাগ নিরাপদ ডেটা নিশ্চিত করে।"}
             </p>
-            <div className="flex items-center gap-2 pt-2">
-              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">
+                <Image
+                  src="/assets/bmdc-logo.svg"
+                  alt="BMDC Logo"
+                  width={14}
+                  height={14}
+                  className="w-3.5 h-3.5 object-contain"
+                />
+                BMDC Standard Compliant
+              </span>
+              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1 shadow-2xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 BASIS Member #1732
               </span>
-              <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-200">
+              <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-200 shadow-2xs">
                 SCCI Member
               </span>
             </div>

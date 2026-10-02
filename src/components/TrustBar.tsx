@@ -11,6 +11,18 @@ interface TrustBarProps {
 export default function TrustBar({ language }: TrustBarProps) {
   const credentials = [
     {
+      title: language === "en" ? "BMDC Compliance" : "বিএমডিসি নির্দেশিকা",
+      subtitle:
+        language === "en"
+          ? "Bangladesh Medical & Dental Council prescription format rules"
+          : "বাংলাদেশ মেডিকেল অ্যান্ড ডেন্টাল কাউন্সিল প্রেসক্রিপশন মান সম্মত",
+      tag: language === "en" ? "Statutory Council" : "জাতীয় কাউন্সিল",
+      logo: "/assets/bmdc-logo.svg",
+      href: "https://bmdc.org.bd/",
+      width: 914,
+      height: 914,
+    },
+    {
       title: language === "en" ? "Member of BASIS" : "বেসিস (BASIS) সদস্য",
       subtitle:
         language === "en"
@@ -89,7 +101,7 @@ export default function TrustBar({ language }: TrustBarProps) {
         </div>
 
         {/* Real Logos & Verified Credentials Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
           {credentials.map((item, idx) => (
             <a
               key={idx}

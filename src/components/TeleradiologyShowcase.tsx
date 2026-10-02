@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Scan,
   FileText,
@@ -663,8 +664,14 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                           <FileCheck className="w-3.5 h-3.5" />
                           <span>{language === "en" ? "Stage 04: Official Signed Report" : "ধাপ ০৪: অফিশিয়াল স্বাক্ষরিত রিপোর্ট"}</span>
                         </span>
-                        <span className="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700 flex items-center gap-1">
-                          <Check className="w-3 h-3 text-emerald-400" />
+                        <span className="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700 flex items-center gap-1.5">
+                          <Image
+                            src="/assets/bmdc-logo.svg"
+                            alt="BMDC"
+                            width={13}
+                            height={13}
+                            className="w-3.5 h-3.5 object-contain"
+                          />
                           <span>BMDC Signed</span>
                         </span>
                       </div>
@@ -679,9 +686,20 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
 
                         <div className="bg-slate-900 border border-slate-800 rounded-xl p-2.5 space-y-1.5">
                           <div className="flex items-center justify-between">
-                            <div>
-                              <div className="font-semibold text-slate-200">{currentCase.radiologist}</div>
-                              <div className="text-[10px] text-emerald-400">{currentCase.bmdcReg}</div>
+                            <div className="flex items-center gap-2">
+                              <div className="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-700/60 p-1 flex items-center justify-center shrink-0">
+                                <Image
+                                  src="/assets/bmdc-logo.svg"
+                                  alt="BMDC"
+                                  width={22}
+                                  height={22}
+                                  className="w-5.5 h-5.5 object-contain"
+                                />
+                              </div>
+                              <div>
+                                <div className="font-semibold text-slate-200">{currentCase.radiologist}</div>
+                                <div className="text-[10px] text-emerald-400 font-medium">{currentCase.bmdcReg}</div>
+                              </div>
                             </div>
                             <div className="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-xs">✓</div>
                           </div>
