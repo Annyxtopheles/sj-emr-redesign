@@ -1,19 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import {
   Calendar,
-  CheckCircle2,
   Video,
   FileText,
   Clock,
-  Sparkles,
   ArrowRight,
-  ShieldCheck,
-  Smartphone,
   Layers,
-  ChevronRight,
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import { AuroraText } from "@/components/ui/AuroraText";
@@ -73,7 +67,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
+    <section className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
@@ -176,7 +170,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
           </div>
 
           {/* Clean Showcase Frame with Authentic Live Software Screens & Progressive Blur */}
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10">
+          <div className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none overflow-hidden border border-b-0 border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10">
             <div className="relative aspect-[16/10] sm:aspect-[16/8.8] w-full bg-slate-50 overflow-hidden">
               {/* Screen 1: Dashboard */}
               <div
@@ -211,23 +205,8 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <LiveActionsScreen language={language} />
               </div>
 
-              {/* Progressive Blur Effect on the bottom of the screens */}
-              <ProgressiveBlur position="bottom" height="38%" tint="light" />
-            </div>
-
-            {/* Subtle contextual caption strip */}
-            <div className="relative z-30 px-4 py-3 bg-white border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-slate-500 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
-                <span className="font-medium text-slate-700">{screenshots[activeTab].desc}</span>
-              </div>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-semibold shrink-0"
-              >
-                <span>{language === "en" ? "Schedule Live Interactive Walkthrough" : "লাইভ সফটওয়্যার ওয়াকথ্রু দেখুন"}</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </a>
+              {/* Progressive Blur Effect on the bottom of the screens fading cleanly right to edge */}
+              <ProgressiveBlur position="bottom" height="42%" tint="light" />
             </div>
           </div>
         </div>
