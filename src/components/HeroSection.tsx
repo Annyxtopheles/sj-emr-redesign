@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from "react";
 import {
+  Users,
   Calendar,
-  Video,
   FileText,
-  Clock,
+  Video,
   ArrowRight,
-  Layers,
 } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import { AuroraText } from "@/components/ui/AuroraText";
@@ -39,30 +38,18 @@ export default function HeroSection({ language }: HeroSectionProps) {
   const screenshots = {
     dashboard: {
       src: "/assets/dashboard-main.png",
-      alt: "SJ EMR Main Doctor Dashboard",
-      label: language === "en" ? "Doctor Control Tower" : "ডাক্তার ড্যাশবোর্ড",
-      desc:
-        language === "en"
-          ? "Real-time appointments, pending follow-ups, and instant patient search."
-          : "দৈনিক অ্যাপয়েন্টমেন্ট, ফলো-আপ তালিকা ও তাৎক্ষণিক রোগী সার্চ সুবিধা।",
+      alt: "Doctor Dashboard & Chamber Queue",
+      label: language === "en" ? "Doctor Dashboard" : "ডাক্তার ড্যাশবোর্ড",
     },
     calendar: {
       src: "/assets/calendar-schedule.png",
-      alt: "SJ EMR Weekly Appointment Schedule Calendar",
-      label: language === "en" ? "Interactive Chamber Schedule" : "চেম্বার শিডিউল ক্যালেন্ডার",
-      desc:
-        language === "en"
-          ? "Weekly & daily patient slot booking with doctor availability sync."
-          : "সাপ্তাহিক ও দৈনিক স্লট বুকিং এবং ডাক্তারদের সময়সূচির পূর্ণাঙ্গ সমন্বয়।",
+      alt: "Chamber Appointment Schedule Calendar",
+      label: language === "en" ? "Chamber Schedule" : "চেম্বার শিডিউল",
     },
     actions: {
       src: "/assets/dashboard-actions.png",
-      alt: "SJ EMR Fast Prescription & Clinical Shortcuts",
-      label: language === "en" ? "Quick Rx & Clinical Tools" : "দ্রুত প্রেসক্রিপশন ও টুলস",
-      desc:
-        language === "en"
-          ? "Pre-loaded clinical tags (Fever, Gastric, BP, Cold) for 60-second prescribing."
-          : "ক্লিনিক্যাল টেমপ্লেট ও ড্রাগ সাজেশনের মাধ্যমে মাত্র ৬০ সেকেন্ডে পূর্ণাঙ্গ প্রেসক্রিপশন।",
+      alt: "Digital Prescription Pad",
+      label: language === "en" ? "Prescription Pad" : "প্রেসক্রিপশন প্যাড",
     },
   };
 
@@ -138,7 +125,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
-              <Layers className="w-4 h-4" />
+              <Users className="w-4 h-4" />
               <span>{screenshots.dashboard.label}</span>
             </button>
 
@@ -164,7 +151,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
-              <Clock className="w-4 h-4" />
+              <FileText className="w-4 h-4" />
               <span>{screenshots.actions.label}</span>
             </button>
           </div>

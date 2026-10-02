@@ -66,32 +66,32 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
           <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Today&apos;s OPD Queue</div>
           <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5 flex items-baseline gap-1.5">
-            <span>28 Total</span>
+            <span>28 Patients</span>
             <span className="text-[10px] text-emerald-600 font-medium">18 Completed</span>
           </div>
         </div>
 
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Avg Rx Time</div>
+          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Waiting in Chamber</div>
           <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5 flex items-baseline gap-1.5">
-            <span>58 Sec</span>
-            <span className="text-[10px] text-emerald-600 font-medium">-75% vs Paper</span>
+            <span>10 Patients</span>
+            <span className="text-[10px] text-amber-600 font-medium">Avg ~8m</span>
           </div>
         </div>
 
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">BMDC &amp; DGDA Sync</div>
+          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Prescriptions Issued</div>
           <div className="text-base sm:text-lg font-bold text-emerald-700 mt-0.5 flex items-baseline gap-1.5">
-            <span>100% Safe</span>
-            <span className="text-[10px] text-slate-400 font-normal">0 Collisions</span>
+            <span>18 Prescriptions</span>
+            <span className="text-[10px] text-emerald-600 font-normal">SMS Sent</span>
           </div>
         </div>
 
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Chamber Revenue</div>
+          <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Chamber Collection</div>
           <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5 flex items-baseline gap-1.5">
             <span>৳28,500</span>
-            <span className="text-[10px] text-emerald-600 font-medium">Cash + bKash</span>
+            <span className="text-[10px] text-emerald-600 font-medium">Today</span>
           </div>
         </div>
       </div>
@@ -174,36 +174,43 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
           </div>
         </div>
 
-        {/* Right: Quick Clinical Actions & Drug Presets */}
+        {/* Right: Quick Clinical Presets & Pending Reports */}
         <div className="lg:col-span-4 space-y-2 flex flex-col justify-between">
           <div className="bg-white rounded-xl p-3 border border-slate-200/90 shadow-2xs">
             <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-              Favorite Clinical Protocols
+              Frequent Rx Templates
             </div>
             <div className="space-y-1.5 text-[11px]">
               <div className="p-2 rounded-lg bg-emerald-50/70 border border-emerald-200/60 font-medium text-emerald-950 flex items-center justify-between">
-                <span>Viral URI Protocol (Adult)</span>
-                <span className="text-[10px] text-emerald-700 font-bold">1-Click</span>
+                <span>Viral Fever &amp; Cough (Adult)</span>
+                <span className="text-[10px] text-emerald-700 font-bold bg-white px-1.5 py-0.5 rounded border border-emerald-200">Apply</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/70 font-medium text-slate-700 flex items-center justify-between">
-                <span>T2DM + Metformin Start</span>
-                <span className="text-[10px] text-slate-500 font-bold">1-Click</span>
+                <span>Type 2 Diabetes (Routine)</span>
+                <span className="text-[10px] text-slate-600 font-semibold bg-white px-1.5 py-0.5 rounded border border-slate-200">Apply</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/70 font-medium text-slate-700 flex items-center justify-between">
-                <span>HTN Dual Regimen (Amlodipine)</span>
-                <span className="text-[10px] text-slate-500 font-bold">1-Click</span>
+                <span>Hypertension (Amlodipine)</span>
+                <span className="text-[10px] text-slate-600 font-semibold bg-white px-1.5 py-0.5 rounded border border-slate-200">Apply</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-slate-900 text-white rounded-xl p-3 border border-slate-800 shadow-2xs">
-            <div className="flex items-center justify-between text-[11px] font-semibold text-emerald-400 mb-1">
-              <span>Cloud Database Sync</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <div className="bg-white rounded-xl p-3 border border-slate-200/90 shadow-2xs">
+            <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center justify-between">
+              <span>Patient Lab Reports</span>
+              <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">2 New</span>
             </div>
-            <p className="text-[10px] text-slate-300 leading-snug">
-              Lifetime prescriptions, SMS receipts, and patient visits instantly synced to secure cloud servers.
-            </p>
+            <div className="space-y-1.5 text-[11px]">
+              <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200/60 flex items-center justify-between">
+                <span className="truncate text-slate-700 font-medium">CBC &amp; CRP • Begum Shahnaz</span>
+                <span className="text-[10px] text-emerald-700 font-semibold shrink-0">Attached ✓</span>
+              </div>
+              <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200/60 flex items-center justify-between">
+                <span className="truncate text-slate-700 font-medium">Chest X-Ray • Kamrul Hasan</span>
+                <span className="text-[10px] text-emerald-700 font-semibold shrink-0">Attached ✓</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -244,24 +251,24 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
       {/* Appointment Metrics */}
       <div className="grid grid-cols-3 gap-2 sm:gap-2.5 mb-3">
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-          <span className="text-[10px] font-semibold text-slate-500 uppercase">Chamber Capacity</span>
-          <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">30 / 30 Booked (100%)</div>
+          <span className="text-[10px] font-semibold text-slate-500 uppercase">Total Bookings</span>
+          <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">30 Patients</div>
         </div>
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
           <span className="text-[10px] font-semibold text-slate-500 uppercase">SMS Reminders</span>
-          <div className="text-base sm:text-lg font-bold text-emerald-700 mt-0.5">30/30 Sent (100%)</div>
+          <div className="text-base sm:text-lg font-bold text-emerald-700 mt-0.5">30 / 30 Sent</div>
         </div>
         <div className="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-          <span className="text-[10px] font-semibold text-slate-500 uppercase">Average Wait Time</span>
-          <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">6.4 Minutes</div>
+          <span className="text-[10px] font-semibold text-slate-500 uppercase">Shift Timing</span>
+          <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">04:00 – 09:00 PM</div>
         </div>
       </div>
 
       {/* Schedule Time Slots Grid */}
       <div className="bg-white rounded-xl border border-slate-200/90 shadow-2xs flex-1 min-h-0 overflow-hidden flex flex-col">
         <div className="px-3 py-2 bg-slate-100/70 border-b border-slate-200 flex items-center justify-between text-[11px] font-bold text-slate-700">
-          <span>Serial Time Slots (15-Minute Optimized Buffer)</span>
-          <span className="text-[10px] text-emerald-700 font-medium">0% No-Show Rate</span>
+          <span>Serial Time Slots (15-Minute Intervals)</span>
+          <span className="text-[10px] text-emerald-700 font-medium">Today&apos;s Chamber</span>
         </div>
 
         <div className="divide-y divide-slate-100 overflow-hidden text-[11px]">
@@ -299,9 +306,9 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
             <span className="col-span-2 font-mono font-bold text-slate-700">04:45 PM</span>
             <div className="col-span-5 font-medium text-slate-900 truncate">
-              Dr. Telemedicine Video Consult <span className="text-slate-400 font-normal text-[10px]">(Dhaka)</span>
+              Nasrin Sultana <span className="text-slate-400 font-normal text-[10px]">(Token #04)</span>
             </div>
-            <span className="col-span-3 text-slate-600 truncate">Remote Video Call</span>
+            <span className="col-span-3 text-slate-600 truncate">Telemedicine Video Consult</span>
             <span className="col-span-2 text-right">
               <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">
                 Next Up
@@ -312,12 +319,12 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
             <span className="col-span-2 font-mono font-bold text-slate-700">05:00 PM</span>
             <div className="col-span-5 font-medium text-slate-900 truncate">
-              Tanvir Ahmed <span className="text-slate-400 font-normal text-[10px]">(Token #04)</span>
+              Tanvir Ahmed <span className="text-slate-400 font-normal text-[10px]">(Token #05)</span>
             </div>
             <span className="col-span-3 text-slate-600 truncate">Pediatric Wheeze Check</span>
             <span className="col-span-2 text-right">
               <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-                Lobby Waiting
+                Waiting
               </span>
             </span>
           </div>
@@ -339,21 +346,25 @@ export function LiveActionsScreen({ language }: ScreenProps) {
           </div>
           <div>
             <div className="font-bold text-slate-900 text-[13px] leading-tight flex items-center gap-1.5">
-              <span>Digital Prescription Builder</span>
+              <span>Prescription (Rx) Pad</span>
               <span className="text-[10px] font-mono font-medium text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                 #RX-2026-9812
               </span>
             </div>
             <div className="text-[11px] text-slate-500">
-              Patient: Md. Rafiqul Islam (48Y / M) • Contact: +880 1711-xxxxxx
+              Patient: Md. Rafiqul Islam (48Y / M) • Serial #18 • Mobile: 01711-348291
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5">
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>BMDC Compliant</span>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-white text-slate-700 border border-slate-200 shadow-2xs">
+            <Printer className="w-3.5 h-3.5 text-slate-500" />
+            <span>Print Rx</span>
+          </span>
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-700 text-white shadow-2xs">
+            <Send className="w-3.5 h-3.5" />
+            <span>Send to Patient</span>
           </span>
         </div>
       </div>
@@ -419,6 +430,17 @@ export function LiveActionsScreen({ language }: ScreenProps) {
             </div>
             <span className="col-span-3 text-right text-slate-700 font-medium">14 Days</span>
           </div>
+        </div>
+
+        {/* Clinical Advice & Follow-up strip */}
+        <div className="px-3 py-2 bg-slate-50 border-t border-slate-200/80 flex items-center justify-between text-[11px]">
+          <span className="text-slate-500 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span>Advice: Complete antibiotic course, drink warm fluids • Auto-saved</span>
+          </span>
+          <span className="font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded text-[10px]">
+            Follow-up: 7 Days
+          </span>
         </div>
       </div>
     </div>
