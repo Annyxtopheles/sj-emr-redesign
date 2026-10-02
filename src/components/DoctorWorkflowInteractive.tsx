@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Zap, Printer, Clock, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 interface DoctorWorkflowInteractiveProps {
   language: "en" | "bn";
@@ -10,8 +10,6 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
   const steps = [
     {
       step: "01",
-      icon: Search,
-      time: language === "en" ? "< 5 Sec" : "< ৫ সেকেন্ড",
       title: language === "en" ? "Patient Intake & History" : "রোগীর আগমন ও অতীত ইতিহাস",
       desc:
         language === "en"
@@ -21,8 +19,6 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
     },
     {
       step: "02",
-      icon: Zap,
-      time: language === "en" ? "< 35 Sec" : "< ৩৫ সেকেন্ড",
       title: language === "en" ? "Smart Drug Auto-Suggest" : "স্মার্ট ড্রাগ অটো-সাজেশন",
       desc:
         language === "en"
@@ -32,8 +28,6 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
     },
     {
       step: "03",
-      icon: Printer,
-      time: language === "en" ? "< 10 Sec" : "< ১০ সেকেন্ড",
       title: language === "en" ? "1-Click Print & Patient SMS" : "১-ক্লিকে প্রিন্ট ও পেশেন্ট এসএমএস",
       desc:
         language === "en"
@@ -69,54 +63,33 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 relative z-10">
-            {steps.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="flex flex-col">
-                  {/* Top Row: Large Typographic Step Numeral & Quiet Time Label */}
-                  <div className="flex items-baseline justify-between mb-4">
-                    <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight select-none">
-                      {item.step}
-                    </span>
-                    <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>{item.time}</span>
-                    </span>
-                  </div>
-
-                  {/* Step Title & Icon */}
-                  <div className="flex items-center gap-2.5 mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  {/* Step Description */}
-                  <p className="text-sm text-slate-600 leading-relaxed mb-5 text-pretty">
-                    {item.desc}
-                  </p>
-
-                  {/* Clean Bottom Highlight */}
-                  <div className="mt-auto pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span className="text-pretty">{item.highlight}</span>
-                  </div>
+            {steps.map((item, idx) => (
+              <div key={idx} className="flex flex-col">
+                {/* Step Numeral */}
+                <div className="mb-4">
+                  <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight select-none">
+                    {item.step}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
-        </div>
 
-        {/* Minimal Bottom Summary Strip */}
-        <div className="mt-14 max-w-2xl mx-auto text-center pt-8 border-t border-slate-100">
-          <p className="text-xs text-slate-500">
-            {language === "en"
-              ? "Compatible with standard Windows PCs, laptops, regular thermal/laser printers, and pre-printed letterheads."
-              : "সাধারণ উইন্ডোজ কম্পিউটার, ল্যাপটপ এবং যেকোনো চেম্বার প্যাড প্রিন্টারের সাথে সম্পূর্ণভাবে উপযোগী।"}
-          </p>
+                {/* Step Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug mb-3">
+                  {item.title}
+                </h3>
+
+                {/* Step Description */}
+                <p className="text-sm text-slate-600 leading-relaxed mb-5 text-pretty">
+                  {item.desc}
+                </p>
+
+                {/* Clean Bottom Highlight */}
+                <div className="mt-auto pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span className="text-pretty">{item.highlight}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
