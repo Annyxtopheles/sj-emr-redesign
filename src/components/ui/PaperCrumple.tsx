@@ -270,7 +270,7 @@ export interface PaperCrumpleProps {
   backSrc?: string;
   width?: number;
   height?: number;
-  sceneHeight?: number;
+  sceneHeight?: number | string;
   imageFit?: 'cover' | 'contain';
   releaseBehavior?: 'restore' | 'creased' | 'stay';
   crumpleAmount?: number;

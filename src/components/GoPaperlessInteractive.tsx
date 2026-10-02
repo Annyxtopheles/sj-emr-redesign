@@ -23,24 +23,34 @@ interface GoPaperlessInteractiveProps {
 
 export default function GoPaperlessInteractive({ language }: GoPaperlessInteractiveProps) {
   const [isCrumpled, setIsCrumpled] = useState(false);
+  const [isTossing, setIsTossing] = useState(false);
   const [resetKey, setResetKey] = useState(0);
+
+  const triggerTossAndFade = () => {
+    if (isTossing || isCrumpled) return;
+    setIsTossing(true);
+    // Smooth physical fade & toss duration
+    setTimeout(() => {
+      setIsCrumpled(true);
+      setIsTossing(false);
+    }, 700);
+  };
 
   const handleStateChange = (state: string) => {
     if (state === "crumpled") {
-      // Delay slightly for physical feel before marking as crumpled
-      setTimeout(() => {
-        setIsCrumpled(true);
-      }, 700);
+      // User dropped or tossed the crumpled paper!
+      triggerTossAndFade();
     }
   };
 
   const handleReset = () => {
-    setResetKey((prev) => prev + 1);
+    setIsTossing(false);
     setIsCrumpled(false);
+    setResetKey((prev) => prev + 1);
   };
 
   const handleQuickCrumple = () => {
-    setIsCrumpled(true);
+    triggerTossAndFade();
   };
 
   return (
@@ -257,9 +267,19 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
               {/* OVERLAY: 3D Physical Paper Pad Crumple Simulation */}
               {!isCrumpled && (
-                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/70 backdrop-blur-[2px] transition-all duration-500">
+                <div
+                  className={`absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/70 backdrop-blur-[2px] transition-all duration-700 ease-out ${
+                    isTossing
+                      ? "opacity-0 scale-90 translate-y-10 blur-[1px] pointer-events-none"
+                      : "opacity-100 scale-100 translate-y-0"
+                  }`}
+                >
                   {/* Interaction Hint Banner */}
-                  <div className="absolute top-4 z-30 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500 text-emerald-200 text-xs font-semibold shadow-lg animate-bounce pointer-events-none">
+                  <div
+                    className={`absolute top-4 z-30 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500 text-emerald-200 text-xs font-semibold shadow-lg transition-opacity duration-300 pointer-events-none ${
+                      isTossing ? "opacity-0" : "animate-bounce"
+                    }`}
+                  >
                     <Move className="w-3.5 h-3.5 text-emerald-400" />
                     <span>
                       {language === "en"
@@ -268,30 +288,34 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                     </span>
                   </div>
 
-                  {/* 3D PaperCrumple WebGL Canvas */}
+                  {/* 3D PaperCrumple WebGL Canvas with expanded bounds */}
                   <PaperCrumple
                     src={getAssetPath("/assets/old-prescription-pad.png")}
                     alt="Old handwritten prescription pad"
                     width={330}
                     height={420}
-                    sceneHeight={520}
+                    sceneHeight="100%"
                     releaseBehavior="stay"
                     crumpleAmount={0.88}
                     creaseStrength={0.25}
                     paperColor="#f8f4ea"
-                    dragRadius={300}
+                    dragRadius={450}
                     returnToOrigin={false}
                     resetKey={resetKey}
                     onStateChange={handleStateChange}
-                    className="w-full max-w-sm"
+                    className="w-full h-full"
                   />
 
                   {/* Bottom manual trigger for touch or quick click */}
-                  <div className="absolute bottom-4 z-30">
+                  <div
+                    className={`absolute bottom-4 z-30 transition-opacity duration-300 ${
+                      isTossing ? "opacity-0 pointer-events-none" : "opacity-100"
+                    }`}
+                  >
                     <button
                       type="button"
                       onClick={handleQuickCrumple}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-medium transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-medium transition-colors cursor-pointer"
                     >
                       <Trash2 className="w-3 h-3 text-rose-400" />
                       <span>{language === "en" ? "Toss Paper Aside" : "কাগজ ফেলে দিন"}</span>
