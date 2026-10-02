@@ -195,7 +195,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                   <div className="mb-5 pb-5 border-b border-slate-100">
                     {billingCycle === "yearly" && plan.oldPrice && (
                       <div className="text-xs text-slate-400 line-through font-semibold mb-0.5">
-                        {plan.oldPrice} BDT
+                        {plan.oldPrice} {language === "en" ? "BDT" : "টাকা"}
                       </div>
                     )}
                     <div className="flex items-baseline gap-1">
@@ -207,7 +207,9 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                           : currentPrice}
                       </span>
                       {currentPrice !== "Custom" && (
-                        <span className="text-xs font-bold text-slate-500">BDT</span>
+                        <span className="text-xs font-bold text-slate-500">
+                          {language === "en" ? "BDT" : "টাকা"}
+                        </span>
                       )}
                     </div>
                     <div className="text-xs text-emerald-700 font-semibold mt-1">

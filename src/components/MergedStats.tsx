@@ -24,7 +24,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           {/* Stat 2: Consultation to Rx */}
           <div className="flex flex-col justify-start">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
-              &lt; <CountUp to={60} duration={1.8} />s
+              &lt; {language === "en" ? <><CountUp to={60} duration={1.8} />s</> : <>৬০ সে.</>}
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
               {language === "en" ? "Consultation to Rx" : "কনসালটেশন ও প্রেসক্রিপশন"}
@@ -37,7 +37,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           {/* Stat 3: Daily Time Saved */}
           <div className="flex flex-col justify-start">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
-              2+ Hrs
+              {language === "en" ? "2+ Hrs" : "২+ ঘণ্টা"}
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
               {language === "en" ? "Daily Time Saved" : "প্রতিদিন সময় সাশ্রয়"}

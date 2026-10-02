@@ -444,7 +444,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     {isActive ? (
                       <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-100/90 px-2 py-0.5 rounded-md border border-emerald-200/80">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                        <span>Active</span>
+                        <span>{language === "en" ? "Active" : "সক্রিয়"}</span>
                       </span>
                     ) : (
                       <ChevronRight className="w-3.5 h-3.5 text-slate-400 opacity-40 group-hover:opacity-100 group-hover:text-emerald-600 transition-all" />
@@ -489,7 +489,9 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                       color: activeTool.theme.icon,
                     }}
                   >
-                    Tool {String(activeToolIndex + 1).padStart(2, "0")} / 10
+                    {language === "en"
+                      ? `Tool ${String(activeToolIndex + 1).padStart(2, "0")} / 10`
+                      : `টুল ${String(activeToolIndex + 1).padStart(2, "0")} / ১০`}
                   </span>
                 </div>
               </div>

@@ -110,14 +110,14 @@ export default function Footer({ language }: FooterProps) {
                   height={14}
                   className="w-3.5 h-3.5 object-contain"
                 />
-                BMDC Standard Compliant
+                {language === "en" ? "BMDC Standard Compliant" : "বিএমডিসি স্ট্যান্ডার্ড মানসম্মত"}
               </span>
               <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1 shadow-2xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                BASIS Member #1732
+                {language === "en" ? "BASIS Member #1732" : "বেসিস সদস্য #১৭৩২"}
               </span>
               <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-200 shadow-2xs">
-                SCCI Member
+                {language === "en" ? "SCCI Member" : "এসসিসিআই সদস্য"}
               </span>
             </div>
 
@@ -228,7 +228,7 @@ export default function Footer({ language }: FooterProps) {
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Dhaka Office (Corporate)</span>
+              <span>{language === "en" ? "Dhaka Office (Corporate)" : "ঢাকা অফিস (কর্পোরেট)"}</span>
             </h4>
             <p className="text-xs text-slate-600 leading-relaxed">
               House No – 281/A (Level – 1), Road – 19/C, New DOHS, Mohakhali, Dhaka-1206, Bangladesh
@@ -254,7 +254,7 @@ export default function Footer({ language }: FooterProps) {
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Sylhet Regional Office</span>
+              <span>{language === "en" ? "Sylhet Regional Office" : "সিলেট আঞ্চলিক অফিস"}</span>
             </h4>
             <p className="text-xs text-slate-600 leading-relaxed">
               AHIL-802, 7th Floor, Al-Hamra Shopping City, Zindabazar, Sylhet-3100, Bangladesh
@@ -263,13 +263,13 @@ export default function Footer({ language }: FooterProps) {
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-emerald-600" />
                 <a href="tel:+8801707074577" className="hover:text-emerald-800 font-semibold text-emerald-700">
-                  +880 1707-074577 (Hotline)
+                  +880 1707-074577 {language === "en" ? "(Hotline)" : "(হটলাইন)"}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-slate-400" />
                 <a href="tel:+8809611677335" className="hover:text-emerald-700">
-                  +880 9611-677335 (Landline)
+                  +880 9611-677335 {language === "en" ? "(Landline)" : "(ল্যান্ডলাইন)"}
                 </a>
               </div>
               <div className="text-[11px] text-slate-400">Skype: SJI Sylhet</div>
@@ -280,8 +280,7 @@ export default function Footer({ language }: FooterProps) {
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © 2026 <span className="text-slate-800 font-semibold">SJ INNOVATION LLC</span>. ALL RIGHTS
-            RESERVED.
+            © 2026 <span className="text-slate-800 font-semibold">SJ INNOVATION LLC</span>. {language === "en" ? "ALL RIGHTS RESERVED." : "সর্বস্বত্ব সংরক্ষিত।"}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
@@ -295,11 +294,11 @@ export default function Footer({ language }: FooterProps) {
             </a>
             <span>•</span>
             <a href="#" className="hover:text-emerald-700 transition-colors">
-              Privacy Policy
+              {language === "en" ? "Privacy Policy" : "প্রাইভেসি পলিসি"}
             </a>
             <span>•</span>
             <a href="#" className="hover:text-emerald-700 transition-colors">
-              Terms of Service
+              {language === "en" ? "Terms of Service" : "শর্তাবলি"}
             </a>
           </div>
         </div>

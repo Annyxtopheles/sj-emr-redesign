@@ -63,7 +63,9 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="text-lg font-bold text-white">Dr. Ehasan UZ Zaman Khan</h4>
+                    <h4 className="text-lg font-bold text-white">
+                      {language === "en" ? "Dr. Ehasan UZ Zaman Khan" : "ডা: এহসান উজ জামান খান"}
+                    </h4>
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   </div>
                   <p className="text-xs text-emerald-300 font-medium">
@@ -89,7 +91,9 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
             </p>
           </div>
           <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 text-center">
-            <h4 className="text-2xl font-extrabold text-teal-700">&lt; 15 Mins</h4>
+            <h4 className="text-2xl font-extrabold text-teal-700">
+              {language === "en" ? "< 15 Mins" : "< ১৫ মিনিট"}
+            </h4>
             <p className="text-xs text-slate-600 mt-1">
               {language === "en" ? "Learning Curve / Onboarding" : "সহজেই সফটওয়্যার আয়ত্ত করার সময়"}
             </p>

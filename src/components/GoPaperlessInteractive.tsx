@@ -154,47 +154,59 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded uppercase tracking-wider">
-                          SJ EMR Digital Pad
+                          {language === "en" ? "SJ EMR Digital Pad" : "এস জে ইএমআর ডিজিটাল প্যাড"}
                         </span>
                         <span className="text-xs text-slate-500">#RX-2026-9812</span>
                       </div>
                       <h4 className="text-base sm:text-lg font-bold text-slate-900 mt-1">
-                        Prof. Dr. M. A. Rahman
+                        {language === "en" ? "Prof. Dr. M. A. Rahman" : "প্রফেসর ডা: এম. এ. রহমান"}
                       </h4>
                       <p className="text-xs text-slate-600">
-                        MBBS, FCPS (Medicine) • BMDC Reg #A-00000
+                        {language === "en"
+                          ? "MBBS, FCPS (Medicine) • BMDC Reg #A-00000"
+                          : "এমবিবিএস, এফসিপিএস (মেডিসিন) • বিএমডিসি রেজিঃ #এ-০০০০০"}
                       </p>
                     </div>
 
                     <div className="text-right hidden sm:block">
                       <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                         <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>BMDC Verified Format</span>
+                        <span>{language === "en" ? "BMDC Verified Format" : "বিএমডিসি ভেরিফায়েড ফরম্যাট"}</span>
                       </div>
-                      <p className="text-[11px] text-slate-400 mt-1">Date: 14 Oct 2026</p>
+                      <p className="text-[11px] text-slate-400 mt-1">
+                        {language === "en" ? "Date: 14 Oct 2026" : "তারিখ: ১৪ অক্টোবর ২০২৬"}
+                      </p>
                     </div>
                   </div>
 
                   {/* Patient Info Bar */}
                   <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 mb-4 flex flex-wrap items-center justify-between gap-2 text-xs">
                     <div>
-                      <span className="text-slate-500">Patient: </span>
-                      <span className="font-bold text-slate-900">Md. Rafiqul Islam</span>
-                      <span className="text-slate-500 ml-2">(48Y / Male)</span>
+                      <span className="text-slate-500">{language === "en" ? "Patient: " : "রোগী: "}</span>
+                      <span className="font-bold text-slate-900">
+                        {language === "en" ? "Md. Rafiqul Islam" : "মো: রফিকুল ইসলাম"}
+                      </span>
+                      <span className="text-slate-500 ml-2">
+                        {language === "en" ? "(48Y / Male)" : "(৪৮ বছর / পুরুষ)"}
+                      </span>
                     </div>
                     <div>
-                      <span className="text-slate-500">Contact: </span>
+                      <span className="text-slate-500">{language === "en" ? "Contact: " : "মোবাইল: "}</span>
                       <span className="font-medium text-slate-800">+880 1711-xxxxxx</span>
                     </div>
                     <div className="text-emerald-700 font-semibold">
-                      Past Visits: 3 (Lifetime Cloud Synced)
+                      {language === "en"
+                        ? "Past Visits: 3 (Lifetime Cloud Synced)"
+                        : "পূর্ববর্তী ভিজিট: ৩টি (ক্লাউড সংরক্ষিত)"}
                     </div>
                   </div>
 
                   {/* Prescribed Medicines Clean Digital List */}
                   <div className="space-y-2.5 mb-5">
                     <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                      Prescribed Medications (DGDA Database Synced)
+                      {language === "en"
+                        ? "Prescribed Medications (DGDA Database Synced)"
+                        : "প্রেসক্রিপশনকৃত ওষুধ (ডিজিডিএ ড্রাগ ডেটাবেস)"}
                     </div>
 
                     <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200 flex items-center justify-between text-xs">
@@ -203,7 +215,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                         <span className="text-slate-500 text-[11px] block">Paracetamol • Beximco Pharma</span>
                       </div>
                       <span className="font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
-                        1 + 1 + 1 (4 Days)
+                        {language === "en" ? "1 + 1 + 1 (4 Days)" : "১ + ১ + ১ (৪ দিন)"}
                       </span>
                     </div>
 
@@ -213,7 +225,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                         <span className="text-slate-500 text-[11px] block">Omeprazole • Square Pharmaceuticals</span>
                       </div>
                       <span className="font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
-                        1 + 0 + 1 (14 Days, Before Meals)
+                        {language === "en" ? "1 + 0 + 1 (14 Days, Before Meals)" : "১ + ০ + ১ (১৪ দিন, খাবারের আগে)"}
                       </span>
                     </div>
 
@@ -223,7 +235,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                         <span className="text-slate-500 text-[11px] block">Ketotifen • Beximco Pharma</span>
                       </div>
                       <span className="font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
-                        2 Tsp TDS (7 Days)
+                        {language === "en" ? "2 Tsp TDS (7 Days)" : "২ চামচ দিনে ৩ বার (৭ দিন)"}
                       </span>
                     </div>
                   </div>
@@ -233,12 +245,18 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                 <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div className="flex items-center gap-2 text-emerald-700 font-semibold">
                     <Smartphone className="w-4 h-4 text-emerald-600" />
-                    <span>Automated SMS with prescription link dispatched</span>
+                    <span>
+                      {language === "en"
+                        ? "Automated SMS with prescription link dispatched"
+                        : "রোগীর ফোনে প্রেসক্রিপশন লিঙ্কসহ স্বয়ংক্রিয় এসএমএস পাঠানো হয়েছে"}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-slate-500 text-[11px]">Time saved: 7 mins</span>
+                    <span className="text-slate-500 text-[11px]">
+                      {language === "en" ? "Time saved: 7 mins" : "সময় সাশ্রয়: ৭ মিনিট"}
+                    </span>
                     <span className="px-2.5 py-1 rounded bg-slate-900 text-white font-bold text-[11px]">
-                      Printed on Chamber Pad
+                      {language === "en" ? "Printed on Chamber Pad" : "চেম্বার প্যাডে প্রিন্ট সম্পন্ন"}
                     </span>
                   </div>
                 </div>

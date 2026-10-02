@@ -48,17 +48,17 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
   };
 
   const specializations = [
-    "General Medicine",
-    "Cardiology",
-    "Orthopedic Surgery",
-    "Gynecology & Obstetrics",
-    "Dermatology & Venereology",
-    "Pediatrics / Child Health",
-    "ENT (Otolaryngology)",
-    "Ophthalmology",
-    "Gastroenterology",
-    "Dental Surgery",
-    "Other Specialty",
+    { en: "General Medicine", bn: "জেনারেল মেডিসিন" },
+    { en: "Cardiology", bn: "কার্ডিওলজি (হৃদরোগ)" },
+    { en: "Orthopedic Surgery", bn: "অর্থোপেডিক সার্জারি" },
+    { en: "Gynecology & Obstetrics", bn: "গাইনি অ্যান্ড অবস্টেট্রিক্স" },
+    { en: "Dermatology & Venereology", bn: "ডার্মাটোলজি (চর্ম ও যৌন)" },
+    { en: "Pediatrics / Child Health", bn: "শিশু স্বাস্থ্য ও পেডিয়াট্রিক্স" },
+    { en: "ENT (Otolaryngology)", bn: "ইএনটি (নাক, কান, গলা)" },
+    { en: "Ophthalmology", bn: "চক্ষু রোগ (অপথ্যালমোলজি)" },
+    { en: "Gastroenterology", bn: "গ্যাস্ট্রোএন্টারোলজি" },
+    { en: "Dental Surgery", bn: "ডেন্টাল সার্জারি" },
+    { en: "Other Specialty", bn: "অন্যান্য স্পেশালিটি" },
   ];
 
   return (
@@ -339,8 +339,8 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                       >
                         <option value="">{language === "en" ? "Select Specialization" : "বাছাই করুন"}</option>
                         {specializations.map((spec) => (
-                          <option key={spec} value={spec}>
-                            {spec}
+                          <option key={spec.en} value={spec.en}>
+                            {language === "en" ? spec.en : spec.bn}
                           </option>
                         ))}
                       </select>
@@ -360,7 +360,11 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         type="text"
                         required={formData.userType === "doctor"}
                         placeholder={
-                          formData.userType === "doctor" ? "e.g. A-12345" : "Managing Director / Admin"
+                          formData.userType === "doctor"
+                            ? "e.g. A-12345"
+                            : language === "en"
+                            ? "Managing Director / Admin"
+                            : "ম্যানেজিং ডিরেক্টর / অ্যাডমিন"
                         }
                         value={formData.bmdcNumber}
                         onChange={(e) => setFormData({ ...formData, bmdcNumber: e.target.value })}
@@ -411,16 +415,16 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       >
                         <option value="Free (14 Days Trial)">
-                          Free 14 Days Trial (0 BDT)
+                          {language === "en" ? "Free 14 Days Trial (0 BDT)" : "ফ্রি ১৪ দিনের ট্রায়াল (০ টাকা)"}
                         </option>
                         <option value="Essential (2000 BDT/Month)">
-                          Essential (2,000 BDT/Month)
+                          {language === "en" ? "Essential (2,000 BDT/Month)" : "এসেনশিয়াল (২,০০০ টাকা/মাস)"}
                         </option>
                         <option value="Essential Plus (10000 BDT/Year)">
-                          Essential Plus (10,000 BDT/Year - Save 58%)
+                          {language === "en" ? "Essential Plus (10,000 BDT/Year - Save 58%)" : "এসেনশিয়াল প্লাস (১০,০০০ টাকা/বছর - ৫৮% সাশ্রয়)"}
                         </option>
                         <option value="Hospital/Diagnostic Center">
-                          Hospital / Diagnostic Center (Custom)
+                          {language === "en" ? "Hospital / Diagnostic Center (Custom)" : "হাসপাতাল / ডায়াগনস্টিক সেন্টার (কাস্টম)"}
                         </option>
                       </select>
                     </div>
