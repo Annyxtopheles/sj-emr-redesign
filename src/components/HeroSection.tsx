@@ -57,7 +57,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden bg-white">
+    <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
