@@ -120,19 +120,22 @@
   position: relative;
   width: 4.5em;
   height: 4.5em;
-  perspective: 24em;
+  perspective: 20em;
   transform-style: preserve-3d;
   flex-shrink: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
+  margin: 0.1em 0.2em 0.1em 0.1em;
 }
 
 .glass-icon-badge .icon-btn__back,
 .glass-icon-badge .icon-btn__front {
   transition:
-    opacity 0.3s cubic-bezier(0.83, 0, 0.17, 1),
-    transform 0.3s cubic-bezier(0.83, 0, 0.17, 1);
-  border-radius: 1.25em;
+    opacity 0.25s cubic-bezier(0.83, 0, 0.17, 1),
+    transform 0.25s cubic-bezier(0.83, 0, 0.17, 1);
+  border-radius: 1.1em;
   position: absolute;
   top: 0;
   left: 0;
@@ -141,41 +144,48 @@
 }
 
 .glass-icon-badge .icon-btn__back {
-  box-shadow: 0.3em -0.3em 0.5em hsla(223, 10%, 10%, 0.12);
+  box-shadow: 0.15em 0.2em 0.4em rgba(15, 23, 42, 0.2);
   display: block;
-  transform: rotate(15deg);
-  transform-origin: 100% 100%;
+  transform: rotate(10deg);
+  transform-origin: 75% 75%;
   will-change: transform;
 }
 
 .glass-icon-badge .icon-btn__front {
-  background-color: hsla(0, 0%, 100%, 0.25);
-  box-shadow: 0 0 0 0.1em hsla(0, 0%, 100%, 0.4) inset;
-  backdrop-filter: blur(0.75em);
-  -webkit-backdrop-filter: blur(0.75em);
+  /* Low opacity dark tint so it pops cleanly with rich contrast on white and light backgrounds */
+  background-color: rgba(15, 23, 42, 0.22);
+  box-shadow:
+    0 0 0 0.08em rgba(15, 23, 42, 0.25) inset,
+    0 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
-  transform-origin: 80% 50%;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 70% 50%;
   will-change: transform;
 }
 
 .glass-icon-badge .icon-btn__icon {
   margin: auto;
-  width: 1.9em;
-  height: 1.9em;
+  width: 2.2em;
+  height: 2.2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 /* 3D hover and active states when parent button is active or hovered */
 .group:hover .glass-icon-badge .icon-btn__back,
 .glass-icon-badge.is-active .icon-btn__back {
-  transform: rotate(25deg) translate3d(-0.4em, -0.4em, 0.4em);
+  transform: rotate(16deg) translate3d(-0.25em, -0.25em, 0.25em);
 }
 
 .group:hover .glass-icon-badge .icon-btn__front,
 .glass-icon-badge.is-active .icon-btn__front {
-  transform: translate3d(0, 0, 1.8em);
+  background-color: rgba(15, 23, 42, 0.3);
+  transform: translate3d(0, 0, 1.2em);
 }
 

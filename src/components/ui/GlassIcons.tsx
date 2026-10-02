@@ -36,7 +36,7 @@ export interface GlassIconBadgeProps {
 export const GlassIconBadge: React.FC<GlassIconBadgeProps> = ({
   icon,
   color = 'green',
-  size = 36,
+  size = 28,
   className = '',
   isActive = false,
 }) => {

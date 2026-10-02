@@ -352,7 +352,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* LEFT: Stacked List of 10 Tools (Scrollable on desktop with active state & progress bar) */}
-          <div className="lg:col-span-5 flex flex-col space-y-2 max-h-[660px] overflow-y-auto pr-2 custom-scrollbar pt-1">
+          <div className="lg:col-span-5 flex flex-col space-y-1.5 max-h-[660px] overflow-y-auto pr-2 custom-scrollbar pt-1">
             {clinicalAiTools.map((tool, idx) => {
               const Icon = tool.icon;
               const isActive = activeToolIndex === idx;
@@ -362,7 +362,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                   key={tool.id}
                   type="button"
                   onClick={() => handleSelectTool(idx)}
-                  className={`text-left w-full px-3.5 py-3 rounded-2xl border transition-all relative overflow-hidden flex items-center justify-between gap-3 group cursor-pointer ${
+                  className={`text-left w-full px-3 py-2 rounded-xl border transition-all relative overflow-hidden flex items-center justify-between gap-3 group cursor-pointer ${
                     isActive
                       ? "bg-emerald-50/90 border-emerald-400 text-emerald-950 shadow-xs ring-1 ring-emerald-500/20"
                       : "bg-white hover:bg-slate-50 border-slate-200/90 text-slate-700 hover:border-slate-300"
@@ -376,21 +376,21 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     />
                   )}
 
-                  <div className="flex items-center gap-3.5 min-w-0">
-                    {/* 3D Glass Icon Badge */}
+                  <div className="flex items-center gap-3 min-w-0">
+                    {/* 3D Glass Icon Badge (Refined compact size with dark tinted glass) */}
                     <GlassIconBadge
-                      icon={<Icon className="w-4 h-4" />}
+                      icon={<Icon className="w-3.5 h-3.5" />}
                       color={tool.color}
-                      size={36}
+                      size={28}
                       isActive={isActive}
                     />
 
                     {/* Title (No numbers) */}
                     <span
-                      className={`text-xs sm:text-sm truncate transition-colors ${
+                      className={`text-xs sm:text-[13px] truncate transition-colors ${
                         isActive
                           ? "text-emerald-950 font-bold"
-                          : "text-slate-800 font-semibold group-hover:text-emerald-900"
+                          : "text-slate-800 font-medium group-hover:text-emerald-900"
                       }`}
                     >
                       {tool.title}
@@ -400,12 +400,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                   {/* Right active status indicator */}
                   <div className="shrink-0 flex items-center">
                     {isActive ? (
-                      <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-100/90 px-2 py-0.5 rounded-md border border-emerald-200/80">
+                      <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-100/90 px-2 py-0.5 rounded-md border border-emerald-200/80">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                         <span>Active</span>
                       </span>
                     ) : (
-                      <ChevronRight className="w-4 h-4 text-slate-400 opacity-40 group-hover:opacity-100 group-hover:text-emerald-600 transition-all" />
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-400 opacity-40 group-hover:opacity-100 group-hover:text-emerald-600 transition-all" />
                     )}
                   </div>
                 </button>
