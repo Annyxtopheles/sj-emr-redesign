@@ -92,7 +92,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-emerald-700 transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-100"
           >
             <Phone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="tabular-nums font-mono">+880 1707-074577</span>
+            <span className="tabular-nums">+880 1707-074577</span>
           </a>
 
           {/* WhatsApp icon button */}

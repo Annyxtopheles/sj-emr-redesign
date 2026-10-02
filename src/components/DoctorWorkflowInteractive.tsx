@@ -75,7 +75,7 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
                 <div key={idx} className="flex flex-col">
                   {/* Top Row: Large Typographic Step Numeral & Quiet Time Label */}
                   <div className="flex items-baseline justify-between mb-4">
-                    <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight font-mono select-none">
+                    <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight select-none">
                       {item.step}
                     </span>
                     <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full flex items-center gap-1.5">

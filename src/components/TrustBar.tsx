@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle } from "lucide-react";
 
 interface TrustBarProps {
   language: "en" | "bn";
@@ -88,10 +87,6 @@ export default function TrustBar({ language }: TrustBarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
-            <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{language === "en" ? "Institutional Credibility & Trust" : "প্রাতিষ্ঠানিক গ্রহণযোগ্যতা ও নির্ভরতা"}</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Trusted by National Healthcare Bodies & Leading Practitioners"

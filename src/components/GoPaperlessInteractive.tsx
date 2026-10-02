@@ -156,7 +156,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                         <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded uppercase tracking-wider">
                           SJ EMR Digital Pad
                         </span>
-                        <span className="text-xs text-slate-500 font-mono">#RX-2026-9812</span>
+                        <span className="text-xs text-slate-500">#RX-2026-9812</span>
                       </div>
                       <h4 className="text-base sm:text-lg font-bold text-slate-900 mt-1">
                         Prof. Dr. M. A. Rahman
@@ -184,7 +184,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                     </div>
                     <div>
                       <span className="text-slate-500">Contact: </span>
-                      <span className="font-mono font-medium text-slate-800">+880 1711-xxxxxx</span>
+                      <span className="font-medium text-slate-800">+880 1711-xxxxxx</span>
                     </div>
                     <div className="text-emerald-700 font-semibold">
                       Past Visits: 3 (Lifetime Cloud Synced)
@@ -236,7 +236,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                     <span>Automated SMS with prescription link dispatched</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-slate-500 font-mono text-[11px]">Time saved: 7 mins</span>
+                    <span className="text-slate-500 text-[11px]">Time saved: 7 mins</span>
                     <span className="px-2.5 py-1 rounded bg-slate-900 text-white font-bold text-[11px]">
                       Printed on Chamber Pad
                     </span>

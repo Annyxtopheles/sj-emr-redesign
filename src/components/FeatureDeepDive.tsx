@@ -482,7 +482,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 </div>
                 <div className="shrink-0 flex items-center gap-2">
                   <span
-                    className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded border shadow-2xs"
+                    className="text-[10px] font-semibold px-2.5 py-1 rounded border shadow-2xs"
                     style={{
                       backgroundColor: activeTool.theme.bg,
                       borderColor: activeTool.theme.border,

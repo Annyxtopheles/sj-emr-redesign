@@ -107,7 +107,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
 
           <div className="divide-y divide-slate-100 overflow-hidden text-[11px]">
             <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center bg-emerald-50/50">
-              <span className="col-span-1 font-mono font-bold text-emerald-800">#18</span>
+              <span className="col-span-1 font-bold text-emerald-800">#18</span>
               <div className="col-span-4 font-semibold text-slate-900 truncate">
                 Md. Rafiqul Islam <span className="text-slate-400 font-normal text-[10px]">(48Y / M)</span>
               </div>
@@ -121,7 +121,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
             </div>
 
             <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-              <span className="col-span-1 font-mono font-bold text-slate-600">#19</span>
+              <span className="col-span-1 font-bold text-slate-600">#19</span>
               <div className="col-span-4 font-medium text-slate-800 truncate">
                 Begum Shahnaz <span className="text-slate-400 font-normal text-[10px]">(52Y / F)</span>
               </div>
@@ -134,7 +134,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
             </div>
 
             <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-              <span className="col-span-1 font-mono font-bold text-slate-600">#20</span>
+              <span className="col-span-1 font-bold text-slate-600">#20</span>
               <div className="col-span-4 font-medium text-slate-800 truncate">
                 Kamrul Hasan <span className="text-slate-400 font-normal text-[10px]">(35Y / M)</span>
               </div>
@@ -147,7 +147,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
             </div>
 
             <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-              <span className="col-span-1 font-mono font-bold text-slate-600">#21</span>
+              <span className="col-span-1 font-bold text-slate-600">#21</span>
               <div className="col-span-4 font-medium text-slate-800 truncate">
                 Tanvir Ahmed <span className="text-slate-400 font-normal text-[10px]">(12Y / M)</span>
               </div>
@@ -160,7 +160,7 @@ export function LiveDashboardScreen({ language }: ScreenProps) {
             </div>
 
             <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-              <span className="col-span-1 font-mono font-bold text-slate-600">#22</span>
+              <span className="col-span-1 font-bold text-slate-600">#22</span>
               <div className="col-span-4 font-medium text-slate-800 truncate">
                 Farhana Karim <span className="text-slate-400 font-normal text-[10px]">(28Y / F)</span>
               </div>
@@ -273,7 +273,7 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
 
         <div className="divide-y divide-slate-100 overflow-hidden text-[11px]">
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center bg-slate-50/50">
-            <span className="col-span-2 font-mono font-bold text-slate-500">04:00 PM</span>
+            <span className="col-span-2 font-bold text-slate-500">04:00 PM</span>
             <div className="col-span-5 font-semibold text-slate-900 truncate">
               Md. Rafiqul Islam <span className="text-slate-400 font-normal text-[10px]">(Token #01)</span>
             </div>
@@ -282,7 +282,7 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           </div>
 
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center bg-slate-50/50">
-            <span className="col-span-2 font-mono font-bold text-slate-500">04:15 PM</span>
+            <span className="col-span-2 font-bold text-slate-500">04:15 PM</span>
             <div className="col-span-5 font-semibold text-slate-900 truncate">
               Begum Shahnaz <span className="text-slate-400 font-normal text-[10px]">(Token #02)</span>
             </div>
@@ -291,7 +291,7 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           </div>
 
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center bg-emerald-50/60">
-            <span className="col-span-2 font-mono font-bold text-emerald-800">04:30 PM</span>
+            <span className="col-span-2 font-bold text-emerald-800">04:30 PM</span>
             <div className="col-span-5 font-bold text-slate-900 truncate">
               Kamrul Hasan <span className="text-slate-500 font-normal text-[10px]">(Token #03)</span>
             </div>
@@ -304,7 +304,7 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           </div>
 
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-            <span className="col-span-2 font-mono font-bold text-slate-700">04:45 PM</span>
+            <span className="col-span-2 font-bold text-slate-700">04:45 PM</span>
             <div className="col-span-5 font-medium text-slate-900 truncate">
               Nasrin Sultana <span className="text-slate-400 font-normal text-[10px]">(Token #04)</span>
             </div>
@@ -317,7 +317,7 @@ export function LiveCalendarScreen({ language }: ScreenProps) {
           </div>
 
           <div className="px-3 py-2 grid grid-cols-12 gap-2 items-center hover:bg-slate-50">
-            <span className="col-span-2 font-mono font-bold text-slate-700">05:00 PM</span>
+            <span className="col-span-2 font-bold text-slate-700">05:00 PM</span>
             <div className="col-span-5 font-medium text-slate-900 truncate">
               Tanvir Ahmed <span className="text-slate-400 font-normal text-[10px]">(Token #05)</span>
             </div>
@@ -347,7 +347,7 @@ export function LiveActionsScreen({ language }: ScreenProps) {
           <div>
             <div className="font-bold text-slate-900 text-[13px] leading-tight flex items-center gap-1.5">
               <span>Prescription (Rx) Pad</span>
-              <span className="text-[10px] font-mono font-medium text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+              <span className="text-[10px] font-medium text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                 #RX-2026-9812
               </span>
             </div>

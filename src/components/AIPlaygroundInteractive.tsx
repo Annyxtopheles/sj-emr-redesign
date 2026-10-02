@@ -217,8 +217,8 @@ export default function AIPlaygroundInteractive({ language }: AIPlaygroundProps)
                     <div className="text-[11px] text-slate-500">Care Skin Clinic, Dhaka</div>
                   </div>
 
-                  <div className="font-serif italic text-xs sm:text-sm text-slate-700 space-y-2 pl-3 border-l-2 border-emerald-500">
-                    <p className="font-sans font-bold not-italic text-slate-900">Rx</p>
+                  <div className="italic text-xs sm:text-sm text-slate-700 space-y-2 pl-3 border-l-2 border-emerald-500">
+                    <p className="font-bold not-italic text-slate-900">Rx</p>
                     <p>1. Tab. Napa Extend 665mg — 1+1+1 (3 days)</p>
                     <p>2. Cap Seclo 20mg — 1+0+1 (before meals)</p>
                     <p>3. Syp Adryll — 2 tsp TDS x 5 days</p>

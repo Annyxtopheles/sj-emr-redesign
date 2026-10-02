@@ -9,11 +9,11 @@ interface MergedStatsProps {
 export default function MergedStats({ language }: MergedStatsProps) {
   return (
     <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-12 gap-y-8 gap-x-4 sm:gap-x-8 items-start text-left">
-          {/* Stat 1: Lead Social-Proof Stat (Larger text & more width on desktop) */}
-          <div className="col-span-1 lg:col-span-4 flex flex-col justify-start">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 tracking-tight leading-none mb-2 tabular-nums">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-start text-left">
+          {/* Stat 1: Lead Social-Proof Stat */}
+          <div className="flex flex-col justify-start">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 tracking-tight leading-none mb-2">
               <CountUp to={62000} separator="," duration={2} />+
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
@@ -22,8 +22,8 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 2: Consultation to Rx */}
-          <div className="col-span-1 lg:col-span-3 flex flex-col justify-start">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2 tabular-nums">
+          <div className="flex flex-col justify-start">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               &lt; <CountUp to={60} duration={1.8} />s
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
@@ -35,8 +35,8 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 3: Daily Time Saved */}
-          <div className="col-span-1 lg:col-span-3 flex flex-col justify-start">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2 tabular-nums">
+          <div className="flex flex-col justify-start">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               2+ Hrs
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
@@ -48,8 +48,8 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 4: Lost Patient Records */}
-          <div className="col-span-1 lg:col-span-2 flex flex-col justify-start">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2 tabular-nums">
+          <div className="flex flex-col justify-start">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               0%
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
