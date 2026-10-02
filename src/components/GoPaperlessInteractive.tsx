@@ -66,7 +66,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
         </div>
 
         {/* 2-Column Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
           {/* Left Column: Why Switch Benefits */}
           <div className="lg:col-span-5 space-y-4">
             <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
@@ -123,19 +123,21 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
               </div>
             </div>
 
-            {/* Subtle Replay Option - Only displayed after paper is tossed */}
-            {isCrumpled && (
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs shadow-xs transition-all cursor-pointer"
-                >
-                  <RotateCcw className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>{language === "en" ? "Restore Paper Pad Demo" : "কাগজের প্যাড পুনরায় আনুন"}</span>
-                </button>
-              </div>
-            )}
+            {/* Replay Option - Fixed height slot so cards never shift */}
+            <div className="h-12 flex items-center pt-2">
+              <button
+                type="button"
+                onClick={handleReset}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs shadow-xs transition-all duration-300 cursor-pointer ${
+                  isCrumpled
+                    ? "opacity-100 pointer-events-auto translate-y-0"
+                    : "opacity-0 pointer-events-none -translate-y-1"
+                }`}
+              >
+                <RotateCcw className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{language === "en" ? "Restore Paper Pad" : "কাগজের প্যাড পুনরায় আনুন"}</span>
+              </button>
+            </div>
           </div>
 
           {/* Right Column: 3D Paper Crumple Stage revealing SJ EMR */}
@@ -248,12 +250,12 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                 </div>
               </div>
 
-              {/* OVERLAY: 3D Physical Paper Pad Simulation with Extended Viewport */}
+              {/* OVERLAY: 3D Physical Paper Pad Simulation with Massive Unclipped Viewport */}
               {!isCrumpled && (
                 <div
-                  className={`absolute -inset-10 sm:-inset-16 lg:-inset-24 z-20 flex items-center justify-center transition-all duration-700 ease-out pointer-events-none ${
+                  className={`absolute -inset-y-96 -inset-x-[48rem] z-20 flex items-center justify-center transition-all duration-700 ease-out pointer-events-none ${
                     isTossing
-                      ? "opacity-0 scale-75 translate-x-24 -translate-y-24 blur-sm"
+                      ? "opacity-0 scale-50 translate-x-48 -translate-y-48 blur-sm"
                       : "opacity-100 scale-100 translate-y-0"
                   }`}
                 >
@@ -268,7 +270,7 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                       crumpleAmount={0.92}
                       creaseStrength={0.25}
                       paperColor="#f8f4ea"
-                      dragRadius={800}
+                      dragRadius={3500}
                       returnToOrigin={false}
                       resetKey={resetKey}
                       onStateChange={handleStateChange}
