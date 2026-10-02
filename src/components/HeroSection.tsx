@@ -57,18 +57,12 @@ export default function HeroSection({ language }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden hero-glow">
-      {/* Background Decorative Blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 pointer-events-none opacity-40 blur-3xl -z-10">
-        <div className="w-96 h-96 bg-emerald-300 rounded-full mx-auto" />
-      </div>
-
+    <section className="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/90 text-emerald-800 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-600 animate-pulse" />
             <Sparkles className="w-4 h-4 text-emerald-600" />
             <span>
               {language === "en"
@@ -82,7 +76,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
             {language === "en" ? (
               <>
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+                <span className="text-emerald-700">
                   #1 Doctor-First EMR
                 </span>{" "}
                 & Telemedicine Software in Bangladesh
@@ -90,7 +84,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
             ) : (
               <>
                 বাংলাদেশের চিকিৎসকদের জন্য{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+                <span className="text-emerald-700">
                   #১ নির্ভরযোগ্য ইএমআর
                 </span>{" "}
                 ও টেলিমেডিসিন সফটওয়্যার
@@ -191,7 +185,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
           </div>
 
           {/* Mockup Frame */}
-          <div className="rounded-2xl bg-slate-900 p-2 sm:p-3 shadow-2xl shadow-emerald-950/20 border border-slate-800">
+          <div className="rounded-2xl bg-slate-900 p-2 sm:p-3 shadow-2xl shadow-slate-900/10 border border-slate-800">
             {/* Browser top chrome */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800 mb-2">
               <div className="flex items-center gap-1.5">
