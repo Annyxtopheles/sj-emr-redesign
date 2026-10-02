@@ -66,6 +66,16 @@ export default function HeroSection({ language }: HeroSectionProps) {
             )}
           </h1>
 
+          {/* Reserved slot for Bangla supporting line (hidden until approved copy is supplied) */}
+          <p
+            lang="bn"
+            data-slot="hero-bangla-support"
+            data-approved="false"
+            className="hidden font-sans text-lg sm:text-xl lg:text-2xl text-emerald-800 font-medium leading-relaxed max-w-2xl mx-auto mb-6"
+          >
+            [BANGLA LINE – APPROVED COPY NEEDED]
+          </p>
+
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
             {language === "en"

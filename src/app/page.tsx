@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MergedStats from "@/components/MergedStats";
@@ -20,6 +20,32 @@ export default function Home() {
   const [language, setLanguage] = useState<"en" | "bn">("en");
   const [selectedPlan, setSelectedPlan] = useState<string>("Essential Plus (10000 BDT/Year)");
 
+  useEffect(() => {
+    try {
+      const savedLang = localStorage.getItem("sjemr_language");
+      if (savedLang === "en" || savedLang === "bn") {
+        setLanguage(savedLang);
+      } else if (
+        typeof navigator !== "undefined" &&
+        navigator.language &&
+        navigator.language.toLowerCase().startsWith("bn")
+      ) {
+        setLanguage("bn");
+      }
+    } catch {
+      // localStorage may fail in some environments
+    }
+  }, []);
+
+  const handleLanguageChange = (newLang: "en" | "bn") => {
+    setLanguage(newLang);
+    try {
+      localStorage.setItem("sjemr_language", newLang);
+    } catch {
+      // ignore
+    }
+  };
+
   const handleSelectPlan = (planName: string) => {
     setSelectedPlan(planName);
   };
@@ -27,7 +53,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafbfc]" lang={language}>
       {/* Sticky Navigation with Enlarged Logo */}
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar language={language} setLanguage={handleLanguageChange} />
 
       {/* Hero with Live Software Screenshot Preview */}
       <HeroSection language={language} />
