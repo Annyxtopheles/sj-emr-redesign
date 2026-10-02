@@ -39,37 +39,31 @@ export default function HeroSection({ language }: HeroSectionProps) {
             {language === "en" ? (
               <>
                 The{" "}
-                <AuroraText
-                  colors={["#059669", "#10b981", "#34d399", "#047857"]}
-                  className="font-black"
-                >
-                  Most Intuitive
+                <AuroraText>
+                  #1 Doctor-First EMR
                 </AuroraText>{" "}
-                EMR & Chamber Management for Doctors
+                & Telemedicine Software in Bangladesh
               </>
             ) : (
               <>
-                বাংলাদেশের ডাক্তারদের জন্য{" "}
-                <AuroraText
-                  colors={["#059669", "#10b981", "#34d399", "#047857"]}
-                  className="font-black"
-                >
-                  সবচেয়ে সহজ ও নির্ভরযোগ্য
+                বাংলাদেশের চিকিৎসকদের জন্য{" "}
+                <AuroraText>
+                  #১ নির্ভরযোগ্য ইএমআর
                 </AuroraText>{" "}
-                ডিজিটাল চেম্বার ও ইএমআর সফটওয়্যার
+                ও টেলিমেডিসিন সফটওয়্যার
               </>
             )}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
             {language === "en"
               ? "Say goodbye to lost paper records and illegible handwriting. Empower your chamber or clinic with instant e-prescriptions, comprehensive Bangladeshi medicine database, Zoom video consultations, and an Android patient portal."
               : "হারিয়ে যাওয়া কাগজের ফাইল এবং অস্পষ্ট হাতের লেখার দিন শেষ। বিল্ট-ইন বাংলাদেশি ড্রাগ ডেটাবেস, মাত্র ৬০ সেকেন্ডে ই-প্রেসক্রিপশন, স্বয়ংক্রিয় জুম ভিডিও কল এবং অ্যান্ড্রয়েড পেশেন্ট পোর্টাল দিয়ে আপনার চেম্বারকে করুন আধুনিক ও ডিজিটাল।"}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10 sm:mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
             <SpecularButton
               size="lg"
               tint="#059669"
