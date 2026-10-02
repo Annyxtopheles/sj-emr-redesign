@@ -54,11 +54,12 @@ export default function TrustBar({ language }: TrustBarProps) {
     <section className="bg-slate-900 text-white py-12 border-y border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <p className="text-xs uppercase tracking-widest font-semibold text-emerald-400 mb-2">
-            {language === "en" ? "Institutional Credibility & Trust" : "প্রাতিষ্ঠানিক গ্রহণযোগ্যতা ও নির্ভরতা"}
-          </p>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-100">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 text-xs font-semibold mb-3">
+            <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+            <span>{language === "en" ? "Institutional Credibility & Trust" : "প্রাতিষ্ঠানিক গ্রহণযোগ্যতা ও নির্ভরতা"}</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-100 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Trusted by National Healthcare Bodies & Leading Practitioners"
               : "বাংলাদেশের শীর্ষস্থানীয় স্বাস্থ্যসেবা ও পেশাজীবী সংগঠন দ্বারা স্বীকৃত"}

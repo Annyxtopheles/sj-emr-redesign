@@ -74,7 +74,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               <span>{language === "en" ? "Fast Doctor Onboarding" : "সহজেই শুরু করুন"}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 text-balance">
               {language === "en"
                 ? "See SJ EMR in Action with a Tailored Walkthrough"
                 : "আপনার চেম্বারের উপযোগী লাইভ ডেমো দেখে নিন"}

@@ -26,7 +26,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
               <span>{language === "en" ? "Diagnostic Imaging Network" : "টেলিরেডিওলজি ও ডায়াগনস্টিক নেটওয়ার্ক"}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
               {language === "en"
                 ? "Connect Diagnostic Centers with Certified Radiologists"
                 : "ডায়াগনস্টিক সেন্টার ও বিশেষজ্ঞ রেডিওলজিস্টদের সমন্বয়ে সমন্বিত নেটওয়ার্ক"}

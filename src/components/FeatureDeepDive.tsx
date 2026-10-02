@@ -235,17 +235,17 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         </div>
 
         {/* 10 Clinical AI Tools Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-2">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{language === "en" ? "Built-in Clinical AI Tools" : "১০টি বিশেষায়িত ক্লিনিক্যাল এআই টুলস"}</span>
+            <span>{language === "en" ? "Built-in Clinical AI Tools" : "১০টি বিশেষায়িত ক্লিনিক্যাল এআই টুলস"}</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Comprehensive Clinical Suite Built Inside SJ EMR AI Lite"
               : "এস জে ইএমআর সফটওয়্যারে সরাসরি সংযুক্ত এআই টুলস"}
-          </h3>
-          <p className="mt-2 text-xs sm:text-sm text-slate-600">
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
             {language === "en"
               ? "Every clinical AI tool operates under a strict Doctor-First mandate: AI prepares suggestions, and the doctor retains complete authority to Accept, Edit, or Discard."
               : "প্রতিটি এআই টুল সম্পূর্ণ ডাক্তারের নিয়ন্ত্রণাধীন—ডাক্তারের চূড়ান্ত অনুমোদন ছাড়া কোনো তথ্য মেডিকেল ফাইলে যুক্ত হয় না।"}

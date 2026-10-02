@@ -76,7 +76,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
               <Video className="w-3.5 h-3.5" />
               <span>{language === "en" ? "Videos" : "ভিডিও"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4 text-balance">
               {language === "en"
                 ? "Video Demonstrations & Talks"
                 : "ভিডিও ডেমো ও চিকিৎসকদের আলোচনা"}
