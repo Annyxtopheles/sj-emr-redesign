@@ -5,6 +5,7 @@ import { FileText, Video, ArrowRight } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import { AuroraText } from "@/components/ui/AuroraText";
 import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import {
   LiveDashboardScreen,
   LiveCalendarScreen,
@@ -31,7 +32,17 @@ export default function HeroSection({ language }: HeroSectionProps) {
 
   return (
     <section className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Subtle Interactive Brand Green Background Ripple Grid */}
+      <BackgroundRippleEffect
+        rows={12}
+        cols={34}
+        cellSize={50}
+        borderColor="rgba(16, 185, 129, 0.1)"
+        fillColor="rgba(16, 185, 129, 0.02)"
+        className="opacity-80"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
