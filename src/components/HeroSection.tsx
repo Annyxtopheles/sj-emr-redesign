@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  Users,
-  Calendar,
-  FileText,
-  Video,
-  ArrowRight,
-} from "lucide-react";
+import { FileText, Video, ArrowRight } from "lucide-react";
 import SpecularButton from "@/components/ui/SpecularButton";
 import { AuroraText } from "@/components/ui/AuroraText";
 import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
@@ -35,24 +29,6 @@ export default function HeroSection({ language }: HeroSectionProps) {
     return () => clearInterval(interval);
   }, []);
 
-  const screenshots = {
-    dashboard: {
-      src: "/assets/dashboard-main.png",
-      alt: "Doctor Dashboard & Chamber Queue",
-      label: language === "en" ? "Doctor Dashboard" : "ডাক্তার ড্যাশবোর্ড",
-    },
-    calendar: {
-      src: "/assets/calendar-schedule.png",
-      alt: "Chamber Appointment Schedule Calendar",
-      label: language === "en" ? "Chamber Schedule" : "চেম্বার শিডিউল",
-    },
-    actions: {
-      src: "/assets/dashboard-actions.png",
-      alt: "Digital Prescription Pad",
-      label: language === "en" ? "Prescription Pad" : "প্রেসক্রিপশন প্যাড",
-    },
-  };
-
   return (
     <section className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,31 +39,37 @@ export default function HeroSection({ language }: HeroSectionProps) {
             {language === "en" ? (
               <>
                 The{" "}
-                <AuroraText>
-                  #1 Doctor-First EMR
+                <AuroraText
+                  colors={["#059669", "#10b981", "#34d399", "#047857"]}
+                  className="font-black"
+                >
+                  Most Intuitive
                 </AuroraText>{" "}
-                & Telemedicine Software in Bangladesh
+                EMR & Chamber Management for Doctors
               </>
             ) : (
               <>
-                বাংলাদেশের চিকিৎসকদের জন্য{" "}
-                <AuroraText>
-                  #১ নির্ভরযোগ্য ইএমআর
+                বাংলাদেশের ডাক্তারদের জন্য{" "}
+                <AuroraText
+                  colors={["#059669", "#10b981", "#34d399", "#047857"]}
+                  className="font-black"
+                >
+                  সবচেয়ে সহজ ও নির্ভরযোগ্য
                 </AuroraText>{" "}
-                ও টেলিমেডিসিন সফটওয়্যার
+                ডিজিটাল চেম্বার ও ইএমআর সফটওয়্যার
               </>
             )}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
             {language === "en"
               ? "Say goodbye to lost paper records and illegible handwriting. Empower your chamber or clinic with instant e-prescriptions, comprehensive Bangladeshi medicine database, Zoom video consultations, and an Android patient portal."
               : "হারিয়ে যাওয়া কাগজের ফাইল এবং অস্পষ্ট হাতের লেখার দিন শেষ। বিল্ট-ইন বাংলাদেশি ড্রাগ ডেটাবেস, মাত্র ৬০ সেকেন্ডে ই-প্রেসক্রিপশন, স্বয়ংক্রিয় জুম ভিডিও কল এবং অ্যান্ড্রয়েড পেশেন্ট পোর্টাল দিয়ে আপনার চেম্বারকে করুন আধুনিক ও ডিজিটাল।"}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10 sm:mb-12">
             <SpecularButton
               size="lg"
               tint="#059669"
@@ -114,57 +96,15 @@ export default function HeroSection({ language }: HeroSectionProps) {
 
         {/* Interactive Showcase Container with Clean Screenshots & Auto-Loop */}
         <div id="preview" className="relative max-w-6xl mx-auto scroll-mt-24">
-          {/* Showcase Tabs */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-5">
-            <button
-              type="button"
-              onClick={() => setActiveTab("dashboard")}
-              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
-                activeTab === "dashboard"
-                  ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
-              }`}
-            >
-              <Users className="w-4 h-4" />
-              <span>{screenshots.dashboard.label}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveTab("calendar")}
-              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
-                activeTab === "calendar"
-                  ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
-              }`}
-            >
-              <Calendar className="w-4 h-4" />
-              <span>{screenshots.calendar.label}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveTab("actions")}
-              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
-                activeTab === "actions"
-                  ? "bg-emerald-900 text-white shadow-md shadow-emerald-900/20"
-                  : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
-              }`}
-            >
-              <FileText className="w-4 h-4" />
-              <span>{screenshots.actions.label}</span>
-            </button>
-          </div>
-
-          {/* Clean Showcase Frame with Authentic Live Software Screens & Progressive Blur */}
+          {/* Clean Showcase Frame with Green Gradient Border & Progressive Blur */}
           <div
-            className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none overflow-hidden border border-b-0 border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10"
+            className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none p-[2px] bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600 shadow-2xl shadow-emerald-950/15"
             style={{
-              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 100%)",
-              maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0.6) 90%, rgba(0,0,0,0) 100%)",
+              maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0.6) 90%, rgba(0,0,0,0) 100%)",
             }}
           >
-            <div className="relative aspect-[16/10] sm:aspect-[16/8.8] w-full bg-slate-50 overflow-hidden">
+            <div className="relative rounded-t-[calc(1rem-2px)] sm:rounded-t-[calc(1.5rem-2px)] rounded-b-none overflow-hidden bg-white h-[340px] sm:h-[400px] md:h-[450px]">
               {/* Screen 1: Dashboard */}
               <div
                 className={`absolute inset-0 transition-all duration-700 ease-in-out ${
@@ -198,18 +138,10 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <LiveActionsScreen language={language} />
               </div>
 
-              {/* Progressive Blur inside the screens */}
-              <ProgressiveBlur position="bottom" height="50%" tint="light" />
+              {/* Progressive Blur tight at the bottom edge */}
+              <ProgressiveBlur position="bottom" height="24%" tint="light" />
             </div>
           </div>
-
-          {/* Progressive Blur over the showcase layout itself bleeding into the edge */}
-          <ProgressiveBlur
-            position="bottom"
-            height="45%"
-            tint="light"
-            className="pointer-events-none -inset-x-2 sm:-inset-x-4 bottom-0 z-30"
-          />
         </div>
       </div>
     </section>
