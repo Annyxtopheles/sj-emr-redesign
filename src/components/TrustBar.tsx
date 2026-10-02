@@ -73,15 +73,15 @@ export default function TrustBar({ language }: TrustBarProps) {
   ];
 
   return (
-    <section className="bg-slate-900 text-white py-12 border-y border-slate-800">
+    <section className="bg-white py-14 sm:py-16 border-y border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 text-xs font-semibold mb-3">
-            <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
+            <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
             <span>{language === "en" ? "Institutional Credibility & Trust" : "প্রাতিষ্ঠানিক গ্রহণযোগ্যতা ও নির্ভরতা"}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-100 tracking-tight mb-4 text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Trusted by National Healthcare Bodies & Leading Practitioners"
               : "বাংলাদেশের শীর্ষস্থানীয় স্বাস্থ্যসেবা ও পেশাজীবী সংগঠন দ্বারা স্বীকৃত"}
@@ -96,11 +96,11 @@ export default function TrustBar({ language }: TrustBarProps) {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 flex flex-col justify-between hover:border-emerald-500/60 hover:bg-slate-800 transition-all duration-200 group hover:-translate-y-1 shadow-md hover:shadow-xl hover:shadow-emerald-950/20 text-left"
+              className="bg-slate-50/70 border border-slate-200/90 rounded-2xl p-4 flex flex-col justify-between hover:border-emerald-500/80 hover:bg-white transition-all duration-200 group hover:-translate-y-1 shadow-xs hover:shadow-lg hover:shadow-emerald-950/5 text-left"
             >
               <div>
                 {/* Authentic Logo Badge Container */}
-                <div className="bg-white rounded-xl p-3 h-20 w-full flex items-center justify-center mb-3.5 shadow-xs border border-white/10 group-hover:scale-[1.02] transition-transform">
+                <div className="bg-white rounded-xl p-3 h-20 w-full flex items-center justify-center mb-3.5 shadow-xs border border-slate-200/80 group-hover:scale-[1.02] group-hover:border-emerald-200 transition-all">
                   <Image
                     src={item.logo}
                     alt={item.title}
@@ -111,12 +111,12 @@ export default function TrustBar({ language }: TrustBarProps) {
                 </div>
 
                 <div className="flex items-start justify-between gap-1.5 mb-1.5">
-                  <h3 className="font-bold text-slate-100 text-sm group-hover:text-white transition-colors">
+                  <h3 className="font-bold text-slate-900 text-sm group-hover:text-emerald-700 transition-colors">
                     {item.title}
                   </h3>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition-colors shrink-0 mt-0.5" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 transition-colors shrink-0 mt-0.5" />
                 </div>
-                <p className="text-xs text-slate-400 leading-snug group-hover:text-slate-300 transition-colors">
+                <p className="text-xs text-slate-600 leading-snug group-hover:text-slate-800 transition-colors">
                   {item.subtitle}
                 </p>
               </div>
@@ -125,34 +125,34 @@ export default function TrustBar({ language }: TrustBarProps) {
         </div>
 
         {/* Impact Numbers */}
-        <div className="mt-10 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">
               <CountUp to={62000} separator="," duration={2.2} />+
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs text-slate-600 font-medium mt-1">
               {language === "en" ? "Consultations Completed" : "সম্পন্ন ডিজিটাল প্রেসক্রিপশন"}
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-teal-400">
+            <div className="text-2xl sm:text-3xl font-extrabold text-teal-600">
               &lt; <CountUp to={60} duration={1.8} /> Sec
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs text-slate-600 font-medium mt-1">
               {language === "en" ? "Average Rx Writing Time" : "গড় প্রেসক্রিপশন তৈরির সময়"}
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400">
+            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-600">
               <CountUp to={100} duration={1.6} />%
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs text-slate-600 font-medium mt-1">
               {language === "en" ? "BMDC Format Compliant" : "BMDC প্রেসক্রিপশন রুলস সম্মত"}
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-300">24/7</div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700">24/7</div>
+            <div className="text-xs text-slate-600 font-medium mt-1">
               {language === "en" ? "Local Live Support" : "ঢাকা ও সিলেট অন-কল সহায়তা"}
             </div>
           </div>
