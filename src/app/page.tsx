@@ -7,6 +7,7 @@ import TrustBar from "@/components/TrustBar";
 import VideoShowcase from "@/components/VideoShowcase";
 import FeatureDeepDive from "@/components/FeatureDeepDive";
 import DoctorWorkflowInteractive from "@/components/DoctorWorkflowInteractive";
+import GoPaperlessInteractive from "@/components/GoPaperlessInteractive";
 import TeleradiologyShowcase from "@/components/TeleradiologyShowcase";
 import PricingSection from "@/components/PricingSection";
 import TestimonialSection from "@/components/TestimonialSection";
@@ -41,6 +42,9 @@ export default function Home() {
 
       {/* 60-Second Mobile AI Prescription Wizard Workflow with Infographic KPI Stats */}
       <DoctorWorkflowInteractive language={language} />
+
+      {/* 3D Interactive Paper Crumple "Go Paperless" Transformation Stage */}
+      <GoPaperlessInteractive language={language} />
 
       {/* Teleradiology & Diagnostic Centers Portal (PACS DICOM Workstation Simulator) */}
       <TeleradiologyShowcase language={language} />

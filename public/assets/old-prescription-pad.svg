@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" width="640" height="820">
+  <defs>
+    <!-- Paper texture & noise -->
+    <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+      <feDiffuseLighting in="noise" lighting-color="#fffdf5" surfaceScale="1.2" result="light">
+        <feDistantLight azimuth="45" elevation="60" />
+      </feDiffuseLighting>
+      <feBlend mode="multiply" in="SourceGraphic" in2="light" />
+    </filter>
+
+    <!-- Faded ink filter -->
+    <filter id="ink-bleed">
+      <feGaussianBlur stdDeviation="0.4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Paper Sheet Background -->
+  <rect width="640" height="820" fill="#f8f4ea" rx="4" />
+  
+  <!-- Faint aged paper stain / gradient overlay -->
+  <rect width="640" height="820" fill="url(#paper-tint)" opacity="0.15" />
+  <linearGradient id="paper-tint" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#c9b084" />
+    <stop offset="50%" stop-color="#fff8eb" />
+    <stop offset="100%" stop-color="#b89d6e" />
+  </linearGradient>
+
+  <!-- Faint horizontal ruled notebook lines -->
+  <g stroke="#d5cbba" stroke-width="0.8" opacity="0.45">
+    <line x1="40" y1="230" x2="600" y2="230" />
+    <line x1="40" y1="270" x2="600" y2="270" />
+    <line x1="40" y1="310" x2="600" y2="310" />
+    <line x1="40" y1="350" x2="600" y2="350" />
+    <line x1="40" y1="390" x2="600" y2="390" />
+    <line x1="40" y1="430" x2="600" y2="430" />
+    <line x1="40" y1="470" x2="600" y2="470" />
+    <line x1="40" y1="510" x2="600" y2="510" />
+    <line x1="40" y1="550" x2="600" y2="550" />
+    <line x1="40" y1="590" x2="600" y2="590" />
+    <line x1="40" y1="630" x2="600" y2="630" />
+    <line x1="40" y1="670" x2="600" y2="670" />
+    <line x1="40" y1="710" x2="600" y2="710" />
+  </g>
+
+  <!-- Red left margin line -->
+  <line x1="170" y1="180" x2="170" y2="730" stroke="#d96b6b" stroke-width="1.2" opacity="0.6" />
+
+  <!-- Doctor Header (Printed Pad Style) -->
+  <g font-family="Georgia, serif">
+    <text x="50" y="55" font-size="20" font-weight="bold" fill="#1e293b" letter-spacing="0.5">DR. M. A. RAHMAN</text>
+    <text x="50" y="75" font-size="11" font-weight="bold" fill="#0f766e">MBBS (DMC), BCS (Health), FCPS (Medicine)</text>
+    <text x="50" y="92" font-size="10" fill="#64748b">Associate Professor of Clinical Medicine • BMDC Reg: 18429</text>
+    <text x="50" y="107" font-size="9" fill="#94a3b8">Green Life Hospital &amp; Diagnostic Centre, Room #304, Dhaka</text>
+
+    <!-- Clinic Right Header -->
+    <text x="590" y="55" font-size="11" font-weight="bold" fill="#334155" text-anchor="end">DAILY OPD CHAMBER</text>
+    <text x="590" y="72" font-size="10" fill="#64748b" text-anchor="end">Visiting: 5:00 PM - 9:30 PM</text>
+    <text x="590" y="88" font-size="9" fill="#94a3b8" text-anchor="end">Serial &amp; Helpline: 01711-000000</text>
+  </g>
+
+  <!-- Header divider -->
+  <line x1="40" y1="125" x2="600" y2="125" stroke="#0f766e" stroke-width="2" />
+  <line x1="40" y1="129" x2="600" y2="129" stroke="#94a3b8" stroke-width="0.7" />
+
+  <!-- Patient Info Strip -->
+  <g font-family="Courier, monospace" font-size="12" fill="#334155">
+    <text x="50" y="152">Name: <tspan font-family="Comic Sans MS, cursive, sans-serif" font-weight="bold" fill="#1e3a8a">Md. Rafiqul Islam</tspan></text>
+    <text x="290" y="152">Age: <tspan font-family="Comic Sans MS, cursive, sans-serif" font-weight="bold" fill="#1e3a8a">48Y</tspan></text>
+    <text x="370" y="152">Sex: <tspan font-family="Comic Sans MS, cursive, sans-serif" font-weight="bold" fill="#1e3a8a">Male</tspan></text>
+    <text x="470" y="152">Date: <tspan font-family="Comic Sans MS, cursive, sans-serif" font-weight="bold" fill="#1e3a8a">14-02-2026</tspan></text>
+  </g>
+  <line x1="40" y1="168" x2="600" y2="168" stroke="#cbd5e1" stroke-width="1" />
+
+  <!-- Left Side: Clinical Findings (Doctor Handwriting in blue/black ink) -->
+  <g font-family="'Brush Script MT', 'Bradley Hand', 'Segoe Script', cursive, sans-serif" font-size="14" fill="#1e3a8a" filter="url(#ink-bleed)">
+    <text x="50" y="210" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#475569">C/C:</text>
+    <text x="50" y="235">- Fever x 4 days</text>
+    <text x="50" y="258">- Dry cough, sore</text>
+    <text x="50" y="280">  throat</text>
+    <text x="50" y="305">- Body ache (severe)</text>
+
+    <text x="50" y="350" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#475569">O/E:</text>
+    <text x="50" y="375">Temp: 102.4°F</text>
+    <text x="50" y="398">BP: 135/85 mmHg</text>
+    <text x="50" y="420">Pulse: 92/min</text>
+    <text x="50" y="445">Chest: Clear</text>
+    <text x="50" y="470">Heart: S1 S2 +</text>
+
+    <text x="50" y="520" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#475569">Inv:</text>
+    <text x="50" y="545">- CBC with ESR</text>
+    <text x="50" y="568">- Serum Cr</text>
+    <text x="50" y="590">- RBS / FBS</text>
+  </g>
+
+  <!-- Big Rx Symbol -->
+  <text x="185" y="222" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#0f766e">℞</text>
+
+  <!-- Prescription Body: Messy Handwriting -->
+  <g font-family="'Brush Script MT', 'Bradley Hand', 'Segoe Script', cursive, sans-serif" font-size="16" fill="#172554" filter="url(#ink-bleed)">
+    <!-- Med 1 -->
+    <text x="210" y="260" font-weight="bold">1. Tab. Napa Extra (500mg+65mg)</text>
+    <text x="240" y="285" fill="#1e3a8a">১+১+১ — ভরা পেটে (৪ দিন)</text>
+
+    <!-- Med 2 -->
+    <text x="210" y="335" font-weight="bold">2. Cap. Seclo 20mg (Omeprazole)</text>
+    <text x="240" y="360" fill="#1e3a8a">১+০+১ — খাবার ৩০ মিনিট আগে (১৪ দিন)</text>
+
+    <!-- Med 3 -->
+    <text x="210" y="410" font-weight="bold">3. Syp. Tofen (Ketotifen 100ml)</text>
+    <text x="240" y="435" fill="#1e3a8a">২ চামচ করে দিনে ২ বার (৭ দিন)</text>
+
+    <!-- Med 4 -->
+    <text x="210" y="485" font-weight="bold">4. Tab. Ciprocin 500mg (Ciprofloxacin)</text>
+    <text x="240" y="510" fill="#1e3a8a">১+০+১ — ৫ দিন চলবে (যদি জ্বর না কমে)</text>
+
+    <!-- Med 5 -->
+    <text x="210" y="560" font-weight="bold">5. Oral Rehydration Saline (ORS)</text>
+    <text x="240" y="585" fill="#1e3a8a">প্রচুর পানি ও তরল খাবার খাবেন</text>
+  </g>
+
+  <!-- General Advice -->
+  <g font-family="Georgia, serif" font-size="11" fill="#475569">
+    <text x="210" y="640" font-weight="bold">উপদেশ / Advice:</text>
+    <text x="210" y="660" font-style="italic">ঠাণ্ডা পানি ও ধুলাবালি এড়িয়ে চলবেন। বিশ্রাম নিন। রিপোর্ট নিয়ে ৫ দিন পর দেখা করুন।</text>
+  </g>
+
+  <!-- Doctor Signature scribbles -->
+  <path d="M 440 730 Q 460 700, 480 720 T 520 690 T 550 710 T 570 700 Q 560 740, 450 735" fill="none" stroke="#1d4ed8" stroke-width="2.2" opacity="0.85" />
+  <text x="470" y="750" font-family="Georgia, serif" font-size="10" fill="#64748b">Signature of Doctor</text>
+
+  <!-- Red Chamber Stamp (Rubber Stamp style) -->
+  <g transform="translate(180, 680) rotate(-12)">
+    <rect x="0" y="0" width="130" height="42" rx="6" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 1" opacity="0.75" />
+    <text x="65" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle" letter-spacing="1" opacity="0.85">OPD VISITED</text>
+    <text x="65" y="32" font-family="Arial, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle" opacity="0.75">DHAKA CHAMBER</text>
+  </g>
+
+  <!-- Bottom Paper Footer Notice -->
+  <text x="320" y="795" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    * এই প্রেসক্রিপশনটি হারিয়ে গেলে বা ফার্মেসিতে অস্পষ্ট থাকলে ক্লিনিক কর্তৃপক্ষ দায়ী থাকবে না।
+  </text>
+</svg>
