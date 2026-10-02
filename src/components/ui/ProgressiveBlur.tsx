@@ -9,6 +9,7 @@ export interface ProgressiveBlurProps extends React.HTMLAttributes<HTMLDivElemen
   position?: "top" | "bottom" | "left" | "right" | "both";
   blurLevels?: number[];
   tint?: "light" | "dark" | "none";
+  tintClassName?: string;
 }
 
 export function ProgressiveBlur({
@@ -17,6 +18,7 @@ export function ProgressiveBlur({
   position = "bottom",
   blurLevels = [0.5, 1, 2, 4, 8, 12, 18, 24],
   tint = "light",
+  tintClassName,
   ...props
 }: ProgressiveBlurProps) {
   return (
@@ -60,7 +62,8 @@ export function ProgressiveBlur({
             "absolute inset-0",
             position === "top"
               ? "bg-gradient-to-t from-transparent via-white/20 to-white/70"
-              : "bg-gradient-to-b from-transparent via-white/20 to-white/70"
+              : "bg-gradient-to-b from-transparent via-white/25 to-[#fafbfc]",
+            tintClassName
           )}
         />
       )}

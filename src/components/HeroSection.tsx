@@ -157,7 +157,13 @@ export default function HeroSection({ language }: HeroSectionProps) {
           </div>
 
           {/* Clean Showcase Frame with Authentic Live Software Screens & Progressive Blur */}
-          <div className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none overflow-hidden border border-b-0 border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10">
+          <div
+            className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none overflow-hidden border border-b-0 border-slate-200/90 bg-white shadow-2xl shadow-slate-900/10"
+            style={{
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 100%)",
+              maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 100%)",
+            }}
+          >
             <div className="relative aspect-[16/10] sm:aspect-[16/8.8] w-full bg-slate-50 overflow-hidden">
               {/* Screen 1: Dashboard */}
               <div
@@ -192,10 +198,18 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <LiveActionsScreen language={language} />
               </div>
 
-              {/* Progressive Blur Effect on the bottom of the screens fading cleanly right to edge */}
-              <ProgressiveBlur position="bottom" height="42%" tint="light" />
+              {/* Progressive Blur inside the screens */}
+              <ProgressiveBlur position="bottom" height="50%" tint="light" />
             </div>
           </div>
+
+          {/* Progressive Blur over the showcase layout itself bleeding into the edge */}
+          <ProgressiveBlur
+            position="bottom"
+            height="45%"
+            tint="light"
+            className="pointer-events-none -inset-x-2 sm:-inset-x-4 bottom-0 z-30"
+          />
         </div>
       </div>
     </section>
