@@ -1,6 +1,7 @@
 "use client";
 
-import { Award, Building2, Users2, HeartPulse, CheckCircle } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle, ExternalLink } from "lucide-react";
 import CountUp from "@/components/ui/CountUp";
 
 interface TrustBarProps {
@@ -15,23 +16,35 @@ export default function TrustBar({ language }: TrustBarProps) {
         language === "en"
           ? "Bangladesh Association of Software & Info Services"
           : "বাংলাদেশ অ্যাসোসিয়েশন অব সফটওয়্যার অ্যান্ড ইনফরমেশন সার্ভিসেস",
-      tag: "Verified Member",
+      tag: language === "en" ? "Verified Member" : "ভেরিফায়েড সদস্য",
+      logo: "/assets/partners/basis-member.png",
+      href: "https://basis.org.bd/company-profile/19-02-708",
+      width: 1024,
+      height: 280,
     },
     {
       title: language === "en" ? "Sylhet Chamber of Commerce" : "সিলেট চেম্বার অব কমার্স",
       subtitle:
         language === "en"
           ? "Member of Sylhet Chamber of Commerce & Industry"
-          : "সিলেট চেম্বার অব কমার্স অ্যান্ড ইন্ডাস্ট্রি নিবন্ধিত",
-      tag: "Trade Member",
+          : "সিলেট চেম্বার অব কমার্স অ্যান্ড ইন্ডাস্ট্রি নিবন্ধিত সদস্য",
+      tag: language === "en" ? "Trade Member" : "ট্রেড সদস্য",
+      logo: "/assets/partners/scci-logo.png",
+      href: "https://sylhetchamber.org.bd/",
+      width: 223,
+      height: 223,
     },
     {
-      title: language === "en" ? "BD Physicians Network" : "বিডি ফিজিশিয়ানস পার্টনার",
+      title: language === "en" ? "BD Physicians" : "বিডি ফিজিশিয়ানস",
       subtitle:
         language === "en"
           ? "Strategic clinical partner for doctor workflows"
-          : "ডাক্তারদের ক্লিনিক্যাল ওয়ার্কফ্লোর স্ট্র্যাটেজিক পার্টনার",
-      tag: "Clinical Partner",
+          : "৫০,০০০+ ডাক্তারদের পেশাদার মেডিকেল নেটওয়ার্ক",
+      tag: language === "en" ? "Clinical Partner" : "ক্লিনিক্যাল পার্টনার",
+      logo: "/assets/partners/bd-physicians.png",
+      href: "https://www.facebook.com/bdphysicians/",
+      width: 1024,
+      height: 1024,
     },
     {
       title: language === "en" ? "Health Support Sylhet" : "হেলথ সাপোর্ট সিলেট",
@@ -39,7 +52,11 @@ export default function TrustBar({ language }: TrustBarProps) {
         language === "en"
           ? "Healthcare outreach & telemedicine implementation"
           : "টেলিমেডিসিন সেবা ও স্বাস্থ্যসুরক্ষা পার্টনার",
-      tag: "Healthcare Partner",
+      tag: language === "en" ? "Healthcare Partner" : "স্বাস্থ্যসেবা পার্টনার",
+      logo: "/assets/partners/sylhet-health-support.png",
+      href: "https://sylhealthsupport.xyz/",
+      width: 240,
+      height: 240,
     },
     {
       title: language === "en" ? "The Optimists" : "দ্য অপটিমিস্টস",
@@ -47,7 +64,11 @@ export default function TrustBar({ language }: TrustBarProps) {
         language === "en"
           ? "Child health & humanitarian medical collaboration"
           : "শিশু স্বাস্থ্য ও মানবিক স্বাস্থ্যসেবা পার্টনার",
-      tag: "Non-profit Partner",
+      tag: language === "en" ? "Non-profit Partner" : "মানবিক পার্টনার",
+      logo: "/assets/partners/the-optimists.png",
+      href: "https://theoptimists.org/",
+      width: 156,
+      height: 63,
     },
   ];
 
@@ -67,24 +88,47 @@ export default function TrustBar({ language }: TrustBarProps) {
           </h2>
         </div>
 
-        {/* Logos & Credentials Cards */}
+        {/* Real Logos & Verified Credentials Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {credentials.map((item, idx) => (
-            <div
+            <a
               key={idx}
-              className="bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 flex flex-col justify-between hover:border-emerald-500/50 hover:bg-slate-800 transition-all group"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 flex flex-col justify-between hover:border-emerald-500/60 hover:bg-slate-800 transition-all duration-200 group hover:-translate-y-1 shadow-md hover:shadow-xl hover:shadow-emerald-950/20 text-left"
             >
               <div>
+                {/* Authentic Logo Badge Container */}
+                <div className="bg-white rounded-xl p-3 h-20 w-full flex items-center justify-center mb-3.5 shadow-xs border border-white/10 group-hover:scale-[1.02] transition-transform">
+                  <Image
+                    src={item.logo}
+                    alt={item.title}
+                    width={item.width}
+                    height={item.height}
+                    className="max-h-12 w-auto max-w-full object-contain"
+                  />
+                </div>
+
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50">
                     {item.tag}
                   </span>
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition-colors" />
                 </div>
-                <h3 className="font-bold text-slate-100 text-sm mb-1">{item.title}</h3>
-                <p className="text-xs text-slate-400 leading-snug">{item.subtitle}</p>
+                <h3 className="font-bold text-slate-100 text-sm mb-1 group-hover:text-white transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-slate-400 leading-snug group-hover:text-slate-300 transition-colors">
+                  {item.subtitle}
+                </p>
               </div>
-            </div>
+
+              <div className="mt-4 pt-2.5 border-t border-slate-700/60 flex items-center justify-between text-[11px] text-emerald-400 font-medium">
+                <span>{language === "en" ? "Visit Official Site" : "ওয়েবসাইট দেখুন"}</span>
+                <span className="group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+              </div>
+            </a>
           ))}
         </div>
 
