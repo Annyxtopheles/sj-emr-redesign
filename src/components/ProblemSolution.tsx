@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, CheckCircle2, Zap, ArrowRight, Clock, ShieldCheck, Database, FileSpreadsheet } from "lucide-react";
+import { XCircle, CheckCircle2, ArrowRight, Clock, ShieldCheck, Database, FileSpreadsheet } from "lucide-react";
 import CountUp from "@/components/ui/CountUp";
 
 interface ProblemSolutionProps {
@@ -61,10 +61,6 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold mb-3">
-            <Zap className="w-3.5 h-3.5 text-emerald-700" />
-            <span>{language === "en" ? "Practice Transformation" : "চেম্বারের আধুনিক রূপান্তর"}</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Why Bangladeshi Doctors Are Switching from Paper to SJ EMR"

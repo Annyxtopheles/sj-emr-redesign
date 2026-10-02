@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
-  Calendar,
   Video,
   CheckCircle2,
   ShieldCheck,
@@ -70,11 +69,6 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Value Prop & Contact Info */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-4">
-              <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-              <span>{language === "en" ? "Fast Doctor Onboarding" : "সহজেই শুরু করুন"}</span>
-            </div>
-
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-4 text-balance">
               {language === "en"
                 ? "See SJ EMR in Action with a Tailored Walkthrough"

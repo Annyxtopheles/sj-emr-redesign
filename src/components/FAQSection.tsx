@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface FAQSectionProps {
   language: "en" | "bn";
@@ -77,10 +77,6 @@ export default function FAQSection({ language }: FAQSectionProps) {
     <section className="py-16 lg:py-24 bg-white border-b border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{language === "en" ? "Frequently Asked Questions" : "সাধারণ প্রশ্নোত্তর"}</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Answers to Common Questions from Doctors & Clinics"

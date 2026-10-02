@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Play, ExternalLink, Video, UserCheck, Shield, Copy, Check } from "lucide-react";
+import { Play, ExternalLink, UserCheck, Shield, Copy, Check } from "lucide-react";
 
 interface VideoItem {
   id: string;
@@ -81,10 +81,6 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-3">
-              <Video className="w-3.5 h-3.5 text-emerald-600" />
-              <span>{language === "en" ? "Videos" : "ভিডিও"}</span>
-            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
               {language === "en"
                 ? "Video Demos & Talks"
