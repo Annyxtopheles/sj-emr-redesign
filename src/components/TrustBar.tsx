@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle, ExternalLink } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 interface TrustBarProps {
   language: "en" | "bn";
@@ -28,10 +28,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Bangladesh Association of Software & Info Services"
           : "বাংলাদেশ অ্যাসোসিয়েশন অব সফটওয়্যার অ্যান্ড ইনফরমেশন সার্ভিসেস",
       tag: language === "en" ? "Verified Member" : "ভেরিফায়েড সদস্য",
-      logo: "/assets/partners/basis-member.png",
+      logo: "/assets/partners/basis-logo.png",
       href: "https://basis.org.bd/company-profile/19-02-708",
-      width: 1024,
-      height: 280,
+      width: 435,
+      height: 185,
     },
     {
       title: language === "en" ? "Sylhet Chamber of Commerce" : "সিলেট চেম্বার অব কমার্স",
@@ -99,38 +99,33 @@ export default function TrustBar({ language }: TrustBarProps) {
           </h2>
         </div>
 
-        {/* Real Logos & Verified Credentials Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+        {/* Flattened Unboxed Logos & Verified Credentials Row */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-start">
           {credentials.map((item, idx) => (
             <a
               key={idx}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-slate-50/70 border border-slate-200/90 rounded-2xl p-4 flex flex-col justify-between hover:border-emerald-500/80 hover:bg-white transition-all duration-200 group hover:-translate-y-1 shadow-xs hover:shadow-lg hover:shadow-emerald-950/5 text-left"
+              className="flex flex-col items-center sm:items-start text-center sm:text-left group py-1 transition-all"
             >
-              <div>
-                {/* Authentic Logo Badge Container */}
-                <div className="bg-white rounded-xl p-3 h-20 w-full flex items-center justify-center mb-3.5 shadow-xs border border-slate-200/80 group-hover:scale-[1.02] group-hover:border-emerald-200 transition-all">
-                  <Image
-                    src={item.logo}
-                    alt={item.title}
-                    width={item.width}
-                    height={item.height}
-                    className="max-h-12 w-auto max-w-full object-contain"
-                  />
-                </div>
-
-                <div className="flex items-start justify-between gap-1.5 mb-1.5">
-                  <h3 className="font-bold text-slate-900 text-sm group-hover:text-emerald-700 transition-colors">
-                    {item.title}
-                  </h3>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 transition-colors shrink-0 mt-0.5" />
-                </div>
-                <p className="text-xs text-slate-600 leading-snug group-hover:text-slate-800 transition-colors">
-                  {item.subtitle}
-                </p>
+              {/* Normalized Optical Height Logo Container */}
+              <div className="h-12 w-full flex items-center justify-center sm:justify-start mb-3">
+                <Image
+                  src={item.logo}
+                  alt={item.title}
+                  width={item.width}
+                  height={item.height}
+                  className="max-h-9 sm:max-h-10 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
               </div>
+
+              <h3 className="font-bold text-slate-900 text-xs sm:text-sm group-hover:text-emerald-700 group-hover:underline decoration-emerald-500/50 underline-offset-2 transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-[11px] sm:text-xs text-slate-500 leading-snug mt-1 group-hover:text-slate-700 transition-colors">
+                {item.subtitle}
+              </p>
             </a>
           ))}
         </div>
