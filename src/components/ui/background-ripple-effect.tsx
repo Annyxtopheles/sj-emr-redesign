@@ -112,7 +112,7 @@ export const BackgroundRippleEffect = ({
 
       {/* Full-Bleed Infinite Wireframe Grid Lines (Clean, no blur, smoothly dissolves along with the screen showcase) */}
       <div
-        className="relative z-0 w-full h-full border-t border-l"
+        className="relative z-0 w-full h-full"
         style={{
           backgroundImage: `
             linear-gradient(to right, ${borderColor} 1px, transparent 1px),
@@ -142,7 +142,7 @@ export const BackgroundRippleEffect = ({
       {/* Prominent Box Outlines Layer: reveals crisp grid lines around cursor with smooth fade-in/fade-out */}
       <div
         className={cn(
-          "absolute inset-0 z-0 w-full h-full border-t border-l pointer-events-none transition-opacity duration-700 ease-out",
+          "absolute inset-0 z-0 w-full h-full pointer-events-none transition-opacity duration-700 ease-out",
           isHovered ? "opacity-100" : "opacity-0"
         )}
         style={{

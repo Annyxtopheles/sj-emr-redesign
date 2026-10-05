@@ -53,7 +53,7 @@ export default function Navbar({ language: propLanguage = "bn", setLanguage: pro
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300 flex items-center ${
+      className={`sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md transition-all duration-300 flex items-center ${
         scrolled ? "h-16 shadow-xs" : "h-20"
       }`}
     >
