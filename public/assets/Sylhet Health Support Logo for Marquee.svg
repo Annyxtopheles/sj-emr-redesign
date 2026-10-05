@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 653 240"><metadata><?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 6.0.0"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmpMM:DocumentID="xmp.did:cb9f5498-bb58-4572-8043-8c369e6bfb9b" xmpMM:InstanceID="xmp.iid:cb9f5498-bb58-4572-8043-8c369e6bfb9b" dcterms:provenance="https://cai-manifests.adobe.com/manifests/urn-c2pa-599c258d-91f3-4ce7-9a2d-6693127bb2f8-adobe"> </rdf:Description></rdf:RDF></x:xmpmeta>
+<?xpacket end="w"?></metadata>
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #39c0ed;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-3 {
+        font-family: BebasNeue-Bold, 'Bebas Neue';
+        font-size: 83.2px;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        fill: #3cc0eb;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="326.5" y1="0" x2="326.5" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00b3c6"/>
+      <stop offset="1" stop-color="#042b6a"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-7" width="653" height="240" rx="41.95" ry="41.95"/>
+      <g id="Generative_Object" data-name="Generative Object">
+        <g>
+          <path class="cls-1" d="M158.17,192.43c-9.49,8.75-21.75,13.8-34.65,15.05v-24.64c8.43-.59,15.33-3.26,20.77-9.6,3.43-3.98,5.21-8.91,5.68-14.23,1.06-12.01-8.33-24.07-20.56-24.13l-32.77-.15c-12.57-.37-24.18-6.5-32.16-16.1-7.75-9.31-11.43-21.36-10.61-33.41,1.21-17.76,11.5-32.46,26.85-41.3l.13,5.69-.02,19.83.07,7.64c-7.3,11.17-2.37,25.42,9.01,31.6,3.38,1.83,7.02,3,10.98,3.02l32.95.18c6.59.04,12.72,2.01,18.44,5.22,14.84,8.31,22.97,24.29,22.08,41.18-.7,13.16-6.42,25.2-16.2,34.14Z"/>
+          <g>
+            <path class="cls-2" d="M101.92,100.99c-3.08,0-5.83-.93-8.02-2.84-2.01-2.2-2.91-4.89-2.89-7.97v-51.75c7.03-3.64,14.83-5.35,22.77-5.19l.02,67.75h-11.89Z"/>
+            <path class="cls-2" d="M169.34,85.44c3.64,4.42,5.43,9.9,5.41,15.54h-51.22s0-22.98,0-22.98l30.98.02c5.93.34,10.96,2.85,14.82,7.42Z"/>
+            <circle class="cls-6" cx="139.23" cy="50.99" r="16.39"/>
+          </g>
+          <g>
+            <path class="cls-2" d="M91.04,202.74l-.03-33.74-16.85-.04c-6.54-.02-12.28-3.36-15.77-8.84-2.8-4.16-4.08-9.03-4.18-14.2l59.55-.04.03,62.12c-4.73,0-9.28-.66-13.8-1.8-3.1-.87-5.94-1.88-8.95-3.47Z"/>
+            <path class="cls-2" d="M138.27,162.44c-2.13,6.56-8.26,9.39-14.71,8.81v-25.31s5.22.05,5.22.05c3.61.43,6.98,2.35,8.76,5.53,1.88,3.36,1.94,7.21.73,10.93Z"/>
+          </g>
+        </g>
+      </g>
+      <text class="cls-3" transform="translate(207.44 112.36)"><tspan class="cls-5" x="0" y="0">S</tspan><tspan x="30.54" y="0">ylhet Hea</tspan><tspan class="cls-4" x="300.37" y="0">l</tspan><tspan x="324.41" y="0">th</tspan><tspan x="0" y="79.1">Support</tspan></text>
+    </g>
+  </g>
+</svg>

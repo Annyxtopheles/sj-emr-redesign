@@ -15,10 +15,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Bangladesh Medical & Dental Council prescription format rules"
           : "বাংলাদেশ মেডিকেল অ্যান্ড ডেন্টাল কাউন্সিল প্রেসক্রিপশন মান সম্মত",
       tag: language === "en" ? "Statutory Council" : "জাতীয় কাউন্সিল",
-      logo: "/assets/BMDC Logo 1.svg",
+      logo: "/assets/BMDC Logo for Marquee.svg",
       href: "https://bmdc.org.bd/",
-      width: 254,
-      height: 254,
+      width: 590,
+      height: 240,
     },
     {
       title: language === "en" ? "Member of BASIS" : "বেসিস (BASIS) সদস্য",
@@ -39,10 +39,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Member of Sylhet Chamber of Commerce & Industry"
           : "সিলেট চেম্বার অব কমার্স অ্যান্ড ইন্ডাস্ট্রি নিবন্ধিত সদস্য",
       tag: language === "en" ? "Trade Member" : "ট্রেড সদস্য",
-      logo: "/assets/SCCI Logo.svg",
+      logo: "/assets/Sylhet Chamber of Commerce Logo for Marquee.svg",
       href: "https://sylhetchamber.org.bd/",
-      width: 157,
-      height: 154,
+      width: 720,
+      height: 240,
     },
     {
       title: language === "en" ? "BD Physicians" : "বিডি ফিজিশিয়ানস",
@@ -51,10 +51,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Strategic clinical partner for doctor workflows"
           : "৫০,০০০+ ডাক্তারদের পেশাদার ক্লিনিক্যাল পার্টনার নেটওয়ার্ক",
       tag: language === "en" ? "Clinical Partner" : "ক্লিনিক্যাল পার্টনার",
-      logo: "/assets/BD Physicians Logo.svg",
+      logo: "/assets/BD Physicians Logo for Marquee.svg",
       href: "https://www.facebook.com/bdphysicians/",
-      width: 153,
-      height: 153,
+      width: 670,
+      height: 240,
     },
     {
       title: language === "en" ? "Health Support Sylhet" : "হেলথ সাপোর্ট সিলেট",
@@ -63,10 +63,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Healthcare outreach & telemedicine implementation"
           : "টেলিমেডিসিন সেবা ও স্বাস্থ্যসুরক্ষা পার্টনার",
       tag: language === "en" ? "Healthcare Partner" : "স্বাস্থ্যসেবা পার্টনার",
-      logo: "/assets/Health Support Sylhet Logo.svg",
+      logo: "/assets/Sylhet Health Support Logo for Marquee.svg",
       href: "https://sylhealthsupport.xyz/",
-      width: 121,
-      height: 175,
+      width: 653,
+      height: 240,
     },
     {
       title: language === "en" ? "The Optimists" : "দ্য অপটিমিস্টস",
@@ -103,7 +103,7 @@ export default function TrustBar({ language }: TrustBarProps) {
           {/* Marquee Track Container */}
           <div className="flex w-max items-center group">
             {/* Track Segment 1 */}
-            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]">
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 pr-12 sm:pr-20 py-2 animate-marquee group-hover:[animation-play-state:paused]">
               {credentials.map((item, idx) => (
                 <a
                   key={`track-1-${idx}`}
@@ -118,14 +118,14 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
             </div>
 
             {/* Track Segment 2 (Seamless loop) */}
-            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 pr-12 sm:pr-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
               {credentials.map((item, idx) => (
                 <a
                   key={`track-2-${idx}`}
@@ -141,14 +141,14 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
             </div>
 
             {/* Track Segment 3 (Ultrawide coverage) */}
-            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 pr-12 sm:pr-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
               {credentials.map((item, idx) => (
                 <a
                   key={`track-3-${idx}`}
@@ -164,7 +164,7 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
