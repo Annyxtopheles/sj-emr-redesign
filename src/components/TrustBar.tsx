@@ -17,8 +17,8 @@ export default function TrustBar({ language }: TrustBarProps) {
       tag: language === "en" ? "Statutory Council" : "জাতীয় কাউন্সিল",
       logo: "/assets/BMDC Logo for Marquee.svg",
       href: "https://bmdc.org.bd/",
-      width: 590,
-      height: 240,
+      width: 512,
+      height: 189,
     },
     {
       title: language === "en" ? "Member of BASIS" : "বেসিস (BASIS) সদস্য",
@@ -41,8 +41,8 @@ export default function TrustBar({ language }: TrustBarProps) {
       tag: language === "en" ? "Trade Member" : "ট্রেড সদস্য",
       logo: "/assets/Sylhet Chamber of Commerce Logo for Marquee.svg",
       href: "https://sylhetchamber.org.bd/",
-      width: 720,
-      height: 240,
+      width: 651,
+      height: 178,
     },
     {
       title: language === "en" ? "BD Physicians" : "বিডি ফিজিশিয়ানস",
@@ -53,8 +53,8 @@ export default function TrustBar({ language }: TrustBarProps) {
       tag: language === "en" ? "Clinical Partner" : "ক্লিনিক্যাল পার্টনার",
       logo: "/assets/BD Physicians Logo for Marquee.svg",
       href: "https://www.facebook.com/bdphysicians/",
-      width: 670,
-      height: 240,
+      width: 570,
+      height: 168,
     },
     {
       title: language === "en" ? "Health Support Sylhet" : "হেলথ সাপোর্ট সিলেট",
@@ -65,7 +65,7 @@ export default function TrustBar({ language }: TrustBarProps) {
       tag: language === "en" ? "Healthcare Partner" : "স্বাস্থ্যসেবা পার্টনার",
       logo: "/assets/Sylhet Health Support Logo for Marquee.svg",
       href: "https://sylhealthsupport.xyz/",
-      width: 653,
+      width: 762,
       height: 240,
     },
     {
