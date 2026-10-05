@@ -2,7 +2,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 
 interface BackgroundRippleEffectProps {
   className?: string;
@@ -10,15 +9,15 @@ interface BackgroundRippleEffectProps {
   fillColor?: string;
 }
 
-// 7 naturally scattered box positions across the hero grid
+// 7 naturally scattered box positions across the upper and middle hero section
 const OCCASIONAL_BOXES = [
-  { top: "14%", left: "12%", delay: 0 },
-  { top: "20%", right: "14%", delay: 1.4 },
-  { top: "36%", left: "6%", delay: 2.8 },
-  { top: "42%", right: "8%", delay: 4.2 },
-  { top: "54%", left: "15%", delay: 5.6 },
-  { top: "64%", right: "16%", delay: 7.0 },
-  { top: "72%", left: "22%", delay: 8.4 },
+  { top: "12%", left: "12%", delay: 0 },
+  { top: "18%", right: "14%", delay: 1.4 },
+  { top: "28%", left: "6%", delay: 2.8 },
+  { top: "34%", right: "8%", delay: 4.2 },
+  { top: "44%", left: "15%", delay: 5.6 },
+  { top: "52%", right: "16%", delay: 7.0 },
+  { top: "60%", left: "22%", delay: 8.4 },
 ];
 
 export const BackgroundRippleEffect = ({
@@ -27,36 +26,48 @@ export const BackgroundRippleEffect = ({
   fillColor = "transparent",
 }: BackgroundRippleEffectProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: -1000, y: -1000 });
+  const [isHovered, setIsHovered] = useState(false);
+  const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      if (
+      const isInside =
         e.clientX >= rect.left &&
         e.clientX <= rect.right &&
         e.clientY >= rect.top &&
-        e.clientY <= rect.bottom
-      ) {
+        e.clientY <= rect.bottom;
+
+      if (isInside) {
         setMousePos({
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
         });
+        setIsHovered(true);
+
+        if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+        fadeTimeoutRef.current = setTimeout(() => {
+          setIsHovered(false);
+        }, 1600);
       } else {
-        setMousePos(null);
+        setIsHovered(false);
       }
     };
 
     window.addEventListener("mousemove", handleMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+    };
   }, []);
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        "absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none",
+        "absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0",
         className
       )}
     >
@@ -99,17 +110,17 @@ export const BackgroundRippleEffect = ({
         />
       </div>
 
-      {/* Full-Bleed Infinite Wireframe Grid Lines (No finite cell limits, fades out smoothly toward bottom) */}
+      {/* Full-Bleed Infinite Wireframe Grid Lines (Clean, no blur, smoothly dissolves along with the screen showcase) */}
       <div
-        className="relative z-10 w-full h-full border-t border-l"
+        className="relative z-0 w-full h-full border-t border-l"
         style={{
           backgroundImage: `
             linear-gradient(to right, ${borderColor} 1px, transparent 1px),
             linear-gradient(to bottom, ${borderColor} 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
-          maskImage: "linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.5) 82%, transparent 98%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.5) 82%, transparent 98%)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.4) 68%, transparent 88%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.4) 68%, transparent 88%)",
         }}
       >
         {OCCASIONAL_BOXES.map((box, idx) => (
@@ -128,38 +139,22 @@ export const BackgroundRippleEffect = ({
         ))}
       </div>
 
-      {/* Prominent Box Outlines Layer: reveals crisp grid lines directly around the cursor location */}
-      {mousePos && (
-        <div
-          className="absolute inset-0 z-15 w-full h-full border-t border-l pointer-events-none transition-opacity duration-150"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(16, 185, 129, 0.28) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(16, 185, 129, 0.28) 1px, transparent 1px)
-            `,
-            backgroundSize: "48px 48px",
-            maskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
-            WebkitMaskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
-          }}
-        />
-      )}
-
-      {/* Selective Soft Blur Patches (softens and blurs grid outlines at organic intervals) */}
+      {/* Prominent Box Outlines Layer: reveals crisp grid lines around cursor with smooth fade-in/fade-out */}
       <div
-        className="absolute top-[8%] left-[10%] w-80 h-72 rounded-full backdrop-blur-[2.5px] bg-white/20 pointer-events-none z-20"
-        aria-hidden="true"
+        className={cn(
+          "absolute inset-0 z-0 w-full h-full border-t border-l pointer-events-none transition-opacity duration-700 ease-out",
+          isHovered ? "opacity-100" : "opacity-0"
+        )}
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(16, 185, 129, 0.26) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(16, 185, 129, 0.26) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+          maskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%), linear-gradient(to bottom, black 45%, transparent 88%)`,
+          WebkitMaskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%), linear-gradient(to bottom, black 45%, transparent 88%)`,
+        }}
       />
-      <div
-        className="absolute top-[32%] right-[8%] w-96 h-80 rounded-full backdrop-blur-[3px] bg-white/25 pointer-events-none z-20"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-[10%] left-[30%] w-88 h-64 rounded-full backdrop-blur-[2px] bg-white/20 pointer-events-none z-20"
-        aria-hidden="true"
-      />
-
-      {/* Progressive blur vanishing smoothly at the bottom edge, in sync with the screen showcase */}
-      <ProgressiveBlur position="bottom" height="26%" tint="light" className="z-25" />
     </div>
   );
 };
