@@ -424,13 +424,13 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         rx="11"
                         fill="none"
                         stroke="#059669"
-                        strokeWidth="2.5"
+                        strokeWidth="2"
                         strokeLinecap="round"
                         pathLength="100"
-                        strokeDasharray="24 76"
+                        strokeDasharray="100"
                         style={{
-                          strokeDashoffset: -progress,
-                          filter: "drop-shadow(0 0 3px rgba(16, 185, 129, 0.6))",
+                          strokeDashoffset: 100 - progress,
+                          filter: "drop-shadow(0 0 3px rgba(16, 185, 129, 0.5))",
                         }}
                         className="transition-[stroke-dashoffset] duration-75 ease-linear"
                       />
