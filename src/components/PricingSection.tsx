@@ -134,14 +134,14 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
               : "১৪ দিনের ফ্রি ট্রায়াল দিয়ে শুরু করুন। কোনো অগ্রিম পেমেন্ট বা হিডেন চার্জ নেই।"}
           </p>
 
-          {/* Billing Cycle Toggle */}
-          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/80 rounded-xl border border-slate-300">
+          {/* Billing Cycle Toggle - Unified Segmented Control */}
+          <div className="mt-8 inline-flex items-center p-1.5 bg-slate-200/80 rounded-xl border border-slate-300 shadow-2xs">
             <button
               type="button"
               onClick={() => setBillingCycle("monthly")}
-              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all ${
+              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer ${
                 billingCycle === "monthly"
-                  ? "bg-white text-slate-900 shadow-xs"
+                  ? "bg-white text-slate-900 shadow-xs border border-slate-300/60"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -150,14 +150,14 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             <button
               type="button"
               onClick={() => setBillingCycle("yearly")}
-              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${
+              className={`px-5 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-2 cursor-pointer ${
                 billingCycle === "yearly"
-                  ? "bg-emerald-600 text-white shadow-xs"
+                  ? "bg-white text-slate-900 shadow-xs border border-slate-300/60"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
               <span>{language === "en" ? "Annual" : "বাৎসরিক বিলিং"}</span>
-              <span className="text-[10px] bg-emerald-900 text-emerald-100 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+              <span className="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300/80 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                 {language === "en" ? "Save 58%" : "৫৮% সাশ্রয়"}
               </span>
             </button>

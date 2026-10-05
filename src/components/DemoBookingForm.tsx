@@ -217,18 +217,16 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         onClick={() => setFormData({ ...formData, userType: "doctor" })}
                         className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                           formData.userType === "doctor"
-                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
                             : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
                         <Image
-                          src="/assets/bmdc-logo.svg"
+                          src="/assets/BMDC Logo 2.svg"
                           alt="BMDC"
-                          width={14}
-                          height={14}
-                          className={`w-3.5 h-3.5 object-contain ${
-                            formData.userType === "doctor" ? "brightness-0 invert" : ""
-                          }`}
+                          width={15}
+                          height={15}
+                          className="w-3.5 h-3.5 object-contain"
                         />
                         <span>{language === "en" ? "BMDC Doctor" : "বিএমডিসি ডাক্তার"}</span>
                       </button>
@@ -238,11 +236,11 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         onClick={() => setFormData({ ...formData, userType: "clinic_admin" })}
                         className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                           formData.userType === "clinic_admin"
-                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
                             : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
-                        <Building className="w-3.5 h-3.5" />
+                        <Building className="w-3.5 h-3.5 text-emerald-700" />
                         <span>{language === "en" ? "Clinic / Hospital" : "ক্লিনিক / হাসপাতাল"}</span>
                       </button>
 
@@ -251,11 +249,11 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         onClick={() => setFormData({ ...formData, userType: "patient" })}
                         className={`px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1 cursor-pointer ${
                           formData.userType === "patient"
-                            ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                            ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
                             : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                         }`}
                       >
-                        <User className="w-3.5 h-3.5" />
+                        <User className="w-3.5 h-3.5 text-emerald-700" />
                         <span>{language === "en" ? "Patient / Other" : "রোগী / অন্যান্য"}</span>
                       </button>
                     </div>
@@ -390,9 +388,9 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         <button
                           type="button"
                           onClick={() => setFormData({ ...formData, demoType: "zoom" })}
-                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
+                          className={`px-3 py-2 rounded-xl text-xs font-semibold border text-center transition-all cursor-pointer ${
                             formData.demoType === "zoom"
-                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs font-semibold"
+                              ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
                               : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
@@ -401,9 +399,9 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         <button
                           type="button"
                           onClick={() => setFormData({ ...formData, demoType: "recorded" })}
-                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
+                          className={`px-3 py-2 rounded-xl text-xs font-semibold border text-center transition-all cursor-pointer ${
                             formData.demoType === "recorded"
-                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs font-semibold"
+                              ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
                               : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >

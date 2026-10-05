@@ -45,41 +45,41 @@ export default function AIPlaygroundInteractive({ language }: AIPlaygroundProps)
           </p>
         </div>
 
-        {/* 3 Interactive Mode Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+        {/* 3 Interactive Mode Tabs - Distinct Category/Tab Theme (Not a CTA) */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8">
           <button
             onClick={() => setActiveTab("voice")}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all ${
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
               activeTab === "voice"
-                ? "bg-emerald-600 text-white shadow-sm"
-                : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                ? "bg-slate-900 text-white shadow-xs border border-slate-900"
+                : "bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/90 shadow-2xs"
             }`}
           >
-            <Mic className="w-4 h-4 shrink-0" />
+            <Mic className={`w-4 h-4 shrink-0 ${activeTab === "voice" ? "text-emerald-400" : "text-slate-400"}`} />
             <span>{language === "en" ? "Bangla Voice-to-Note" : "বাংলা ভয়েস-টু-নোট"}</span>
           </button>
 
           <button
             onClick={() => setActiveTab("ocr")}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all ${
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
               activeTab === "ocr"
-                ? "bg-emerald-600 text-white shadow-sm"
-                : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                ? "bg-slate-900 text-white shadow-xs border border-slate-900"
+                : "bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/90 shadow-2xs"
             }`}
           >
-            <ScanLine className="w-4 h-4 shrink-0" />
+            <ScanLine className={`w-4 h-4 shrink-0 ${activeTab === "ocr" ? "text-emerald-400" : "text-slate-400"}`} />
             <span>{language === "en" ? "Handwriting Pad OCR" : "হাতের লেখার প্রেসক্রিপশন OCR"}</span>
           </button>
 
           <button
             onClick={() => setActiveTab("lab")}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all ${
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
               activeTab === "lab"
-                ? "bg-emerald-600 text-white shadow-sm"
-                : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                ? "bg-slate-900 text-white shadow-xs border border-slate-900"
+                : "bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/90 shadow-2xs"
             }`}
           >
-            <FileCheck2 className="w-4 h-4 shrink-0" />
+            <FileCheck2 className={`w-4 h-4 shrink-0 ${activeTab === "lab" ? "text-emerald-400" : "text-slate-400"}`} />
             <span>{language === "en" ? "Lab Report Scanner" : "ল্যাব রিপোর্ট ইন্টারপ্রেটার"}</span>
           </button>
         </div>

@@ -231,7 +231,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
           </p>
         </div>
 
-        {/* Case Modality Selector Tabs */}
+        {/* Case Modality Selector Tabs - Distinct Category/Filter Theme (Not a CTA) */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           {cases.map((c, idx) => (
             <button
@@ -242,11 +242,11 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
               }}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                 activeCaseIndex === idx
-                  ? "bg-emerald-600 text-white shadow-md shadow-emerald-950/20 border border-emerald-600"
-                  : "bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-2xs"
+                  ? "bg-slate-900 text-white shadow-xs border border-slate-900"
+                  : "bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 border border-slate-200/90 shadow-2xs"
               }`}
             >
-              <Scan className={`w-3.5 h-3.5 ${activeCaseIndex === idx ? "text-white" : "text-emerald-600"}`} />
+              <Scan className={`w-3.5 h-3.5 ${activeCaseIndex === idx ? "text-emerald-400" : "text-slate-400"}`} />
               <span>{c.name}</span>
             </button>
           ))}
@@ -274,8 +274,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                   <div
                     className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-200 mt-0.5 ${
                       isCurrent
-                        ? "bg-emerald-600 border-emerald-600 text-white shadow-xs scale-105"
-                        : "bg-emerald-50 border-emerald-200 text-emerald-700 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105"
+                        ? "bg-emerald-100 border-emerald-300 text-emerald-800 shadow-2xs"
+                        : "bg-slate-100/80 border-slate-200 text-slate-600 group-hover:bg-emerald-50 group-hover:border-emerald-200 group-hover:text-emerald-700"
                     }`}
                   >
                     <StageIcon className="w-5 h-5" />
@@ -347,7 +347,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                     type="button"
                     onClick={() => setIsInverted(!isInverted)}
                     className={`px-2 py-1 rounded-lg font-semibold flex items-center gap-1 transition-colors cursor-pointer ${
-                      isInverted ? "bg-emerald-600 text-white" : "bg-[#0b3327] text-slate-300 hover:text-white"
+                      isInverted ? "bg-emerald-500/30 text-emerald-300 border border-emerald-500/40" : "bg-[#0b3327] text-slate-300 hover:text-white"
                     }`}
                     title="Invert negative/positive"
                   >
@@ -379,7 +379,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                       else setZoomLevel(1);
                     }}
                     className={`px-2 py-1 rounded-lg font-semibold flex items-center gap-1 transition-colors cursor-pointer ${
-                      zoomLevel > 1 ? "bg-emerald-600 text-white" : "bg-[#0b3327] hover:bg-[#104434] text-slate-300"
+                      zoomLevel > 1 ? "bg-emerald-500/30 text-emerald-300 border border-emerald-500/40" : "bg-[#0b3327] hover:bg-[#104434] text-slate-300"
                     }`}
                     title="Toggle zoom magnification"
                   >
@@ -467,7 +467,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                       <button
                         type="button"
                         onClick={() => setActiveWorkflowStep(2)}
-                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                        className="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 active:bg-emerald-500/40 text-emerald-300 hover:text-emerald-200 border border-emerald-500/40 font-semibold text-xs transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
                       >
                         <Stethoscope className="w-3.5 h-3.5" />
                         <span>{language === "en" ? "Open Case for Review →" : "কেসটি রিভিউ করুন →"}</span>
@@ -502,7 +502,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                       <button
                         type="button"
                         onClick={() => setActiveWorkflowStep(3)}
-                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                        className="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 active:bg-emerald-500/40 text-emerald-300 hover:text-emerald-200 border border-emerald-500/40 font-semibold text-xs transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
                       >
                         <Sliders className="w-3.5 h-3.5" />
                         <span>{language === "en" ? "Run AI Landmark Assist →" : "এআই অ্যানালাইসিস দেখুন →"}</span>
@@ -539,7 +539,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                         onClick={() => {
                           setActiveWorkflowStep(4);
                         }}
-                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                        className="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 active:bg-emerald-500/40 text-emerald-300 hover:text-emerald-200 border border-emerald-500/40 font-semibold text-xs transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
                       >
                         <FileCheck className="w-3.5 h-3.5" />
                         <span>{language === "en" ? "Approve & Sign Report →" : "অনুমোদন ও ডিজিটাল স্বাক্ষর →"}</span>
@@ -602,7 +602,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                       <button
                         type="button"
                         onClick={() => alert(language === "en" ? `Downloading official signed PDF report for ${currentCase.caseNo}...` : `${currentCase.caseNo} এর স্বাক্ষরিত অফিসিয়াল পিডিএফ ডাউনলোড হচ্ছে...`)}
-                        className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                        className="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 active:bg-emerald-500/40 text-emerald-300 hover:text-emerald-200 border border-emerald-500/40 font-semibold text-xs transition-all flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
                       >
                         <Download className="w-3.5 h-3.5" />
                         <span>{language === "en" ? "Download Official BMDC PDF" : "অফিশিয়াল পিডিএফ ডাউনলোড"}</span>
