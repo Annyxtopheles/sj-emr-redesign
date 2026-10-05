@@ -555,7 +555,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                         </span>
                         <span className="text-[10px] font-bold text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-700 flex items-center gap-1.5">
                           <Image
-                            src="/assets/bmdc-logo-white.svg"
+                            src="/assets/BMDC Logo 2.svg"
                             alt="BMDC"
                             width={13}
                             height={13}
@@ -577,7 +577,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                           <div className="flex items-center gap-2">
                             <div className="w-7 h-7 rounded-lg bg-emerald-950 border border-emerald-700/60 p-1 flex items-center justify-center shrink-0">
                               <Image
-                                src="/assets/bmdc-logo.svg"
+                                src="/assets/BMDC Logo 2.svg"
                                 alt="BMDC"
                                 width={20}
                                 height={20}

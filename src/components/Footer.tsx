@@ -104,7 +104,7 @@ export default function Footer({ language }: FooterProps) {
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">
                 <Image
-                  src="/assets/bmdc-logo.svg"
+                  src="/assets/BMDC Logo 1.svg"
                   alt="BMDC Logo"
                   width={14}
                   height={14}

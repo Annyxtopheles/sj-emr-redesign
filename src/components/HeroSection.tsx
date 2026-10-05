@@ -39,11 +39,11 @@ export default function HeroSection({ language }: HeroSectionProps) {
         className="opacity-75"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6 pointer-events-none">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
             {language === "en" ? (
               <>
                 The{" "}
@@ -68,20 +68,20 @@ export default function HeroSection({ language }: HeroSectionProps) {
             lang="bn"
             data-slot="hero-bangla-support"
             data-approved="false"
-            className="hidden font-sans text-lg sm:text-xl lg:text-2xl text-emerald-800 font-medium leading-relaxed max-w-2xl mx-auto mb-6 pointer-events-none"
+            className="hidden font-sans text-lg sm:text-xl lg:text-2xl text-emerald-800 font-medium leading-relaxed max-w-2xl mx-auto mb-6"
           >
             [BANGLA LINE – APPROVED COPY NEEDED]
           </p>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal pointer-events-none">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
             {language === "en"
               ? "Say goodbye to lost paper records and illegible handwriting. Empower your chamber or clinic with instant e-prescriptions, comprehensive Bangladeshi medicine database, Zoom video consultations, and an Android patient portal."
               : "হারিয়ে যাওয়া কাগজের ফাইল এবং অস্পষ্ট হাতের লেখার দিন শেষ। বিল্ট-ইন বাংলাদেশি ড্রাগ ডেটাবেস, মাত্র ৬০ সেকেন্ডে ই-প্রেসক্রিপশন, স্বয়ংক্রিয় জুম ভিডিও কল এবং অ্যান্ড্রয়েড পেশেন্ট পোর্টাল দিয়ে আপনার চেম্বারকে করুন আধুনিক ও ডিজিটাল।"}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14 pointer-events-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
             <SpecularButton
               size="lg"
               tint="#059669"

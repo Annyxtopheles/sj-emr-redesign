@@ -15,10 +15,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Bangladesh Medical & Dental Council prescription format rules"
           : "বাংলাদেশ মেডিকেল অ্যান্ড ডেন্টাল কাউন্সিল প্রেসক্রিপশন মান সম্মত",
       tag: language === "en" ? "Statutory Council" : "জাতীয় কাউন্সিল",
-      logo: "/assets/bmdc-logo.svg",
+      logo: "/assets/BMDC Logo 1.svg",
       href: "https://bmdc.org.bd/",
-      width: 914,
-      height: 914,
+      width: 254,
+      height: 254,
     },
     {
       title: language === "en" ? "Member of BASIS" : "বেসিস (BASIS) সদস্য",
@@ -27,10 +27,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Bangladesh Association of Software & Info Services"
           : "বাংলাদেশ অ্যাসোসিয়েশন অব সফটওয়্যার অ্যান্ড ইনফরমেশন সার্ভিসেস",
       tag: language === "en" ? "Verified Member" : "ভেরিফায়েড সদস্য",
-      logo: "/assets/partners/basis-logo.png",
+      logo: "/assets/BASIS Logo.svg",
       href: "https://basis.org.bd/company-profile/19-02-708",
-      width: 435,
-      height: 185,
+      width: 424,
+      height: 144,
     },
     {
       title: language === "en" ? "Sylhet Chamber of Commerce" : "সিলেট চেম্বার অব কমার্স",
@@ -39,10 +39,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Member of Sylhet Chamber of Commerce & Industry"
           : "সিলেট চেম্বার অব কমার্স অ্যান্ড ইন্ডাস্ট্রি নিবন্ধিত সদস্য",
       tag: language === "en" ? "Trade Member" : "ট্রেড সদস্য",
-      logo: "/assets/partners/scci-logo.png",
+      logo: "/assets/SCCI Logo.svg",
       href: "https://sylhetchamber.org.bd/",
-      width: 223,
-      height: 223,
+      width: 157,
+      height: 154,
     },
     {
       title: language === "en" ? "BD Physicians" : "বিডি ফিজিশিয়ানস",
@@ -51,10 +51,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Strategic clinical partner for doctor workflows"
           : "৫০,০০০+ ডাক্তারদের পেশাদার ক্লিনিক্যাল পার্টনার নেটওয়ার্ক",
       tag: language === "en" ? "Clinical Partner" : "ক্লিনিক্যাল পার্টনার",
-      logo: "/assets/partners/bd-physicians.png",
+      logo: "/assets/BD Physicians Logo.svg",
       href: "https://www.facebook.com/bdphysicians/",
-      width: 1024,
-      height: 1024,
+      width: 153,
+      height: 153,
     },
     {
       title: language === "en" ? "Health Support Sylhet" : "হেলথ সাপোর্ট সিলেট",
@@ -63,10 +63,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Healthcare outreach & telemedicine implementation"
           : "টেলিমেডিসিন সেবা ও স্বাস্থ্যসুরক্ষা পার্টনার",
       tag: language === "en" ? "Healthcare Partner" : "স্বাস্থ্যসেবা পার্টনার",
-      logo: "/assets/partners/sylhet-health-support.png",
+      logo: "/assets/Health Support Sylhet Logo.svg",
       href: "https://sylhealthsupport.xyz/",
-      width: 240,
-      height: 240,
+      width: 121,
+      height: 175,
     },
     {
       title: language === "en" ? "The Optimists" : "দ্য অপটিমিস্টস",
@@ -75,10 +75,10 @@ export default function TrustBar({ language }: TrustBarProps) {
           ? "Child health & humanitarian medical collaboration"
           : "শিশু স্বাস্থ্য ও মানবিক স্বাস্থ্যসেবা পার্টনার",
       tag: language === "en" ? "Non-profit Partner" : "মানবিক পার্টনার",
-      logo: "/assets/partners/the-optimists.png",
+      logo: "/assets/The Optimists Logo.svg",
       href: "https://theoptimists.org/",
-      width: 156,
-      height: 63,
+      width: 244,
+      height: 103,
     },
   ];
 

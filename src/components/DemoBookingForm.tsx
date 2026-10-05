@@ -102,14 +102,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               <div className="flex items-start gap-3 p-2 -mx-2 rounded-xl transition-all duration-200 hover:bg-white/80 hover:shadow-2xs group cursor-default">
                 <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:scale-105 flex items-center justify-center shrink-0 p-1 transition-all duration-200 shadow-2xs relative">
                   <Image
-                    src="/assets/bmdc-logo.svg"
+                    src="/assets/BMDC Logo 1.svg"
                     alt="BMDC"
                     width={20}
                     height={20}
                     className="w-5 h-5 object-contain group-hover:opacity-0 transition-opacity duration-200"
                   />
                   <Image
-                    src="/assets/bmdc-logo-white.svg"
+                    src="/assets/BMDC Logo 2.svg"
                     alt="BMDC"
                     width={20}
                     height={20}

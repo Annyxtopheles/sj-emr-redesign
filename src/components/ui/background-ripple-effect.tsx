@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface BackgroundRippleEffectProps {
@@ -22,26 +22,34 @@ export const BackgroundRippleEffect = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        setMousePos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      } else {
+        setMousePos(null);
+      }
+    };
 
-  const handleMouseLeave = () => {
-    setMousePos(null);
-  };
+    window.addEventListener("mousemove", handleMove, { passive: true });
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       className={cn(
-        "absolute inset-0 w-full h-full overflow-hidden pointer-events-auto select-none",
+        "absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none",
         className
       )}
     >
@@ -104,7 +112,7 @@ export const BackgroundRippleEffect = ({
           return (
             <div
               key={idx}
-              className="relative border-r border-b cursor-pointer transition-colors duration-700 ease-out hover:border-emerald-500/40 hover:duration-100"
+              className="relative border-r border-b transition-colors duration-700 ease-out"
               style={{
                 backgroundColor: fillColor,
                 borderColor: borderColor,
