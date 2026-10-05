@@ -47,14 +47,14 @@ export const BackgroundRippleEffect = ({
     >
       <style>{`
         @keyframes ambientFloatSubtle1 {
-          0% { transform: translate(-10%, -10%) scale(1); opacity: 0.25; }
-          50% { transform: translate(18%, 15%) scale(1.1); opacity: 0.45; }
-          100% { transform: translate(-10%, -10%) scale(1); opacity: 0.25; }
+          0% { transform: translate(-10%, -10%) scale(1); opacity: 0.2; }
+          50% { transform: translate(18%, 15%) scale(1.1); opacity: 0.35; }
+          100% { transform: translate(-10%, -10%) scale(1); opacity: 0.2; }
         }
         @keyframes ambientFloatSubtle2 {
-          0% { transform: translate(15%, 20%) scale(1.08); opacity: 0.2; }
-          50% { transform: translate(-15%, -10%) scale(0.95); opacity: 0.4; }
-          100% { transform: translate(15%, 20%) scale(1.08); opacity: 0.2; }
+          0% { transform: translate(15%, 20%) scale(1.08); opacity: 0.15; }
+          50% { transform: translate(-15%, -10%) scale(0.95); opacity: 0.3; }
+          100% { transform: translate(15%, 20%) scale(1.08); opacity: 0.15; }
         }
         @keyframes boxOccasionalPulse {
           0%, 100% {
@@ -63,7 +63,7 @@ export const BackgroundRippleEffect = ({
           }
           32% {
             background-color: rgba(16, 185, 129, 0.07);
-            border-color: rgba(16, 185, 129, 0.20);
+            border-color: rgba(16, 185, 129, 0.22);
           }
           64% {
             background-color: transparent;
@@ -72,34 +72,19 @@ export const BackgroundRippleEffect = ({
         }
       `}</style>
 
-      {/* Very faint ambient light glow (subtle and non-intrusive) */}
+      {/* Very faint ambient light glow (subtle and non-intrusive, no cursor blob) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute -top-[12%] -left-[10%] w-[680px] h-[680px] rounded-full bg-emerald-400/06 blur-[160px]"
+          className="absolute -top-[12%] -left-[10%] w-[680px] h-[680px] rounded-full bg-emerald-400/05 blur-[160px]"
           style={{ animation: "ambientFloatSubtle1 18s ease-in-out infinite" }}
         />
         <div
-          className="absolute top-[25%] -right-[12%] w-[620px] h-[620px] rounded-full bg-teal-400/05 blur-[150px]"
+          className="absolute top-[25%] -right-[12%] w-[620px] h-[620px] rounded-full bg-teal-400/04 blur-[150px]"
           style={{ animation: "ambientFloatSubtle2 22s ease-in-out infinite" }}
         />
-        {/* Soft cursor hover aura */}
-        {mousePos && (
-          <div
-            className="absolute rounded-full pointer-events-none transition-opacity duration-300"
-            style={{
-              left: mousePos.x,
-              top: mousePos.y,
-              width: 260,
-              height: 260,
-              transform: "translate(-50%, -50%)",
-              background: "radial-gradient(circle, rgba(16, 185, 129, 0.10) 0%, rgba(16, 185, 129, 0.02) 60%, transparent 80%)",
-              filter: "blur(12px)",
-            }}
-          />
-        )}
       </div>
 
-      {/* Full-Bleed Delicate Wireframe Grid with Radial Mask */}
+      {/* Full-Bleed Delicate Base Wireframe Grid */}
       <div
         className="relative z-10 w-full h-full border-t border-l"
         style={{
@@ -119,7 +104,7 @@ export const BackgroundRippleEffect = ({
           return (
             <div
               key={idx}
-              className="relative border-r border-b cursor-pointer transition-colors duration-700 ease-out hover:bg-emerald-500/12 hover:border-emerald-500/35 hover:duration-100"
+              className="relative border-r border-b cursor-pointer transition-colors duration-700 ease-out hover:border-emerald-500/40 hover:duration-100"
               style={{
                 backgroundColor: fillColor,
                 borderColor: borderColor,
@@ -131,6 +116,32 @@ export const BackgroundRippleEffect = ({
           );
         })}
       </div>
+
+      {/* Prominent Box Outlines Layer: reveals crisp outlines directly around the cursor location */}
+      {mousePos && (
+        <div
+          className="absolute inset-0 z-15 w-full h-full border-t border-l pointer-events-none transition-opacity duration-150"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
+            gridAutoRows: "48px",
+            borderColor: "rgba(16, 185, 129, 0.28)",
+            maskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
+            WebkitMaskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
+          }}
+        >
+          {STATIC_CELLS.map((idx) => (
+            <div
+              key={idx}
+              className="relative border-r border-b"
+              style={{
+                borderColor: "rgba(16, 185, 129, 0.28)",
+                backgroundColor: "transparent",
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Selective Soft Blur Patches (softens and blurs grid outlines at organic intervals) */}
       <div
