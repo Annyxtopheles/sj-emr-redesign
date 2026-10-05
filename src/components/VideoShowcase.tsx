@@ -112,7 +112,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
         {/* Video Theatre & Playlist Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Theatre Player */}
-          <div className="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="lg:col-span-8 bg-[#031913] border border-[#0d3f32] rounded-2xl overflow-hidden shadow-2xl">
             {/* Video Screen Container 16:9 */}
             <div className="relative aspect-video w-full bg-black overflow-hidden">
               {isPlaying ? (
@@ -159,7 +159,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
             </div>
 
             {/* Video Details Card */}
-            <div className="p-6 space-y-3 bg-slate-900 text-white">
+            <div className="p-6 space-y-3 bg-[#06241b] border-t border-[#0d3f32] text-white">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-xs text-slate-400">
                   <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -171,7 +171,7 @@ export default function VideoShowcase({ language }: VideoShowcaseProps) {
                 <div className="flex items-center gap-3 text-xs">
                   <button
                     onClick={handleCopyLink}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0b3327] hover:bg-[#104434] text-emerald-100 hover:text-white border border-[#145341] transition-colors cursor-pointer"
                     title="Copy video link"
                   >
                     {copied ? (

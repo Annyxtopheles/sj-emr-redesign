@@ -95,16 +95,16 @@ export default function FAQSection({ language }: FAQSectionProps) {
             return (
               <div
                 key={idx}
-                className={`border rounded-xl overflow-hidden transition-all duration-200 bg-[#EFFFF5] group ${
+                className={`border rounded-xl overflow-hidden transition-all duration-200 bg-white group ${
                   isOpen
                     ? "border-emerald-300 shadow-sm ring-1 ring-emerald-500/20"
-                    : "border-emerald-200/70 hover:border-emerald-300 hover:shadow-xs"
+                    : "border-slate-200 hover:border-slate-300 hover:shadow-xs"
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 bg-[#EFFFF5] hover:bg-[#e4faed] transition-colors cursor-pointer"
+                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 bg-[#fbfcfd] hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <span className="text-sm font-bold text-slate-900 leading-snug group-hover:text-emerald-950 transition-colors">{faq.q}</span>
                   <ChevronDown
@@ -114,7 +114,7 @@ export default function FAQSection({ language }: FAQSectionProps) {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed bg-[#EFFFF5] border-t border-emerald-200/50">
+                  <div className="px-5 py-4 text-xs sm:text-sm text-slate-700 leading-relaxed bg-[#EFFFF5] border-t border-emerald-200/70">
                     {faq.a}
                   </div>
                 )}

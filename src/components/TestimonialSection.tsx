@@ -27,7 +27,7 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
 
         {/* Featured Testimonial Card */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 text-white p-8 sm:p-12 shadow-2xl border border-emerald-800/60 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#022c22] via-[#041d16] to-[#012019] text-white p-8 sm:p-12 shadow-2xl border border-emerald-800/60 overflow-hidden">
             {/* Background Quotes Watermark */}
             <Quote className="absolute right-6 -bottom-6 w-44 h-44 text-emerald-600/10 pointer-events-none" />
 

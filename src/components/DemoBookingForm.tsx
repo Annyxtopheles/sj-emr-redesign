@@ -100,13 +100,20 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               </div>
 
               <div className="flex items-start gap-3 p-2 -mx-2 rounded-xl transition-all duration-200 hover:bg-white/80 hover:shadow-2xs group cursor-default">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:scale-105 flex items-center justify-center shrink-0 p-1 transition-all duration-200 shadow-2xs">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:scale-105 flex items-center justify-center shrink-0 p-1 transition-all duration-200 shadow-2xs relative">
                   <Image
                     src="/assets/bmdc-logo.svg"
                     alt="BMDC"
                     width={20}
                     height={20}
-                    className="w-5 h-5 object-contain group-hover:brightness-0 group-hover:invert transition-all"
+                    className="w-5 h-5 object-contain group-hover:opacity-0 transition-opacity duration-200"
+                  />
+                  <Image
+                    src="/assets/bmdc-logo-white.svg"
+                    alt="BMDC"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute inset-0 m-auto"
                   />
                 </div>
                 <div>
@@ -435,7 +442,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {loading ? (
                         <span>{language === "en" ? "Processing..." : "প্রক্রিয়াকরণ হচ্ছে..."}</span>

@@ -4,358 +4,359 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #d00708;
+        fill: #ffffff;
       }
 
       .cls-2 {
-        fill: #ce0607;
+        fill: #ffffff;
       }
 
       .cls-3 {
-        fill: #fdf1f0;
+        fill: #ffffff;
       }
 
       .cls-4 {
-        fill: #fbd9da;
+        fill: #ffffff;
       }
 
       .cls-5 {
-        fill: #cf0607;
+        fill: #ffffff;
       }
 
       .cls-6 {
-        fill: #fdd4d2;
+        fill: #ffffff;
       }
 
       .cls-7 {
-        fill: #d20406;
+        fill: #ffffff;
       }
 
       .cls-8 {
-        fill: #fbe3e2;
+        fill: #ffffff;
       }
 
       .cls-9 {
-        fill: #d00608;
+        fill: #ffffff;
       }
 
       .cls-10 {
-        fill: #ce080a;
+        fill: #ffffff;
       }
 
       .cls-11 {
-        fill: #fce3e3;
+        fill: #ffffff;
       }
 
       .cls-12 {
-        fill: #ce1112;
+        fill: #ffffff;
       }
 
       .cls-13 {
-        fill: #fde3e5;
+        fill: #ffffff;
       }
 
       .cls-14 {
-        fill: #fef7f7;
+        fill: #ffffff;
       }
 
       .cls-15 {
-        fill: #fde7e5;
+        fill: #ffffff;
       }
 
       .cls-16 {
-        fill: #d00c0c;
+        fill: #ffffff;
       }
 
       .cls-17 {
-        fill: #d20709;
+        fill: #ffffff;
       }
 
       .cls-18 {
-        fill: #fdf6f6;
+        fill: #ffffff;
       }
 
       .cls-19 {
-        fill: #cf0809;
+        fill: #ffffff;
       }
 
       .cls-20 {
-        fill: #d20b0a;
+        fill: #ffffff;
       }
 
       .cls-21 {
-        fill: #d00809;
+        fill: #ffffff;
       }
 
       .cls-22 {
-        fill: #fdefef;
+        fill: #ffffff;
       }
 
       .cls-23 {
-        fill: #cc070b;
+        fill: #ffffff;
       }
 
       .cls-24 {
-        fill: #d2090a;
+        fill: #ffffff;
       }
 
       .cls-25 {
-        fill: #c51213;
+        fill: #ffffff;
       }
 
       .cls-26 {
-        fill: #fefafa;
+        fill: #ffffff;
       }
 
       .cls-27 {
-        fill: #fdf1f1;
+        fill: #ffffff;
       }
 
       .cls-28 {
-        fill: #cf0708;
+        fill: #ffffff;
       }
 
       .cls-29 {
-        fill: #cd0e0f;
+        fill: #ffffff;
       }
 
       .cls-30 {
-        fill: #f9c6c6;
+        fill: #ffffff;
       }
 
       .cls-31 {
-        fill: #cd0a0a;
+        fill: #ffffff;
       }
 
       .cls-32 {
-        fill: #fef9fa;
+        fill: #ffffff;
       }
 
       .cls-33 {
-        fill: #f9d3d2;
+        fill: #ffffff;
       }
 
       .cls-34 {
-        fill: #d00507;
+        fill: #ffffff;
       }
 
       .cls-35 {
-        fill: #cf0709;
+        fill: #ffffff;
       }
 
       .cls-36 {
-        fill: #d30809;
+        fill: #ffffff;
       }
 
       .cls-37 {
-        fill: #fad7d6;
+        fill: #ffffff;
       }
 
       .cls-38 {
-        fill: #ce0808;
+        fill: #ffffff;
       }
 
       .cls-39 {
-        fill: #d20506;
+        fill: #ffffff;
       }
 
       .cls-40 {
-        fill: #fadbda;
+        fill: #ffffff;
       }
 
       .cls-41 {
-        fill: #fceded;
+        fill: #ffffff;
       }
 
       .cls-42 {
-        fill: #c61213;
+        fill: #ffffff;
       }
 
       .cls-43 {
-        fill: #cf090b;
+        fill: #ffffff;
       }
 
       .cls-44 {
-        fill: #d00808;
+        fill: #ffffff;
       }
 
       .cls-45 {
-        fill: #fdeaea;
+        fill: #ffffff;
       }
 
       .cls-46 {
-        fill: #cd0608;
+        fill: #ffffff;
       }
 
       .cls-47 {
-        fill: #d00c0b;
+        fill: #ffffff;
       }
 
       .cls-48 {
-        fill: #fae4e4;
+        fill: #ffffff;
       }
 
       .cls-49 {
-        fill: #ce0809;
+        fill: #ffffff;
       }
 
       .cls-50 {
-        fill: #fdf3f2;
+        fill: #ffffff;
       }
 
       .cls-51 {
-        fill: #fce4e3;
+        fill: #ffffff;
       }
 
       .cls-52 {
-        fill: #fdfaf9;
+        fill: #ffffff;
       }
 
       .cls-53 {
-        fill: #d10f0f;
+        fill: #ffffff;
       }
 
       .cls-54 {
-        fill: #fefdfd;
+        fill: #ffffff;
       }
 
       .cls-55 {
-        fill: #c4100e;
+        fill: #ffffff;
       }
 
       .cls-56 {
-        fill: #bf0f0f;
+        fill: #ffffff;
       }
 
       .cls-57 {
-        fill: #cc090a;
+        fill: #ffffff;
       }
 
       .cls-58 {
-        fill: #c3181a;
+        fill: #ffffff;
       }
 
       .cls-59 {
-        fill: #fa8d8b;
+        fill: #ffffff;
       }
 
       .cls-60 {
-        fill: #cc080a;
+        fill: #ffffff;
       }
 
       .cls-61 {
-        fill: #c50e0f;
+        fill: #ffffff;
       }
 
       .cls-62 {
-        fill: #cc080b;
+        fill: #ffffff;
       }
 
       .cls-63 {
-        fill: #fce6e6;
+        fill: #ffffff;
       }
 
       .cls-64 {
-        fill: #fbe2e2;
+        fill: #ffffff;
       }
 
       .cls-65 {
-        fill: #fdf8f7;
+        fill: #ffffff;
       }
 
       .cls-66 {
-        fill: #fefbfb;
+        fill: #ffffff;
       }
 
       .cls-67 {
-        fill: #fefefe;
+        fill: #ffffff;
       }
 
       .cls-68 {
-        fill: #fefcfb;
+        fill: #ffffff;
       }
 
       .cls-69 {
-        fill: #d10909;
+        fill: #ffffff;
       }
 
       .cls-70 {
-        fill: #fdf8f8;
+        fill: #ffffff;
       }
 
       .cls-71 {
-        fill: #fbf0f0;
+        fill: #ffffff;
       }
 
       .cls-72 {
-        fill: #fde8e8;
+        fill: #ffffff;
       }
 
       .cls-73 {
-        fill: #d10a09;
+        fill: #ffffff;
       }
 
       .cls-74 {
-        fill: #c8090b;
+        fill: #ffffff;
       }
 
       .cls-75 {
-        fill: #fce8e8;
+        fill: #ffffff;
       }
 
       .cls-76 {
-        fill: #c11514;
+        fill: #ffffff;
       }
 
       .cls-77 {
-        fill: #fdf0f1;
+        fill: #ffffff;
       }
 
       .cls-78 {
-        fill: #cb0b0c;
+        fill: #ffffff;
       }
 
       .cls-79 {
-        fill: #cf090a;
+        fill: #ffffff;
       }
 
       .cls-80 {
-        fill: #d30a08;
+        fill: #ffffff;
       }
 
       .cls-81 {
-        fill: #d30808;
+        fill: #ffffff;
       }
 
       .cls-82 {
-        fill: #d00607;
+        fill: #ffffff;
       }
 
       .cls-83 {
-        fill: #fde6e7;
+        fill: #ffffff;
       }
 
       .cls-84 {
-        fill: #fef8f8;
+        fill: #ffffff;
       }
 
       .cls-85 {
-        fill: #cd0607;
+        fill: #ffffff;
       }
 
       .cls-86 {
-        fill: #fdfafa;
+        fill: #ffffff;
       }
 
       .cls-87 {
-        fill: #d00a09;
+        fill: #ffffff;
       }
+
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
     <g id="Generative_Object" data-name="Generative Object">
       <g>
-        <circle class="cls-39" cx="456.74" cy="456.72" r="448.65" fill="none" stroke="#d00708" stroke-width="16.2"/>
+        <circle class="cls-39" cx="456.74" cy="456.72" r="448.65" fill="none" stroke="#ffffff" stroke-width="16.2"/>
         <g>
           <path class="cls-49" d="M74.53,369.3c-4.36-4.77-1.2-11.93,1.99-16.62l-3.16,6.35c-.23,3.81-1.17,6.14-2.81,7-1.28,4.98-2.14,11.39-8.75,11.36-2.94-.66-2.17-6.33-1.54-8.73,4.24-16.09,8.01-31.29,14-46.68.77-1.99,2.79-3.28,5.03-4.28-2.98-3.3-7.2-3.19-12.06-5.47l12.27-4.71,14.07-32.96c6.49-15.19,14.4-29.33,23.4-43.05,3.25-4.95,9.34-5.79,14.33-4.91-2.36-5.12-2.61-9.56-.18-13.63,1.85-3.09,6.28-4.59,11.33-4.72l-12.85-11.58c3.01-1.93,7.52.24,10.56,1.45,3.48-2.7,7.79-4.74,13.14-3.01-2.13,2.53-3.77,4.15-5.31,7.63l37.57,30.93c-2.94,1.57-6.21,2.01-10.15,2.23l-21.58-18.11c-3.7-3.1-7.78-4.45-12.48-2.72-2.39.88-3.51,4.7-1.72,6.02,3.45-1.3,7.13-2.7,10.46-.35,2.57,1.82,5.25,5.3,3.92,9.29s-5.35,4.41-7.69,6.81c-.54,1.54.04,5.47-1.68,6.74-1.22.9-3.41,2.25-5.85,1.49-5.58-1.74-8.03-7.23-7.51-13.11-2.98-.32-5.43,1.06-6.9,3.19-7.13,10.32-12.39,21.16-18.52,32.52,4.71,3.21,8.95,5.52,14.05,7.29-1.86-7.11-4.56-14.52-1.91-21.62,1.87-3.01,7.21-4.05,10.56-5.26,3.61,6.36,7.05,13.01,13.99,15.46l15.5,5.48c.76,1.39-1.49,3.52-2.54,3.97-3.16,1.37-20.61-4.46-28.6-12.32-.6,8.56,3.02,14.69,6.63,21.63-3.01,1.85-6.17,3.06-9.6,3.64-6.93-3.82-13.51-7.4-21.86-10.01-4.6,10.33,1.38,21.73,11.16,26.83,5.93,3.09,12.2,4.36,17.96,1.29-2.42-.82-4.18-1.29-5.23-2.35-1.28-1.28-1.74-3.42-1-5.44,1.75-4.83,7.27-5.77,10.84-4.16,4.58,2.05,5.78,7.53,2.95,11.75-4.09,6.1-11.34,9.39-18.85,8.72-11.54-1.02-20.28-7.72-26.25-18.17-2.45,5.91-5.31,11.03-6.16,17.53l46.27,15.3c-2.76,2.65-6.27,4.28-9.88,5.42l-36.26-11.94c-3.48-1.15-6.58,5.5-7.23,9.32l48.09,13.48-8.74,6.65c-11.49-3.37-26.94-10.26-30.97-5.72-3.24,3.66,4.23,3.47,4.9,6.75.97,4.77-10.38,4.1-10.37,12.22,0,4.52,2.91,8.87,8.66,7.51-2.49-1.15-4.47-2.56-4.82-5.34-.28-2.22,1.06-4.79,3.63-6.3,3.27-1.93,7.47-.76,9.47,1.63,2.55,3.06,2.83,7.59.72,11.25-3.04,5.25-8.62,7.18-14.5,6.29-4.94-.75-10.08-3.76-11.94-9.14Z"/>
           <path class="cls-38" d="M506.03,62.69c7.65,1.02,1.53,19.76,18,34.05,4.33,3.76,10.05,3.9,14.79,1.73s8.3-6.2,6.77-12.8c-4.39,3.23-8.76,7.11-14.23,6.18-8.44-1.43-2.43-14.81-6.75-18.36-1.37,1.3-2.81,4.11-4.31,4.41-2.11.43-4.9.16-6.33-1.88-2.72-3.86-1.24-9.3,2.37-11.25,4.08-2.2,8.92-.44,11.51,4.33,1.25-2.04,1.67-4.62,1.54-7.52l-22.37-3.39c-3.63-.55-5.46-5.63-6.57-8.89,19.85,2.03,38.97,5.82,58.62,9.77,2.91,3.09,4.82,5.94,6.52,10.24l-28.17-6.28-3.48,18.79,13.3-7.69c8.5,11.67,5.83,29.27-7.18,35.7-9.38,4.64-19.61-.58-25.46-8.59-8.03-11-9.56-24.86-8.55-38.56Z"/>
@@ -460,7 +461,7 @@
             <circle class="cls-48" cx="72.78" cy="391.12" r="4.04"/>
           </g>
           <g>
-            <circle class="cls-7" cx="456.33" cy="451.61" r="318.1" fill="none" stroke="#d00708" stroke-width="15.5"/>
+            <circle class="cls-7" cx="456.33" cy="451.61" r="318.1" fill="none" stroke="#ffffff" stroke-width="15.5"/>
             <g>
               <path class="cls-34" d="M456.14,759.03c-12.56-21.4-37.73-31.21-60.82-38.45-23.15-7.26-45.17-14.46-67.74-23.48-27.71-11.08-52.69-26.16-72.49-48.56-26.53-30-39.84-67.92-38.9-108.05.4-17.03,3.19-32.74,6.25-49.32l7.29-39.59c9.19-49.96-8.24-90.88-41.14-128.16,18.36-21.85,34.62-43.51,49.53-67.05l12.18,3.17c45.32,11.8,92.32-3.66,121.12-40.33l9.43-11.06,146.03-.07,15.23,19.02c18.3,20,43.14,33.02,70.27,36.81,19.79,2.74,38.27-.17,56.78-7.74,15.15,23.24,30.26,45.36,47.37,67.12-24.34,26.78-40.15,59.75-40.96,96.14-.51,22.62,4.11,43.84,8.21,65.72l7.83,41.7c8.45,62.17-21.11,122.18-75.6,153.07-19.31,10.95-39.09,18.77-60.13,26.27l-58.14,20.71c-17.28,6.15-31.85,16.71-41.61,32.13Z"/>
               <g>

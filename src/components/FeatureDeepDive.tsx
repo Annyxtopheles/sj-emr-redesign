@@ -476,9 +476,9 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
 
           {/* RIGHT: Live Authentic Software Interface Display (Direct from dev software code) */}
           <div className="lg:col-span-8 flex flex-col h-full">
-            <div className="rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-800 p-5 sm:p-6 shadow-2xl shadow-slate-950/20 flex flex-col justify-between h-full text-slate-100 font-sans">
+            <div className="rounded-2xl sm:rounded-3xl bg-[#06241b] border border-[#0d3f32] p-5 sm:p-6 shadow-2xl shadow-emerald-950/20 flex flex-col justify-between h-full text-slate-100 font-sans">
               {/* Clean Clinical Screen Header */}
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-800/80">
+              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#0d3f32]/80">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-xs"
@@ -520,7 +520,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 1. Voice-to-Note Screen */}
                 {activeToolIndex === 0 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center">
                           <Mic className="w-4 h-4 animate-pulse" />
@@ -530,11 +530,11 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                           <div className="text-[10px] text-rose-400 font-medium">Recording active • 00:14 / 02:00</div>
                         </div>
                       </div>
-                      <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded font-medium">Auto-SOAP</span>
+                      <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-1 rounded font-medium">Auto-SOAP</span>
                     </div>
 
                     {/* Waveform indicator */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center justify-between gap-1.5">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 flex items-center justify-between gap-1.5">
                       <div className="flex items-center gap-1 w-full h-6">
                         {[40, 70, 30, 90, 60, 100, 45, 80, 55, 95, 30, 85, 65, 40, 90, 75, 50, 85, 30, 60, 95, 45, 80].map((h, i) => (
                           <div
@@ -548,7 +548,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Transcribed Speech */}
-                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-xs text-slate-300 space-y-1">
+                    <div className="bg-[#06241b]/90 border border-[#0d3f32] rounded-xl p-3.5 text-xs text-slate-300 space-y-1">
                       <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Detected Audio Stream</div>
                       <p className="italic text-slate-200">
                         &quot;Patient reports 3 days of high fever and persistent dry cough, anorexia, and body ache. Temp 102.2°F. Throat is erythematous, lungs clear on auscultation. Prescribed Napa Extend and Bilastine.&quot;
@@ -556,27 +556,27 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Structured SOAP Note */}
-                    <div className="bg-slate-900 border border-emerald-900/60 rounded-xl p-3.5 space-y-2 text-xs">
-                      <div className="flex items-center justify-between text-[11px] font-bold text-emerald-400 border-b border-slate-800 pb-1.5">
+                    <div className="bg-[#06241b] border border-emerald-900/60 rounded-xl p-3.5 space-y-2 text-xs">
+                      <div className="flex items-center justify-between text-[11px] font-bold text-emerald-400 border-b border-[#0d3f32] pb-1.5">
                         <span>Generated Clinical SOAP Note</span>
                         <span className="bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded text-[10px] border border-emerald-800">
                           High Confidence
                         </span>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                        <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                        <div className="bg-[#021812] p-2 rounded-lg border border-[#0d3f32]">
                           <span className="font-bold text-slate-400 block mb-0.5">S (Subjective):</span>
                           <span className="text-slate-200">Fever (3d), dry cough, body ache, loss of appetite.</span>
                         </div>
-                        <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                        <div className="bg-[#021812] p-2 rounded-lg border border-[#0d3f32]">
                           <span className="font-bold text-slate-400 block mb-0.5">O (Objective):</span>
                           <span className="text-slate-200">Temp 102.2°F, Chest clear bilaterally, Throat congestion +.</span>
                         </div>
-                        <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                        <div className="bg-[#021812] p-2 rounded-lg border border-[#0d3f32]">
                           <span className="font-bold text-slate-400 block mb-0.5">A (Assessment):</span>
                           <span className="text-emerald-300 font-semibold">Acute Upper Respiratory Viral Infection (J06.9)</span>
                         </div>
-                        <div className="bg-slate-950 p-2 rounded-lg border border-slate-800">
+                        <div className="bg-[#021812] p-2 rounded-lg border border-[#0d3f32]">
                           <span className="font-bold text-slate-400 block mb-0.5">P (Plan):</span>
                           <span className="text-slate-200">Tab Napa Extend 665mg 1+1+1 (3d), Tab Bilastine 20mg 0+0+1 (5d).</span>
                         </div>
@@ -588,7 +588,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 2. Handwritten Pad OCR Screen */}
                 {activeToolIndex === 1 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
                           <ScanLine className="w-4 h-4" />
@@ -604,8 +604,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Prescription Table Extracted */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden text-xs">
-                      <div className="bg-slate-850 px-3 py-2 border-b border-slate-800 text-[10px] font-bold text-slate-400 uppercase tracking-wider grid grid-cols-12 gap-2">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl overflow-hidden text-xs">
+                      <div className="bg-slate-850 px-3 py-2 border-b border-[#0d3f32] text-[10px] font-bold text-slate-400 uppercase tracking-wider grid grid-cols-12 gap-2">
                         <span className="col-span-5">Medication & Strength</span>
                         <span className="col-span-3">Dosage / Timing</span>
                         <span className="col-span-2">Duration</span>
@@ -657,7 +657,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 3. Diagnosis Assist Screen */}
                 {activeToolIndex === 2 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-teal-500/20 border border-teal-500/40 text-teal-400 flex items-center justify-center">
                           <Sparkles className="w-4 h-4" />
@@ -667,7 +667,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                           <div className="text-[10px] text-slate-400">Chief complaint input: Fever, productive cough, chest tightness (4d)</div>
                         </div>
                       </div>
-                      <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">ICD-10 Mapped</span>
+                      <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-0.5 rounded">ICD-10 Mapped</span>
                     </div>
 
                     {/* Ranked Differentials */}
@@ -676,7 +676,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         Ranked Diagnostic Hypotheses
                       </div>
 
-                      <div className="bg-slate-900 border border-emerald-500/60 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-emerald-500/60 rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-emerald-300">1. Acute Bronchitis (ICD-10: J20.9)</span>
                           <span className="text-emerald-400 font-bold text-[11px] bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
@@ -688,10 +688,10 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         </p>
                       </div>
 
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-slate-200">2. Community-Acquired Pneumonia (ICD-10: J18.9)</span>
-                          <span className="text-slate-400 font-bold text-[11px] bg-slate-800 px-2 py-0.5 rounded">
+                          <span className="text-slate-400 font-bold text-[11px] bg-[#0b3327] px-2 py-0.5 rounded">
                             64% Match
                           </span>
                         </div>
@@ -700,17 +700,17 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         </p>
                       </div>
 
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-slate-200">3. Viral Rhinopharyngitis (ICD-10: J06.9)</span>
-                          <span className="text-slate-400 font-bold text-[11px] bg-slate-800 px-2 py-0.5 rounded">
+                          <span className="text-slate-400 font-bold text-[11px] bg-[#0b3327] px-2 py-0.5 rounded">
                             41% Match
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-[11px] text-slate-300 flex items-center justify-between">
+                    <div className="bg-[#06241b]/90 border border-[#0d3f32] rounded-xl p-3 text-[11px] text-slate-300 flex items-center justify-between">
                       <span className="text-slate-400">Suggested Investigations:</span>
                       <span className="font-semibold text-emerald-400">Chest X-Ray P/A View • CBC with ESR</span>
                     </div>
@@ -720,7 +720,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 4. Medication Safety Check Screen */}
                 {activeToolIndex === 3 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
                           <AlertCircle className="w-4 h-4" />
@@ -748,19 +748,19 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
 
                     {/* Drug Validation Cards */}
                     <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-[10px] text-emerald-400 font-bold uppercase">Metformin 500mg</div>
                         <div className="text-[11px] text-slate-200 mt-0.5">Dose: 1000mg/day (Safe)</div>
                         <div className="text-[10px] text-slate-400">Renal clearance: Normal</div>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-[10px] text-emerald-400 font-bold uppercase">Clopidogrel 75mg</div>
                         <div className="text-[11px] text-slate-200 mt-0.5">Dose: 75mg/day (Standard)</div>
                         <div className="text-[10px] text-slate-400">No antiplatelet clash detected</div>
                       </div>
                     </div>
 
-                    <div className="bg-slate-900 border border-emerald-900/60 rounded-xl p-3 text-xs text-slate-300 flex items-center justify-between">
+                    <div className="bg-[#06241b] border border-emerald-900/60 rounded-xl p-3 text-xs text-slate-300 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                         <span>Dosage verified against national geriatric & adult guidelines.</span>
@@ -773,7 +773,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 5. Lab Results Interpreter Screen */}
                 {activeToolIndex === 4 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 flex items-center justify-center">
                           <FileCheck2 className="w-4 h-4" />
@@ -789,8 +789,8 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Biomarker Table */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden text-xs">
-                      <div className="bg-slate-850 px-3 py-2 border-b border-slate-800 text-[10px] font-bold text-slate-400 uppercase tracking-wider grid grid-cols-12 gap-2">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl overflow-hidden text-xs">
+                      <div className="bg-slate-850 px-3 py-2 border-b border-[#0d3f32] text-[10px] font-bold text-slate-400 uppercase tracking-wider grid grid-cols-12 gap-2">
                         <span className="col-span-4">Biomarker</span>
                         <span className="col-span-3">Patient Value</span>
                         <span className="col-span-3">Reference Range</span>
@@ -832,7 +832,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-[11px] text-slate-300 space-y-1">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 text-[11px] text-slate-300 space-y-1">
                       <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider block">AI Clinical Summary:</span>
                       <p>
                         Mild microcytic hypochromic anemia co-occurring with reactive leukocytosis. Elevated fasting glucose indicates sub-optimal glycemic control. Suggest checking HbA1c and Serum Ferritin.
@@ -844,7 +844,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 6. Bangla Patient Education Screen */}
                 {activeToolIndex === 5 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
                           <Languages className="w-4 h-4" />
@@ -860,7 +860,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Bangla Guidance Handout */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3 text-xs">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-4 space-y-3 text-xs">
                       <div className="flex items-start gap-2.5">
                         <span className="w-5 h-5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
                           ১
@@ -899,11 +899,11 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     <div className="flex gap-2">
-                      <div className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 flex items-center justify-between text-xs text-slate-300">
+                      <div className="flex-1 bg-[#06241b] border border-[#0d3f32] rounded-xl px-3 py-2 flex items-center justify-between text-xs text-slate-300">
                         <span>SMS Dispatch: 01707-XXXXXX</span>
                         <Send className="w-3.5 h-3.5 text-emerald-400" />
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 flex items-center gap-1.5 text-xs text-slate-300">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl px-3 py-2 flex items-center gap-1.5 text-xs text-slate-300">
                         <Printer className="w-3.5 h-3.5 text-slate-400" />
                         <span>{language === "en" ? "Print" : "প্রিন্ট"}</span>
                       </div>
@@ -914,7 +914,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 7. Follow-up Planner Screen */}
                 {activeToolIndex === 6 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-teal-500/20 border border-teal-500/40 text-teal-400 flex items-center justify-center">
                           <CalendarClock className="w-4 h-4" />
@@ -930,12 +930,12 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Schedule Recommendation */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2 text-xs">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-4 space-y-2 text-xs">
                       <div className="flex items-center justify-between">
                         <span className="text-slate-400">Recommended Next Visit:</span>
                         <span className="text-sm font-bold text-emerald-400">3 Weeks (21 Days)</span>
                       </div>
-                      <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-800 pt-2">
+                      <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-[#0d3f32] pt-2">
                         <span>Target Calibration Date:</span>
                         <span className="text-slate-200 font-semibold">21 October 2026 (Wednesday)</span>
                       </div>
@@ -946,7 +946,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Queued SMS Preview */}
-                    <div className="bg-slate-900/90 border border-emerald-900/60 rounded-xl p-3.5 space-y-1.5 text-xs">
+                    <div className="bg-[#06241b]/90 border border-emerald-900/60 rounded-xl p-3.5 space-y-1.5 text-xs">
                       <div className="flex items-center justify-between text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
                         <span>Queued Bangla SMS Reminder</span>
                         <span>Auto-send in 18d</span>
@@ -961,7 +961,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 8. Patient History Summarizer Screen */}
                 {activeToolIndex === 7 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center">
                           <History className="w-4 h-4" />
@@ -971,7 +971,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                           <div className="text-[10px] text-slate-400">Hosne Ara Begum (61y, Female) • Patient ID #8841</div>
                         </div>
                       </div>
-                      <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">4 Visits Total</span>
+                      <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-0.5 rounded">4 Visits Total</span>
                     </div>
 
                     {/* Critical Allergy Pill */}
@@ -983,19 +983,19 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                     </div>
 
                     {/* Multi-visit Timeline */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-2 text-xs">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-2 text-xs">
                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
                         Historical Trajectory (2024 - 2026)
                       </div>
                       <div className="space-y-2 text-[11px]">
-                        <div className="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
+                        <div className="flex items-center justify-between border-b border-[#0d3f32]/80 pb-1.5">
                           <div>
                             <span className="text-slate-400 mr-2">12 Jan 2024:</span>
                             <span className="text-slate-200">Initial intake for uncontrolled hypertension</span>
                           </div>
                           <span className="text-rose-400 font-bold">BP 158/95</span>
                         </div>
-                        <div className="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
+                        <div className="flex items-center justify-between border-b border-[#0d3f32]/80 pb-1.5">
                           <div>
                             <span className="text-slate-400 mr-2">18 Jun 2024:</span>
                             <span className="text-slate-200">Amlodipine titrated to 5mg, diet modified</span>
@@ -1017,7 +1017,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 9. Smart Diagnostic Coding Screen */}
                 {activeToolIndex === 8 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
                           <Tag className="w-4 h-4" />
@@ -1038,28 +1038,28 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                         Standardized Codes Mapped to File
                       </div>
 
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-emerald-400">ICD-10: I10</span>
-                          <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Primary Diagnosis</span>
+                          <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-0.5 rounded">Primary Diagnosis</span>
                         </div>
                         <div className="text-xs text-slate-200 font-semibold">Essential (Primary) Hypertension</div>
                         <p className="text-[11px] text-slate-400">WHO Standard Category: Diseases of the circulatory system</p>
                       </div>
 
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-teal-400">ICD-10: E11.9</span>
-                          <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Secondary Comorbidity</span>
+                          <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-0.5 rounded">Secondary Comorbidity</span>
                         </div>
                         <div className="text-xs text-slate-200 font-semibold">Type 2 Diabetes Mellitus without complications</div>
                         <p className="text-[11px] text-slate-400">WHO Standard Category: Endocrine, nutritional and metabolic diseases</p>
                       </div>
 
-                      <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+                      <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-1">
                         <div className="flex items-center justify-between text-xs">
                           <span className="font-bold text-cyan-400">ICD-11: BA00</span>
-                          <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">ICD-11 Ready</span>
+                          <span className="text-[10px] bg-[#0b3327] text-slate-300 px-2 py-0.5 rounded">ICD-11 Ready</span>
                         </div>
                         <div className="text-xs text-slate-200 font-semibold">Essential Hypertension</div>
                       </div>
@@ -1070,7 +1070,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 {/* 10. Clinic AI Insights Dashboard Screen */}
                 {activeToolIndex === 9 && (
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#0d3f32]">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
                           <BarChart3 className="w-4 h-4" />
@@ -1087,26 +1087,26 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
 
                     {/* Stats Overview */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-lg font-bold text-emerald-400">48</div>
                         <div className="text-[10px] text-slate-400">Patients Seen</div>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-lg font-bold text-teal-400">54s</div>
                         <div className="text-[10px] text-slate-400">Avg Rx Time</div>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-lg font-bold text-cyan-400">100%</div>
                         <div className="text-[10px] text-slate-400">Digital Pad</div>
                       </div>
-                      <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl">
+                      <div className="bg-[#06241b] border border-[#0d3f32] p-2.5 rounded-xl">
                         <div className="text-lg font-bold text-emerald-300">28.8k</div>
                         <div className="text-[10px] text-slate-400">BDT Collected</div>
                       </div>
                     </div>
 
                     {/* Disease Distribution Bar Chart */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-2 text-xs">
+                    <div className="bg-[#06241b] border border-[#0d3f32] rounded-xl p-3 space-y-2 text-xs">
                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                         Top Prevalent Symptoms Diagnosed Today
                       </div>
@@ -1116,7 +1116,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                             <span>Viral Fever &amp; Respiratory (J06)</span>
                             <span className="font-bold text-emerald-400">38% (18 pts)</span>
                           </div>
-                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-[#0b3327] rounded-full overflow-hidden">
                             <div className="h-full bg-emerald-500 rounded-full" style={{ width: "38%" }} />
                           </div>
                         </div>
@@ -1126,7 +1126,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                             <span>Hypertension / CVD Follow-up (I10)</span>
                             <span className="font-bold text-teal-400">26% (12 pts)</span>
                           </div>
-                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-[#0b3327] rounded-full overflow-hidden">
                             <div className="h-full bg-teal-500 rounded-full" style={{ width: "26%" }} />
                           </div>
                         </div>
@@ -1136,7 +1136,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                             <span>Gastritis / Peptic Ulcer (K29)</span>
                             <span className="font-bold text-cyan-400">20% (10 pts)</span>
                           </div>
-                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-[#0b3327] rounded-full overflow-hidden">
                             <div className="h-full bg-cyan-500 rounded-full" style={{ width: "20%" }} />
                           </div>
                         </div>
@@ -1151,7 +1151,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
         </div>
 
         {/* Bottom Banner callout with SpecularButton */}
-        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-[#031d16] to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="max-w-2xl text-center lg:text-left">
               <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">
