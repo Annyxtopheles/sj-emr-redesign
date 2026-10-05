@@ -59,3 +59,18 @@
   mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, black 20%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, black 20%, transparent 85%);
 }
+
+/* Infinite Marquee Animation for Trust Logos */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+

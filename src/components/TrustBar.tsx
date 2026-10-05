@@ -83,10 +83,10 @@ export default function TrustBar({ language }: TrustBarProps) {
   ];
 
   return (
-    <section className="pt-2 sm:pt-4 pb-14 sm:pb-16 border-b border-slate-200/80">
+    <section className="pt-2 sm:pt-4 pb-12 sm:pb-14 border-b border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 text-balance">
             {language === "en"
               ? "Trusted by National Healthcare Bodies & Leading Practitioners"
@@ -94,35 +94,82 @@ export default function TrustBar({ language }: TrustBarProps) {
           </h2>
         </div>
 
-        {/* Flattened Unboxed Logos & Verified Credentials Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-start">
-          {credentials.map((item, idx) => (
-            <a
-              key={idx}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center sm:items-start text-center sm:text-left group py-1 transition-all"
-            >
-              {/* Normalized Optical Height Logo Container */}
-              <div className="h-12 w-full flex items-center justify-center sm:justify-start mb-3">
-                <Image
-                  src={item.logo}
-                  alt={item.title}
-                  width={item.width}
-                  height={item.height}
-                  className="max-h-9 sm:max-h-10 w-auto max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                />
-              </div>
+        {/* Infinite Continuous Looping Logo Marquee */}
+        <div className="relative w-full overflow-hidden">
+          {/* Subtle Left & Right Edge Gradient Fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#fafbfc] to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#fafbfc] to-transparent z-10" />
 
-              <h3 className="font-bold text-slate-900 text-xs sm:text-sm group-hover:text-emerald-700 group-hover:underline decoration-emerald-500/50 underline-offset-2 transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-[11px] sm:text-xs text-slate-500 leading-snug mt-1 group-hover:text-slate-700 transition-colors">
-                {item.subtitle}
-              </p>
-            </a>
-          ))}
+          {/* Marquee Track Container */}
+          <div className="flex w-max items-center group">
+            {/* Track Segment 1 */}
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]">
+              {credentials.map((item, idx) => (
+                <a
+                  key={`track-1-${idx}`}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={item.title}
+                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                >
+                  <Image
+                    src={item.logo}
+                    alt={item.title}
+                    width={item.width}
+                    height={item.height}
+                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                  />
+                </a>
+              ))}
+            </div>
+
+            {/* Track Segment 2 (Seamless loop) */}
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+              {credentials.map((item, idx) => (
+                <a
+                  key={`track-2-${idx}`}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={item.title}
+                  tabIndex={-1}
+                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                >
+                  <Image
+                    src={item.logo}
+                    alt={item.title}
+                    width={item.width}
+                    height={item.height}
+                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                  />
+                </a>
+              ))}
+            </div>
+
+            {/* Track Segment 3 (Ultrawide coverage) */}
+            <div className="flex shrink-0 items-center justify-around gap-12 sm:gap-20 py-2 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+              {credentials.map((item, idx) => (
+                <a
+                  key={`track-3-${idx}`}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={item.title}
+                  tabIndex={-1}
+                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                >
+                  <Image
+                    src={item.logo}
+                    alt={item.title}
+                    width={item.width}
+                    height={item.height}
+                    className="h-9 sm:h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
