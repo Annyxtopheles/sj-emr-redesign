@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface BackgroundRippleEffectProps {
@@ -9,39 +9,15 @@ interface BackgroundRippleEffectProps {
   fillColor?: string;
 }
 
+const STATIC_CELLS = Array.from({ length: 420 }, (_, idx) => idx);
+
 export const BackgroundRippleEffect = ({
   className,
   borderColor = "rgba(16, 185, 129, 0.10)",
   fillColor = "rgba(16, 185, 129, 0.015)",
 }: BackgroundRippleEffectProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [gridSize, setGridSize] = useState<{ cols: number; rows: number }>({
-    cols: 36,
-    rows: 14,
-  });
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
-
-  // Dynamically compute columns and rows to ensure 100% edge-to-edge coverage with ZERO gaps
-  useEffect(() => {
-    const updateSize = () => {
-      if (containerRef.current) {
-        const width = containerRef.current.clientWidth || window.innerWidth;
-        const height = containerRef.current.clientHeight || 750;
-        const targetBoxSize = 50; // pixels per box outline
-        const cols = Math.max(10, Math.ceil(width / targetBoxSize));
-        const rows = Math.max(8, Math.ceil(height / targetBoxSize));
-        setGridSize({ cols, rows });
-      }
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
-  const totalCells = useMemo(() => {
-    return Array.from({ length: gridSize.cols * gridSize.rows }, (_, idx) => idx);
-  }, [gridSize.cols, gridSize.rows]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -116,23 +92,20 @@ export const BackgroundRippleEffect = ({
         )}
       </div>
 
-      {/* Full-Bleed Box Outlines Grid (Edge-to-edge, zero side gaps) */}
+      {/* Full-Bleed Box Outlines Grid (Edge-to-edge via CSS auto-fill, zero layout shift) */}
       <div
         className="relative z-10 w-full h-full border-t border-l"
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${gridSize.cols}, 1fr)`,
-          gridTemplateRows: `repeat(${gridSize.rows}, minmax(46px, 1fr))`,
+          gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
+          gridAutoRows: "48px",
           borderColor: borderColor,
           maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
         }}
       >
-        {totalCells.map((idx) => {
-          const row = Math.floor(idx / gridSize.cols);
-          const col = idx % gridSize.cols;
-          // Staggered continuous diagonal wave animation so boxes breathe in a seamless loop
-          const pulseDelay = ((row + col) % 8) * 0.85;
+        {STATIC_CELLS.map((idx) => {
+          const pulseDelay = (idx % 11) * 0.65;
 
           return (
             <div

@@ -10,7 +10,7 @@ interface NavbarProps {
   setLanguage?: (lang: "en" | "bn") => void;
 }
 
-export default function Navbar({ language: propLanguage = "en", setLanguage: propSetLanguage }: NavbarProps) {
+export default function Navbar({ language: propLanguage = "bn", setLanguage: propSetLanguage }: NavbarProps) {
   const [internalLanguage, setInternalLanguage] = useState<"en" | "bn">(propLanguage);
   const language = propSetLanguage ? propLanguage : internalLanguage;
 

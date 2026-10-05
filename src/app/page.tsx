@@ -17,20 +17,15 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [language, setLanguage] = useState<"en" | "bn">("en");
+  const [language, setLanguage] = useState<"en" | "bn">("bn");
   const [selectedPlan, setSelectedPlan] = useState<string>("Essential Plus (10000 BDT/Year)");
 
   useEffect(() => {
     try {
       const savedLang = localStorage.getItem("sjemr_language");
-      if (savedLang === "en" || savedLang === "bn") {
-        setLanguage(savedLang);
-      } else if (
-        typeof navigator !== "undefined" &&
-        navigator.language &&
-        navigator.language.toLowerCase().startsWith("bn")
-      ) {
-        setLanguage("bn");
+      // Default is Bangla for everyone. Only switch to English if user explicitly selected it.
+      if (savedLang === "en") {
+        setLanguage("en");
       }
     } catch {
       // localStorage may fail in some environments
