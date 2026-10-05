@@ -22,23 +22,15 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      const savedLang = localStorage.getItem("sjemr_language");
-      // Default is Bangla for everyone. Only switch to English if user explicitly selected it.
-      if (savedLang === "en") {
-        setLanguage("en");
-      }
+      // Clear legacy localStorage override that was causing unwanted revert to English on reload
+      localStorage.removeItem("sjemr_language");
     } catch {
-      // localStorage may fail in some environments
+      // ignore
     }
   }, []);
 
   const handleLanguageChange = (newLang: "en" | "bn") => {
     setLanguage(newLang);
-    try {
-      localStorage.setItem("sjemr_language", newLang);
-    } catch {
-      // ignore
-    }
   };
 
   const handleSelectPlan = (planName: string) => {

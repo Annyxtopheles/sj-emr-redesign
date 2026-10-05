@@ -9,7 +9,7 @@ import { blogsData } from "@/data/blogs";
 import { Calendar, Clock, ArrowRight, User, Sparkles } from "lucide-react";
 
 export default function BlogsPage() {
-  const [language, setLanguage] = useState<"en" | "bn">("en");
+  const [language, setLanguage] = useState<"en" | "bn">("bn");
   const featuredBlog = blogsData[0];
   const regularBlogs = blogsData.slice(1);
 

@@ -31,7 +31,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   return (
     <main className="min-h-screen flex flex-col bg-[#fafbfc]">
       {/* Sticky Header with defaults */}
-      <Navbar language="en" />
+      <Navbar language="bn" />
 
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b border-slate-200/80 py-3.5">
