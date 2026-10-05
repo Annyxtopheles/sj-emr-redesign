@@ -110,15 +110,14 @@ export default function TrustBar({ language }: TrustBarProps) {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={item.title}
-                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                  className="flex items-center justify-center shrink-0 px-3"
                 >
                   <Image
                     src={item.logo}
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
@@ -132,16 +131,15 @@ export default function TrustBar({ language }: TrustBarProps) {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={item.title}
                   tabIndex={-1}
-                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                  className="flex items-center justify-center shrink-0 px-3"
                 >
                   <Image
                     src={item.logo}
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
@@ -155,16 +153,15 @@ export default function TrustBar({ language }: TrustBarProps) {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={item.title}
                   tabIndex={-1}
-                  className="flex items-center justify-center shrink-0 px-3 transition-transform duration-300 hover:scale-105"
+                  className="flex items-center justify-center shrink-0 px-3"
                 >
                   <Image
                     src={item.logo}
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
