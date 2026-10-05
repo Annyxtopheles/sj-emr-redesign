@@ -13,8 +13,8 @@ export default function MergedStats({ language }: MergedStatsProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-start text-left">
           {/* Stat 1: Lead Social-Proof Stat */}
           <div className="flex flex-col justify-start">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 tracking-tight leading-none mb-2">
-              <CountUp to={62000} separator="," duration={2} />+
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
+              <CountUp to={62000} separator="," duration={1.4} />+
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
               {language === "en" ? "Consultations Completed" : "সম্পন্ন ডিজিটাল প্রেসক্রিপশন"}
@@ -24,7 +24,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           {/* Stat 2: Consultation to Rx */}
           <div className="flex flex-col justify-start">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
-              &lt; {language === "en" ? <><CountUp to={60} duration={1.8} />s</> : <>৬০ সে.</>}
+              &lt; {language === "en" ? <><CountUp to={60} duration={1.4} />s</> : <>৬০ সে.</>}
             </div>
             <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
               {language === "en" ? "Consultation to Rx" : "কনসালটেশন ও প্রেসক্রিপশন"}

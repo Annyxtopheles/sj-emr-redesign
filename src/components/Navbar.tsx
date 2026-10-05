@@ -23,21 +23,29 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
   };
 
   const [scrolled, setScrolled] = useState(false);
+  const [showDemoCTA, setShowDemoCTA] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      const heroEl = document.getElementById("hero");
+      if (heroEl) {
+        // Hide while at hero section (user sees hero CTA); reveal once scrolled past hero
+        setShowDemoCTA(window.scrollY > 380);
+      } else {
+        setShowDemoCTA(true);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Primary doctor navigation links
   const primaryNavLinks = [
     { name: language === "en" ? "Features" : "ফিচার", href: "/#features" },
-    { name: language === "en" ? "Videos" : "ভিডিও", href: "/#videos" },
-    { name: language === "en" ? "Workflow" : "ওয়ার্কফ্লো", href: "/#workflow" },
     { name: language === "en" ? "Reviews" : "মতামত", href: "/#testimonials" },
     { name: language === "en" ? "Pricing" : "মূল্য তালিকা", href: "/#pricing" },
     { name: language === "en" ? "Blog" : "ব্লগ", href: "/blogs" },
@@ -124,14 +132,22 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             {language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}
           </a>
 
-          {/* Single Primary Action: Book Demo */}
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 px-4 py-2.5 rounded-xl shadow-xs hover:shadow transition-all whitespace-nowrap"
+          {/* Single Primary Action: Book Demo (hidden at hero section, revealed after scrolling) */}
+          <div
+            className={`transition-all duration-300 ease-out origin-right overflow-hidden ${
+              showDemoCTA
+                ? "opacity-100 scale-100 max-w-[200px] pointer-events-auto ml-1"
+                : "opacity-0 scale-95 max-w-0 pointer-events-none"
+            }`}
           >
-            <Calendar className="w-4 h-4" />
-            <span>{language === "en" ? "Book Demo" : "ডেমো বুক করুন"}</span>
-          </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 px-4 py-2.5 rounded-xl shadow-xs hover:shadow transition-all whitespace-nowrap"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>{language === "en" ? "Book Demo" : "ডেমো বুক করুন"}</span>
+            </a>
+          </div>
         </div>
 
         {/* Mobile Actions & Menu Toggle */}
@@ -167,13 +183,21 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             </button>
           </div>
 
-          {/* Book Demo Button */}
-          <a
-            href="#contact"
-            className="text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 rounded-lg shadow-2xs whitespace-nowrap"
+          {/* Book Demo Button (hidden at hero section, revealed after scrolling) */}
+          <div
+            className={`transition-all duration-300 ease-out origin-right overflow-hidden ${
+              showDemoCTA
+                ? "opacity-100 scale-100 max-w-[140px] pointer-events-auto"
+                : "opacity-0 scale-95 max-w-0 pointer-events-none"
+            }`}
           >
-            {language === "en" ? "Book Demo" : "ডেমো বুক করুন"}
-          </a>
+            <a
+              href="#contact"
+              className="text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 rounded-lg shadow-2xs whitespace-nowrap block"
+            >
+              {language === "en" ? "Book Demo" : "ডেমো বুক করুন"}
+            </a>
+          </div>
 
           {/* Hamburger Menu Button */}
           <button

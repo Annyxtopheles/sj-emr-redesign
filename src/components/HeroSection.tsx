@@ -31,22 +31,19 @@ export default function HeroSection({ language }: HeroSectionProps) {
   }, []);
 
   return (
-    <section className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
-      {/* Subtle Interactive Brand Green Background Ripple Grid */}
+    <section id="hero" className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
+      {/* Subtle Interactive Brand Green Background Box Outlines Grid (Edge-to-edge, ambient loop, hover reactive) */}
       <BackgroundRippleEffect
-        rows={12}
-        cols={34}
-        cellSize={50}
-        borderColor="rgba(16, 185, 129, 0.1)"
-        fillColor="rgba(16, 185, 129, 0.02)"
-        className="opacity-80"
+        borderColor="rgba(16, 185, 129, 0.10)"
+        fillColor="rgba(16, 185, 129, 0.015)"
+        className="opacity-90"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-none">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6 pointer-events-none">
             {language === "en" ? (
               <>
                 The{" "}
@@ -71,20 +68,20 @@ export default function HeroSection({ language }: HeroSectionProps) {
             lang="bn"
             data-slot="hero-bangla-support"
             data-approved="false"
-            className="hidden font-sans text-lg sm:text-xl lg:text-2xl text-emerald-800 font-medium leading-relaxed max-w-2xl mx-auto mb-6"
+            className="hidden font-sans text-lg sm:text-xl lg:text-2xl text-emerald-800 font-medium leading-relaxed max-w-2xl mx-auto mb-6 pointer-events-none"
           >
             [BANGLA LINE – APPROVED COPY NEEDED]
           </p>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-normal pointer-events-none">
             {language === "en"
               ? "Say goodbye to lost paper records and illegible handwriting. Empower your chamber or clinic with instant e-prescriptions, comprehensive Bangladeshi medicine database, Zoom video consultations, and an Android patient portal."
               : "হারিয়ে যাওয়া কাগজের ফাইল এবং অস্পষ্ট হাতের লেখার দিন শেষ। বিল্ট-ইন বাংলাদেশি ড্রাগ ডেটাবেস, মাত্র ৬০ সেকেন্ডে ই-প্রেসক্রিপশন, স্বয়ংক্রিয় জুম ভিডিও কল এবং অ্যান্ড্রয়েড পেশেন্ট পোর্টাল দিয়ে আপনার চেম্বারকে করুন আধুনিক ও ডিজিটাল।"}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14 pointer-events-auto">
             <SpecularButton
               size="lg"
               tint="#059669"
@@ -110,7 +107,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
         </div>
 
         {/* Interactive Showcase Container with Clean Screenshots & Auto-Loop */}
-        <div id="preview" className="relative max-w-6xl mx-auto scroll-mt-24">
+        <div id="preview" className="relative max-w-6xl mx-auto scroll-mt-24 pointer-events-auto">
           {/* Clean Showcase Frame with Green Gradient Border & Progressive Blur */}
           <div
             className="relative rounded-t-2xl sm:rounded-t-3xl rounded-b-none p-[2px] bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600 shadow-2xl shadow-emerald-950/15"
