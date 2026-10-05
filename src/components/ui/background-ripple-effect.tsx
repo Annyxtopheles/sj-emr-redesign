@@ -151,8 +151,8 @@ export const BackgroundRippleEffect = ({
             linear-gradient(to bottom, rgba(16, 185, 129, 0.26) 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
-          maskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%), linear-gradient(to bottom, black 45%, transparent 88%)`,
-          WebkitMaskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%), linear-gradient(to bottom, black 45%, transparent 88%)`,
+          maskImage: `radial-gradient(180px circle at ${mousePos.x}px ${mousePos.y}px, black 15%, transparent 100%)`,
+          WebkitMaskImage: `radial-gradient(180px circle at ${mousePos.x}px ${mousePos.y}px, black 15%, transparent 100%)`,
         }}
       />
     </div>

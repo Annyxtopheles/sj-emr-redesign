@@ -83,7 +83,7 @@ export default function TrustBar({ language }: TrustBarProps) {
   ];
 
   return (
-    <section className="pt-2 sm:pt-4 pb-12 sm:pb-14 border-b border-slate-200/80 overflow-hidden">
+    <section className="pt-14 sm:pt-20 lg:pt-24 pb-14 sm:pb-18 lg:pb-20 border-b border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
