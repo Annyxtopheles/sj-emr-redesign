@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 
 interface BackgroundRippleEffectProps {
   className?: string;
@@ -9,10 +10,16 @@ interface BackgroundRippleEffectProps {
   fillColor?: string;
 }
 
-const STATIC_CELLS = Array.from({ length: 420 }, (_, idx) => idx);
-
-// Exactly 7 naturally scattered box positions across the entire grid
-const OCCASIONAL_BOX_INDICES = [28, 74, 137, 195, 252, 318, 381];
+// 7 naturally scattered box positions across the hero grid
+const OCCASIONAL_BOXES = [
+  { top: "14%", left: "12%", delay: 0 },
+  { top: "20%", right: "14%", delay: 1.4 },
+  { top: "36%", left: "6%", delay: 2.8 },
+  { top: "42%", right: "8%", delay: 4.2 },
+  { top: "54%", left: "15%", delay: 5.6 },
+  { top: "64%", right: "16%", delay: 7.0 },
+  { top: "72%", left: "22%", delay: 8.4 },
+];
 
 export const BackgroundRippleEffect = ({
   className,
@@ -92,63 +99,49 @@ export const BackgroundRippleEffect = ({
         />
       </div>
 
-      {/* Full-Bleed Delicate Base Wireframe Grid */}
+      {/* Full-Bleed Infinite Wireframe Grid Lines (No finite cell limits, fades out smoothly toward bottom) */}
       <div
         className="relative z-10 w-full h-full border-t border-l"
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
-          gridAutoRows: "48px",
-          borderColor: borderColor,
-          maskImage: "radial-gradient(ellipse 85% 70% at 50% 25%, black 20%, rgba(0,0,0,0.45) 55%, transparent 88%)",
-          WebkitMaskImage: "radial-gradient(ellipse 85% 70% at 50% 25%, black 20%, rgba(0,0,0,0.45) 55%, transparent 88%)",
+          backgroundImage: `
+            linear-gradient(to right, ${borderColor} 1px, transparent 1px),
+            linear-gradient(to bottom, ${borderColor} 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+          maskImage: "linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.5) 82%, transparent 98%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.5) 82%, transparent 98%)",
         }}
       >
-        {STATIC_CELLS.map((idx) => {
-          const occasionalIndex = OCCASIONAL_BOX_INDICES.indexOf(idx);
-          const isOccasional = occasionalIndex !== -1;
-          const delay = isOccasional ? occasionalIndex * 1.35 : 0;
-
-          return (
-            <div
-              key={idx}
-              className="relative border-r border-b transition-colors duration-700 ease-out"
-              style={{
-                backgroundColor: fillColor,
-                borderColor: borderColor,
-                animation: isOccasional
-                  ? `boxOccasionalPulse 9.5s ease-in-out infinite ${delay}s`
-                  : undefined,
-              }}
-            />
-          );
-        })}
+        {OCCASIONAL_BOXES.map((box, idx) => (
+          <div
+            key={idx}
+            className="absolute w-[48px] h-[48px] border transition-colors duration-700 ease-out"
+            style={{
+              top: box.top,
+              left: box.left,
+              right: box.right,
+              backgroundColor: fillColor,
+              borderColor: borderColor,
+              animation: `boxOccasionalPulse 9.5s ease-in-out infinite ${box.delay}s`,
+            }}
+          />
+        ))}
       </div>
 
-      {/* Prominent Box Outlines Layer: reveals crisp outlines directly around the cursor location */}
+      {/* Prominent Box Outlines Layer: reveals crisp grid lines directly around the cursor location */}
       {mousePos && (
         <div
           className="absolute inset-0 z-15 w-full h-full border-t border-l pointer-events-none transition-opacity duration-150"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
-            gridAutoRows: "48px",
-            borderColor: "rgba(16, 185, 129, 0.28)",
+            backgroundImage: `
+              linear-gradient(to right, rgba(16, 185, 129, 0.28) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(16, 185, 129, 0.28) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
             maskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
             WebkitMaskImage: `radial-gradient(190px circle at ${mousePos.x}px ${mousePos.y}px, black 20%, transparent 100%)`,
           }}
-        >
-          {STATIC_CELLS.map((idx) => (
-            <div
-              key={idx}
-              className="relative border-r border-b"
-              style={{
-                borderColor: "rgba(16, 185, 129, 0.28)",
-                backgroundColor: "transparent",
-              }}
-            />
-          ))}
-        </div>
+        />
       )}
 
       {/* Selective Soft Blur Patches (softens and blurs grid outlines at organic intervals) */}
@@ -161,9 +154,12 @@ export const BackgroundRippleEffect = ({
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-[6%] left-[30%] w-88 h-64 rounded-full backdrop-blur-[2px] bg-white/20 pointer-events-none z-20"
+        className="absolute bottom-[10%] left-[30%] w-88 h-64 rounded-full backdrop-blur-[2px] bg-white/20 pointer-events-none z-20"
         aria-hidden="true"
       />
+
+      {/* Progressive blur vanishing smoothly at the bottom edge, in sync with the screen showcase */}
+      <ProgressiveBlur position="bottom" height="26%" tint="light" className="z-25" />
     </div>
   );
 };
