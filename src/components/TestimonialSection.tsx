@@ -84,23 +84,23 @@ export default function TestimonialSection({ language }: TestimonialSectionProps
 
         {/* Doctor Trust Stat Pillars */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 text-center">
-            <h4 className="text-2xl font-extrabold text-emerald-700">99.4%</h4>
-            <p className="text-xs text-slate-600 mt-1">
+          <div className="bg-white border border-slate-200/90 rounded-2xl p-5 text-center shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group">
+            <h4 className="text-2xl font-extrabold text-emerald-700 group-hover:scale-105 transition-transform duration-200">99.4%</h4>
+            <p className="text-xs text-slate-600 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Doctor Satisfaction Rating" : "চিকিৎসক সন্তুষ্টি রেটিং"}
             </p>
           </div>
-          <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 text-center">
-            <h4 className="text-2xl font-extrabold text-teal-700">
+          <div className="bg-white border border-slate-200/90 rounded-2xl p-5 text-center shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group">
+            <h4 className="text-2xl font-extrabold text-teal-700 group-hover:scale-105 transition-transform duration-200">
               {language === "en" ? "< 15 Mins" : "< ১৫ মিনিট"}
             </h4>
-            <p className="text-xs text-slate-600 mt-1">
+            <p className="text-xs text-slate-600 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Learning Curve / Onboarding" : "সহজেই সফটওয়্যার আয়ত্ত করার সময়"}
             </p>
           </div>
-          <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 text-center">
-            <h4 className="text-2xl font-extrabold text-cyan-700">100%</h4>
-            <p className="text-xs text-slate-600 mt-1">
+          <div className="bg-white border border-slate-200/90 rounded-2xl p-5 text-center shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group">
+            <h4 className="text-2xl font-extrabold text-cyan-700 group-hover:scale-105 transition-transform duration-200">100%</h4>
+            <p className="text-xs text-slate-600 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Paperless Records Capability" : "সম্পূর্ণ পেপারলেস চেম্বার সুবিধা"}
             </p>
           </div>

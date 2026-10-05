@@ -176,10 +176,10 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             return (
               <div
                 key={plan.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all bg-white ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 bg-white group cursor-default ${
                   isFeatured
-                    ? "border-2 border-emerald-500 shadow-sm"
-                    : "border border-slate-200/90 shadow-2xs hover:border-slate-300"
+                    ? "border-2 border-emerald-500 shadow-md hover:shadow-lg hover:-translate-y-1"
+                    : "border border-slate-200/90 shadow-2xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-1"
                 }`}
               >
                 <div>

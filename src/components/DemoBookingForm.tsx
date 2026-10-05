@@ -66,7 +66,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
       <span id="demo" className="scroll-mt-24 absolute top-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Value Prop & Contact Info */}
           <div className="lg:col-span-5">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-4 text-balance">
@@ -83,12 +83,12 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
 
             {/* Quick Benefits Bullet List */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
+              <div className="flex items-start gap-3 p-2 -mx-2 rounded-xl transition-all duration-200 hover:bg-white/80 hover:shadow-2xs group cursor-default">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105 flex items-center justify-center text-emerald-600 shrink-0 transition-all duration-200 shadow-2xs">
                   <Video className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                     {language === "en" ? "Live Interactive Zoom Demo" : "লাইভ জুম স্ক্রিন-শেয়ারিং"}
                   </h4>
                   <p className="text-xs text-slate-600">
@@ -99,18 +99,18 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center shrink-0 p-1">
+              <div className="flex items-start gap-3 p-2 -mx-2 rounded-xl transition-all duration-200 hover:bg-white/80 hover:shadow-2xs group cursor-default">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:scale-105 flex items-center justify-center shrink-0 p-1 transition-all duration-200 shadow-2xs">
                   <Image
                     src="/assets/bmdc-logo.svg"
                     alt="BMDC"
                     width={20}
                     height={20}
-                    className="w-5 h-5 object-contain"
+                    className="w-5 h-5 object-contain group-hover:brightness-0 group-hover:invert transition-all"
                   />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                     {language === "en" ? "BMDC Doctor Verification" : "বিএমডিসি রেজিস্টার্ড ডাক্তারদের অগ্রাধিকার"}
                   </h4>
                   <p className="text-xs text-slate-600">
@@ -121,12 +121,12 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
+              <div className="flex items-start gap-3 p-2 -mx-2 rounded-xl transition-all duration-200 hover:bg-white/80 hover:shadow-2xs group cursor-default">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105 flex items-center justify-center text-emerald-600 shrink-0 transition-all duration-200 shadow-2xs">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                     {language === "en" ? "2-Hour Response Time" : "২ ঘণ্টার মধ্যে নিশ্চিত যোগাযোগ"}
                   </h4>
                   <p className="text-xs text-slate-600">
@@ -139,8 +139,8 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
             </div>
 
             {/* Direct Helpline Badge */}
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs text-xs">
-              <span className="text-slate-500">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:border-l-4 hover:border-l-emerald-500 hover:-translate-y-0.5 transition-all duration-200 text-xs group cursor-default">
+              <span className="text-slate-500 group-hover:text-slate-700 transition-colors">
                 {language === "en" ? "Prefer direct phone consultation?" : "সরাসরি ফোনে কথা বলতে চান?"}
               </span>
               <div className="mt-1 flex items-center gap-3">

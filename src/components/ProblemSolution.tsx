@@ -75,11 +75,11 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
 
         {/* Infographic KPI Stats Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight group-hover:scale-105 transition-transform duration-200">
               &lt; <CountUp to={60} duration={1.8} />s
             </div>
-            <div className="text-xs font-bold text-slate-900 mt-1">
+            <div className="text-xs font-bold text-slate-900 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Consultation to Rx" : "প্রেসক্রিপশন প্রস্তুতের সময়"}
             </div>
             <div className="text-[11px] text-slate-500 mt-0.5">
@@ -87,11 +87,11 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight group-hover:scale-105 transition-transform duration-200">
               <CountUp to={100} duration={1.6} />%
             </div>
-            <div className="text-xs font-bold text-slate-900 mt-1">
+            <div className="text-xs font-bold text-slate-900 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "BMDC Compliance" : "বিএমডিসি নির্দেশিকা সম্মত"}
             </div>
             <div className="text-[11px] text-slate-500 mt-0.5">
@@ -99,9 +99,9 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">0%</div>
-            <div className="text-xs font-bold text-slate-900 mt-1">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight group-hover:scale-105 transition-transform duration-200">0%</div>
+            <div className="text-xs font-bold text-slate-900 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Lost Patient Records" : "নথি হারানোর ঝুঁকি শূন্য"}
             </div>
             <div className="text-[11px] text-slate-500 mt-0.5">
@@ -109,11 +109,11 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-default group text-center">
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 tracking-tight group-hover:scale-105 transition-transform duration-200">
               <CountUp to={2} duration={1.5} />+ Hrs
             </div>
-            <div className="text-xs font-bold text-slate-900 mt-1">
+            <div className="text-xs font-bold text-slate-900 mt-1 group-hover:text-emerald-950 transition-colors">
               {language === "en" ? "Daily Time Saved" : "প্রতিদিন সময় সাশ্রয়"}
             </div>
             <div className="text-[11px] text-slate-500 mt-0.5">

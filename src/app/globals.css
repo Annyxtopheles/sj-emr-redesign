@@ -2,6 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-hind-siliguri), var(--font-geist-sans), "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, sans-serif;
+  --color-emerald-50: #EFFFF5;
 }
 
 @layer base {

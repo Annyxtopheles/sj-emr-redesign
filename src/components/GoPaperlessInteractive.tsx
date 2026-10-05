@@ -63,13 +63,13 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
           {/* Left Column: Why Switch Benefits */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 group cursor-default">
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105 transition-all duration-200">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-emerald-900 transition-colors">
                     {language === "en" ? "0% Lost Patient Records" : "নথি হারানোর কোনো ভয় নেই"}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -81,13 +81,13 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 group cursor-default">
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105 transition-all duration-200">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-emerald-900 transition-colors">
                     {language === "en" ? "Zero Pharmacy Dispensing Errors" : "শতভাগ নির্ভুল ওষুধ বিতরণ"}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -99,13 +99,13 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs hover:border-emerald-500 hover:border-l-4 hover:border-l-emerald-500 hover:shadow-md hover:ring-1 hover:ring-emerald-500/20 hover:-translate-y-0.5 transition-all duration-200 group cursor-default">
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105 transition-all duration-200">
                   <Printer className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-emerald-900 transition-colors">
                     {language === "en" ? "1-Click Print & Auto-SMS" : "১-ক্লিকে চেম্বার প্যাড প্রিন্ট ও এসএমএস"}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -136,19 +136,17 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
 
           {/* Right Column: 3D Paper Crumple Stage revealing SJ EMR */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl bg-slate-900 border border-slate-800 p-2 sm:p-4 shadow-2xl min-h-[560px] flex items-center justify-center">
-              {/* UNDERNEATH: The Pristine SJ EMR Digital Prescription UI */}
-              <div className="relative w-full h-full bg-white rounded-2xl p-5 sm:p-7 text-slate-800 flex flex-col justify-between border border-slate-200 overflow-hidden shadow-sm">
-                {/* Clean Frosted Glass Blur Overlay behind paper - transitions to clear when tossed */}
-                <div
-                  className={`absolute inset-0 rounded-2xl transition-all duration-700 ease-out pointer-events-none z-10 ${
-                    isCrumpled || isTossing
-                      ? "backdrop-blur-none bg-transparent opacity-0"
-                      : "backdrop-blur-md bg-white/20"
-                  }`}
-                />
+            <div className="relative rounded-3xl bg-white border border-slate-200/90 shadow-xl p-5 sm:p-7 text-slate-800 flex flex-col justify-between min-h-[560px]">
+              {/* Clean Frosted Glass Blur Overlay behind paper - transitions to clear when tossed */}
+              <div
+                className={`absolute inset-0 rounded-3xl transition-all duration-700 ease-out pointer-events-none z-10 ${
+                  isCrumpled || isTossing
+                    ? "backdrop-blur-none bg-transparent opacity-0"
+                    : "backdrop-blur-md bg-white/20"
+                }`}
+              />
 
-                <div>
+              <div>
                   {/* Digital Prescription Header */}
                   <div className="flex items-start justify-between pb-4 border-b border-slate-200 mb-4">
                     <div>
@@ -260,7 +258,6 @@ export default function GoPaperlessInteractive({ language }: GoPaperlessInteract
                     </span>
                   </div>
                 </div>
-              </div>
 
               {/* OVERLAY: 3D Physical Paper Pad Simulation with Massive Unclipped Viewport */}
               {!isCrumpled && (
