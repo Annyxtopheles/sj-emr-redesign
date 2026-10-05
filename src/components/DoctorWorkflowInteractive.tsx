@@ -47,29 +47,28 @@ export default function DoctorWorkflowInteractive({ language }: DoctorWorkflowIn
               ? "From Patient Intake to Prescription in 60 Seconds"
               : "রোগীর আগমন থেকে প্রেসক্রিপশন প্রিন্ট—মাত্র ৬০ সেকেন্ডে"}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
-            {language === "en"
-              ? "Three clear steps engineered to eliminate clerical friction in busy Bangladeshi OPD chambers handling 40–80 patients daily."
-              : "ব্যস্ততম চেম্বারে প্রতিদিন ৪০-৮০ জন রোগীর নির্ভুল চিকিৎসাসেবা নিশ্চিত করতে সহজ ও দ্রুত ৩টি ধাপ।"}
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-balance max-w-2xl mx-auto">
+            {language === "en" ? (
+              <>
+                Three clear steps engineered to eliminate clerical friction in busy Bangladeshi OPD chambers handling 40–80&nbsp;patients&nbsp;daily.
+              </>
+            ) : (
+              "ব্যস্ততম চেম্বারে প্রতিদিন ৪০-৮০ জন রোগীর নির্ভুল চিকিৎসাসেবা নিশ্চিত করতে সহজ ও দ্রুত ৩টি ধাপ।"
+            )}
           </p>
         </div>
 
         {/* Unboxed 3-Step Typographic Workflow Layout */}
         <div className="relative">
-          {/* Subtle Thin Connecting Line for Desktop */}
-          <div
-            className="hidden lg:block absolute top-8 left-[12%] right-[12%] h-px bg-slate-200 -z-0"
-            aria-hidden="true"
-          />
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 relative z-10">
             {steps.map((item, idx) => (
               <div key={idx} className="flex flex-col">
-                {/* Step Numeral */}
-                <div className="mb-4">
-                  <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight select-none">
+                {/* Step Numeral with Inline Divider */}
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-5xl sm:text-6xl font-black text-emerald-600 tracking-tight select-none shrink-0">
                     {item.step}
                   </span>
+                  <div className="h-px flex-1 bg-slate-200" aria-hidden="true" />
                 </div>
 
                 {/* Step Title */}

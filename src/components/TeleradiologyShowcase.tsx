@@ -181,8 +181,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
       title: language === "en" ? "Lab Intake & Upload" : "ল্যাব এন্ট্রি ও আপলোড",
       desc:
         language === "en"
-          ? "Diagnostic center uploads scans and clinical info in seconds."
-          : "ডায়াগনস্টিক ল্যাব থেকে স্ক্যান ও রোগীর তথ্য তাৎক্ষণিক আপলোড।",
+          ? "Diagnostic center uploads scans and clinical info in seconds with automated DICOM routing."
+          : "ডায়াগনস্টিক ল্যাব থেকে স্ক্যান ও রোগীর তথ্য তাৎক্ষণিক আপলোড ও স্বয়ংক্রিয় ক্লাউড রাউটিং।",
       icon: Building2,
     },
     {
@@ -190,8 +190,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
       title: language === "en" ? "Radiologist Worklist" : "রেডিওলজিস্ট ওয়ার্কলিস্ট",
       desc:
         language === "en"
-          ? "Certified radiologists review cases on high-res web DICOM viewer."
-          : "প্রত্যয়িত রেডিওলজিস্টরা অনলাইনে ডাইকম ভিউয়ারে রিপোর্ট প্রস্তুত করেন।",
+          ? "Certified radiologists review high-resolution DICOM slices remotely with zero local setup."
+          : "প্রত্যয়িত রেডিওলজিস্টরা অনলাইনে হাই-রেজোলিউশন ডাইকম ভিউয়ারে রিপোর্ট প্রস্তুত করেন।",
       icon: Stethoscope,
     },
     {
@@ -199,8 +199,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
       title: language === "en" ? "AI Landmark Assist" : "এআই অ্যানালাইসিস সহায়তা",
       desc:
         language === "en"
-          ? "Automated ratio calculations and preliminary finding checks."
-          : "স্বয়ংক্রিয় কার্ডিওথোরাসিক রেশিও ও ফ্র্যাকচার মার্কার সহায়তা।",
+          ? "Automated cardiothoracic ratio, fracture indicators, and preliminary finding checks."
+          : "স্বয়ংক্রিয় কার্ডিওথোরাসিক রেশিও ও ফ্র্যাকচার মার্কার শনাক্তকরণে ক্লিনিক্যাল সহায়তা।",
       icon: Sliders,
     },
     {
@@ -208,8 +208,8 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
       title: language === "en" ? "BMDC Signed Delivery" : "স্বাক্ষরিত রিপোর্ট ডেলিভারি",
       desc:
         language === "en"
-          ? "Verified PDF report dispatched directly via SMS and WhatsApp."
-          : "ডিজিটাল সিল সম্বলিত অফিসিয়াল পিডিএফ সরাসরি রোগীর কাছে পৌঁছে যায়।",
+          ? "Verified PDF report with digital signature dispatched directly via SMS and WhatsApp."
+          : "ডিজিটাল সিল সম্বলিত অফিসিয়াল পিডিএফ সরাসরি রোগীর কাছে এসএমএস ও হোয়াটসঅ্যাপে পৌঁছে যায়।",
       icon: FileCheck,
     },
   ];
@@ -255,7 +255,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
         {/* Dynamic Split Layout: Left Workflow Controls + Right Live PACS Workstation */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: 4-Stage Pipeline Walkthrough */}
-          <div className="lg:col-span-5 space-y-2.5">
+          <div className="lg:col-span-5 space-y-3.5 sm:space-y-4">
             {workflowStages.map((stage) => {
               const StageIcon = stage.icon;
               const isCurrent = activeWorkflowStep === stage.step;
@@ -265,27 +265,31 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
                   key={stage.step}
                   type="button"
                   onClick={() => setActiveWorkflowStep(stage.step)}
-                  className={`text-left w-full p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center gap-3.5 relative overflow-hidden group ${
+                  className={`text-left w-full p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-start gap-3.5 sm:gap-4 relative overflow-hidden group ${
                     isCurrent
-                      ? "bg-white border-emerald-500 shadow-md ring-1 ring-emerald-500/30"
-                      : "bg-slate-50/70 hover:bg-white border-slate-200 text-slate-700"
+                      ? "bg-white border-emerald-500 shadow-md ring-1 ring-emerald-500/20 -translate-y-0.5 border-l-4 border-l-emerald-600"
+                      : "bg-white hover:bg-slate-50/80 border-slate-200/90 hover:border-slate-300 text-slate-700 hover:-translate-y-0.5"
                   }`}
                 >
                   <div
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-200 mt-0.5 ${
                       isCurrent
-                        ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
-                        : "bg-white border-slate-200 text-emerald-700 group-hover:bg-emerald-50"
+                        ? "bg-emerald-600 border-emerald-600 text-white shadow-xs scale-105"
+                        : "bg-emerald-50 border-emerald-200 text-emerald-700 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:scale-105"
                     }`}
                   >
-                    <StageIcon className="w-4 h-4" />
+                    <StageIcon className="w-5 h-5" />
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <div className={`text-xs font-bold ${isCurrent ? "text-emerald-950" : "text-slate-800"}`}>
+                    <div
+                      className={`text-sm sm:text-base font-bold mb-1 transition-colors ${
+                        isCurrent ? "text-slate-900" : "text-slate-900 group-hover:text-emerald-900"
+                      }`}
+                    >
                       0{stage.step}. {stage.title}
                     </div>
-                    <p className={`text-[11px] leading-relaxed mt-0.5 ${isCurrent ? "text-slate-700" : "text-slate-500"}`}>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {stage.desc}
                     </p>
                   </div>
@@ -296,7 +300,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
             <div className="pt-2">
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition-all shadow-md shadow-emerald-950/20"
               >
                 <span>{language === "en" ? "Onboard Your Diagnostic Center" : "আপনার ল্যাব যুক্ত করুন"}</span>
                 <ArrowRight className="w-4 h-4" />

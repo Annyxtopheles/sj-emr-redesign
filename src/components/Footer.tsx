@@ -44,10 +44,14 @@ export default function Footer({ language }: FooterProps) {
                 ? "Stay Updated with SJ EMR Product Innovations"
                 : "এস জে ইএমআরের নতুন ফিচার ও টিউটোরিয়াল পান"}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600">
-              {language === "en"
-                ? "Get the latest clinical feature releases, doctor success stories, and video tutorials directly in your inbox."
-                : "নতুন ড্রাগ ডেটাবেস আপডেট, ভিডিও টিউটোরিয়াল এবং সফল ডাক্তারদের কেস স্টাডি সরাসরি আপনার ইমেইলে পান।"}
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl text-balance">
+              {language === "en" ? (
+                <>
+                  Get the latest clinical feature releases, doctor success stories, and video tutorials directly in&nbsp;your&nbsp;inbox.
+                </>
+              ) : (
+                "নতুন ড্রাগ ডেটাবেস আপডেট, ভিডিও টিউটোরিয়াল এবং সফল ডাক্তারদের কেস স্টাডি সরাসরি আপনার ইমেইলে পান।"
+              )}
             </p>
           </div>
 
