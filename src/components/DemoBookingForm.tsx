@@ -330,14 +330,14 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-slate-700 mb-1">
-                        {language === "en" ? "Medical Specialization *" : "স্পেশালাইজেশন *"}
+                        {language === "en" ? "Medical Specialization *" : "মেডিকেল স্পেশালাইজেশন *"}
                       </label>
                       <select
                         value={formData.specialization}
                         onChange={(e) => setFormData({ ...formData, specialization: e.target.value })}
                         className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       >
-                        <option value="">{language === "en" ? "Select Specialization" : "বাছাই করুন"}</option>
+                        <option value="">{language === "en" ? "Select Specialization" : "স্পেশালাইজেশন বাছাই করুন"}</option>
                         {specializations.map((spec) => (
                           <option key={spec.en} value={spec.en}>
                             {language === "en" ? spec.en : spec.bn}
@@ -389,7 +389,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                               : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
-                          {language === "en" ? "Live Zoom (1-on-1)" : "লাইভ জুম"}
+                          {language === "en" ? "Live Zoom (1-on-1)" : "লাইভ জুম (১-অন-১)"}
                         </button>
                         <button
                           type="button"
@@ -400,7 +400,7 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                               : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                           }`}
                         >
-                          {language === "en" ? "Recorded Video Tour" : "রেকর্ডেড ভিডিও"}
+                          {language === "en" ? "Recorded Video Tour" : "রেকর্ডেড ভিডিও ট্যুর"}
                         </button>
                       </div>
                     </div>

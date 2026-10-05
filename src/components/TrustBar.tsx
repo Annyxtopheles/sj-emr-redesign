@@ -9,7 +9,7 @@ interface TrustBarProps {
 export default function TrustBar({ language }: TrustBarProps) {
   const credentials = [
     {
-      title: language === "en" ? "BMDC Compliance" : "বিএমডিসি নির্দেশিকা",
+      title: language === "en" ? "BMDC Compliance" : "বিএমডিসি কমপ্লায়েন্স ও নির্দেশিকা",
       subtitle:
         language === "en"
           ? "Bangladesh Medical & Dental Council prescription format rules"
@@ -49,7 +49,7 @@ export default function TrustBar({ language }: TrustBarProps) {
       subtitle:
         language === "en"
           ? "Strategic clinical partner for doctor workflows"
-          : "৫০,০০০+ ডাক্তারদের পেশাদার মেডিকেল নেটওয়ার্ক",
+          : "৫০,০০০+ ডাক্তারদের পেশাদার ক্লিনিক্যাল পার্টনার নেটওয়ার্ক",
       tag: language === "en" ? "Clinical Partner" : "ক্লিনিক্যাল পার্টনার",
       logo: "/assets/partners/bd-physicians.png",
       href: "https://www.facebook.com/bdphysicians/",

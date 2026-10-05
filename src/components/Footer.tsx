@@ -124,7 +124,7 @@ export default function Footer({ language }: FooterProps) {
             {/* Official Social Media Links */}
             <div className="pt-2">
               <div className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold mb-2">
-                {language === "en" ? "Connect With Us" : "সোশ্যাল মিডিয়া"}
+                {language === "en" ? "Connect With Us" : "আমাদের সাথে যুক্ত থাকুন"}
               </div>
               <div className="flex items-center gap-4 sm:gap-5">
                 <a

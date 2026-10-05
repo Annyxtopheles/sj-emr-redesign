@@ -121,7 +121,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             rel="noopener noreferrer"
             className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-emerald-700 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors whitespace-nowrap"
           >
-            {language === "en" ? "Doctor Login" : "লগইন"}
+            {language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}
           </a>
 
           {/* Single Primary Action: Book Demo */}
@@ -172,7 +172,7 @@ export default function Navbar({ language: propLanguage = "en", setLanguage: pro
             href="#contact"
             className="text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 rounded-lg shadow-2xs whitespace-nowrap"
           >
-            {language === "en" ? "Book Demo" : "ডেমো"}
+            {language === "en" ? "Book Demo" : "ডেমো বুক করুন"}
           </a>
 
           {/* Hamburger Menu Button */}

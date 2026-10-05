@@ -142,7 +142,7 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
                   </div>
                 </div>
                 <span className="text-[11px] font-bold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md border border-rose-200">
-                  Legacy
+                  {language === "en" ? "Legacy" : "সনাতন পদ্ধতি"}
                 </span>
               </div>
 
@@ -164,8 +164,8 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             </div>
 
             <div className="mt-8 pt-4 border-t border-rose-100 flex items-center justify-between text-xs text-rose-700 font-medium">
-              <span>8-10 mins wasted per consultation</span>
-              <span className="text-rose-600 font-bold">High Risk</span>
+              <span>{language === "en" ? "8-10 mins wasted per consultation" : "প্রতি কনসালটেশনে ৮-১০ মিনিট অপচয়"}</span>
+              <span className="text-rose-600 font-bold">{language === "en" ? "High Risk" : "উচ্চ ঝুঁকি"}</span>
             </div>
           </div>
 
@@ -208,7 +208,7 @@ export default function ProblemSolution({ language }: ProblemSolutionProps) {
             </div>
 
             <div className="mt-8 pt-4 border-t border-emerald-100 flex items-center justify-between text-xs text-emerald-800 font-semibold">
-              <span>Ready in under 60 seconds</span>
+              <span>{language === "en" ? "Ready in under 60 seconds" : "৬০ সেকেন্ডের মধ্যে প্রস্তুত"}</span>
               <a href="#contact" className="text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1 font-bold">
                 <span>{language === "en" ? "Upgrade Chamber" : "চেম্বার আধুনিক করুন"}</span>
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -269,7 +269,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
             href="#contact"
             className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3.5 py-2 rounded-lg border border-emerald-200 shrink-0"
           >
-            {language === "en" ? "Questions? Talk to Sales" : "যেকোনো প্রশ্নে কথা বলুন"}
+            {language === "en" ? "Questions? Talk to Sales" : "যেকোনো প্রশ্নে সেলস টিমের সাথে কথা বলুন"}
           </a>
         </div>
       </div>

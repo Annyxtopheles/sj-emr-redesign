@@ -70,7 +70,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       image: "/assets/spot-telemedicine.jpg",
       alt: "SJ EMR Automated Video Telemedicine Consultation",
-      badge: language === "en" ? "1-Click Telemedicine" : "স্বয়ংক্রিয় জুম কল",
+      badge: language === "en" ? "1-Click Telemedicine" : "১-ক্লিকে টেলিমেডিসিন",
       title: language === "en" ? "Automated Zoom Video Consultations" : "স্বয়ংক্রিয় জুম ভিডিও কনসাল্টেশন",
       tagline:
         language === "en"
@@ -89,7 +89,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
     {
       image: "/assets/spot-records.jpg",
       alt: "SJ EMR Encrypted Cloud Patient Records & Diagnostics",
-      badge: language === "en" ? "Zero Paperwork" : "আজীবন স্বাস্থ্য নথি",
+      badge: language === "en" ? "Zero Paperwork" : "১০০% পেপারলেস স্বাস্থ্য নথি",
       title: language === "en" ? "Patient Demographics & Centralized Cloud PHI" : "রোগীর ডেমোগ্রাফি ও আজীবন ডিজিটাল রেকর্ড",
       tagline:
         language === "en"
@@ -886,7 +886,7 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                       </div>
                       <div className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 flex items-center gap-1.5 text-xs text-slate-300">
                         <Printer className="w-3.5 h-3.5 text-slate-400" />
-                        <span>Print</span>
+                        <span>{language === "en" ? "Print" : "প্রিন্ট"}</span>
                       </div>
                     </div>
                   </div>
