@@ -410,12 +410,31 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                       : "bg-white hover:bg-slate-50 border-slate-200/90 text-slate-700 hover:border-slate-300"
                   }`}
                 >
-                  {/* Active progress bar indicator for auto-cycle */}
+                  {/* Active circulating perimeter border line indicator */}
                   {isActive && isAutoPlaying && !isPaused && (
-                    <div
-                      className="absolute bottom-0 left-0 h-0.5 bg-emerald-600 transition-all duration-75"
-                      style={{ width: `${progress}%` }}
-                    />
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none rounded-xl overflow-hidden z-10"
+                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                    >
+                      <rect
+                        x="1"
+                        y="1"
+                        width="calc(100% - 2px)"
+                        height="calc(100% - 2px)"
+                        rx="11"
+                        fill="none"
+                        stroke="#059669"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        pathLength="100"
+                        strokeDasharray="24 76"
+                        style={{
+                          strokeDashoffset: -progress,
+                          filter: "drop-shadow(0 0 3px rgba(16, 185, 129, 0.6))",
+                        }}
+                        className="transition-[stroke-dashoffset] duration-75 ease-linear"
+                      />
+                    </svg>
                   )}
 
                   <div className="flex items-center gap-3 min-w-0">

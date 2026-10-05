@@ -32,11 +32,11 @@ export default function HeroSection({ language }: HeroSectionProps) {
 
   return (
     <section id="hero" className="relative pt-10 pb-0 lg:pt-16 lg:pb-0 overflow-hidden">
-      {/* Subtle Interactive Brand Green Background Box Outlines Grid (Edge-to-edge, ambient loop, hover reactive) */}
+      {/* Subtle Interactive Brand Green Background Box Outlines Grid (Edge-to-edge, subtle occasional boxes, blurred at places) */}
       <BackgroundRippleEffect
-        borderColor="rgba(16, 185, 129, 0.10)"
-        fillColor="rgba(16, 185, 129, 0.015)"
-        className="opacity-90"
+        borderColor="rgba(16, 185, 129, 0.05)"
+        fillColor="transparent"
+        className="opacity-75"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-none">

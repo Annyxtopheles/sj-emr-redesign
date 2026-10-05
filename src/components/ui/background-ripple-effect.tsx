@@ -11,10 +11,13 @@ interface BackgroundRippleEffectProps {
 
 const STATIC_CELLS = Array.from({ length: 420 }, (_, idx) => idx);
 
+// Exactly 7 naturally scattered box positions across the entire grid
+const OCCASIONAL_BOX_INDICES = [28, 74, 137, 195, 252, 318, 381];
+
 export const BackgroundRippleEffect = ({
   className,
-  borderColor = "rgba(16, 185, 129, 0.10)",
-  fillColor = "rgba(16, 185, 129, 0.015)",
+  borderColor = "rgba(16, 185, 129, 0.05)",
+  fillColor = "transparent",
 }: BackgroundRippleEffectProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
@@ -43,56 +46,60 @@ export const BackgroundRippleEffect = ({
       )}
     >
       <style>{`
-        @keyframes ambientFloat1 {
-          0% { transform: translate(-15%, -10%) scale(1); opacity: 0.45; }
-          50% { transform: translate(25%, 20%) scale(1.2); opacity: 0.75; }
-          100% { transform: translate(-15%, -10%) scale(1); opacity: 0.45; }
+        @keyframes ambientFloatSubtle1 {
+          0% { transform: translate(-10%, -10%) scale(1); opacity: 0.25; }
+          50% { transform: translate(18%, 15%) scale(1.1); opacity: 0.45; }
+          100% { transform: translate(-10%, -10%) scale(1); opacity: 0.25; }
         }
-        @keyframes ambientFloat2 {
-          0% { transform: translate(20%, 25%) scale(1.15); opacity: 0.4; }
-          50% { transform: translate(-20%, -15%) scale(0.95); opacity: 0.7; }
-          100% { transform: translate(20%, 25%) scale(1.15); opacity: 0.4; }
+        @keyframes ambientFloatSubtle2 {
+          0% { transform: translate(15%, 20%) scale(1.08); opacity: 0.2; }
+          50% { transform: translate(-15%, -10%) scale(0.95); opacity: 0.4; }
+          100% { transform: translate(15%, 20%) scale(1.08); opacity: 0.2; }
         }
-        @keyframes boxAmbientPulse {
+        @keyframes boxOccasionalPulse {
           0%, 100% {
             background-color: transparent;
-            border-color: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.05);
           }
-          50% {
-            background-color: rgba(16, 185, 129, 0.06);
-            border-color: rgba(16, 185, 129, 0.22);
+          32% {
+            background-color: rgba(16, 185, 129, 0.07);
+            border-color: rgba(16, 185, 129, 0.20);
+          }
+          64% {
+            background-color: transparent;
+            border-color: rgba(16, 185, 129, 0.05);
           }
         }
       `}</style>
 
-      {/* Ambient Looping Lights (drifting continuously throughout in seamless loop) */}
+      {/* Very faint ambient light glow (subtle and non-intrusive) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute -top-[10%] -left-[10%] w-[650px] h-[650px] rounded-full bg-emerald-400/20 blur-[120px]"
-          style={{ animation: "ambientFloat1 14s ease-in-out infinite" }}
+          className="absolute -top-[12%] -left-[10%] w-[680px] h-[680px] rounded-full bg-emerald-400/06 blur-[160px]"
+          style={{ animation: "ambientFloatSubtle1 18s ease-in-out infinite" }}
         />
         <div
-          className="absolute top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-teal-400/15 blur-[110px]"
-          style={{ animation: "ambientFloat2 18s ease-in-out infinite" }}
+          className="absolute top-[25%] -right-[12%] w-[620px] h-[620px] rounded-full bg-teal-400/05 blur-[150px]"
+          style={{ animation: "ambientFloatSubtle2 22s ease-in-out infinite" }}
         />
-        {/* Soft radial cursor glow that follows mouse movement across the grid */}
+        {/* Soft cursor hover aura */}
         {mousePos && (
           <div
             className="absolute rounded-full pointer-events-none transition-opacity duration-300"
             style={{
               left: mousePos.x,
               top: mousePos.y,
-              width: 320,
-              height: 320,
+              width: 260,
+              height: 260,
               transform: "translate(-50%, -50%)",
-              background: "radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(16, 185, 129, 0.04) 50%, transparent 80%)",
-              filter: "blur(10px)",
+              background: "radial-gradient(circle, rgba(16, 185, 129, 0.10) 0%, rgba(16, 185, 129, 0.02) 60%, transparent 80%)",
+              filter: "blur(12px)",
             }}
           />
         )}
       </div>
 
-      {/* Full-Bleed Box Outlines Grid (Edge-to-edge via CSS auto-fill, zero layout shift) */}
+      {/* Full-Bleed Delicate Wireframe Grid with Radial Mask */}
       <div
         className="relative z-10 w-full h-full border-t border-l"
         style={{
@@ -100,26 +107,44 @@ export const BackgroundRippleEffect = ({
           gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
           gridAutoRows: "48px",
           borderColor: borderColor,
-          maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
+          maskImage: "radial-gradient(ellipse 85% 70% at 50% 25%, black 20%, rgba(0,0,0,0.45) 55%, transparent 88%)",
+          WebkitMaskImage: "radial-gradient(ellipse 85% 70% at 50% 25%, black 20%, rgba(0,0,0,0.45) 55%, transparent 88%)",
         }}
       >
         {STATIC_CELLS.map((idx) => {
-          const pulseDelay = (idx % 11) * 0.65;
+          const occasionalIndex = OCCASIONAL_BOX_INDICES.indexOf(idx);
+          const isOccasional = occasionalIndex !== -1;
+          const delay = isOccasional ? occasionalIndex * 1.35 : 0;
 
           return (
             <div
               key={idx}
-              className="relative border-r border-b cursor-pointer transition-colors duration-700 ease-out hover:bg-emerald-500/20 hover:border-emerald-500/45 hover:shadow-[0_0_14px_rgba(16,185,129,0.22)] hover:duration-75"
+              className="relative border-r border-b cursor-pointer transition-colors duration-700 ease-out hover:bg-emerald-500/12 hover:border-emerald-500/35 hover:duration-100"
               style={{
                 backgroundColor: fillColor,
                 borderColor: borderColor,
-                animation: `boxAmbientPulse 6.8s ease-in-out infinite ${pulseDelay}s`,
+                animation: isOccasional
+                  ? `boxOccasionalPulse 9.5s ease-in-out infinite ${delay}s`
+                  : undefined,
               }}
             />
           );
         })}
       </div>
+
+      {/* Selective Soft Blur Patches (softens and blurs grid outlines at organic intervals) */}
+      <div
+        className="absolute top-[8%] left-[10%] w-80 h-72 rounded-full backdrop-blur-[2.5px] bg-white/20 pointer-events-none z-20"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-[32%] right-[8%] w-96 h-80 rounded-full backdrop-blur-[3px] bg-white/25 pointer-events-none z-20"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-[6%] left-[30%] w-88 h-64 rounded-full backdrop-blur-[2px] bg-white/20 pointer-events-none z-20"
+        aria-hidden="true"
+      />
     </div>
   );
 };
