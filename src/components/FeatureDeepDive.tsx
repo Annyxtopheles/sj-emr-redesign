@@ -1157,15 +1157,21 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
 
         {/* Bottom Banner callout with CursorGrid & Clean Smooth CTA */}
         <div className="relative rounded-3xl bg-gradient-to-r from-[#02241b] via-[#031d16] to-[#01221a] text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl overflow-hidden group">
-          {/* Interactive CursorGrid Background */}
-          <div className="absolute inset-0 pointer-events-auto z-0 opacity-75">
+          {/* Interactive CursorGrid: Placed on the interactive CTA side with smooth radial mask */}
+          <div
+            className="absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 pointer-events-auto z-0 overflow-hidden"
+            style={{
+              maskImage: "radial-gradient(ellipse 80% 85% at 70% 50%, black 25%, transparent 85%)",
+              WebkitMaskImage: "radial-gradient(ellipse 80% 85% at 70% 50%, black 25%, transparent 85%)",
+            }}
+          >
             <CursorGrid
-              cellSize={52}
+              cellSize={64}
               color="#34D399"
-              radius={130}
+              radius={140}
               gridOpacity={0.06}
-              maxOpacity={0.4}
-              fillOpacity={0.12}
+              maxOpacity={0.45}
+              fillOpacity={0.14}
               lineWidth={1}
             />
           </div>

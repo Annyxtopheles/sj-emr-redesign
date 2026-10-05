@@ -36,15 +36,21 @@ export default function Footer({ language }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Box with CursorGrid */}
         <div className="relative rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-10 mb-16 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden group">
-          {/* Interactive CursorGrid Background for Bright Card */}
-          <div className="absolute inset-0 pointer-events-auto z-0 opacity-70">
+          {/* Interactive CursorGrid: Placed on the interactive form side with smooth radial mask */}
+          <div
+            className="absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 pointer-events-auto z-0 overflow-hidden"
+            style={{
+              maskImage: "radial-gradient(ellipse 80% 85% at 70% 50%, black 25%, transparent 85%)",
+              WebkitMaskImage: "radial-gradient(ellipse 80% 85% at 70% 50%, black 25%, transparent 85%)",
+            }}
+          >
             <CursorGrid
-              cellSize={52}
+              cellSize={64}
               color="#059669"
-              radius={130}
+              radius={140}
               gridOpacity={0.04}
-              maxOpacity={0.3}
-              fillOpacity={0.06}
+              maxOpacity={0.35}
+              fillOpacity={0.08}
               lineWidth={1}
             />
           </div>
