@@ -6,7 +6,7 @@ interface MergedStatsProps {
 
 export default function MergedStats({ language }: MergedStatsProps) {
   return (
-    <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-transparent">
+    <section className="pt-14 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-start text-left">
           {/* Stat 1: Lead Social-Proof Stat */}

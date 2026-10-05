@@ -14,6 +14,7 @@ import {
   Globe,
   Download,
 } from "lucide-react";
+import CursorGrid from "@/components/ui/CursorGrid";
 
 interface FooterProps {
   language: "en" | "bn";
@@ -33,9 +34,22 @@ export default function Footer({ language }: FooterProps) {
   return (
     <footer className="bg-slate-50 text-slate-600 pt-16 pb-12 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter Box */}
-        <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-10 mb-16 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="max-w-xl text-center lg:text-left">
+        {/* Newsletter Box with CursorGrid */}
+        <div className="relative rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-10 mb-16 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden group">
+          {/* Interactive CursorGrid Background for Bright Card */}
+          <div className="absolute inset-0 pointer-events-auto z-0 opacity-70">
+            <CursorGrid
+              cellSize={52}
+              color="#059669"
+              radius={130}
+              gridOpacity={0.04}
+              maxOpacity={0.3}
+              fillOpacity={0.06}
+              lineWidth={1}
+            />
+          </div>
+
+          <div className="relative z-10 max-w-xl text-center lg:text-left pointer-events-auto">
             <span className="text-xs font-semibold text-emerald-700 uppercase tracking-widest">
               {language === "en" ? "Medical Technology Dispatch" : "আপডেট থাকুন"}
             </span>
@@ -55,7 +69,7 @@ export default function Footer({ language }: FooterProps) {
             </p>
           </div>
 
-          <div className="w-full lg:w-auto">
+          <div className="relative z-10 w-full lg:w-auto pointer-events-auto">
             {subscribed ? (
               <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-5 py-3 rounded-xl text-xs font-semibold">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />

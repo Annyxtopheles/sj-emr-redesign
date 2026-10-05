@@ -9,16 +9,6 @@ interface BackgroundRippleEffectProps {
   fillColor?: string;
 }
 
-// 7 naturally scattered box positions across the upper and middle hero section
-const OCCASIONAL_BOXES = [
-  { top: "12%", left: "12%", delay: 0 },
-  { top: "18%", right: "14%", delay: 1.4 },
-  { top: "28%", left: "6%", delay: 2.8 },
-  { top: "34%", right: "8%", delay: 4.2 },
-  { top: "44%", left: "15%", delay: 5.6 },
-  { top: "52%", right: "16%", delay: 7.0 },
-  { top: "60%", left: "22%", delay: 8.4 },
-];
 
 export const BackgroundRippleEffect = ({
   className,
@@ -122,22 +112,7 @@ export const BackgroundRippleEffect = ({
           maskImage: "linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.4) 68%, transparent 88%)",
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.4) 68%, transparent 88%)",
         }}
-      >
-        {OCCASIONAL_BOXES.map((box, idx) => (
-          <div
-            key={idx}
-            className="absolute w-[48px] h-[48px] border transition-colors duration-700 ease-out"
-            style={{
-              top: box.top,
-              left: box.left,
-              right: box.right,
-              backgroundColor: fillColor,
-              borderColor: borderColor,
-              animation: `boxOccasionalPulse 9.5s ease-in-out infinite ${box.delay}s`,
-            }}
-          />
-        ))}
-      </div>
+      />
 
       {/* Prominent Box Outlines Layer: reveals crisp grid lines around cursor with smooth fade-in/fade-out */}
       <div

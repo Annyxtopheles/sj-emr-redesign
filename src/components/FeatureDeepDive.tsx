@@ -32,9 +32,9 @@ import {
   Baby,
   UserCheck,
 } from "lucide-react";
-import SpecularButton from "@/components/ui/SpecularButton";
 import GlowCard from "@/components/ui/GlowCard";
 import { GlassIconBadge } from "@/components/ui/GlassIcons";
+import CursorGrid from "@/components/ui/CursorGrid";
 
 interface FeatureDeepDiveProps {
   language: "en" | "bn";
@@ -319,10 +319,15 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
               ? "Designed for Bangladeshi Doctors, Built for Speed & Precision"
               : "বাংলাদেশের চিকিৎসকদের বাস্তব অভিজ্ঞতার আলোকে নির্মিত ফিচারসমূহ"}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-pretty max-w-2xl mx-auto">
-            {language === "en"
-              ? "Every tool is tailored to cut clerical burden, eliminate prescription errors, and ensure seamless patient\u00A0follow-up."
-              : "প্রতিটি ফিচার তৈরি করা হয়েছে চেম্বারের সময় বাঁচাতে, প্রেসক্রিপশনের নির্ভুলতা নিশ্চিত করতে এবং রোগীদের উন্নত সেবা দিতে।"}
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto text-balance">
+            {language === "en" ? (
+              <>
+                Every tool is tailored to cut clerical burden, eliminate prescription errors,<br className="hidden sm:inline" />{" "}
+                <span className="sm:whitespace-nowrap">and ensure seamless patient follow-up.</span>
+              </>
+            ) : (
+              "প্রতিটি ফিচার তৈরি করা হয়েছে চেম্বারের সময় বাঁচাতে, প্রেসক্রিপশনের নির্ভুলতা নিশ্চিত করতে এবং রোগীদের উন্নত সেবা দিতে।"
+            )}
           </p>
         </div>
 
@@ -1150,10 +1155,23 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
           </div>
         </div>
 
-        {/* Bottom Banner callout with SpecularButton */}
-        <div className="rounded-3xl bg-gradient-to-r from-emerald-950 via-[#031d16] to-teal-950 text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="max-w-2xl text-center lg:text-left">
+        {/* Bottom Banner callout with CursorGrid & Clean Smooth CTA */}
+        <div className="relative rounded-3xl bg-gradient-to-r from-[#02241b] via-[#031d16] to-[#01221a] text-white p-6 sm:p-10 border border-emerald-800/60 shadow-xl overflow-hidden group">
+          {/* Interactive CursorGrid Background */}
+          <div className="absolute inset-0 pointer-events-auto z-0 opacity-75">
+            <CursorGrid
+              cellSize={52}
+              color="#34D399"
+              radius={130}
+              gridOpacity={0.06}
+              maxOpacity={0.4}
+              fillOpacity={0.12}
+              lineWidth={1}
+            />
+          </div>
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 pointer-events-none">
+            <div className="max-w-2xl text-center lg:text-left pointer-events-auto">
               <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">
                 {language === "en" ? "Specialty Modules Ready" : "স্পেশালাইজড ক্লিনিক্যাল মডিউল"}
               </span>
@@ -1169,18 +1187,14 @@ export default function FeatureDeepDive({ language }: FeatureDeepDiveProps) {
                 }
               </p>
             </div>
-            <div className="shrink-0">
-              <SpecularButton
-                size="md"
-                tint="#047857"
-                lineColor="#34d399"
-                baseColor="#064e3b"
-                textColor="#ffffff"
+            <div className="shrink-0 pointer-events-auto">
+              <a
                 href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-slate-950 font-bold text-xs sm:text-sm shadow-md shadow-emerald-950/40 hover:shadow-lg transition-all duration-200 group/btn cursor-pointer hover:-translate-y-0.5"
               >
                 <span>{language === "en" ? "Contact Sales" : "যোগাযোগ করুন"}</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </SpecularButton>
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>
