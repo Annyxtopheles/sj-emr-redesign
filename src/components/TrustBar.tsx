@@ -117,7 +117,7 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-9 md:h-11 w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
@@ -139,7 +139,7 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-9 md:h-11 w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
@@ -161,7 +161,7 @@ export default function TrustBar({ language }: TrustBarProps) {
                     alt={item.title}
                     width={item.width}
                     height={item.height}
-                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
+                    className="h-8 sm:h-9 md:h-11 w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] object-contain transition-all duration-300 grayscale opacity-75 hover:grayscale-0 hover:opacity-100 max-md:grayscale-0 max-md:opacity-100"
                   />
                 </a>
               ))}
