@@ -136,11 +136,24 @@ export default function Footer({ language }: FooterProps) {
                 />
                 {language === "en" ? "BMDC Standard Compliant" : "বিএমডিসি স্ট্যান্ডার্ড মানসম্মত"}
               </span>
-              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1 shadow-2xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">
+                <Image
+                  src="/assets/BASIS Logo.svg"
+                  alt="BASIS Logo"
+                  width={14}
+                  height={14}
+                  className="w-3.5 h-3.5 object-contain"
+                />
                 {language === "en" ? "BASIS Member #1732" : "বেসিস সদস্য #১৭৩২"}
               </span>
-              <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded border border-teal-200 shadow-2xs">
+              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">
+                <Image
+                  src="/assets/SCCI Logo.svg"
+                  alt="SCCI Logo"
+                  width={14}
+                  height={14}
+                  className="w-3.5 h-3.5 object-contain"
+                />
                 {language === "en" ? "SCCI Member" : "এসসিসিআই সদস্য"}
               </span>
             </div>

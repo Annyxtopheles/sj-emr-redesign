@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Calendar, Menu, X } from "lucide-react";
+import { Phone, Calendar, Menu, X, LogIn } from "lucide-react";
 
 interface NavbarProps {
   language?: "en" | "bn";
@@ -122,14 +122,15 @@ export default function Navbar({ language: propLanguage = "bn", setLanguage: pro
             </button>
           </div>
 
-          {/* Doctor Login */}
+          {/* Doctor Login Button */}
           <a
             href="https://emr.com.bd/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-emerald-700 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs hover:border-slate-400 transition-all whitespace-nowrap"
           >
-            {language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}
+            <LogIn className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
+            <span>{language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}</span>
           </a>
 
           {/* Single Primary Action: Book Demo (hidden at hero section, revealed after scrolling) */}
@@ -231,9 +232,10 @@ export default function Navbar({ language: propLanguage = "bn", setLanguage: pro
                 href="https://emr.com.bd/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-2.5 text-sm font-semibold text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl shadow-xs hover:border-slate-400 transition-all"
               >
-                {language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}
+                <LogIn className="w-4 h-4 text-emerald-600" />
+                <span>{language === "en" ? "Doctor Login" : "ডাক্তার লগইন"}</span>
               </a>
               <a
                 href="#contact"

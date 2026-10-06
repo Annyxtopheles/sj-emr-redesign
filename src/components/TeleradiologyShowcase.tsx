@@ -231,7 +231,7 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
           </p>
         </div>
 
-        {/* Case Modality Selector Tabs - Distinct Category/Filter Theme (Not a CTA) */}
+        {/* Case Modality Selector Tabs - Matching Demo Booking Form Tab Design */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           {cases.map((c, idx) => (
             <button
@@ -240,13 +240,13 @@ export default function TeleradiologyShowcase({ language }: TeleradiologyShowcas
               onClick={() => {
                 setActiveCaseIndex(idx);
               }}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border flex items-center justify-center gap-2 transition-all cursor-pointer ${
                 activeCaseIndex === idx
-                  ? "bg-slate-900 text-white shadow-xs border border-slate-900"
-                  : "bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 border border-slate-200/90 shadow-2xs"
+                  ? "bg-emerald-50 border-emerald-400 text-emerald-950 ring-1 ring-emerald-500/20 font-bold shadow-2xs"
+                  : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
               }`}
             >
-              <Scan className={`w-3.5 h-3.5 ${activeCaseIndex === idx ? "text-emerald-400" : "text-slate-400"}`} />
+              <Scan className={`w-3.5 h-3.5 ${activeCaseIndex === idx ? "text-emerald-700" : "text-emerald-700/70"}`} />
               <span>{c.name}</span>
             </button>
           ))}

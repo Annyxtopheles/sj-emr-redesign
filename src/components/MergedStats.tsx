@@ -8,9 +8,9 @@ export default function MergedStats({ language }: MergedStatsProps) {
   return (
     <section className="pt-14 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-start text-left">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center text-center">
           {/* Stat 1: Lead Social-Proof Stat */}
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               {language === "en" ? "62,000+" : "৬২,০০০+"}
             </div>
@@ -20,7 +20,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 2: Consultation to Rx */}
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               {language === "en" ? "< 60s" : "< ৬০ সে."}
             </div>
@@ -30,7 +30,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 3: Daily Time Saved */}
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               {language === "en" ? "2+ Hrs" : "২+ ঘণ্টা"}
             </div>
@@ -40,7 +40,7 @@ export default function MergedStats({ language }: MergedStatsProps) {
           </div>
 
           {/* Stat 4: Lost Patient Records */}
-          <div className="flex flex-col justify-start">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-600 tracking-tight leading-none mb-2">
               {language === "en" ? "0%" : "০%"}
             </div>

@@ -26,7 +26,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
       periodYearly: language === "en" ? "Free for 60 days" : "৬০ দিনের জন্য সম্পূর্ণ ফ্রি",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Start 60-Day Trial" : "৬০ দিনের ফ্রি ট্রায়াল শুরু করুন",
+      ctaText: language === "en" ? "60-Day Trial" : "৬০ দিনের ট্রায়াল",
       features: [
         language === "en" ? "Full e-prescription & BD drug database" : "সম্পূর্ণ ই-প্রেসক্রিপশন ও ড্রাগ ডেটাবেস",
         language === "en" ? "Lifetime patient history & diagnostics" : "আজীবন রোগীর মেডিকেল হিস্ট্রি ও রিপোর্ট",
@@ -232,14 +232,14 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                 <button
                   type="button"
                   onClick={() => handlePlanClick(plan.id === "trial" ? "Free (60 Days Trial)" : plan.name)}
-                  className={`w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+                  className={`w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer ${
                     isFeatured
                       ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
                   }`}
                 >
-                  <span>{plan.ctaText}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="whitespace-nowrap">{plan.ctaText}</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
               </div>
             );
