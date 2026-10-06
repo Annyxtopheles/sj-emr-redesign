@@ -14,19 +14,19 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
   const plans = [
     {
       id: "trial",
-      tag: language === "en" ? "14-Day Free Evaluation" : "১৪ দিনের ফ্রি ট্রায়াল",
-      name: language === "en" ? "Free Trial" : "ফ্রি ট্রায়াল",
+      tag: language === "en" ? "60-Day Free Relaunch" : "৬০ দিনের ফ্রি ট্রায়াল (রিলঞ্চ অফার)",
+      name: language === "en" ? "Free Trial (60 Days)" : "ফ্রি ট্রায়াল (৬০ দিন)",
       desc:
         language === "en"
           ? "Test the complete software in your daily chamber with zero commitment."
           : "কোনো অগ্রিম পেমেন্ট ছাড়াই সম্পূর্ণ সফটওয়্যার চেম্বারে যাচাই করে দেখুন।",
       priceMonthly: "0",
-      periodMonthly: language === "en" ? "Free for 14 days" : "১৪ দিনের জন্য সম্পূর্ণ ফ্রি",
+      periodMonthly: language === "en" ? "Free for 60 days" : "৬০ দিনের জন্য সম্পূর্ণ ফ্রি",
       priceYearly: "0",
-      periodYearly: language === "en" ? "Free for 14 days" : "১৪ দিনের জন্য সম্পূর্ণ ফ্রি",
+      periodYearly: language === "en" ? "Free for 60 days" : "৬০ দিনের জন্য সম্পূর্ণ ফ্রি",
       oldPrice: null,
       popular: false,
-      ctaText: language === "en" ? "Start Free Trial" : "ফ্রি ট্রায়াল শুরু করুন",
+      ctaText: language === "en" ? "Start 60-Day Trial" : "৬০ দিনের ফ্রি ট্রায়াল শুরু করুন",
       features: [
         language === "en" ? "Full e-prescription & BD drug database" : "সম্পূর্ণ ই-প্রেসক্রিপশন ও ড্রাগ ডেটাবেস",
         language === "en" ? "Lifetime patient history & diagnostics" : "আজীবন রোগীর মেডিকেল হিস্ট্রি ও রিপোর্ট",
@@ -130,8 +130,8 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
           </h2>
           <p className="text-sm sm:text-base text-slate-600 text-pretty">
             {language === "en"
-              ? "Start with a risk-free 14-day trial. Upgrade or cancel anytime with complete data ownership."
-              : "১৪ দিনের ফ্রি ট্রায়াল দিয়ে শুরু করুন। কোনো অগ্রিম পেমেন্ট বা হিডেন চার্জ নেই।"}
+              ? "Start with our relaunch special: Free for 60 days. Upgrade or cancel anytime with complete data ownership."
+              : "রিলঞ্চ অফারে ৬০ দিনের ফ্রি ট্রায়াল দিয়ে শুরু করুন। কোনো অগ্রিম পেমেন্ট বা হিডেন চার্জ নেই।"}
           </p>
 
           {/* Billing Cycle Toggle - Unified Segmented Control */}
@@ -231,7 +231,7 @@ export default function PricingSection({ language, onSelectPlan }: PricingSectio
                 {/* CTA Button */}
                 <button
                   type="button"
-                  onClick={() => handlePlanClick(plan.name)}
+                  onClick={() => handlePlanClick(plan.id === "trial" ? "Free (60 Days Trial)" : plan.name)}
                   className={`w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
                     isFeatured
                       ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs"

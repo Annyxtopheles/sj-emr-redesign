@@ -42,6 +42,14 @@ export default function HeroSection({ language }: HeroSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Header Content */}
         <div className="text-center max-w-4xl mx-auto">
+          {/* Relaunch Special Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/90 text-emerald-800 text-xs font-semibold mb-6 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>
+              {language === "en" ? "Relaunch Special: 100% Free for 60 Days" : "রিলঞ্চ অফার: ৬০ দিনের জন্য সম্পূর্ণ ফ্রি"}
+            </span>
+          </div>
+
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
             {language === "en" ? (
@@ -101,7 +109,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs hover:border-slate-400 transition-all"
             >
               <FileText className="w-5 h-5 text-emerald-600" />
-              <span>{language === "en" ? "Start Free Trial" : "ফ্রি ট্রায়াল শুরু করুন"}</span>
+              <span>{language === "en" ? "Free for 60 Days" : "৬০ দিনের ফ্রি ট্রায়াল"}</span>
             </a>
           </div>
         </div>

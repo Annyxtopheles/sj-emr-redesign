@@ -171,8 +171,8 @@ export default function BlogsPage() {
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 {language === "en"
-                  ? "Experience 60-second e-prescribing, the Bangladeshi drug directory, and automated Zoom telemedicine. Free 14-day trial with full support."
-                  : "মাত্র ৬০ সেকেন্ডে প্রেসক্রিপশন প্রিন্ট, ড্রাগ ডেটাবেস ও জুম টেলিমেডিসিনের অভিজ্ঞতা নিন। ১৪ দিনের ফ্রি ট্রায়াল শুরু করুন।"}
+                  ? "Experience 60-second e-prescribing, the Bangladeshi drug directory, and automated Zoom telemedicine. Free 60-day trial with full support."
+                  : "মাত্র ৬০ সেকেন্ডে প্রেসক্রিপশন প্রিন্ট, ড্রাগ ডেটাবেস ও জুম টেলিমেডিসিনের অভিজ্ঞতা নিন। ৬০ দিনের ফ্রি ট্রায়াল শুরু করুন।"}
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">

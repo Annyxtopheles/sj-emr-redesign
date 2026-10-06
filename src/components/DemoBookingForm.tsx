@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Video,
@@ -33,6 +33,20 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
     demoType: "zoom", // 'zoom' | 'recorded'
     plan: selectedPlan || "Essential Plus (10000 BDT/Year)",
   });
+
+  useEffect(() => {
+    if (selectedPlan) {
+      if (
+        selectedPlan.toLowerCase().includes("trial") ||
+        selectedPlan.toLowerCase().includes("free") ||
+        selectedPlan.toLowerCase().includes("ট্রায়াল")
+      ) {
+        setFormData((prev) => ({ ...prev, plan: "Free (60 Days Trial)" }));
+      } else {
+        setFormData((prev) => ({ ...prev, plan: selectedPlan }));
+      }
+    }
+  }, [selectedPlan]);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -419,8 +433,8 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
                         onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
                         className="w-full bg-slate-50/70 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white focus:ring-1 focus:ring-emerald-600 transition-all"
                       >
-                        <option value="Free (14 Days Trial)">
-                          {language === "en" ? "Free 14 Days Trial (0 BDT)" : "ফ্রি ১৪ দিনের ট্রায়াল (০ টাকা)"}
+                        <option value="Free (60 Days Trial)">
+                          {language === "en" ? "Free 60 Days Trial (0 BDT - Relaunch Offer)" : "ফ্রি ৬০ দিনের ট্রায়াল (০ টাকা - রিলঞ্চ অফার)"}
                         </option>
                         <option value="Essential (2000 BDT/Month)">
                           {language === "en" ? "Essential (2,000 BDT/Month)" : "এসেনশিয়াল (২,০০০ টাকা/মাস)"}
