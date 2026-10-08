@@ -1,6 +1,8 @@
 {
   "name": "sj-emr-redesign",
   "version": "0.1.0",
+  "description": "SJ EMR - Doctor-First EMR & Telemedicine Platform for Bangladeshi Healthcare",
+  "author": "SJ Innovation LLC",
   "private": true,
   "scripts": {
     "dev": "next dev",
