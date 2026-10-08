@@ -299,8 +299,8 @@ export default function Footer({ language }: FooterProps) {
             <div className="space-y-1.5 text-xs text-slate-600 pt-1">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-emerald-600" />
-                <a href="tel:+8801707074577" className="hover:text-emerald-800 font-semibold text-emerald-700">
-                  +880 1707-074577 {language === "en" ? "(Hotline)" : "(হটলাইন)"}
+                <a href="tel:+8801896188434" className="hover:text-emerald-800 font-semibold text-emerald-700">
+                  +880 1896-188434 {language === "en" ? "(Hotline)" : "(হটলাইন)"}
                 </a>
               </div>
               <div className="flex items-center gap-2">

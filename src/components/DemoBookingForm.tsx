@@ -166,11 +166,11 @@ export default function DemoBookingForm({ language, selectedPlan }: DemoBookingF
               </span>
               <div className="mt-1 flex items-center gap-3">
                 <a
-                  href="tel:+8801707074577"
+                  href="tel:+8801896188434"
                   className="font-bold text-emerald-700 hover:text-emerald-800 text-sm flex items-center gap-1.5"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  +880 1707-074577
+                  +880 1896-188434
                 </a>
                 <span className="text-slate-300">|</span>
                 <a

@@ -89,11 +89,11 @@ export default function Navbar({ language: propLanguage = "bn", setLanguage: pro
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           {/* Phone Hotline link */}
           <a
-            href="tel:+8801707074577"
+            href="tel:+8801896188434"
             className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-emerald-700 transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-100"
           >
             <Phone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>+880 1707-074577</span>
+            <span>+880 1896-188434</span>
           </a>
 
           {/* Language Toggle directly to the left of Doctor Login */}
@@ -155,7 +155,7 @@ export default function Navbar({ language: propLanguage = "bn", setLanguage: pro
         <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
           {/* Tap-to-call icon */}
           <a
-            href="tel:+8801707074577"
+            href="tel:+8801896188434"
             aria-label="Call Hotline"
             className="p-2 text-slate-700 hover:text-emerald-700 rounded-lg hover:bg-slate-100 transition-colors"
           >
